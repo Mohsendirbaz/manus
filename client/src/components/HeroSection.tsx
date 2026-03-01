@@ -66,7 +66,7 @@ export default function HeroSection() {
           >
             {isRTL ? (
               <>
-                پلتفرم خودمختاری
+                بستر خودروی خودران
                 <br />
                 <span style={{ color: "#4DB6AC" }}>مبتنی بر فیزیک</span>
                 <br />
