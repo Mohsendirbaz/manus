@@ -1,4 +1,6 @@
 import { type Slide } from "@/data/slides";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { slideTranslations, ui } from "@/data/translations";
 
 interface SlideCardProps {
   slide: Slide;
@@ -31,17 +33,26 @@ function highlight(text: string, query: string): React.ReactNode {
 }
 
 export default function SlideCard({ slide, searchQuery, animationDelay, onClick }: SlideCardProps) {
+  const { language, isRTL } = useLanguage();
+  const t = ui[language];
+  const slideT = slideTranslations[language][slide.id - 1];
+  const sectionLabel = t.sections[slide.section];
+
   return (
     <article
       className="slide-card cursor-pointer animate-fade-in-up"
-      style={{ animationDelay: `${animationDelay}s`, opacity: 0 }}
+      style={{
+        animationDelay: `${animationDelay}s`,
+        opacity: 0,
+        direction: isRTL ? "rtl" : "ltr",
+      }}
       onClick={onClick}
     >
       {/* Image */}
       <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
         <img
           src={slide.image}
-          alt={slide.title}
+          alt={slideT.title}
           className="w-full h-full object-cover transition-transform duration-500"
           style={{ transform: "scale(1)" }}
           onMouseEnter={(e) => {
@@ -53,16 +64,19 @@ export default function SlideCard({ slide, searchQuery, animationDelay, onClick 
           loading="lazy"
         />
         {/* Section badge overlay */}
-        <div className="absolute top-3 left-3">
+        <div className={`absolute top-3 ${isRTL ? "right-3" : "left-3"}`}>
           <span
             className="section-badge text-white"
-            style={{ backgroundColor: slide.sectionColor }}
+            style={{
+              backgroundColor: slide.sectionColor,
+              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : undefined,
+            }}
           >
-            {slide.section}
+            {sectionLabel}
           </span>
         </div>
         {/* Slide number overlay */}
-        <div className="absolute top-3 right-3">
+        <div className={`absolute top-3 ${isRTL ? "left-3" : "right-3"}`}>
           <span
             className="text-white text-xs px-2 py-0.5 rounded"
             style={{
@@ -77,28 +91,35 @@ export default function SlideCard({ slide, searchQuery, animationDelay, onClick 
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className={`p-5 ${isRTL ? "text-right" : ""}`}>
         <h3
           className="text-base font-semibold mb-2 leading-snug"
-          style={{ fontFamily: "'Playfair Display', serif", color: "#2C2C2C" }}
+          style={{
+            fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
+            color: "#2C2C2C",
+          }}
         >
-          {highlight(slide.title, searchQuery)}
+          {highlight(slideT.title, searchQuery)}
         </h3>
 
         <p
           className="text-xs mb-4 leading-relaxed line-clamp-3"
-          style={{ fontFamily: "'DM Sans', sans-serif", color: "#5A5A5A" }}
+          style={{
+            fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+            color: "#5A5A5A",
+          }}
         >
-          {highlight(slide.summary, searchQuery)}
+          {highlight(slideT.summary, searchQuery)}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {slide.tags.slice(0, 4).map((tag) => (
+        <div className={`flex flex-wrap gap-1.5 ${isRTL ? "flex-row-reverse" : ""}`}>
+          {slideT.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
               className="tag-pill"
               style={{
+                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : undefined,
                 backgroundColor:
                   searchQuery && tag.toLowerCase().includes(searchQuery.toLowerCase())
                     ? "rgba(45,125,111,0.12)"
@@ -116,12 +137,9 @@ export default function SlideCard({ slide, searchQuery, animationDelay, onClick 
               {tag}
             </span>
           ))}
-          {slide.tags.length > 4 && (
-            <span
-              className="tag-pill"
-              style={{ color: "#9CA3AF" }}
-            >
-              +{slide.tags.length - 4}
+          {slideT.tags.length > 4 && (
+            <span className="tag-pill" style={{ color: "#9CA3AF" }}>
+              +{slideT.tags.length - 4}
             </span>
           )}
         </div>
