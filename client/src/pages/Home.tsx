@@ -10,10 +10,6 @@ import type { Slide } from "@/data/slides";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
-
   const [searchQuery, setSearchQuery] = useState("");
   const [activeSection, setActiveSection] = useState<Section | "All">("All");
   const [selectedSlide, setSelectedSlide] = useState<Slide | null>(null);
