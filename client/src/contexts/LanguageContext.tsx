@@ -32,6 +32,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     html.setAttribute("lang", language);
   }, [language, isRTL]);
 
+  useEffect(() => {
+    const handler = () => {
+      setLanguage(language === "fa" ? "en" : "fa");
+    };
+    window.addEventListener("toggle-language", handler);
+    return () => window.removeEventListener("toggle-language", handler);
+  }, [language]);
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage, isRTL }}>
       {children}
