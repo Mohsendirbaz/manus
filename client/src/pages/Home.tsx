@@ -1,23 +1,97 @@
-import { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import { Link } from "wouter";
-import { slides60, acts, actColors, ACT_LABELS, type Act, type Slide60 } from "@/data/slides60";
+import { slides60, actColors as actColorsEPU, ACT_LABELS as ACT_LABELS_EPU, type Act, type Slide60 } from "@/data/slides60";
+import { slidesA, ACT_LABELS_A, type SlideA, type ActA } from "@/data/slidesA";
+import { slidesB, ACT_LABELS_B, type SlideB, type ActB } from "@/data/slidesB";
 import { ui60 } from "@/data/translations60";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// ─── Sub-components ──────────────────────────────────────────────────────────
+// ─── Unified slide type ───────────────────────────────────────────────────────
+type DeckId = "EPU" | "A" | "B";
 
-function ActBadge({ act, lang }: { act: Act; lang: "en" | "fa" }) {
-  const color = actColors[act];
-  const label = ACT_LABELS[act][lang];
-  const isFa = lang === "fa";
+interface UnifiedSlide {
+  uid: string;          // unique across all 120: "EPU-1", "A-1", "B-1"
+  deck: DeckId;
+  id: number;
+  act: string;
+  actLabel: { en: string; fa: string };
+  imageUrl: string;
+  en: { title: string; narrative: string; strategic: string; keyPoints: string[]; tags: string[] };
+  fa: { title: string; narrative: string; strategic: string; keyPoints: string[]; tags: string[] };
+}
+
+const DECK_META: Record<DeckId, { en: string; fa: string; accent: string }> = {
+  EPU: { en: "EPU Strategy", fa: "استراتژی EPU", accent: "#C8A96E" },
+  A:   { en: "Deck A · UFP", fa: "Deck A · UFP", accent: "#4FC3F7" },
+  B:   { en: "Deck B · Temporal", fa: "Deck B · زمانی", accent: "#4CAF82" },
+};
+
+// Act color lookup — EPU uses its own map; A and B get deck accent
+const ACT_COLORS_A: Record<ActA, string> = {
+  Foundation: "#4FC3F7", Taxonomy: "#29B6F6", Composition: "#0288D1",
+  LDA: "#0277BD", Variants: "#01579B", Decision: "#4DD0E1",
+  Performance: "#26C6DA", Synthesis: "#00ACC1",
+};
+const ACT_COLORS_B: Record<ActB, string> = {
+  Foundation: "#4CAF82", T0Manager: "#26A69A", Operators: "#00897B",
+  Landauer: "#00796B", Constraints: "#00695C", LLM: "#43A047",
+  Synthesis: "#388E3C",
+};
+
+function getActColor(slide: UnifiedSlide): string {
+  if (slide.deck === "EPU") return actColorsEPU[slide.act as Act] ?? "#C8A96E";
+  if (slide.deck === "A")   return ACT_COLORS_A[slide.act as ActA] ?? "#4FC3F7";
+  return ACT_COLORS_B[slide.act as ActB] ?? "#4CAF82";
+}
+
+// Build unified array once
+const allSlides: UnifiedSlide[] = [
+  ...slides60.map((s: Slide60): UnifiedSlide => ({
+    uid: `EPU-${s.id}`, deck: "EPU", id: s.id,
+    act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
+    en: s.en, fa: s.fa,
+  })),
+  ...slidesA.map((s: SlideA): UnifiedSlide => ({
+    uid: `A-${s.id}`, deck: "A", id: s.id,
+    act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
+    en: s.en, fa: s.fa,
+  })),
+  ...slidesB.map((s: SlideB): UnifiedSlide => ({
+    uid: `B-${s.id}`, deck: "B", id: s.id,
+    act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
+    en: s.en, fa: s.fa,
+  })),
+];
+
+// ─── Sub-components ──────────────────────────────────────────────────────────
+function DeckBadge({ deck, lang }: { deck: DeckId; lang: "en" | "fa" }) {
+  const meta = DECK_META[deck];
+  return (
+    <span
+      className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-bold"
+      style={{
+        backgroundColor: meta.accent + "22",
+        color: meta.accent,
+        fontFamily: "'Space Mono', monospace",
+        letterSpacing: "0.03em",
+      }}
+    >
+      {lang === "fa" ? meta.fa : meta.en}
+    </span>
+  );
+}
+
+function ActBadge({ slide, lang }: { slide: UnifiedSlide; lang: "en" | "fa" }) {
+  const color = getActColor(slide);
+  const label = slide.actLabel[lang];
   return (
     <span
       className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium"
       style={{
         backgroundColor: color + "18",
         color,
-        fontFamily: isFa ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
-        letterSpacing: isFa ? "0" : "0.02em",
+        fontFamily: lang === "fa" ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+        letterSpacing: lang === "fa" ? "0" : "0.02em",
       }}
     >
       {label}
@@ -25,157 +99,137 @@ function ActBadge({ act, lang }: { act: Act; lang: "en" | "fa" }) {
   );
 }
 
-function SlideCard60({
-  slide,
-  lang,
-  isRTL,
-  searchQuery,
-  animationDelay,
-  onClick,
+function highlight(text: string, query: string): string | React.ReactNode {
+  if (!query.trim()) return text;
+  const q = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const parts = text.split(new RegExp(`(${q})`, "gi"));
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <mark key={i} style={{ backgroundColor: "#C8A96E33", color: "#8B6914" }}>{part}</mark>
+        ) : part
+      )}
+    </>
+  );
+}
+
+function SlideCard({
+  slide, lang, isRTL, searchQuery, animationDelay, onClick,
 }: {
-  slide: Slide60;
-  lang: "en" | "fa";
-  isRTL: boolean;
-  searchQuery: string;
-  animationDelay: number;
-  onClick: () => void;
+  slide: UnifiedSlide; lang: "en" | "fa"; isRTL: boolean;
+  searchQuery: string; animationDelay: number; onClick: () => void;
 }) {
   const content = slide[lang];
-  const accentColor = actColors[slide.act];
-
-  function highlight(text: string) {
-    if (!searchQuery.trim()) return text;
-    const q = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const parts = text.split(new RegExp(`(${q})`, "gi"));
-    return parts.map((part, i) =>
-      part.toLowerCase() === searchQuery.toLowerCase() ? (
-        <mark key={i} style={{ backgroundColor: accentColor + "33", color: accentColor, borderRadius: "2px" }}>
-          {part}
-        </mark>
-      ) : (
-        part
-      )
-    );
-  }
-
+  const accentColor = getActColor(slide);
+  const deckMeta = DECK_META[slide.deck];
   return (
     <article
-      onClick={onClick}
-      className="group cursor-pointer rounded-none border transition-all duration-200 hover:shadow-md"
+      className="group cursor-pointer border rounded-sm overflow-hidden"
       style={{
-        backgroundColor: "#FDFCFA",
         borderColor: "#E8E5DF",
+        backgroundColor: "#FDFCFA",
         animationDelay: `${animationDelay}s`,
-        direction: isRTL ? "rtl" : "ltr",
       }}
+      onClick={onClick}
     >
       {/* Image */}
-      <div className="relative overflow-hidden" style={{ height: "180px" }}>
+      <div className="relative overflow-hidden" style={{ height: "160px" }}>
         <img
           src={slide.imageUrl}
           alt={content.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover"
+          style={{ filter: "brightness(0.92)" }}
           loading="lazy"
         />
         <div
           className="absolute inset-0"
           style={{ background: `linear-gradient(to top, ${accentColor}44 0%, transparent 60%)` }}
         />
-        <div className={`absolute bottom-3 ${isRTL ? "right-3" : "left-3"}`}>
-          <ActBadge act={slide.act} lang={lang} />
+        <div className={`absolute top-2 ${isRTL ? "right-2" : "left-2"} flex gap-1.5`}>
+          <span
+            className="text-xs px-1.5 py-0.5 rounded font-bold"
+            style={{
+              backgroundColor: deckMeta.accent + "dd",
+              color: "#fff",
+              fontFamily: "'Space Mono', monospace",
+              fontSize: "10px",
+            }}
+          >
+            {slide.deck === "EPU" ? "EPU" : `Deck ${slide.deck}`}
+          </span>
         </div>
-        <div
-          className={`absolute top-3 ${isRTL ? "left-3" : "right-3"} text-xs font-bold px-2 py-0.5 rounded`}
-          style={{
-            backgroundColor: "rgba(0,0,0,0.55)",
-            color: "#fff",
-            fontFamily: "'Space Mono', monospace",
-          }}
-        >
-          {String(slide.id).padStart(2, "0")}
+        <div className={`absolute bottom-2 ${isRTL ? "right-2" : "left-2"}`}>
+          <span
+            className="text-xs px-1.5 py-0.5 rounded"
+            style={{
+              backgroundColor: "rgba(0,0,0,0.65)",
+              color: "#F8F7F4",
+              fontFamily: "'Space Mono', monospace",
+              fontSize: "10px",
+            }}
+          >
+            #{slide.id}
+          </span>
         </div>
       </div>
-
-      {/* Content */}
-      <div className="p-5">
+      {/* Body */}
+      <div className={`p-4 ${isRTL ? "text-right" : ""}`}>
+        <div className={`flex items-center gap-2 mb-2 flex-wrap ${isRTL ? "flex-row-reverse" : ""}`}>
+          <ActBadge slide={slide} lang={lang} />
+        </div>
         <h3
-          className="text-base font-semibold mb-2 leading-snug"
+          className="text-sm font-semibold leading-snug mb-2 line-clamp-2"
           style={{
             fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
             color: "#1A1A1A",
           }}
         >
-          {highlight(content.title)}
+          {highlight(content.title, searchQuery)}
         </h3>
         <p
-          className="text-sm leading-relaxed mb-4 line-clamp-3"
+          className="text-xs leading-relaxed line-clamp-3"
           style={{
             fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-            color: "#5A5A5A",
+            color: "#6B7280",
           }}
         >
-          {highlight(content.narrative)}
+          {highlight(content.narrative, searchQuery)}
         </p>
-
-        {/* Key points preview */}
-        <ul className={`space-y-1 mb-4 ${isRTL ? "pr-3" : "pl-3"}`} style={{ borderLeft: isRTL ? "none" : `2px solid ${accentColor}33`, borderRight: isRTL ? `2px solid ${accentColor}33` : "none" }}>
-          {content.keyPoints.slice(0, 2).map((kp, i) => (
-            <li
-              key={i}
-              className="text-xs leading-relaxed"
-              style={{
-                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                color: "#7A7A7A",
-              }}
-            >
-              {highlight(kp)}
-            </li>
-          ))}
-        </ul>
-
-        {/* Tags */}
-        <div className={`flex flex-wrap gap-1.5 ${isRTL ? "flex-row-reverse" : ""}`}>
-          {content.tags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2 py-0.5 rounded-full"
-              style={{
-                backgroundColor: accentColor + "12",
-                color: accentColor,
-                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-              }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        {content.tags.length > 0 && (
+          <div className={`flex flex-wrap gap-1 mt-3 ${isRTL ? "flex-row-reverse" : ""}`}>
+            {content.tags.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="text-xs px-1.5 py-0.5 border rounded-sm"
+                style={{
+                  borderColor: "#E8E5DF",
+                  color: "#9CA3AF",
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "10px",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </article>
   );
 }
 
-function SlideModal60({
-  slide,
-  lang,
-  isRTL,
-  onClose,
-  onPrev,
-  onNext,
-  hasPrev,
-  hasNext,
+// ─── Modal ────────────────────────────────────────────────────────────────────
+function SlideModal({
+  slide, lang, isRTL, onClose, onPrev, onNext, hasPrev, hasNext,
 }: {
-  slide: Slide60;
-  lang: "en" | "fa";
-  isRTL: boolean;
-  onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-  hasPrev: boolean;
-  hasNext: boolean;
+  slide: UnifiedSlide; lang: "en" | "fa"; isRTL: boolean;
+  onClose: () => void; onPrev: () => void; onNext: () => void;
+  hasPrev: boolean; hasNext: boolean;
 }) {
   const content = slide[lang];
-  const accentColor = actColors[slide.act];
-  const t = ui60[lang];
+  const accentColor = getActColor(slide);
+  const deckMeta = DECK_META[slide.deck];
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -190,57 +244,50 @@ function SlideModal60({
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: "rgba(0,0,0,0.75)", backdropFilter: "blur(4px)" }}
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+      style={{ backgroundColor: "rgba(10,22,40,0.85)", backdropFilter: "blur(4px)" }}
+      onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-sm"
-        style={{ backgroundColor: "#FDFCFA", direction: isRTL ? "rtl" : "ltr" }}
+        className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-sm border"
+        style={{ backgroundColor: "#FDFCFA", borderColor: "#E8E5DF" }}
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Header bar */}
+        {/* Modal header */}
         <div
-          className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 border-b"
-          style={{ backgroundColor: "#FDFCFA", borderColor: "#E8E5DF" }}
+          className={`flex items-center justify-between px-6 py-4 border-b ${isRTL ? "flex-row-reverse" : ""}`}
+          style={{ borderColor: "#E8E5DF" }}
         >
           <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
             <span
-              className="text-xs font-bold"
-              style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}
+              className="text-xs px-2 py-1 rounded font-bold"
+              style={{ backgroundColor: deckMeta.accent + "22", color: deckMeta.accent, fontFamily: "'Space Mono', monospace" }}
             >
-              {String(slide.id).padStart(2, "0")} / 60
+              {slide.deck === "EPU" ? "EPU" : `Deck ${slide.deck}`} #{slide.id}
             </span>
-            <ActBadge act={slide.act} lang={lang} />
+            <ActBadge slide={slide} lang={lang} />
           </div>
           <button
             onClick={onClose}
-            className="text-xl leading-none px-2 py-1 rounded transition-colors hover:bg-gray-100"
-            style={{ color: "#5A5A5A" }}
-            aria-label="Close"
+            className="text-gray-400 hover:text-gray-600 text-xl leading-none"
           >
             ×
           </button>
         </div>
-
-        {/* Body */}
-        <div className="grid md:grid-cols-2 gap-0">
-          {/* Image */}
-          <div className="relative" style={{ minHeight: "300px" }}>
+        {/* Modal body — two-column */}
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${isRTL ? "direction-rtl" : ""}`}>
+          {/* Left: image */}
+          <div className="relative" style={{ minHeight: "280px" }}>
             <img
               src={slide.imageUrl}
               alt={content.title}
               className="w-full h-full object-cover"
-              style={{ minHeight: "300px" }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{ background: `linear-gradient(135deg, ${accentColor}22 0%, transparent 70%)` }}
+              style={{ minHeight: "280px" }}
             />
           </div>
-
-          {/* Content */}
-          <div className="p-8">
+          {/* Right: content */}
+          <div className={`p-6 overflow-y-auto ${isRTL ? "text-right" : ""}`} style={{ maxHeight: "70vh" }}>
             <h2
-              className="text-2xl font-bold mb-4 leading-tight"
+              className="text-xl font-bold mb-3 leading-snug"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
                 color: "#1A1A1A",
@@ -248,129 +295,116 @@ function SlideModal60({
             >
               {content.title}
             </h2>
-
-            <div className="mb-5">
-              <p
-                className="text-xs uppercase tracking-widest mb-2"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  color: accentColor,
-                }}
+            <p
+              className="text-sm leading-relaxed mb-4"
+              style={{
+                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+                color: "#4B5563",
+              }}
+            >
+              {content.narrative}
+            </p>
+            {content.strategic && (
+              <div
+                className="mb-4 p-3 border-l-2 rounded-sm"
+                style={{ borderColor: accentColor, backgroundColor: accentColor + "0A" }}
               >
-                {isRTL ? "روایت فنی" : "Technical Narrative"}
-              </p>
-              <p
-                className="text-sm leading-relaxed"
-                style={{
-                  fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                  color: "#3A3A3A",
-                }}
-              >
-                {content.narrative}
-              </p>
-            </div>
-
-            <div className="mb-5">
-              <p
-                className="text-xs uppercase tracking-widest mb-2"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  color: accentColor,
-                }}
-              >
-                {isRTL ? "انتخاب‌های راهبردی" : "Strategic Choices"}
-              </p>
-              <p
-                className="text-sm leading-relaxed"
-                style={{
-                  fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                  color: "#5A5A5A",
-                }}
-              >
-                {content.strategic}
-              </p>
-            </div>
-
-            <div className="mb-5">
-              <p
-                className="text-xs uppercase tracking-widest mb-3"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  color: accentColor,
-                }}
-              >
-                {isRTL ? "نکات کلیدی" : "Key Points"}
-              </p>
-              <ul className="space-y-2">
-                {content.keyPoints.map((kp, i) => (
-                  <li
-                    key={i}
-                    className={`flex gap-2 text-sm ${isRTL ? "flex-row-reverse text-right" : ""}`}
-                    style={{
-                      fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                      color: "#3A3A3A",
-                    }}
-                  >
-                    <span style={{ color: accentColor, flexShrink: 0 }}>▸</span>
-                    <span>{kp}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Tags */}
-            <div className={`flex flex-wrap gap-2 ${isRTL ? "flex-row-reverse" : ""}`}>
-              {content.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2.5 py-1 rounded-full border"
+                <p
+                  className="text-xs font-semibold mb-1 uppercase tracking-wide"
+                  style={{ color: accentColor, fontFamily: "'Space Mono', monospace" }}
+                >
+                  {isRTL ? "انتخاب راهبردی" : "Strategic Choice"}
+                </p>
+                <p
+                  className="text-sm leading-relaxed"
                   style={{
-                    borderColor: accentColor + "44",
-                    color: accentColor,
                     fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+                    color: "#374151",
                   }}
                 >
-                  {tag}
-                </span>
-              ))}
-            </div>
+                  {content.strategic}
+                </p>
+              </div>
+            )}
+            {content.keyPoints.length > 0 && (
+              <div className="mb-4">
+                <p
+                  className="text-xs font-semibold mb-2 uppercase tracking-wide"
+                  style={{ color: "#9CA3AF", fontFamily: "'Space Mono', monospace" }}
+                >
+                  {isRTL ? "نکات کلیدی" : "Key Points"}
+                </p>
+                <ul className={`space-y-1.5 ${isRTL ? "pr-3" : "pl-3"}`}>
+                  {content.keyPoints.map((kp, i) => (
+                    <li
+                      key={i}
+                      className="text-sm leading-relaxed"
+                      style={{
+                        fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+                        color: "#374151",
+                        listStyleType: "disc",
+                        display: "list-item",
+                      }}
+                    >
+                      {kp}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {content.tags.length > 0 && (
+              <div className={`flex flex-wrap gap-1.5 ${isRTL ? "flex-row-reverse" : ""}`}>
+                {content.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-2 py-0.5 border rounded-sm"
+                    style={{
+                      borderColor: "#E8E5DF",
+                      color: "#9CA3AF",
+                      fontFamily: "'Space Mono', monospace",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-
         {/* Navigation footer */}
         <div
-          className={`flex items-center justify-between px-6 py-4 border-t ${isRTL ? "flex-row-reverse" : ""}`}
-          style={{ borderColor: "#E8E5DF" }}
+          className={`flex items-center justify-between px-6 py-3 border-t ${isRTL ? "flex-row-reverse" : ""}`}
+          style={{ borderColor: "#E8E5DF", backgroundColor: "#F8F7F4" }}
         >
           <button
-            onClick={isRTL ? onNext : onPrev}
-            disabled={isRTL ? !hasNext : !hasPrev}
-            className="text-sm px-4 py-2 border rounded transition-all disabled:opacity-30"
+            onClick={onPrev}
+            disabled={!hasPrev}
+            className="text-xs px-4 py-2 border rounded-sm disabled:opacity-30 transition-all"
             style={{
-              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
               borderColor: "#D0CCC5",
-              color: "#3A3A3A",
+              color: "#5A5A5A",
             }}
           >
-            {isRTL ? t.next : t.prev}
+            {isRTL ? "بعدی →" : "← Prev"}
           </button>
           <span
             className="text-xs"
             style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
           >
-            {slide.id} / 60
+            {slide.deck === "EPU" ? "EPU" : `Deck ${slide.deck}`} #{slide.id}
           </span>
           <button
-            onClick={isRTL ? onPrev : onNext}
-            disabled={isRTL ? !hasPrev : !hasNext}
-            className="text-sm px-4 py-2 border rounded transition-all disabled:opacity-30"
+            onClick={onNext}
+            disabled={!hasNext}
+            className="text-xs px-4 py-2 border rounded-sm disabled:opacity-30 transition-all"
             style={{
-              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
               borderColor: "#D0CCC5",
-              color: "#3A3A3A",
+              color: "#5A5A5A",
             }}
           >
-            {isRTL ? t.prev : t.next}
+            {isRTL ? "← قبلی" : "Next →"}
           </button>
         </div>
       </div>
@@ -379,58 +413,72 @@ function SlideModal60({
 }
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
-
 export default function Home() {
   const { language, isRTL } = useLanguage();
   const lang = language as "en" | "fa";
   const t = ui60[lang];
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeAct, setActiveAct] = useState<Act | "All">("All");
-  const [selectedSlide, setSelectedSlide] = useState<Slide60 | null>(null);
+  const [activeDeck, setActiveDeck] = useState<DeckId | "All">("All");
+  const [selectedSlide, setSelectedSlide] = useState<UnifiedSlide | null>(null);
+
+  // Language toggle listener
+  useEffect(() => {
+    const handler = () => {};
+    window.addEventListener("toggle-language", handler);
+    return () => window.removeEventListener("toggle-language", handler);
+  }, []);
 
   const filteredSlides = useMemo(() => {
-    let result = slides60;
-    if (activeAct !== "All") result = result.filter((s) => s.act === activeAct);
+    let result = allSlides;
+    if (activeDeck !== "All") result = result.filter((s) => s.deck === activeDeck);
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter((s) => {
-        const en = s.en;
-        const fa = s.fa;
+        const en = s.en; const fa = s.fa;
         return (
           en.title.toLowerCase().includes(q) ||
           en.narrative.toLowerCase().includes(q) ||
           en.keyPoints.some((k) => k.toLowerCase().includes(q)) ||
-          en.tags.some((t) => t.toLowerCase().includes(q)) ||
+          en.tags.some((tg) => tg.toLowerCase().includes(q)) ||
           fa.title.toLowerCase().includes(q) ||
           fa.narrative.toLowerCase().includes(q) ||
           fa.keyPoints.some((k) => k.toLowerCase().includes(q)) ||
-          fa.tags.some((t) => t.toLowerCase().includes(q))
+          fa.tags.some((tg) => tg.toLowerCase().includes(q))
         );
       });
     }
     return result;
-  }, [searchQuery, activeAct]);
+  }, [searchQuery, activeDeck]);
 
-  const handleActChange = useCallback((act: Act | "All") => {
-    setActiveAct(act);
+  const handleDeckChange = useCallback((deck: DeckId | "All") => {
+    setActiveDeck(deck);
     setSearchQuery("");
   }, []);
 
-  const selectedIdx = selectedSlide ? filteredSlides.findIndex((s) => s.id === selectedSlide.id) : -1;
+  const selectedIdx = selectedSlide
+    ? filteredSlides.findIndex((s) => s.uid === selectedSlide.uid)
+    : -1;
 
-  const actCounts = useMemo(() => {
-    const counts: Record<Act, number> = { I: 0, II: 0, III: 0, IV: 0 };
-    slides60.forEach((s) => counts[s.act]++);
-    return counts;
+  const deckCounts = useMemo(() => {
+    const c: Record<DeckId, number> = { EPU: 0, A: 0, B: 0 };
+    allSlides.forEach((s) => c[s.deck]++);
+    return c;
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F8F7F4", direction: isRTL ? "rtl" : "ltr" }}>
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: "#F8F7F4", direction: isRTL ? "rtl" : "ltr" }}
+    >
       {/* ── Header ── */}
       <header
         className="sticky top-0 z-40 border-b"
-        style={{ backgroundColor: "rgba(248,247,244,0.95)", backdropFilter: "blur(8px)", borderColor: "#E8E5DF" }}
+        style={{
+          backgroundColor: "rgba(248,247,244,0.95)",
+          backdropFilter: "blur(8px)",
+          borderColor: "#E8E5DF",
+        }}
       >
         <div className="container mx-auto px-4 lg:px-8" style={{ maxWidth: "1400px" }}>
           <div className={`flex items-center gap-4 py-3 ${isRTL ? "flex-row-reverse" : ""}`}>
@@ -443,36 +491,23 @@ export default function Home() {
                   color: "#1A1A1A",
                 }}
               >
-                {t.siteTitle}
+                {isRTL ? "راهبرد EPU" : "EPU Strategy"}
               </p>
               <p
                 className="text-xs mt-0.5"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? "۶۰ اسلاید · ۴ پرده" : "60 Slides · 4 Acts"}
+                {isRTL ? "۱۲۰ اسلاید · ۳ Deck" : "120 Slides · 3 Decks"}
               </p>
             </div>
 
-            {/* Decks link */}
-            <Link href="/decks">
-              <span
-                className="text-xs px-3 py-1.5 border rounded-sm cursor-pointer hidden sm:inline-block"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  borderColor: "#D0CCC5",
-                  color: "#5A5A5A",
-                }}
-              >
-                {isRTL ? "کتابخانه Deck" : "All Decks"}
-              </span>
-            </Link>
             {/* Search */}
             <div className="flex-1 max-w-md mx-auto relative">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={t.searchPlaceholder}
+                placeholder={isRTL ? "جستجو در ۱۲۰ اسلاید..." : "Search 120 slides..."}
                 className="w-full px-4 py-2 text-sm border rounded-sm outline-none transition-all focus:border-gray-400"
                 style={{
                   backgroundColor: "#FDFCFA",
@@ -501,7 +536,7 @@ export default function Home() {
               }}
               className="text-xs px-3 py-1.5 border rounded-sm transition-all hover:bg-gray-50"
               style={{
-                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                fontFamily: "'Space Mono', monospace",
                 borderColor: "#D0CCC5",
                 color: "#5A5A5A",
               }}
@@ -516,122 +551,104 @@ export default function Home() {
       <section
         className="py-16 px-4"
         style={{
-          background: "linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #1A2D2A 100%)",
+          background: "linear-gradient(135deg, #0A1628 0%, #0D2137 50%, #0A2840 100%)",
         }}
       >
         <div className="container mx-auto" style={{ maxWidth: "1400px" }}>
           <div className={`max-w-3xl ${isRTL ? "mr-auto text-right" : "ml-0"}`}>
             <p
-              className="text-xs uppercase tracking-widest mb-4"
-              style={{ fontFamily: "'Space Mono', monospace", color: "#2D7D6F" }}
+              className="text-xs uppercase tracking-widest mb-3"
+              style={{ fontFamily: "'Space Mono', monospace", color: "#C8A96E" }}
             >
-              {isRTL ? "سند راهبردی — نسخه ۲.۰" : "Strategy Document — v2.0"}
+              {isRTL ? "سند راهبردی — نسخه ۲.۰۰" : "Strategy Document — Version 2.00"}
             </p>
             <h1
-              className="text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+              className="text-4xl lg:text-5xl font-bold mb-4 leading-tight"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
                 color: "#F8F7F4",
               }}
             >
-              {t.heroTitle}
+              {isRTL
+                ? "راهبرد EPU — بستر خودروهای هیدروژنی"
+                : "EPU Strategy — Driverless H₂ Autonomy Platform"}
             </h1>
             <p
-              className="text-base mb-8 leading-relaxed"
+              className="text-sm leading-relaxed mb-8"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
                 color: "#B0ADA8",
                 maxWidth: "600px",
               }}
             >
-              {t.heroDescription}
+              {isRTL
+                ? "معماری ایمنی مبتنی بر فیزیک و قابل ممیزی کربن برای نسل بعدی خودروهای هیدروژنی — طراحی‌شده بدون فرمان، اداره‌شده با قانون اساسی قطعی."
+                : "Physics-certified, carbon-auditable safety architecture for next-generation hydrogen vehicles — designed commandless, governed by deterministic constitutional law."}
             </p>
-
-            {/* Deck links */}
-            <div className={`flex flex-wrap gap-3 mb-4 ${isRTL ? "flex-row-reverse" : ""}`}>
-              <Link href="/deck-a">
-                <span
-                  className="text-xs px-4 py-2 rounded-sm border cursor-pointer inline-block"
-                  style={{
-                    borderColor: "#4FC3F7",
-                    color: "#4FC3F7",
-                    backgroundColor: "#4FC3F711",
-                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
-                  }}
-                >
-                  {isRTL ? "Deck A ← فیلتراسیون جهانی" : "Deck A → Universal Filtration"}
-                </span>
-              </Link>
-              <Link href="/deck-b">
-                <span
-                  className="text-xs px-4 py-2 rounded-sm border cursor-pointer inline-block"
-                  style={{
-                    borderColor: "#00C853",
-                    color: "#00C853",
-                    backgroundColor: "#00C85311",
-                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
-                  }}
-                >
-                  {isRTL ? "Deck B ← دستور زمانی" : "Deck B → Tense Grammar"}
-                </span>
-              </Link>
-            </div>
-            {/* Act pills */}
+            {/* Deck pills */}
             <div className={`flex flex-wrap gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
-              {acts.map((act) => (
-                <button
-                  key={act}
-                  onClick={() => handleActChange(act)}
-                  className="text-xs px-4 py-2 rounded-sm border transition-all"
-                  style={{
-                    borderColor: actColors[act] + "66",
-                    color: actColors[act],
-                    backgroundColor: actColors[act] + "11",
-                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
-                  }}
-                >
-                  {ACT_LABELS[act][lang]} ({actCounts[act]})
-                </button>
-              ))}
+              {(["EPU", "A", "B"] as DeckId[]).map((deck) => {
+                const meta = DECK_META[deck];
+                return (
+                  <button
+                    key={deck}
+                    onClick={() => handleDeckChange(deck)}
+                    className="text-xs px-4 py-2 rounded-sm border transition-all"
+                    style={{
+                      borderColor: meta.accent + "66",
+                      color: meta.accent,
+                      backgroundColor: meta.accent + "11",
+                      fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                    }}
+                  >
+                    {lang === "fa" ? meta.fa : meta.en} ({deckCounts[deck]})
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Act Navigation ── */}
+      {/* ── Deck Navigation ── */}
       <nav
         className="border-b sticky top-[57px] z-30"
         style={{ backgroundColor: "rgba(248,247,244,0.97)", borderColor: "#E8E5DF" }}
       >
         <div className="container mx-auto px-4 lg:px-8" style={{ maxWidth: "1400px" }}>
           <div className={`flex items-center gap-0 overflow-x-auto ${isRTL ? "flex-row-reverse" : ""}`}>
+            {/* All */}
             <button
-              onClick={() => handleActChange("All")}
+              onClick={() => handleDeckChange("All")}
               className="px-5 py-3 text-sm border-b-2 transition-all whitespace-nowrap"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                borderBottomColor: activeAct === "All" ? "#1A1A1A" : "transparent",
-                color: activeAct === "All" ? "#1A1A1A" : "#7A7A7A",
-                fontWeight: activeAct === "All" ? "600" : "400",
+                borderBottomColor: activeDeck === "All" ? "#1A1A1A" : "transparent",
+                color: activeDeck === "All" ? "#1A1A1A" : "#7A7A7A",
+                fontWeight: activeDeck === "All" ? "600" : "400",
               }}
             >
-              {isRTL ? `همه (${slides60.length})` : `All (${slides60.length})`}
+              {isRTL ? `همه (${allSlides.length})` : `All (${allSlides.length})`}
             </button>
-            {acts.map((act) => (
-              <button
-                key={act}
-                onClick={() => handleActChange(act)}
-                className="px-5 py-3 text-sm border-b-2 transition-all whitespace-nowrap"
-                style={{
-                  fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                  borderBottomColor: activeAct === act ? actColors[act] : "transparent",
-                  color: activeAct === act ? actColors[act] : "#7A7A7A",
-                  fontWeight: activeAct === act ? "600" : "400",
-                }}
-              >
-                {ACT_LABELS[act][lang]} ({actCounts[act]})
-              </button>
-            ))}
+            {/* EPU */}
+            {(["EPU", "A", "B"] as DeckId[]).map((deck) => {
+              const meta = DECK_META[deck];
+              return (
+                <button
+                  key={deck}
+                  onClick={() => handleDeckChange(deck)}
+                  className="px-5 py-3 text-sm border-b-2 transition-all whitespace-nowrap"
+                  style={{
+                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+                    borderBottomColor: activeDeck === deck ? meta.accent : "transparent",
+                    color: activeDeck === deck ? meta.accent : "#7A7A7A",
+                    fontWeight: activeDeck === deck ? "600" : "400",
+                  }}
+                >
+                  {lang === "fa" ? meta.fa : meta.en} ({deckCounts[deck]})
+                </button>
+              );
+            })}
           </div>
         </div>
       </nav>
@@ -642,18 +659,15 @@ export default function Home() {
         <div className={`flex items-center justify-between mb-8 ${isRTL ? "flex-row-reverse" : ""}`}>
           <p
             className="text-sm"
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              color: "#9CA3AF",
-            }}
+            style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
           >
             {searchQuery
               ? `${filteredSlides.length} ${isRTL ? "نتیجه" : "result" + (filteredSlides.length !== 1 ? "s" : "")} — "${searchQuery}"`
               : `${filteredSlides.length} ${isRTL ? "اسلاید" : "slide" + (filteredSlides.length !== 1 ? "s" : "")}`}
           </p>
-          {(searchQuery || activeAct !== "All") && (
+          {(searchQuery || activeDeck !== "All") && (
             <button
-              onClick={() => { setSearchQuery(""); setActiveAct("All"); }}
+              onClick={() => { setSearchQuery(""); setActiveDeck("All"); }}
               className="text-xs px-3 py-1 border rounded-sm transition-all hover:bg-gray-50"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
@@ -670,13 +684,13 @@ export default function Home() {
         {filteredSlides.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {filteredSlides.map((slide, idx) => (
-              <SlideCard60
-                key={slide.id}
+              <SlideCard
+                key={slide.uid}
                 slide={slide}
                 lang={lang}
                 isRTL={isRTL}
                 searchQuery={searchQuery}
-                animationDelay={idx * 0.03}
+                animationDelay={idx * 0.02}
                 onClick={() => setSelectedSlide(slide)}
               />
             ))}
@@ -684,67 +698,32 @@ export default function Home() {
         ) : (
           <div className="text-center py-24">
             <p
-              className="text-2xl mb-3"
+              className="text-sm"
               style={{
-                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
-                color: "#2C2C2C",
+                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
+                color: "#9CA3AF",
               }}
             >
-              {t.noResults}
-            </p>
-            <p className="text-sm" style={{ color: "#9CA3AF", fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif" }}>
-              {t.noResultsHint}
+              {isRTL ? "اسلایدی یافت نشد." : "No slides found."}
             </p>
           </div>
         )}
       </main>
 
-      {/* ── Footer ── */}
-      <footer className="border-t py-10" style={{ borderColor: "#E8E5DF", backgroundColor: "#F0EDE8" }}>
-        <div className="container mx-auto px-4 lg:px-8" style={{ maxWidth: "1400px" }}>
-          <div className={`flex flex-col md:flex-row items-start md:items-center justify-between gap-6 ${isRTL ? "md:flex-row-reverse" : ""}`}>
-            <div className={isRTL ? "text-right" : ""}>
-              <p
-                className="text-base font-semibold mb-1"
-                style={{
-                  fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
-                  color: "#2C2C2C",
-                }}
-              >
-                {t.siteTitle}
-              </p>
-              <p className="text-xs" style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}>
-                {isRTL ? "مبتنی بر فیزیک · قابل ممیزی کربن · خنثی از کاربرد" : "Physics-Certified · Carbon-Auditable · Application-Neutral"}
-              </p>
-            </div>
-            <div className={`flex gap-4 flex-wrap ${isRTL ? "flex-row-reverse" : ""}`}>
-              {acts.map((act) => (
-                <button
-                  key={act}
-                  onClick={() => handleActChange(act)}
-                  className="text-xs transition-colors hover:opacity-80"
-                  style={{
-                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                    color: actColors[act],
-                  }}
-                >
-                  {ACT_LABELS[act][lang]}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
-
       {/* ── Modal ── */}
       {selectedSlide && (
-        <SlideModal60
+        <SlideModal
           slide={selectedSlide}
           lang={lang}
           isRTL={isRTL}
           onClose={() => setSelectedSlide(null)}
-          onPrev={() => selectedIdx > 0 && setSelectedSlide(filteredSlides[selectedIdx - 1])}
-          onNext={() => selectedIdx < filteredSlides.length - 1 && setSelectedSlide(filteredSlides[selectedIdx + 1])}
+          onPrev={() => {
+            if (selectedIdx > 0) setSelectedSlide(filteredSlides[selectedIdx - 1]);
+          }}
+          onNext={() => {
+            if (selectedIdx < filteredSlides.length - 1)
+              setSelectedSlide(filteredSlides[selectedIdx + 1]);
+          }}
           hasPrev={selectedIdx > 0}
           hasNext={selectedIdx < filteredSlides.length - 1}
         />
