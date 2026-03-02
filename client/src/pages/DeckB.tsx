@@ -175,110 +175,119 @@ function SlideModalB({
     >
       <div
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-sm"
-        style={{ backgroundColor: "#FDFCFA" }}
+        style={{ backgroundColor: "#FDFCFA", direction: isRTL ? "rtl" : "ltr" }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-gray-400 hover:text-gray-700 text-xl font-light"
+        {/* Header bar */}
+        <div
+          className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 border-b"
+          style={{ backgroundColor: "#FDFCFA", borderColor: "#E8E5DF" }}
         >
-          x
-        </button>
-        {/* Image */}
-        {slide.imageUrl && (
-          <img
-            src={slide.imageUrl}
-            alt={content.title}
-            className="w-full object-cover rounded-t-sm"
-            style={{ maxHeight: "400px", objectFit: "cover" }}
-          />
-        )}
-        {/* Content */}
-        <div className={`p-6 ${isRTL ? "text-right" : ""}`}>
-          <div className={`flex items-center gap-2 mb-3 ${isRTL ? "flex-row-reverse" : ""}`}>
-            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
+          <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
+            <span className="text-xs font-bold" style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}>
               {String(slide.id).padStart(2, "0")} / 30
             </span>
             <ActBadgeB act={slide.act} lang={lang} />
           </div>
-          <h2
-            className="text-2xl font-bold mb-4"
-            style={{
-              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
-              color: "#1A1A1A",
-            }}
-          >
-            {content.title}
-          </h2>
-          <p
-            className="text-sm leading-relaxed mb-4"
-            style={{
-              fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-              color: "#4B5563",
-            }}
-          >
-            {content.narrative}
-          </p>
-          {content.strategic && (
-            <blockquote
-              className="border-l-2 pl-4 mb-4 italic text-sm"
-              style={{ borderColor: accentColor, color: "#6B7280" }}
-            >
-              {content.strategic}
-            </blockquote>
-          )}
-          {content.keyPoints && content.keyPoints.length > 0 && (
-            <ul className={`space-y-1 mb-4 ${isRTL ? "pr-4" : "pl-4"}`}>
-              {content.keyPoints.map((pt, i) => (
-                <li
-                  key={i}
-                  className="text-sm flex items-start gap-2"
-                  style={{
-                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
-                    color: "#374151",
-                  }}
-                >
-                  <span style={{ color: accentColor, marginTop: "4px", flexShrink: 0 }}>&#9658;</span>
-                  {pt}
-                </li>
-              ))}
-            </ul>
-          )}
-          {/* Tags */}
-          {content.tags && content.tags.length > 0 && (
-            <div className={`flex flex-wrap gap-1 ${isRTL ? "flex-row-reverse" : ""}`}>
-              {content.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2 py-0.5 rounded"
-                  style={{
-                    backgroundColor: accentColor + "15",
-                    color: accentColor,
-                    fontFamily: "'Space Mono', monospace",
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-        {/* Navigation */}
-        <div className="flex items-center justify-between px-6 pb-6">
           <button
-            onClick={onPrev}
-            disabled={!hasPrev}
-            className="text-sm px-4 py-2 border rounded-sm disabled:opacity-30"
-            style={{ borderColor: "#D0CCC5", color: "#5A5A5A" }}
+            onClick={onClose}
+            className="text-xl leading-none px-2 py-1 rounded transition-colors hover:bg-gray-100"
+            style={{ color: "#5A5A5A" }}
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+        {/* Body: two-column */}
+        <div className="grid md:grid-cols-2 gap-0">
+          {/* Image */}
+          <div className="relative" style={{ minHeight: "300px" }}>
+            <img
+              src={slide.imageUrl}
+              alt={content.title}
+              className="w-full h-full object-cover"
+              style={{ minHeight: "300px" }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: `linear-gradient(135deg, ${accentColor}22 0%, transparent 70%)` }}
+            />
+          </div>
+          {/* Content */}
+          <div className={`p-8 ${isRTL ? "text-right" : ""}`}>
+            <h2
+              className="text-2xl font-bold mb-4 leading-tight"
+              style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif", color: "#1A1A1A" }}
+            >
+              {content.title}
+            </h2>
+            <div className="mb-5">
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}>
+                {isRTL ? "روایت فنی" : "Technical Narrative"}
+              </p>
+              <p className="text-sm leading-relaxed" style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif", color: "#3A3A3A" }}>
+                {content.narrative}
+              </p>
+            </div>
+            {content.strategic && (
+              <div className="mb-5">
+                <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}>
+                  {isRTL ? "انتخاب‌های راهبردی" : "Strategic Choices"}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif", color: "#5A5A5A" }}>
+                  {content.strategic}
+                </p>
+              </div>
+            )}
+            {content.keyPoints && content.keyPoints.length > 0 && (
+              <div className="mb-5">
+                <p className="text-xs uppercase tracking-widest mb-3" style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}>
+                  {isRTL ? "نکات کلیدی" : "Key Points"}
+                </p>
+                <ul className="space-y-2">
+                  {content.keyPoints.map((kp, i) => (
+                    <li key={i} className={`flex gap-2 text-sm ${isRTL ? "flex-row-reverse text-right" : ""}`}
+                      style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif", color: "#3A3A3A" }}>
+                      <span style={{ color: accentColor, flexShrink: 0 }}>▸</span>
+                      <span>{kp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {content.tags && content.tags.length > 0 && (
+              <div className={`flex flex-wrap gap-2 ${isRTL ? "flex-row-reverse" : ""}`}>
+                {content.tags.map((tag) => (
+                  <span key={tag} className="text-xs px-2.5 py-1 rounded-full border"
+                    style={{ borderColor: accentColor + "44", color: accentColor, fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif" }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+        {/* Navigation footer */}
+        <div
+          className={`flex items-center justify-between px-6 py-4 border-t ${isRTL ? "flex-row-reverse" : ""}`}
+          style={{ borderColor: "#E8E5DF" }}
+        >
+          <button
+            onClick={isRTL ? onNext : onPrev}
+            disabled={isRTL ? !hasNext : !hasPrev}
+            className="text-sm px-4 py-2 border rounded transition-all disabled:opacity-30"
+            style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif", borderColor: "#D0CCC5", color: "#3A3A3A" }}
           >
             {isRTL ? "بعدی ›" : "‹ Prev"}
           </button>
+          <span className="text-xs" style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}>
+            {slide.id} / 30
+          </span>
           <button
-            onClick={onNext}
-            disabled={!hasNext}
-            className="text-sm px-4 py-2 border rounded-sm disabled:opacity-30"
-            style={{ borderColor: "#D0CCC5", color: "#5A5A5A" }}
+            onClick={isRTL ? onPrev : onNext}
+            disabled={isRTL ? !hasPrev : !hasNext}
+            className="text-sm px-4 py-2 border rounded transition-all disabled:opacity-30"
+            style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif", borderColor: "#D0CCC5", color: "#3A3A3A" }}
           >
             {isRTL ? "‹ قبلی" : "Next ›"}
           </button>
@@ -340,7 +349,7 @@ export default function DeckB() {
         <div className="container mx-auto px-4 lg:px-8" style={{ maxWidth: "1400px" }}>
           <div className={`flex items-center gap-4 py-3 ${isRTL ? "flex-row-reverse" : ""}`}>
             {/* Back link */}
-            <Link href="/">
+            <Link href="/decks">
               <span
                 className="text-xs px-3 py-1.5 border rounded-sm cursor-pointer"
                 style={{
@@ -349,7 +358,7 @@ export default function DeckB() {
                   color: "#5A5A5A",
                 }}
               >
-                {isRTL ? "← EPU" : "← EPU"}
+                {isRTL ? "← کتابخانه" : "← All Decks"}
               </span>
             </Link>
             {/* Title */}

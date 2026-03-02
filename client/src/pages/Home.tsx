@@ -453,6 +453,19 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Decks link */}
+            <Link href="/decks">
+              <span
+                className="text-xs px-3 py-1.5 border rounded-sm cursor-pointer hidden sm:inline-block"
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  borderColor: "#D0CCC5",
+                  color: "#5A5A5A",
+                }}
+              >
+                {isRTL ? "کتابخانه Deck" : "All Decks"}
+              </span>
+            </Link>
             {/* Search */}
             <div className="flex-1 max-w-md mx-auto relative">
               <input
