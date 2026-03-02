@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback, useEffect } from "react";
+import { Link } from "wouter";
 import { slides60, acts, actColors, ACT_LABELS, type Act, type Slide60 } from "@/data/slides60";
 import { ui60 } from "@/data/translations60";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -533,6 +534,35 @@ export default function Home() {
               {t.heroDescription}
             </p>
 
+            {/* Deck links */}
+            <div className={`flex flex-wrap gap-3 mb-4 ${isRTL ? "flex-row-reverse" : ""}`}>
+              <Link href="/deck-a">
+                <span
+                  className="text-xs px-4 py-2 rounded-sm border cursor-pointer inline-block"
+                  style={{
+                    borderColor: "#4FC3F7",
+                    color: "#4FC3F7",
+                    backgroundColor: "#4FC3F711",
+                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                  }}
+                >
+                  {isRTL ? "Deck A ← فیلتراسیون جهانی" : "Deck A → Universal Filtration"}
+                </span>
+              </Link>
+              <Link href="/deck-b">
+                <span
+                  className="text-xs px-4 py-2 rounded-sm border cursor-pointer inline-block"
+                  style={{
+                    borderColor: "#00C853",
+                    color: "#00C853",
+                    backgroundColor: "#00C85311",
+                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                  }}
+                >
+                  {isRTL ? "Deck B ← دستور زمانی" : "Deck B → Tense Grammar"}
+                </span>
+              </Link>
+            </div>
             {/* Act pills */}
             <div className={`flex flex-wrap gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
               {acts.map((act) => (
