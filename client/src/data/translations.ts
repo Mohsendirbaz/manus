@@ -127,7 +127,7 @@ export const slideTranslations: Record<Language, SlideTranslation[]> = {
     {
       title: "Physics-Certified, Carbon-Auditable Autonomy: The EPU Vision",
       summary:
-        "The EPU (Environment Processing Unit) represents a paradigm shift in autonomous vehicle architecture — a physics-certified, carbon-auditable safety compute core that is fuel-agnostic and application-agnostic.",
+        "The EPU (Event Processing Unit) represents a paradigm shift in autonomous vehicle architecture — a physics-certified, carbon-auditable safety compute core that is fuel-agnostic and application-agnostic.",
       keyPoints: [
         "EPU is the safety compute core — the constitutional foundation, not a feature or module",
         "Physics-certified: every decision pathway is formally provable, not statistically inferred",

@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import type { Language } from "@/data/translations";
+
+// Language type is defined inline to avoid importing from legacy translations.ts
+type Language = "en" | "fa";
 
 interface LanguageContextType {
   language: Language;
@@ -31,6 +33,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     html.setAttribute("dir", isRTL ? "rtl" : "ltr");
     html.setAttribute("lang", language);
   }, [language, isRTL]);
+
+  useEffect(() => {
+    const handler = () => {
+      setLanguage(language === "fa" ? "en" : "fa");
+    };
+    window.addEventListener("toggle-language", handler);
+    return () => window.removeEventListener("toggle-language", handler);
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, isRTL }}>
