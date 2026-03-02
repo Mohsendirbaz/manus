@@ -24,9 +24,72 @@ export interface Slide60 {
   fa: SlideContent;
 }
 
-// Helper: reuse the 30 existing CDN images across 60 slides
-const BASE = "https://d2xsxph8kpxj0f.cloudfront.net/3105195c-7b24-4e40-9e5f-3a4d7e2c8b1f";
-const img = (n: number) => `${BASE}/img_${((n - 1) % 30) + 1}.png`;
+// CDN image URLs — 60 unique images
+const CDN1 = "https://d2xsxph8kpxj0f.cloudfront.net/3105195c-7b24-4e40-9e5f-3a4d7e2c8b1f";
+const CDN2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K";
+const IMG_URLS: Record<number, string> = {
+  1:  `${CDN1}/img_1.png`,
+  2:  `${CDN1}/img_2.png`,
+  3:  `${CDN1}/img_3.png`,
+  4:  `${CDN1}/img_4.png`,
+  5:  `${CDN1}/img_5.png`,
+  6:  `${CDN1}/img_6.png`,
+  7:  `${CDN1}/img_7.png`,
+  8:  `${CDN1}/img_8.png`,
+  9:  `${CDN1}/img_9.png`,
+  10: `${CDN1}/img_10.png`,
+  11: `${CDN1}/img_11.png`,
+  12: `${CDN1}/img_12.png`,
+  13: `${CDN1}/img_13.png`,
+  14: `${CDN1}/img_14.png`,
+  15: `${CDN1}/img_15.png`,
+  16: `${CDN1}/img_16.png`,
+  17: `${CDN1}/img_17.png`,
+  18: `${CDN1}/img_18.png`,
+  19: `${CDN1}/img_19.png`,
+  20: `${CDN1}/img_20.png`,
+  21: `${CDN1}/img_21.png`,
+  22: `${CDN1}/img_22.png`,
+  23: `${CDN1}/img_23.png`,
+  24: `${CDN1}/img_24.png`,
+  25: `${CDN1}/img_25.png`,
+  26: `${CDN1}/img_26.png`,
+  27: `${CDN1}/img_27.png`,
+  28: `${CDN1}/img_28.png`,
+  29: `${CDN1}/img_29.png`,
+  30: `${CDN1}/img_30.png`,
+  31: `${CDN2}/img_31_004eef07.png`,
+  32: `${CDN2}/img_32_b328edef.png`,
+  33: `${CDN2}/img_33_f6697092.png`,
+  34: `${CDN2}/img_34_b15b42c9.png`,
+  35: `${CDN2}/img_35_a1053a5a.png`,
+  36: `${CDN2}/img_36_18224822.png`,
+  37: `${CDN2}/img_37_7efed32a.png`,
+  38: `${CDN2}/img_38_f2c33e2a.png`,
+  39: `${CDN2}/img_39_a3cdcf69.png`,
+  40: `${CDN2}/img_40_574b7dc2.png`,
+  41: `${CDN2}/img_41_d753b6b9.png`,
+  42: `${CDN2}/img_42_fc9bc3c1.png`,
+  43: `${CDN2}/img_43_c70d9010.png`,
+  44: `${CDN2}/img_44_93ae76b8.png`,
+  45: `${CDN2}/img_45_48379da2.png`,
+  46: `${CDN2}/img_46_be3f94c1.png`,
+  47: `${CDN2}/img_47_5304b75f.png`,
+  48: `${CDN2}/img_48_d87c5353.png`,
+  49: `${CDN2}/img_49_c9cd6ab8.png`,
+  50: `${CDN2}/img_50_8e53a842.png`,
+  51: `${CDN2}/img_51_ed86ba6f.png`,
+  52: `${CDN2}/img_52_76fe0721.png`,
+  53: `${CDN2}/img_53_13809f3c.png`,
+  54: `${CDN2}/img_54_1896ea7b.png`,
+  55: `${CDN2}/img_55_0c1a5b97.png`,
+  56: `${CDN2}/img_56_ec38a578.png`,
+  57: `${CDN2}/img_57_7d17628a.png`,
+  58: `${CDN2}/img_58_1ee547a2.png`,
+  59: `${CDN2}/img_59_6b937941.png`,
+  60: `${CDN2}/img_60_e5ff4957.png`,
+};
+const img = (n: number) => IMG_URLS[n] ?? IMG_URLS[1];
 
 export const ACT_LABELS: Record<Act, { en: string; fa: string }> = {
   I:   { en: "Act I — The Problem & The Paradigm Shift",      fa: "پرده اول — مسئله و تحول پارادایم" },
