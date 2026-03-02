@@ -8,15 +8,15 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  language: "en",
+  language: "fa",
   setLanguage: () => {},
-  isRTL: false,
+  isRTL: true,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem("epu-language");
-    return (saved === "fa" || saved === "en") ? saved : "en";
+    return (saved === "fa" || saved === "en") ? saved : "fa";
   });
 
   const isRTL = language === "fa";
