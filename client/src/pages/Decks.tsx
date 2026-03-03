@@ -90,6 +90,28 @@ const decks = [
       tag: "GA_IMPL_2026_001",
     },
   },
+  {
+    id: "deck-d",
+    href: "/deck-d",
+    accentColor: "#0D9488",
+    bgGradient: "linear-gradient(135deg, #001A1A 0%, #003333 50%, #001A1A 100%)",
+    slideCount: 120,
+    actCount: 8,
+    en: {
+      label: "Deck D",
+      title: "TWIN Multi-Agent Integration",
+      description:
+        "120 slides covering the full TWIN multi-agent codebase integration into EPU: agent foundation, message bus, BFT trust consensus, memory architecture, mechanical signal protocol, station coordination, LLM integration, and TWIN-EPU synthesis.",
+      tag: "TWIN_INT_2026_001",
+    },
+    fa: {
+      label: "Deck D",
+      title: "یکپارچه‌سازی چندعاملی TWIN",
+      description:
+        "۱۲۰ اسلاید پوشش‌دهنده یکپارچه‌سازی کامل کدبیس چندعاملی TWIN در EPU: بنیاد عوامل هوشمند، گذرگاه پیام، اجماع اعتماد BFT، معماری حافظه، پروتکل سیگنال مکانیکی، هماهنگی ایستگاه‌ها، یکپارچه‌سازی LLM، و برآیند TWIN-EPU.",
+      tag: "TWIN_INT_2026_001",
+    },
+  },
 ];
 
 export default function Decks() {
@@ -126,7 +148,7 @@ export default function Decks() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? "۱۲۰ اسلاید · ۳ Deck" : "120 Slides · 3 Decks"}
+                {isRTL ? "۳۰۰ اسلاید · ۵ Deck" : "300 Slides · 5 Decks"}
               </p>
             </div>
             <div className="flex-1" />
@@ -169,8 +191,8 @@ export default function Decks() {
               }}
             >
               {isRTL
-                ? "۱۲۰ اسلاید · سه چارچوب"
-                : "120 Slides · Three Frameworks"}
+                ? "۳۰۰ اسلاید · پنج چارچوب"
+                : "300 Slides · Five Frameworks"}
             </h1>
             <p
               className="text-sm leading-relaxed"
@@ -193,7 +215,7 @@ export default function Decks() {
         className="container mx-auto px-4 lg:px-8 py-12 pb-24"
         style={{ maxWidth: "1400px" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {decks.map((deck) => {
             const content = deck[lang];
             return (
