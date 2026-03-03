@@ -68,6 +68,28 @@ const decks = [
       tag: "TemporalStateManagement",
     },
   },
+  {
+    id: "deck-c",
+    href: "/deck-c",
+    accentColor: "#F59E0B",
+    bgGradient: "linear-gradient(135deg, #1A0A00 0%, #2D1500 50%, #1A0A00 100%)",
+    slideCount: 60,
+    actCount: 8,
+    en: {
+      label: "Deck C",
+      title: "Ghost Autonomy Implementation",
+      description:
+        "60 slides covering the PICAPD ISA, Queen Bee BFT architecture, physics foundation (bilinear forms, PBE, conservation laws), financial model, OEM qualification results, and the 2030 vision for Ghost EPU as the safety compute standard.",
+      tag: "GA_IMPL_2026_001",
+    },
+    fa: {
+      label: "Deck C",
+      title: "پیاده‌سازی Ghost Autonomy",
+      description:
+        "۶۰ اسلاید پوشش‌دهنده ISA PICAPD، معماری Queen Bee BFT، پایه فیزیکی (فرم‌های دوخطی، PBE، قوانین بقا)، مدل مالی، نتایج صلاحیت‌سنجی OEM، و چشم‌انداز ۲۰۳۰ برای Ghost EPU به‌عنوان استاندارد محاسبات ایمنی.",
+      tag: "GA_IMPL_2026_001",
+    },
+  },
 ];
 
 export default function Decks() {

@@ -8,6 +8,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import DeckA from "./pages/DeckA";
 import DeckB from "./pages/DeckB";
+import DeckC from "./pages/DeckC";
 import Decks from "./pages/Decks";
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/decks"} component={Decks} />
       <Route path={"/deck-a"} component={DeckA} />
       <Route path={"/deck-b"} component={DeckB} />
+      <Route path={"/deck-c"} component={DeckC} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
