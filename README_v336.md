@@ -22,11 +22,89 @@ The portal is designed as a living strategic document: slides are searchable, fi
 
 ---
 
-## Slide Architecture — 336 Slides · 6 Decks
+## Deck Summaries
+
+### EPU · Core Strategy (60 slides)
+
+The foundational deck. It opens by diagnosing the central failure mode of modern autonomous vehicle architectures — statistical decision-making under physical uncertainty — and argues that safety cannot be probabilistic. The EPU (Event Processing Unit) is introduced as a physics-first, deterministic safety compute core that sits between raw sensor data and vehicle actuation. The deck unfolds across four acts: the paradigm shift from statistical to deterministic AI, the EPU as a "priceless tool" for commandless governance, the 10-Gate hardware architecture that enforces physical law at the silicon level, and a roadmap toward regulatory certification and global deployment. The final slides establish physics itself as the competitive moat — an argument that no software-only competitor can replicate.
+
+**Arc:** Problem → Tool → Architecture → Roadmap
+
+---
+
+### Deck A · Unified Field Protocol — UFP (30 slides)
+
+A rigorous mathematical treatment of the sensor fusion and decision algebra that underpins the EPU. The deck begins with the Separation Problem — the impossibility of cleanly decomposing multi-modal sensor streams — and introduces the Universal Filtration Primitive (UFP) as the solution. It develops a 10-path taxonomy of signal types, a Composition Algebra for combining filtered outputs, and the LDA (Layered Decision Architecture) core and its variants. Performance benchmarks and formal validation close the deck, followed by a synthesis section that maps UFP's mathematical foundations onto the EPU hardware gates and identifies open research problems and standalone applications in genomics and agent state management.
+
+**Arc:** Problem → Primitive → Algebra → Validation → Open Problems
+
+---
+
+### Deck B · Temporal Reasoning (30 slides)
+
+Addresses the dimension that most AV architectures ignore: time. The deck opens with the Temporal State Problem — the fact that sensor readings, decisions, and actuation all exist at different points in time, and naive fusion destroys causal ordering. It develops a differential geometry of temporal evolution, introduces T₀ Manager as the EPU's real-time clock arbiter, and formalizes the operator theory governing state transitions. Landauer's principle is invoked to establish the thermodynamic lower bound on reversible computation, constraining what the EPU can physically guarantee. The deck closes by integrating temporal reasoning with LLM inference layers and drawing connections to category theory, type theory, and a universal state management protocol — positioning tense grammar as a formal engineering primitive.
+
+**Arc:** Problem → Geometry → Operators → Thermodynamics → LLM Integration → Theory
+
+---
+
+### Deck C · Ghost Autonomous Vehicle Platform (60 slides)
+
+The commercial and engineering face of the project. It opens with the three mathematical pillars of Ghost safety and immediately grounds them in a $2.1 trillion market opportunity by 2035. The deck covers the Physics-Deterministic Core (PDC) design philosophy, the Strategic Asset and Go-to-market Plan (SAGP), and a deep physics foundation section that certifies every design decision against ISO 26262 and FMVSS standards. An architecture deep-dive follows, covering sensor suite governance, the constitutional law model of vehicle control, and the validation courts framework for regulatory transparency. Financial modeling, competitive moat analysis, and a three-version technology roadmap (v1.0 → v2.0 → v3.0) lead to a 2030 vision in which Ghost EPU becomes the global safety compute standard for autonomous mobility.
+
+**Arc:** Vision → Market → Physics → Architecture → Finance → Roadmap → 2030
+
+---
+
+### Deck D · Semiconductor & Multi-Agent Architecture (120 slides)
+
+The largest and most technically dense deck. It introduces TWIN — the multi-agent software nervous system that runs on EPU silicon — and develops the complete agent taxonomy: roles, privilege levels, and capability boundaries. The deck progresses through the full TWIN stack: the message bus and communication protocols, Byzantine fault-tolerant consensus mechanisms, layered memory architecture (volatile, persistent, and shared), mechanical signaling protocols for hardware-software co-design, and the coordination layer governing agent stations and brokers. An LLM integration layer bridges natural language reasoning with deterministic silicon constraints. The deck closes with a system synthesis showing how TWIN and EPU compose into a single unified intelligence stack, followed by an investment thesis articulating the competitive moat and a 2030 vision for autonomous fleet intelligence at global scale.
+
+**Arc:** Overview → Taxonomy → Communication → Consensus → Memory → Signaling → Coordination → LLM → Synthesis → Investment
+
+---
+
+### Deck E · Thermal Management & Hydrogen Systems (30 slides)
+
+An executive-level engineering deck focused on the physical systems that make the Ghost H₂ platform viable at scale. It opens by reaffirming the EPU vision in the context of hydrogen propulsion and establishes that EPU is a safety compute core, not a driving assistant. The cabin controller design is detailed, followed by the hydrogen platform integration — covering fuel cell stack management, thermal domain architecture, and range feasibility for a 2,000-mile target. Integrated electronics and the sensor governance charter are presented, then the deck pivots to strategic economics: a TEA/LCA (Techno-Economic Analysis / Life Cycle Assessment) moat analysis comparing H₂ against battery-electric across three scenarios. The final slide argues that the methodology itself — physics-certified, application-neutral — is the deepest competitive moat, positioning EPU as a deployment platform beyond automotive.
+
+**Arc:** Vision → Cabin → Hydrogen → Electronics → Sensors → Economics → Moat
+
+---
+
+### Deck F · Founder Biography (6 slides)
+
+Six cinematic slides documenting the multidisciplinary expertise that converges in the Ghost H₂ EPU project. Each slide is accompanied by a bespoke AI-generated marketing image served from CDN.
+
+| # | Title | Summary |
+|---|-------|---------|
+| F-1 | Petroleum Engineering & Simon CO₂ Sequestration | The founder's petroleum engineering background and work on Simon subsurface reserves for carbon sequestration — establishing deep geological and thermodynamic intuition. |
+| F-2 | Chemical Engineering PhD & NH₃ Pathways | PhD-level chemical engineering expertise applied to ammonia synthesis pathways — the same reaction engineering principles that govern hydrogen production and semiconductor process chemistry. |
+| F-3 | Hydrogen Pure Streams & Vertical Integration | How the founder's expertise in producing pure hydrogen streams from industrial processes maps directly onto the Ghost H₂ fuel supply chain — a case of vertical integration of knowledge. |
+| F-4 | Chip Manufacturing & Semiconductor Chemistry | The chemical engineering principles underlying semiconductor fabrication — CVD, plasma etching, dopant diffusion — and their direct relevance to EPU chip design and process node selection. |
+| F-5 | Zero-to-1 Computing & the G10 Thesis | The founder's G10 multi-gate thesis, which established a zero-to-one framework for computing architectures — the intellectual precursor to the EPU's 10-Gate design. |
+| F-6 | Neural Networks 2016 → LLM 2023 | Early exposure to neural network modeling in the 2016 thesis provided the foundation for becoming an LLM practitioner from the first available models in 2023 — a seven-year arc of AI continuity that informs the EPU's LLM integration layer. |
+
+---
+
+## Slide Count Summary
+
+| Deck | File | Slides | Theme |
+|------|------|--------|-------|
+| EPU | `slides60.ts` | 60 | Core EPU Strategy |
+| A | `slidesA.ts` | 30 | Unified Field Protocol |
+| B | `slidesB.ts` | 30 | Temporal Reasoning |
+| C | `slidesC.ts` | 60 | Ghost AV Platform |
+| D | `slidesD.ts` | 120 | Semiconductor / Multi-Agent |
+| E | `slidesE.ts` | 30 | Thermal & Hydrogen Systems |
+| F | `slidesBio.ts` | 6 | Founder Biography |
+| **Total** | | **336** | |
+
+---
+
+## Slide Architecture — Act Structure
 
 ### EPU · استراتژی (60 slides) — `slides60.ts`
-
-The core Event Processing Unit strategy deck. Covers the foundational physics-first safety architecture for commandless hydrogen autonomous vehicles.
 
 | Act | Title (EN) | Title (FA) | Slides |
 |-----|-----------|-----------|--------|
@@ -35,13 +113,11 @@ The core Event Processing Unit strategy deck. Covers the foundational physics-fi
 | III | The 10-Gate Architecture | معماری ۱۰ دروازه | 31–45 |
 | IV | The Roadmap & The Future | نقشه راه و آینده | 46–60 |
 
-**Slide 1 title:** Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip / درگاه اطلاع‌رسانی خودروی هیدروژنی شبح با راهبرد EPU
+**Slide 1:** Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip / درگاه اطلاع‌رسانی خودروی هیدروژنی شبح با راهبرد EPU
 
 ---
 
 ### Deck A · UFP (30 slides) — `slidesA.ts`
-
-Unified Field Protocol — the mathematical and logical foundation for multi-path sensor fusion and decision algebra in the EPU architecture.
 
 | Act | Title (EN) | Title (FA) |
 |-----|-----------|-----------|
@@ -58,8 +134,6 @@ Unified Field Protocol — the mathematical and logical foundation for multi-pat
 
 ### Deck B · Temporal (30 slides) — `slidesB.ts`
 
-Temporal reasoning, Landauer's principle, and the thermodynamic constraints on real-time autonomous decision-making. Covers T₀ management, operator theory, and LLM integration into the temporal layer.
-
 | Act | Title (EN) | Title (FA) |
 |-----|-----------|-----------|
 | Foundation | Foundation | پایه |
@@ -73,8 +147,6 @@ Temporal reasoning, Landauer's principle, and the thermodynamic constraints on r
 ---
 
 ### Deck C · Ghost (60 slides) — `slidesC.ts`
-
-The Ghost autonomous vehicle platform — executive vision, physics-certified design philosophy, strategic assets, financial modeling, validation results, and integration roadmap.
 
 | Act | Title (EN) | Title (FA) |
 |-----|-----------|-----------|
@@ -91,8 +163,6 @@ The Ghost autonomous vehicle platform — executive vision, physics-certified de
 
 ### Deck D · Semiconductor / نیمه‌هادی (120 slides) — `slidesD.ts`
 
-The largest deck. Covers the full multi-agent semiconductor and chip architecture for autonomous vehicles — from agent foundations and Byzantine fault tolerance to LLM integration and TWIN/EPU system synthesis.
-
 | Act | Title (EN) | Title (FA) |
 |-----|-----------|-----------|
 | Agent Foundation | Agent Foundation | بنیاد عوامل هوشمند |
@@ -108,8 +178,6 @@ The largest deck. Covers the full multi-agent semiconductor and chip architectur
 
 ### Deck E · Thermal / حرارتی (30 slides) — `slidesE.ts`
 
-Thermal management, cabin controller design, hydrogen platform integration, sensor governance, and TEA/LCA strategic moat analysis for the Ghost H₂ vehicle.
-
 | Act | Title (EN) | Title (FA) |
 |-----|-----------|-----------|
 | Executive Framing | Executive Framing | چارچوب اجرایی |
@@ -123,31 +191,14 @@ Thermal management, cabin controller design, hydrogen platform integration, sens
 
 ### Deck F · Founder / بنیان‌گذار (6 slides) — `slidesBio.ts`
 
-Biographical and expertise slides documenting the founder's multidisciplinary background — from petroleum engineering and CO₂ sequestration to chemical engineering, semiconductor chemistry, neural networks (2016), and LLM practice (2023). Each slide is accompanied by a bespoke AI-generated cinematic image uploaded to CDN.
-
-| Slide | Act | Title (EN) | Title (FA) | Image |
-|-------|-----|-----------|-----------|-------|
-| F-1 | Subsurface & CO₂ | Simon Subsurface Reserve & CO₂ Sequestration | ذخایر زیرسطحی سیمون و ترسیب CO₂ | Geological cross-section |
-| F-2 | NH₃ Synthesis | NH₃ Production Pathways & Chemical Engineering | مسیرهای تولید آمونیاک | Haber-Bosch night complex |
-| F-3 | H₂ Integration | Hydrogen Pure Streams & Vertical Integration | جریان‌های خالص هیدروژن | H₂ value chain panorama |
-| F-4 | Semiconductor Chem | Chip Manufacturing & Chemical Engineering Principles | ریزتراشه و اصول شیمی | Semiconductor wafer macro |
-| F-5 | Zero-to-1 Computing | Zero-to-1 of Computing & G10 Thesis | صفر تا یک محاسبات و پایان‌نامه G10 | G10 ten-gate mandala |
-| F-6 | Neural Nets → LLM | Neural Networks 2016 → LLM 2023 | شبکه عصبی ۲۰۱۶ تا LLM ۲۰۲۳ | Cosmic neural timeline |
-
----
-
-## Slide Count Summary
-
-| Deck | File | Slides | Theme |
-|------|------|--------|-------|
-| EPU | `slides60.ts` | 60 | Core EPU Strategy |
-| A | `slidesA.ts` | 30 | Unified Field Protocol |
-| B | `slidesB.ts` | 30 | Temporal Reasoning |
-| C | `slidesC.ts` | 60 | Ghost AV Platform |
-| D | `slidesD.ts` | 120 | Semiconductor / Multi-Agent |
-| E | `slidesE.ts` | 30 | Thermal & Hydrogen Systems |
-| F | `slidesBio.ts` | 6 | Founder Biography |
-| **Total** | | **336** | |
+| Act | Title (EN) | Title (FA) |
+|-----|-----------|-----------|
+| Subsurface & CO₂ | Subsurface & CO₂ | زیرسطحی و CO₂ |
+| NH₃ Synthesis | NH₃ Synthesis | سنتز آمونیاک |
+| H₂ Integration | H₂ Integration | یکپارچه‌سازی H₂ |
+| Semiconductor Chem | Semiconductor Chemistry | شیمی نیمه‌هادی |
+| Zero-to-1 Computing | Zero-to-1 Computing | صفر تا یک محاسبات |
+| Neural Nets → LLM | Neural Networks → LLM | شبکه عصبی تا LLM |
 
 ---
 
