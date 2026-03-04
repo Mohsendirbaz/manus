@@ -80,6 +80,9 @@ const AUDIENCE_MAP: Record<string, AudiencePath[]> = {
   "G:PowerElectronics": ["engineer", "investor"],
   "G:SWPowertrain":     ["engineer", "investor"],
   "G:DigitalTwin":      ["investor", "engineer", "regulator"],
+  "G:InvestorPath":     ["investor"],
+  "G:EngineerPath":     ["engineer"],
+  "G:RegulatorPath":    ["regulator"],
 };
 
 function getAudiencePaths(slide: { deck: string; act: string }): AudiencePath[] {

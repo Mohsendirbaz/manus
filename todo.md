@@ -53,3 +53,9 @@
 - [x] G.V3-3 Generate 10 premium images combining physical craft with SDV architecture
 - [x] G.V3-4 Create/update slidesG.ts with 10 slides
 - [x] G.V3-5 Integrate and verify
+
+## 3 Curated Pathway Slides (G-11, G-12, G-13) — reach 360 total
+- [x] CP.1 Analyze all 357 slides to curate 3 optimal ~40-slide pathways (Investor, Engineer, Regulator)
+- [x] CP.2 Generate 3 cinematic images for the pathway slides
+- [x] CP.3 Add 3 slides to slidesG.ts with full bilingual content
+- [x] CP.4 Update platform to show 360 total, verify and checkpoint

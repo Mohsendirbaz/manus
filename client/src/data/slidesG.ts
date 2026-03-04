@@ -13,7 +13,10 @@ export type ActG =
   | "PerceptionArray"
   | "PowerElectronics"
   | "SWPowertrain"
-  | "DigitalTwin";
+  | "DigitalTwin"
+  | "InvestorPath"
+  | "EngineerPath"
+  | "RegulatorPath";
 
 export interface SlideContentG {
   title: string;
@@ -43,6 +46,9 @@ export const ACT_LABELS_G: Record<ActG, { en: string; fa: string }> = {
   PowerElectronics: { en: "Power Electronics",      fa: "الکترونیک قدرت" },
   SWPowertrain:     { en: "SW-Defined Powertrain",  fa: "پیشرانه نرم‌افزاری" },
   DigitalTwin:      { en: "Digital Twin",            fa: "دوقلوی دیجیتال" },
+  InvestorPath:     { en: "Investor Pathway",        fa: "مسیر سرمایه‌گذار" },
+  EngineerPath:     { en: "Engineer Pathway",        fa: "مسیر مهندس" },
+  RegulatorPath:    { en: "Regulator Pathway",       fa: "مسیر ناظر" },
 };
 
 const CDN_G = "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K";
@@ -58,6 +64,9 @@ const IMG_URLS_G: Record<number, string> = {
   8:  `${CDN_G}/g_veh08_power_electronics-YursXh6dAqGpVeNoiX3rPg.png`,
   9:  `${CDN_G}/g_veh09_sw_powertrain-V4AUuCBpMbA4LWvechhNYC.png`,
   10: `${CDN_G}/g_veh10_digital_twin-VpjS5rt9H6L7daTZdoYzcy.png`,
+  11: `${CDN_G}/g11_investor_pathway-5Zq3BeTdFrwJe4ddP39K9L.png`,
+  12: `${CDN_G}/g12_engineer_pathway-ULqwoWahkyAvUd7GmEZoDF.png`,
+  13: `${CDN_G}/g13_regulator_pathway-QogLKMHW7voYpK5CEXNrPG.png`,
 };
 
 function imgG(n: number): string {
@@ -450,6 +459,117 @@ export const slidesG: SlideG[] = [
         "نگهداری پیش‌بینانه + اعتبارسنجی گارانتی + گواهی فروش مجدد — دوقلو با خودرو زندگی می‌کند",
       ],
       tags: ["دوقلوی-دیجیتال", "اندازه‌شناسی", "FARO", "CMM", "تضمین-کیفیت"],
+    },
+  },
+  // ─── G-11: INVESTOR PATHWAY ─────────────────────────────────────────
+  {
+    id: 11,
+    act: "InvestorPath" as ActG,
+    actLabel: { en: "Investor Pathway", fa: "مسیر سرمایه‌گذار" },
+    imageUrl: imgG(11),
+    en: {
+      title: "Investor Pathway — From Physics to $4.2B Valuation in 40 Slides",
+      narrative:
+        "This curated 40-slide sequence tells the complete Ghost EPU story through the lens of market opportunity, competitive moat, and financial return. It begins with the foundational physics vision (EPU-1 through EPU-3), establishes the $2.1T market opportunity and competitive landscape (C-2, C-3, C-5), then builds the technical moat through the 10-Gate architecture and PICAPD ISA (EPU-34, C-24, C-29). The vertical integration story unfolds through HPSA's mine-to-chip pipeline (C-17, C-18) and the Quad-Plus Alliance (C-20, C-22). Financial architecture covers the business model, Series B ($120M), IPO strategy ($2.8–4.2B), and 23-patent IP portfolio (C-39 through C-42). Benchmarks against NVIDIA and Mobileye (C-48) establish performance superiority, while the Entity Scoring Matrix and Valuation Path (C-65, C-63) provide due diligence frameworks.",
+      strategic:
+        "The Investor Pathway is designed for Series B due diligence, board presentations, and LP meetings. It answers the five questions every institutional investor asks: Why now? ($469B autonomous vehicle market by 2035), Why this team? (petroleum engineering → chemical engineering → semiconductor → AI), Why defensible? (physics-grounded determinism vs. probabilistic ML), What's the exit? (NASDAQ IPO at $2.8–4.2B), and What are the risks? (C-44 risk matrix with mitigations). The 40-slide constraint forces maximum information density per slide.",
+      keyPoints: [
+        "40-slide curated sequence across all 8 decks — the complete investment story in one sitting",
+        "Covers: vision → market ($2.1T) → architecture → vertical integration → financials → exit strategy",
+        "Benchmarks: Ghost EPU vs. NVIDIA Drive Orin vs. Mobileye EyeQ6 — performance and safety metrics",
+        "Financial arc: Series B ($120M) → IPO ($2.8–4.2B) with 23-patent IP portfolio and Coq-verified proofs",
+        "Reading order: EPU-1,2,3 → C-2,3,5 → EPU-30,34 → C-24,29,30,32 → EPU-53 → C-17,18,20,22 → C-39–44 → C-48,50,65,63,67 → D-118,119 → E-25,29 → EPU-55,56,60 → F-1,3,5 → G-1,10",
+      ],
+      tags: ["investor-pathway", "curated-sequence", "due-diligence", "valuation", "IPO", "Series-B"],
+    },
+    fa: {
+      title: "مسیر سرمایه‌گذار — از فیزیک تا ارزش‌گذاری ۴.۲ میلیارد دلاری در ۴۰ اسلاید",
+      narrative:
+        "این توالی ۴۰ اسلایدی داستان کامل Ghost EPU را از منظر فرصت بازار، خندق رقابتی و بازده مالی روایت می‌کند. از چشم‌انداز فیزیک بنیادین آغاز می‌شود، فرصت بازار ۲.۱ تریلیون دلاری را تثبیت می‌کند، سپس خندق فنی را از طریق معماری ۱۰-دروازه و ISA PICAPD می‌سازد.",
+      strategic:
+        "مسیر سرمایه‌گذار برای بررسی دقیق سری B، ارائه‌های هیئت مدیره و جلسات LP طراحی شده است. پنج سؤال کلیدی هر سرمایه‌گذار نهادی را پاسخ می‌دهد.",
+      keyPoints: [
+        "توالی ۴۰ اسلایدی از هر ۸ Deck — داستان کامل سرمایه‌گذاری در یک نشست",
+        "پوشش: چشم‌انداز → بازار (۲.۱T$) → معماری → یکپارچگی عمودی → مالی → استراتژی خروج",
+        "معیارسنجی: Ghost EPU در برابر NVIDIA Drive Orin و Mobileye EyeQ6",
+        "مسیر مالی: سری B (۱۲۰M$) → IPO (۲.۸–۴.۲B$) با ۲۳ پتنت و اثبات‌های Coq",
+        "ترتیب خواندن: EPU-1,2,3 → C-2,3,5 → EPU-30,34 → C-24,29,30,32 → EPU-53 → C-17,18,20,22 → C-39–44 → C-48,50,65,63,67 → D-118,119 → E-25,29 → EPU-55,56,60 → F-1,3,5 → G-1,10",
+      ],
+      tags: ["مسیر-سرمایه‌گذار", "توالی-منتخب", "بررسی-دقیق", "ارزش‌گذاری", "IPO"],
+    },
+  },
+  // ─── G-12: ENGINEER PATHWAY ─────────────────────────────────────────
+  {
+    id: 12,
+    act: "EngineerPath" as ActG,
+    actLabel: { en: "Engineer Pathway", fa: "مسیر مهندس" },
+    imageUrl: imgG(12),
+    en: {
+      title: "Engineer Pathway — From Equations to Silicon to Fleet in 40 Slides",
+      narrative:
+        "This curated 40-slide sequence traces the complete technical arc from mathematical foundations through silicon implementation to fleet-scale deployment. It opens with the event-driven architecture vision (EPU-1, EPU-4) and E/E architecture evolution (EPU-15, EPU-16), establishing deterministic timing as the safety pillar (EPU-17). The mathematical core builds through sensor requirements (EPU-20), functional redundancy (EPU-21), and the deterministic bounds formulation (EPU-31, EPU-32). The 10-Gate architecture unfolds gate by gate — multi-sensor fusion (EPU-36), Pythagorean closure (EPU-37), Fibonacci regularization (EPU-42), covariance enforcement (EPU-45), and WCET bounds (EPU-46). Deck A contributes the Universal Filtration Primitive and composition algebra (A-1, A-2, A-9, A-12), while Deck B provides differential geometry of temporal evolution and the constraint stress tensor (B-2, B-13). Silicon implementation covers bilinear form mapping (C-24), population balance compression (C-28), PICAPD ISA (C-29), 7nm process (C-32), WCET analysis (C-34), memory architecture (C-35), and formal verification (C-38).",
+      strategic:
+        "The Engineer Pathway is designed for technical due diligence, architecture review boards, and senior engineering recruitment. It answers: What is the mathematical foundation? (bilinear forms, conservation laws, topological vector spaces), How does it become hardware? (PICAPD ISA with 47 Coq-verified opcodes on 7nm), How does it scale? (EPU-MAS multi-agent system with Byzantine fault tolerance), and What makes it verifiable? (formal proofs, WCET bounds, deterministic timing). This is the path for anyone who needs to understand why the architecture is correct, not just that it works.",
+      keyPoints: [
+        "40-slide technical deep-dive across all 8 decks — from differential equations to fleet deployment",
+        "Mathematical foundations: bilinear forms, conservation laws, topological vector spaces, 89.7:1 compression",
+        "10-Gate architecture: each gate's mathematical basis, from multi-sensor fusion to AGM integration",
+        "Silicon implementation: PICAPD ISA (47 opcodes), 7nm process, 512-register file, Coq formal proofs",
+        "Reading order: EPU-1,4,15,16,17,20,21 → EPU-31,32,34,36,37,42,45,46,49,52 → A-1,2,9,12 → B-2,13 → C-24,28,29,32,34,35,38,66 → D-3,16,47,65,107,120 → E-16 → G-6,7",
+      ],
+      tags: ["engineer-pathway", "curated-sequence", "architecture", "formal-verification", "PICAPD", "10-gate"],
+    },
+    fa: {
+      title: "مسیر مهندس — از معادلات تا سیلیکون تا ناوگان در ۴۰ اسلاید",
+      narrative:
+        "این توالی ۴۰ اسلایدی کمان فنی کامل را از مبانی ریاضی تا پیاده‌سازی سیلیکونی و استقرار ناوگانی دنبال می‌کند. با چشم‌انداز معماری رویدادمحور آغاز می‌شود و زمان‌بندی قطعی را به‌عنوان ستون ایمنی تثبیت می‌کند.",
+      strategic:
+        "مسیر مهندس برای بررسی دقیق فنی، هیئت‌های بازبینی معماری و جذب مهندسان ارشد طراحی شده است. پاسخ می‌دهد: مبنای ریاضی چیست؟ چگونه سخت‌افزار می‌شود؟ چگونه مقیاس‌پذیر می‌شود؟",
+      keyPoints: [
+        "۴۰ اسلاید عمیق فنی از هر ۸ Deck — از معادلات دیفرانسیل تا استقرار ناوگان",
+        "مبانی ریاضی: فرم‌های دوخطی، قوانین بقا، فضاهای برداری توپولوژیک، فشرده‌سازی ۸۹.۷:۱",
+        "معماری ۱۰-دروازه: مبنای ریاضی هر دروازه، از ادغام حسگر تا یکپارچگی AGM",
+        "پیاده‌سازی سیلیکونی: ISA PICAPD (۴۷ آپکد)، فرآیند ۷nm، ۵۱۲ رجیستر، اثبات رسمی Coq",
+        "ترتیب: EPU-1,4,15,16,17,20,21 → EPU-31,32,34,36,37,42,45,46,49,52 → A-1,2,9,12 → B-2,13 → C-24,28,29,32,34,35,38,66 → D-3,16,47,65,107,120 → E-16 → G-6,7",
+      ],
+      tags: ["مسیر-مهندس", "توالی-منتخب", "معماری", "اثبات-رسمی", "PICAPD", "۱۰-دروازه"],
+    },
+  },
+  // ─── G-13: REGULATOR PATHWAY ────────────────────────────────────────
+  {
+    id: 13,
+    act: "RegulatorPath" as ActG,
+    actLabel: { en: "Regulator Pathway", fa: "مسیر ناظر" },
+    imageUrl: imgG(13),
+    en: {
+      title: "Regulator Pathway — From Safety Case to Certification Evidence in 40 Slides",
+      narrative:
+        "This curated 40-slide sequence presents the complete safety and certification story for regulatory review, type approval, and standards body engagement. It opens with the physics-certified vision (EPU-1, EPU-2, EPU-3) and domain discipline (EPU-5), establishing that safety is constitutional, not bolted on. The degradation policy and MRC matrix (EPU-22) shows rule-governed failure behavior, while validation gates (EPU-23) and the certification evidence file (EPU-24) demonstrate audit readiness. The 10-Gate map (EPU-34, EPU-35) is traversed with emphasis on gates most relevant to certification: multi-sensor fusion (EPU-36), geometric validation (EPU-38), spatial governance (EPU-39), MRC types (EPU-40), hierarchical decision with audit trails (EPU-43), the memoryless property (EPU-44), and WCET bounds (EPU-46). ISO 26262 ASIL-D and IEC 61508 SIL-4 certification strategy (EPU-54) is followed by the sensor suite constitution (EPU-58) and validation courts (EPU-59). Deck C contributes risk management (C-7), ASIL-D certification path (C-31), formal verification (C-38), risk matrix (C-44), and global regulatory compliance (C-59).",
+      strategic:
+        "The Regulator Pathway is designed for UNECE WP.29 submissions, NHTSA engagement, EU AI Act compliance reviews, and ISO/IEC standards body presentations. It demonstrates that Ghost EPU's safety case is built on deterministic physics rather than statistical ML confidence intervals — a fundamentally different certification paradigm. Every claim is traceable to a formal proof (Coq), a timing bound (WCET), or a physical law (conservation). The 40-slide constraint ensures that a regulator can review the complete safety argument in a single session.",
+      keyPoints: [
+        "40-slide safety and certification sequence — the complete regulatory argument in one session",
+        "Covers: safety philosophy → degradation policy → 10-Gate verification → formal proofs → certification evidence",
+        "Standards alignment: ISO 26262 ASIL-D, IEC 61508 SIL-4, UNECE WP.29, EU AI Act",
+        "Every claim traceable to: Coq formal proof, WCET timing bound, or conservation law — no statistical confidence intervals",
+        "Reading order: EPU-1,2,3,5 → EPU-22,23,24 → EPU-31,33,34,35,36,38,39,40,43,44,46,49 → EPU-54,58,59 → C-7,31,38,44,59,64 → D-21,28,35,36,38,76,115 → E-21,22,23,28 → G-10",
+      ],
+      tags: ["regulator-pathway", "curated-sequence", "certification", "ISO-26262", "ASIL-D", "safety-case"],
+    },
+    fa: {
+      title: "مسیر ناظر — از پرونده ایمنی تا شواهد گواهی‌نامه در ۴۰ اسلاید",
+      narrative:
+        "این توالی ۴۰ اسلایدی داستان کامل ایمنی و گواهی‌نامه را برای بررسی نظارتی، تأیید نوع و تعامل با نهادهای استاندارد ارائه می‌کند. نشان می‌دهد که پرونده ایمنی Ghost EPU بر فیزیک قطعی استوار است، نه فواصل اطمینان آماری ML.",
+      strategic:
+        "مسیر ناظر برای ارائه‌های UNECE WP.29، تعامل NHTSA، بررسی انطباق قانون هوش مصنوعی اتحادیه اروپا و ارائه‌های نهادهای استاندارد ISO/IEC طراحی شده است.",
+      keyPoints: [
+        "۴۰ اسلاید ایمنی و گواهی‌نامه — استدلال نظارتی کامل در یک نشست",
+        "پوشش: فلسفه ایمنی → سیاست تخریب → تأیید ۱۰-دروازه → اثبات رسمی → شواهد گواهی‌نامه",
+        "انطباق استاندارد: ISO 26262 ASIL-D، IEC 61508 SIL-4، UNECE WP.29، قانون هوش مصنوعی اتحادیه اروپا",
+        "هر ادعا قابل ردیابی: اثبات رسمی Coq، کران زمانی WCET، یا قانون بقا — بدون فواصل اطمینان آماری",
+        "ترتیب: EPU-1,2,3,5 → EPU-22,23,24 → EPU-31,33,34,35,36,38,39,40,43,44,46,49 → EPU-54,58,59 → C-7,31,38,44,59,64 → D-21,28,35,36,38,76,115 → E-21,22,23,28 → G-10",
+      ],
+      tags: ["مسیر-ناظر", "توالی-منتخب", "گواهی‌نامه", "ISO-26262", "ASIL-D", "پرونده-ایمنی"],
     },
   },
 ];
