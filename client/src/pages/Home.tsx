@@ -606,8 +606,8 @@ export default function Home() {
               }}
             >
               {isRTL
-                ? "راهبرد EPU — بستر خودروهای هیدروژنی"
-                : "EPU Strategy — Driverless H₂ Autonomy Platform"}
+                ? "درگاه اطلاع‌رسانی خودروی هیدروژنی شبح با راهبرد EPU"
+                : "Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip"}
             </h1>
             <p
               className="text-sm leading-relaxed mb-8"
