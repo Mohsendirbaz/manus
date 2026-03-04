@@ -1870,6 +1870,7 @@ export const slidesD: SlideD[] = [
         "Cognitive elevation: memory transforms reactive control into genuine autonomous intelligence",
         "Continuous improvement: agents improve from operational experience without retraining",
         "Bridge to Act V: mechanical signal protocol builds on memory for reliable sensor-to-decision pipeline",
+        "Fleet-scale compounding: every operational hour adds to shared episodic memory, widening the performance gap over competitors with static rule sets",
       ],
       tags: ["Act IV Synthesis", "Cognitive Foundation", "Autonomous Intelligence", "Continuous Improvement", "Memory Architecture"],
     },
@@ -1882,6 +1883,7 @@ export const slidesD: SlideD[] = [
         "ارتقای شناختی: حافظه کنترل واکنشی را به هوشمندی خودمختار واقعی تبدیل می‌کند",
         "بهبود پیوسته: کارگزاران از تجربه عملیاتی بدون بازآموزی بهبود می‌یابند",
         "پل به پرده پنجم: پروتکل سیگنال مکانیکی بر پایه حافظه برای خط لوله حسگر-به-تصمیم قابل اعتماد بنا می‌شود",
+        "ترکیب مقیاس ناوگان: هر ساعت عملیاتی به حافظه رویدادی مشترک افزوده می‌شود و شکاف عملکردی نسبت به رقبا با مجموعه قوانین ایستا را گسترش می‌دهد",
       ],
       tags: ["برآیند پرده چهارم", "پایه شناختی", "هوشمندی خودمختار", "بهبود پیوسته", "معماری حافظه"],
     },
@@ -1900,6 +1902,7 @@ export const slidesD: SlideD[] = [
         "Hard real-time delivery: WCET-bounded signal transmission within 1ms",
         "Priority arbitration: safety-critical signals preempt optimization commands",
         "Feedback integration: physical sensor data closes the agent decision loop",
+        "Hardware moat at the physics boundary: the PICAPD ISA's actuator abstraction layer cannot be replicated without co-designing silicon and signal protocol simultaneously",
       ],
       tags: ["پروتکل سیگنال مکانیکی", "رابط نرم‌افزار-سخت‌افزار", "WCET", "آکچوئاتور", "یکپارچه‌سازی EPU"]
     },
@@ -1912,6 +1915,7 @@ export const slidesD: SlideD[] = [
         "تحویل بلادرنگ سخت: انتقال سیگنال محدود به WCET در ۱ms",
         "داوری اولویت: سیگنال‌های حیاتی ایمنی دستورات بهینه‌سازی را پیش می‌اندازند",
         "یکپارچه‌سازی بازخورد: داده‌های حسگر فیزیکی حلقه تصمیم کارگزار را می‌بندند",
+        "خندق سخت‌افزاری در مرز فیزیک: لایه انتزاع محرک ISA PICAPD بدون طراحی مشترک سیلیکون و پروتکل سیگنال به‌طور همزمان قابل تکرار نیست",
       ],
       tags: ["پروتکل سیگنال مکانیکی", "رابط نرم‌افزار-سخت‌افزار", "WCET", "محرک", "یکپارچه‌سازی EPU"]
     }

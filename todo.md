@@ -92,3 +92,8 @@
 - [ ] T4.3 Add plain-language opening to EPU-48
 - [ ] T4.4 Rewrite all 8 Deck D Act Synthesis slides around single governing claims
 - [ ] T4.5 Restructure C-59 as 2x4 jurisdiction matrix
+
+## Farsi 5th keyPoints Parity (Deck D — 59 slides)
+- [ ] FA.D.1 Audit all 59 Deck D slides for FA 5th keyPoint gaps
+- [ ] FA.D.2 Inject Farsi 5th keyPoints for all 59 slides
+- [ ] FA.D.3 Verify TypeScript and checkpoint
