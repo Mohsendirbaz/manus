@@ -46,17 +46,40 @@ const ACT_COLORS_B: Record<ActB, string> = {
   Synthesis: "#388E3C",
 };
 const ACT_COLORS_C: Record<ActC, string> = {
-  Executive: "#F59E0B", PDC: "#D97706", SAGP: "#B45309",
-  PhysicsFound: "#FBBF24", ArchDeep: "#F97316", Financial: "#EF4444",
-  Validation: "#10B981", Integration: "#8B5CF6",
+  Executive:    "#F59E0B", // amber — deck identity
+  PDC:          "#FB923C", // orange — differentiated from Executive
+  SAGP:         "#EA580C", // deep orange — differentiated from PDC
+  PhysicsFound: "#FBBF24", // yellow-amber
+  ArchDeep:     "#F97316", // orange
+  Financial:    "#EF4444", // red
+  Validation:   "#10B981", // emerald
+  Integration:  "#8B5CF6", // violet
+};
+const ACT_COLORS_D: Record<ActD, string> = {
+  AgentFoundation: "#0D9488", // teal — deck identity
+  Communication:   "#0891B2", // cyan
+  TrustConsensus:  "#1D4ED8", // blue
+  MemoryArch:      "#7C3AED", // violet
+  MechanicalSignal: "#059669", // emerald
+  Coordination:    "#D97706", // amber
+  LLMIntegration:  "#9333EA", // purple
+  SystemSynthesis: "#DC2626", // red
+};
+const ACT_COLORS_E: Record<ActE, string> = {
+  ExecutiveFraming:      "#DC2626", // red — urgency
+  CabinController:       "#EA580C", // orange
+  HydrogenPlatform:      "#0891B2", // cyan — cryogenic/H₂
+  IntegratedElectronics: "#7C3AED", // violet — deck identity
+  SensorGovernance:      "#059669", // emerald
+  TEALCAMoat:            "#9D174D", // crimson
 };
 
 function getActColor(slide: UnifiedSlide): string {
   if (slide.deck === "EPU") return actColorsEPU[slide.act as Act] ?? "#C8A96E";
   if (slide.deck === "A")   return ACT_COLORS_A[slide.act as ActA] ?? "#4FC3F7";
   if (slide.deck === "C")   return ACT_COLORS_C[slide.act as ActC] ?? "#F59E0B";
-  if (slide.deck === "D")   return "#0D9488";
-  if (slide.deck === "E")   return "#7C3AED";
+  if (slide.deck === "D")   return ACT_COLORS_D[slide.act as ActD] ?? "#0D9488";
+  if (slide.deck === "E")   return ACT_COLORS_E[slide.act as ActE] ?? "#7C3AED";
   if (slide.deck === "F")   return "#A78BFA";
   return ACT_COLORS_B[slide.act as ActB] ?? "#4CAF82";
 }
