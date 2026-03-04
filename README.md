@@ -58,7 +58,7 @@ The commercial and engineering face of the project. It opens with the three math
 
 ### Deck D · Semiconductor & Multi-Agent Architecture (120 slides)
 
-The largest and most technically dense deck. It introduces TWIN — the multi-agent software nervous system that runs on EPU silicon — and develops the complete agent taxonomy: roles, privilege levels, and capability boundaries. The deck progresses through the full TWIN stack: the message bus and communication protocols, Byzantine fault-tolerant consensus mechanisms, layered memory architecture (volatile, persistent, and shared), mechanical signaling protocols for hardware-software co-design, and the coordination layer governing agent stations and brokers. An LLM integration layer bridges natural language reasoning with deterministic silicon constraints. The deck closes with a system synthesis showing how TWIN and EPU compose into a single unified intelligence stack, followed by an investment thesis articulating the competitive moat and a 2030 vision for autonomous fleet intelligence at global scale.
+The largest and most technically dense deck. It introduces EPU-MAS — the multi-agent software nervous system that runs on EPU silicon — and develops the complete agent taxonomy: roles, privilege levels, and capability boundaries. The deck progresses through the full EPU-MAS stack: the message bus and communication protocols, Byzantine fault-tolerant consensus mechanisms, layered memory architecture (volatile, persistent, and shared), mechanical signaling protocols for hardware-software co-design, and the coordination layer governing agent stations and brokers. An LLM integration layer bridges natural language reasoning with deterministic silicon constraints. The deck closes with a system synthesis showing how EPU-MAS and EPU compose into a single unified intelligence stack, followed by an investment thesis articulating the competitive moat and a 2030 vision for autonomous fleet intelligence at global scale.
 
 **Arc:** Overview → Taxonomy → Communication → Consensus → Memory → Signaling → Coordination → LLM → Synthesis → Investment
 
@@ -172,7 +172,7 @@ Six cinematic slides documenting the multidisciplinary expertise that converges 
 | Mechanical Signaling | Mechanical Signaling Protocol | پروتکل سیگنال‌دهی مکانیکی |
 | Coordination | Coordination & Stations | هماهنگی ایستگاه‌ها و کارگزاران |
 | LLM Integration | LLM Integration Layer | پیوند هوش مصنوعی و سیلیکون |
-| System Synthesis | System Synthesis | برآیند یکپارچه‌سازی TWIN و EPU |
+| System Synthesis | System Synthesis | برآیند یکپارچه‌سازی EPU-MAS و EPU |
 
 ---
 
