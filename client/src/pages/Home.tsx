@@ -599,8 +599,8 @@ export default function Home() {
               }}
             >
               {isRTL
-                ? "راهبرد EPU — بستر خودروهای هیدروژنی"
-                : "EPU Strategy — Driverless H₂ Autonomy Platform"}
+                ? "درگاه اطلاع‌رسانی خودروی هیدروژنی شبح با راهبرد EPU"
+                : "Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip"}
             </h1>
             <p
               className="text-sm leading-relaxed mb-8"
@@ -611,8 +611,8 @@ export default function Home() {
               }}
             >
               {isRTL
-                ? "معماری ایمنی مبتنی بر فیزیک و قابل ممیزی کربن برای نسل بعدی خودروهای هیدروژنی — طراحی‌شده بدون فرمان، اداره‌شده با قانون اساسی قطعی."
-                : "Physics-certified, carbon-auditable safety architecture for next-generation hydrogen vehicles — designed commandless, governed by deterministic constitutional law."}
+                ? "خودروی خودران هیدروژنی شبح — بدون فرمان، بدون راننده، با پردازنده رویداد EPU به‌عنوان هسته ایمنی فیزیک‌محور و قابل ممیزی کربنی."
+                : "Ghost H₂ autonomous vehicle — steeringless, driverless, powered by the EPU microchip as its physics-certified, carbon-auditable safety compute core."}
             </p>
             {/* Deck pills */}
             <div className={`flex flex-wrap gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
