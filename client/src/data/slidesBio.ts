@@ -44,14 +44,14 @@ export const ACT_LABELS_F: Record<ActF, { en: string; fa: string }> = {
 // CDN base — reuse the existing project CDN bucket
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K";
 
-// Placeholder images reused from existing CDN assets (distinct per slide)
+// Custom cinematic marketing images generated for Deck F
 const IMG_URLS: Record<number, string> = {
-  1: `${CDN}/slide_1_084eba59.png`,
-  2: `${CDN}/slide_3_3e4d1b64.png`,
-  3: `${CDN}/slide_5_32f0a621.png`,
-  4: `${CDN}/slide_7_453c97e4.png`,
-  5: `${CDN}/slide_9_1f9315f1.png`,
-  6: `${CDN}/slide_11_8e064cfd.png`,
+  1: `${CDN}/deck_f1_subsurface-c4hBZaLo26wK32b4TiEvoZ.png`,
+  2: `${CDN}/deck_f2_ammonia-iw4W2QccGKoNAGcw37iPLv.png`,
+  3: `${CDN}/deck_f3_hydrogen-fBWKcxEG4ZLkHhpiMJMHRe.png`,
+  4: `${CDN}/deck_f4_chip-jg5NwerbtBFygWwDtCkrzi.png`,
+  5: `${CDN}/deck_f5_g10-kH2UsuWcRoqCTLWootoWKV.png`,
+  6: `${CDN}/deck_f6_ai-Lazji3AHoMarDuN3qAv7Sk.png`,
 };
 
 function imgF(n: number): string {
