@@ -83,7 +83,7 @@ const IMG_URLS: Record<number, string> = {
   54: `${CDN}/slide_54_54c50651.png`,
   55: `${CDN}/slide_55_a88f0354.png`,
   56: `${CDN}/slide_56_b96331b1.png`,
-  57: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/h2_ecosystem_epu57_3030df2b.png',
+  57: `${CDN}/slide_57_63c96e46.png`,
   58: `${CDN}/slide_58_dea462dc.png`,
   59: `${CDN}/slide_59_58fa87a4.png`,
   60: `${CDN}/slide_60_7b29ec69.png`,
@@ -104,7 +104,7 @@ export const slides60: Slide60[] = [
   {
     id: 1, act: "I", actLabel: ACT_LABELS.I, imageUrl: img(1),
     en: {
-      title: "Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip",
+      title: "EPU Vision — From Sensor to Decision on Physics",
       narrative: "The Event Processing Unit (EPU) constructs the sensor-to-decision pathway on the laws of physics and controllable timing. The goal is behavior that is not merely reliable, but defensible and auditable.",
       strategic: "Carbon auditing and lifecycle reporting form the pillars of our 'Sustainable Pace' brand. This strategic orientation permeates all decisions, yet is always kept separate from safety claims so both remain clear and credible.",
       keyPoints: [
@@ -117,7 +117,7 @@ export const slides60: Slide60[] = [
       tags: ["EPU", "Vision", "Physics", "Auditability", "Sustainable Pace"],
     },
     fa: {
-      title: "درگاه اطلاع‌رسانی خودروی هیدروژنی شبح با راهبرد EPU",
+      title: "چشم‌انداز EPU",
       narrative: "پردازشگر رویدادمحور (EPU) مسیر حسگر تا تصمیم را بر پایه قوانین فیزیک و زمان‌بندی قابل کنترل می‌سازد. هدف، رفتاری است که فراتر از قابل‌اتکا بودن، قابل دفاع و ممیزی باشد.",
       strategic: "ممیزی کربن و گزارش‌دهی چرخه‌حیات، پایه‌های اصلی برند «سبک پایدار» ما را تشکیل می‌دهند. این جهت‌گیری راهبردی در همه تصمیمات نفوذ دارد، اما همواره از ادعاهای ایمنی جدا نگه داشته می‌شود تا هر دو بخش شفاف و معتبر بمانند.",
       keyPoints: [

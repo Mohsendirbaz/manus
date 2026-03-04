@@ -90,50 +90,6 @@ const decks = [
       tag: "GA_IMPL_2026_001",
     },
   },
-  {
-    id: "deck-d",
-    href: "/deck-d",
-    accentColor: "#0D9488",
-    bgGradient: "linear-gradient(135deg, #001A1A 0%, #003333 50%, #001A1A 100%)",
-    slideCount: 120,
-    actCount: 8,
-    en: {
-      label: "Deck D",
-      title: "TWIN Multi-Agent Integration",
-      description:
-        "120 slides covering the full TWIN multi-agent codebase integration into EPU: agent foundation, message bus, BFT trust consensus, memory architecture, mechanical signal protocol, station coordination, LLM integration, and TWIN-EPU synthesis.",
-      tag: "TWIN_INT_2026_001",
-    },
-    fa: {
-      label: "Deck D",
-      title: "یکپارچه‌سازی چندعاملی TWIN",
-      description:
-        "۱۲۰ اسلاید پوشش‌دهنده یکپارچه‌سازی کامل کدبیس چندعاملی TWIN در EPU: بنیاد عوامل هوشمند، گذرگاه پیام، اجماع اعتماد BFT، معماری حافظه، پروتکل سیگنال مکانیکی، هماهنگی ایستگاه‌ها، یکپارچه‌سازی LLM، و برآیند TWIN-EPU.",
-      tag: "TWIN_INT_2026_001",
-    },
-  },
-  {
-    id: "deck-e",
-    href: "/deck-e",
-    accentColor: "#7C3AED",
-    bgGradient: "linear-gradient(135deg, #0D0A1A 0%, #1A0D33 50%, #0D0A1A 100%)",
-    slideCount: 30,
-    actCount: 8,
-    en: {
-      label: "Deck E",
-      title: "Interior & Cabin View — EPU Strategy Origins",
-      description:
-        "30 slides presenting the original EPU strategy through the lens of interior vehicle design: cabin controller architecture, hoisted dome interface, H2 platform packaging, sensor constitution, safety architecture, modular serviceability, and TEA/LCA strategic moat.",
-      tag: "EPU_INTERIOR_2025_001",
-    },
-    fa: {
-      label: "Deck E",
-      title: "نمای داخلی و کابین — ریشه‌های استراتژی EPU",
-      description:
-        "۳۰ اسلاید ارائه استراتژی اولیه EPU از منظر طراحی داخلی خودرو: معماری کنترلر کابین، رابط گنبدی بالابرنده، بسته‌بندی پلتفرم H2، منشور حسگرها، معماری ایمنی، قابلیت سرویس ماژولار، و مزیت رقابتی TEA/LCA.",
-      tag: "EPU_INTERIOR_2025_001",
-    },
-  },
 ];
 
 export default function Decks() {
@@ -170,7 +126,7 @@ export default function Decks() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? "۳۳۰ اسلاید · ۶ Deck" : "330 Slides · 6 Decks"}
+                {isRTL ? "۱۲۰ اسلاید · ۳ Deck" : "120 Slides · 3 Decks"}
               </p>
             </div>
             <div className="flex-1" />
@@ -213,8 +169,8 @@ export default function Decks() {
               }}
             >
               {isRTL
-                ? "۳۳۰ اسلاید · شش چارچوب"
-                : "330 Slides · Six Frameworks"}
+                ? "۱۲۰ اسلاید · سه چارچوب"
+                : "120 Slides · Three Frameworks"}
             </h1>
             <p
               className="text-sm leading-relaxed"
@@ -237,7 +193,7 @@ export default function Decks() {
         className="container mx-auto px-4 lg:px-8 py-12 pb-24"
         style={{ maxWidth: "1400px" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {decks.map((deck) => {
             const content = deck[lang];
             return (
