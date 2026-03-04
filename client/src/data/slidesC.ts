@@ -211,26 +211,26 @@ export const slidesC: SlideC[] = [
     id: 4, act: "Executive", actLabel: ACT_LABELS_C.Executive, imageUrl: imgC(4),
     en: {
       title: "Strategic Goals 2026–2030: Four Milestones",
-      narrative: "Ghost Autonomy's commercialization roadmap is structured around four milestones: (1) 2026 Q3 — PICAPD ISA tape-out at 7nm, first silicon validation; (2) 2027 Q1 — OEM integration pilot with Tier-1 automotive partner, ASIL-D certification process initiated; (3) 2028 Q2 — Series B funding round ($120M target), production-ready EPU; (4) 2030 — IPO on NASDAQ or dual-listing, $2.8B–$4.2B valuation target.",
+      narrative: "Ghost Autonomy's commercialization roadmap is structured around four milestones: (1) 2026 Q3 — PICAPD ISA tape-out at 7nm, first silicon validation; (2) 2027 Q1 — OEM integration pilot with Tier-1 automotive partner, ASIL-D certification process initiated; (3) 2028 Q2 — Series B funding round ($120M target), production-ready EPU; (4) 2030 — IPO on NASDAQ or dual-listing,  valuation target.",
       strategic: "Each milestone is gated by a technical proof: tape-out requires ISA conformance test suite passing 100%; OEM pilot requires ASIL-D pre-certification; Series B requires production yield >85%; IPO requires 3 OEM design wins. The milestones are not aspirational — they are contractually defined with specific measurable criteria.",
       keyPoints: [
         "2026 Q3: PICAPD ISA tape-out at 7nm, first silicon validation",
         "2027 Q1: OEM integration pilot, ASIL-D certification process initiated",
         "2028 Q2: Series B $120M, production-ready EPU with yield >85%",
-        "2030: IPO, $2.8B–$4.2B valuation, 3 OEM design wins required",
+        "2030: IPO,  valuation, 3 OEM design wins required",
         "PICAPD ISA: 7 instruction classes (P-I-C-A-P-D) map directly to physical conservation operators",
       ],
       tags: ["Roadmap", "Milestones", "IPO", "Series B", "OEM"],
     },
     fa: {
       title: "اهداف استراتژیک ۲۰۲۶–۲۰۳۰: چهار نقطه عطف",
-      narrative: "نقشه راه تجاری‌سازی Ghost Autonomy حول چهار نقطه عطف ساختار یافته است: (۱) Q3 2026 — tape-out ISA PICAPD در ۷ نانومتر؛ (۲) Q1 2027 — پایلوت یکپارچه‌سازی OEM، آغاز فرآیند گواهی‌سازی ASIL-D؛ (۳) Q2 2028 — سری B (هدف ۱۲۰ میلیون دلار)؛ (۴) ۲۰۳۰ — IPO با ارزش‌گذاری ۲.۸–۴.۲ میلیارد دلار.",
+      narrative: "نقشه راه تجاری‌سازی Ghost Autonomy حول چهار نقطه عطف ساختار یافته است: (۱) Q3 2026 — tape-out ISA PICAPD در ۷ نانومتر؛ (۲) Q1 2027 — پایلوت یکپارچه‌سازی OEM، آغاز فرآیند گواهی‌سازی ASIL-D؛ (۳) Q2 2028 — سری B (هدف ۱۲۰ میلیون دلار)؛ (۴) ۲۰۳۰ — IPO با ارزش‌گذاری .",
       strategic: "هر نقطه عطف با یک اثبات فنی مشروط است: tape-out نیاز به گذر ۱۰۰٪ مجموعه تست انطباق ISA دارد؛ پایلوت OEM نیاز به پیش‌گواهی ASIL-D دارد؛ سری B نیاز به بازده تولید بیش از ۸۵٪ دارد.",
       keyPoints: [
         "Q3 2026: tape-out ISA PICAPD در ۷ نانومتر، اولین اعتبارسنجی سیلیکون",
         "Q1 2027: پایلوت یکپارچه‌سازی OEM، آغاز فرآیند گواهی‌سازی ASIL-D",
         "Q2 2028: سری B ۱۲۰ میلیون دلار، EPU آماده تولید با بازده بیش از ۸۵٪",
-        "۲۰۳۰: IPO، ارزش‌گذاری ۲.۸–۴.۲ میلیارد دلار، ۳ طراحی OEM",
+        "۲۰۳۰: IPO، ارزش‌گذاری ، ۳ طراحی OEM",
         "ISA PICAPD: ۷ کلاس دستورالعمل مستقیماً به عملگرهای بقای فیزیکی نگاشته می‌شوند",
       ],
       tags: ["نقشه راه", "نقاط عطف", "IPO", "سری B", "OEM"],
@@ -651,7 +651,7 @@ export const slidesC: SlideC[] = [
     en: {
       title: "Silica → Polysilicon → Wafers → EPU: Four-Stage Value Chain",
       narrative: "The HPSA value chain has four stages with specific technical and economic parameters: Stage 1→2 (Silica to Polysilicon): Siemens process, 8:1 silica-to-polysilicon ratio by mass, 6N purity, $45/kg polysilicon cost (vs. $65/kg spot market). Stage 2→3 (Polysilicon to Wafers): Czochralski crystal growth, 300mm wafers, <0.1 defects/cm², $180/wafer (vs. $240/wafer spot). Stage 3→4 (Wafers to EPU): TSMC 7nm process, 85% yield target, 120 EPU dies/wafer, $2,400/EPU manufacturing cost.",
-      strategic: "The four-stage value chain creates a $1,800/EPU cost advantage over a competitor that procures all inputs from spot markets. At 100,000 EPUs/year production volume, this represents $180M/year in cost savings — more than the entire Series A funding round. This structural cost advantage is the primary driver of the $2.8B–$4.2B valuation range.",
+      strategic: "The four-stage value chain creates a $1,800/EPU cost advantage over a competitor that procures all inputs from spot markets. At 100,000 EPUs/year production volume, this represents $180M/year in cost savings — more than the entire Series A funding round. This structural cost advantage is the primary driver of the  valuation range.",
       keyPoints: [
         "Silica→Polysilicon: 8:1 ratio, 6N purity, $45/kg (vs. $65/kg spot) — 31% savings",
         "Polysilicon→Wafers: 300mm, <0.1 defects/cm², $180/wafer (vs. $240/wafer) — 25% savings",
@@ -1291,11 +1291,11 @@ export const slidesC: SlideC[] = [
   {
     id: 41, act: "Financial", actLabel: ACT_LABELS_C.Financial, imageUrl: imgC(41),
     en: {
-      title: "IPO Strategy: NASDAQ Listing, $2.8B–$4.2B Valuation",
-      narrative: "Ghost Autonomy's IPO strategy targets a 2030 NASDAQ listing with a $2.8B–$4.2B valuation range. The valuation is based on three comparable transactions: Mobileye IPO (2022, $17B valuation, 12x revenue); Ambarella (2012, $800M valuation, 8x revenue); Lattice Semiconductor (2018, $1.2B valuation, 6x revenue). Ghost EPU's valuation at IPO is based on 3 OEM design wins × $8M average license value × 50x revenue multiple = $1.2B minimum, plus royalty stream NPV of $1.6B–$3B.",
+      title: "IPO Strategy: NASDAQ Listing,  Valuation",
+      narrative: "Ghost Autonomy's IPO strategy targets a 2030 NASDAQ listing with a  valuation range. The valuation is based on three comparable transactions: Mobileye IPO (2022, $17B valuation, 12x revenue); Ambarella (2012, $800M valuation, 8x revenue); Lattice Semiconductor (2018, $1.2B valuation, 6x revenue). Ghost EPU's valuation at IPO is based on 3 OEM design wins × $8M average license value × 50x revenue multiple = $1.2B minimum, plus royalty stream NPV of $1.6B–$3B.",
       strategic: "The IPO timing (2030) is chosen to coincide with the first wave of Level 4 autonomous vehicle deployments, when the $45B ASIL-D processor market will be at peak growth. The dual-listing option (NASDAQ + Hong Kong Stock Exchange) is being evaluated to capture Chinese OEM demand, given that China represents 35% of global autonomous vehicle production.",
       keyPoints: [
-        "Target: 2030 NASDAQ IPO, $2.8B–$4.2B valuation",
+        "Target: 2030 NASDAQ IPO,  valuation",
         "Comparable: Mobileye 2022 IPO at $17B (12x revenue)",
         "Valuation floor: 3 OEM design wins × $8M × 50x = $1.2B + royalty NPV $1.6B–$3B",
         "Dual-listing option: NASDAQ + HKEX for Chinese OEM demand (35% of global AV production)",
@@ -1304,11 +1304,11 @@ export const slidesC: SlideC[] = [
       tags: ["IPO", "NASDAQ", "Valuation", "Mobileye", "HKEX"],
     },
     fa: {
-      title: "استراتژی IPO: پذیرش در NASDAQ، ارزش‌گذاری ۲.۸–۴.۲ میلیارد دلار",
-      narrative: "استراتژی IPO Ghost Autonomy پذیرش NASDAQ در سال ۲۰۳۰ با محدوده ارزش‌گذاری ۲.۸–۴.۲ میلیارد دلار را هدف قرار می‌دهد. ارزش‌گذاری بر اساس سه معامله قابل مقایسه است: IPO Mobileye (۲۰۲۲، ۱۷ میلیارد دلار، ۱۲ برابر درآمد).",
+      title: "استراتژی IPO: پذیرش در NASDAQ، ارزش‌گذاری ",
+      narrative: "استراتژی IPO Ghost Autonomy پذیرش NASDAQ در سال ۲۰۳۰ با محدوده ارزش‌گذاری  را هدف قرار می‌دهد. ارزش‌گذاری بر اساس سه معامله قابل مقایسه است: IPO Mobileye (۲۰۲۲، ۱۷ میلیارد دلار، ۱۲ برابر درآمد).",
       strategic: "زمان‌بندی IPO (۲۰۳۰) برای همزمانی با اولین موج استقرار خودروهای خودمختار سطح ۴ انتخاب شده است. گزینه پذیرش دوگانه (NASDAQ + بورس هنگ‌کنگ) برای جذب تقاضای OEM چینی در حال بررسی است.",
       keyPoints: [
-        "هدف: IPO NASDAQ 2030، ارزش‌گذاری ۲.۸–۴.۲ میلیارد دلار",
+        "هدف: IPO NASDAQ 2030، ارزش‌گذاری ",
         "قابل مقایسه: IPO Mobileye 2022 با ۱۷ میلیارد دلار (۱۲ برابر درآمد)",
         "کف ارزش‌گذاری: ۳ برنده طراحی OEM × ۸ میلیون دلار × ۵۰ = ۱.۲ میلیارد دلار + NPV حق امتیاز",
         "گزینه پذیرش دوگانه: NASDAQ + HKEX برای تقاضای OEM چینی (۳۵٪ تولید جهانی AV)",
@@ -1553,12 +1553,12 @@ export const slidesC: SlideC[] = [
     id: 51, act: "Financial", actLabel: ACT_LABELS_C.Financial, imageUrl: imgC(51),
     en: {
       title: "Funding Strategy: Series B to IPO Roadmap",
-      narrative: "Series B ($85M, Q3 2026): fund tape-out of Ghost EPU v2.0 (TSMC 3nm), expand OEM qualification to 5 additional OEMs, hire 40 engineers. Series C ($220M, Q1 2028): fund volume production ramp, establish Asia-Pacific manufacturing partnership, complete regulatory filing in EU/US/China. IPO (2030, target $4.2B valuation): based on $840M ARR at 5x revenue multiple, with $12.4B SOM capture trajectory.",
+      narrative: "Series B ($85M, Q3 2026): fund tape-out of Ghost EPU v2.0 (TSMC 3nm), expand OEM qualification to 5 additional OEMs, hire 40 engineers. Series C ($220M, Q1 2028): fund volume production ramp, establish Asia-Pacific manufacturing partnership, complete regulatory filing in EU/US/China. IPO (2030, target): based on $840M ARR at 5x revenue multiple, with $12.4B SOM capture trajectory.",
       strategic: "The funding roadmap is milestone-driven, not time-driven. Each round is triggered by a specific technical and commercial milestone: Series B by v2.0 tape-out, Series C by first OEM production contract, IPO by $100M ARR. This structure minimizes dilution and maximizes valuation at each stage.",
       keyPoints: [
         "Series B $85M (Q3 2026): v2.0 tape-out + 5 OEM qualifications",
         "Series C $220M (Q1 2028): volume production + regulatory filing",
-        "IPO 2030: $4.2B valuation at $840M ARR × 5x multiple",
+        "IPO 2030: at $840M ARR × 5x multiple",
         "Milestone-driven structure minimizes dilution",
         "Appendix F: Gasification validation — 4B state space, 200-register working set, 20M:1 compression ratio",
       ],
@@ -1567,8 +1567,8 @@ export const slidesC: SlideC[] = [
     fa: {
       title: "استراتژی تأمین مالی: نقشه راه از Series B تا IPO",
       strategic: "نقشه راه تأمین مالی مبتنی بر نقاط عطف است، نه زمان. هر دور با یک نقطه عطف فنی و تجاری خاص فعال می‌شود: Series B با tape-out نسخه ۲.۰، Series C با اولین قرارداد تولید OEM، IPO با ۱۰۰ میلیون دلار ARR.",
-      narrative: "Series B (۸۵ میلیون دلار، Q3 2026): tape-out Ghost EPU v2.0 (TSMC 3nm)، گسترش صلاحیت‌سنجی به ۵ OEM اضافی، استخدام ۴۰ مهندس. Series C (۲۲۰ میلیون دلار، Q1 2028): رمپ تولید انبوه، مشارکت تولیدی آسیا-اقیانوسیه، ثبت نظارتی EU/US/چین. IPO (2030، هدف ۴.۲ میلیارد دلار ارزش‌گذاری).",
-      keyPoints: ["Series B ۸۵ میلیون دلار: tape-out v2.0 + ۵ صلاحیت OEM", "Series C ۲۲۰ میلیون دلار: تولید انبوه + ثبت نظارتی", "IPO 2030: ۴.۲ میلیارد دلار ارزش‌گذاری", "ساختار مبتنی بر نقطه عطف", "پیوست F: اعتبارسنجی گازی‌سازی — فضای ۴ میلیارد حالت، مجموعه کاری ۲۰۰ رجیستر، نسبت فشرده‌سازی ۲۰ میلیون:۱"],
+      narrative: "Series B (۸۵ میلیون دلار، Q3 2026): tape-out Ghost EPU v2.0 (TSMC 3nm)، گسترش صلاحیت‌سنجی به ۵ OEM اضافی، استخدام ۴۰ مهندس. Series C (۲۲۰ میلیون دلار، Q1 2028): رمپ تولید انبوه، مشارکت تولیدی آسیا-اقیانوسیه، ثبت نظارتی EU/US/چین. IPO (2030، هدف).",
+      keyPoints: ["Series B ۸۵ میلیون دلار: tape-out v2.0 + ۵ صلاحیت OEM", "Series C ۲۲۰ میلیون دلار: تولید انبوه + ثبت نظارتی", "IPO 2030:", "ساختار مبتنی بر نقطه عطف", "پیوست F: اعتبارسنجی گازی‌سازی — فضای ۴ میلیارد حالت، مجموعه کاری ۲۰۰ رجیستر، نسبت فشرده‌سازی ۲۰ میلیون:۱"],
       tags: ["تأمین مالی", "Series B", "IPO", "ارزش‌گذاری", "نقشه راه"]
     }
   },
@@ -1760,13 +1760,13 @@ export const slidesC: SlideC[] = [
     id: 60, act: "Integration", actLabel: ACT_LABELS_C.Integration, imageUrl: imgC(60),
     en: {
       title: "Vision 2030: Ghost EPU as the Safety Compute Standard for Autonomous Mobility",
-      narrative: "By 2030, Ghost EPU's vision is to be the de facto safety compute standard for autonomous mobility — the processor that every Level 4/5 vehicle uses because it is the only processor that satisfies all regulatory requirements natively. The path: 2026 — first production vehicle with Ghost EPU (OEM-A). 2027 — 100,000 units shipped, Series C closed. 2028 — regulatory compliance in all 4 major markets. 2029 — 1M units shipped, $840M ARR. 2030 — IPO, 2M units/year, $4.2B valuation.",
+      narrative: "By 2030, Ghost EPU's vision is to be the de facto safety compute standard for autonomous mobility — the processor that every Level 4/5 vehicle uses because it is the only processor that satisfies all regulatory requirements natively. The path: 2026 — first production vehicle with Ghost EPU (OEM-A). 2027 — 100,000 units shipped, Series C closed. 2028 — regulatory compliance in all 4 major markets. 2029 — 1M units shipped, $840M ARR. 2030 — IPO, 2M units/year.",
       strategic: "The 2030 vision is not aspirational — it is the logical outcome of the current trajectory. Ghost EPU has already completed the hardest steps: hardware design, ASIL-D certification, and Tier-1 OEM qualification. The remaining steps are execution: production ramp, regulatory filing, and market expansion.",
       keyPoints: [
         "2026: first production vehicle with Ghost EPU",
         "2028: regulatory compliance in EU, US, China, Japan",
         "2029: 1M units, $840M ARR",
-        "2030: IPO at $4.2B valuation — the safety compute standard for autonomy",
+        "2030: IPO at — the safety compute standard for autonomy",
         "Appendix O: Glossary — 47 technical terms with precise definitions and cross-references to source equations",
       ],
       tags: ["Vision 2030", "IPO", "Production", "Regulatory", "Standard"],
@@ -1775,7 +1775,7 @@ export const slidesC: SlideC[] = [
       title: "چشم‌انداز ۲۰۳۰: Ghost EPU به عنوان استاندارد محاسبات ایمنی برای تحرک خودران",
       strategic: "چشم‌انداز ۲۰۳۰ آرزویی نیست — نتیجه منطقی مسیر فعلی است. Ghost EPU قبلاً سخت‌ترین مراحل را تکمیل کرده: طراحی سخت‌افزار، گواهینامه ASIL-D، و صلاحیت‌سنجی OEM Tier-1. مراحل باقی‌مانده اجرایی هستند.",
       narrative: "تا ۲۰۳۰، چشم‌انداز Ghost EPU این است که استاندارد محاسبات ایمنی de facto برای تحرک خودران باشد. مسیر: ۲۰۲۶ — اولین خودروی تولیدی با Ghost EPU. ۲۰۲۷ — ۱۰۰,۰۰۰ واحد ارسال‌شده. ۲۰۲۸ — انطباق نظارتی در ۴ بازار. ۲۰۲۹ — ۱ میلیون واحد، ۸۴۰ میلیون دلار ARR. ۲۰۳۰ — IPO، ۲ میلیون واحد/سال.",
-      keyPoints: ["۲۰۲۶: اولین خودروی تولیدی با Ghost EPU", "۲۰۲۸: انطباق نظارتی در EU، US، چین، ژاپن", "۲۰۲۹: ۱ میلیون واحد، ۸۴۰ میلیون دلار ARR", "۲۰۳۰: IPO با ارزش‌گذاری ۴.۲ میلیارد دلار", "پیوست O: واژه‌نامه — ۴۷ اصطلاح فنی با تعاریف دقیق و ارجاعات متقابل به معادلات منبع"],
+      keyPoints: ["۲۰۲۶: اولین خودروی تولیدی با Ghost EPU", "۲۰۲۸: انطباق نظارتی در EU، US، چین، ژاپن", "۲۰۲۹: ۱ میلیون واحد، ۸۴۰ میلیون دلار ARR", "۲۰۳۰: IPO با ارزش‌گذاری ", "پیوست O: واژه‌نامه — ۴۷ اصطلاح فنی با تعاریف دقیق و ارجاعات متقابل به معادلات منبع"],
       tags: ["چشم‌انداز ۲۰۳۰", "IPO", "تولید", "نظارتی", "استاندارد"]
     }
   },
