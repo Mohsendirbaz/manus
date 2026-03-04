@@ -60,7 +60,7 @@ const IMG_URLS_G: Record<number, string> = {
   4:  `${CDN_G}/g_int04_acoustic_module-AsRG22DxeYq2xMr96addXw.png`,
   5:  `${CDN_G}/g_int05_haptic_surface-cKbBBafNRT7DCbtTDTB5Xq.png`,
   6:  `${CDN_G}/g_veh06_central_computer-DQYuSVsvkVPEdJcNoBuHL3.png`,
-  7:  `${CDN_G}/g_veh07_sensor_array-3AumnwNML38dj9NaMQ43d8.png`,
+  7:  `${CDN_G}/g_veh07_sensor_array_6cd95825.png`,
   8:  `${CDN_G}/g_veh08_power_electronics-YursXh6dAqGpVeNoiX3rPg.png`,
   9:  `${CDN_G}/g_veh09_sw_powertrain-V4AUuCBpMbA4LWvechhNYC.png`,
   10: `${CDN_G}/g_veh10_digital_twin-VpjS5rt9H6L7daTZdoYzcy.png`,
@@ -468,22 +468,22 @@ export const slidesG: SlideG[] = [
     actLabel: { en: "Investor Pathway", fa: "مسیر سرمایه‌گذار" },
     imageUrl: imgG(11),
     en: {
-      title: "Investor Pathway — From Physics to $4.2B Valuation in 40 Slides",
+      title: "Investor Pathway — The Complete Story in 40 Slides",
       narrative:
-        "This curated 40-slide sequence tells the complete Ghost EPU story through the lens of market opportunity, competitive moat, and financial return. It begins with the foundational physics vision (EPU-1 through EPU-3), establishes the $2.1T market opportunity and competitive landscape (C-2, C-3, C-5), then builds the technical moat through the 10-Gate architecture and PICAPD ISA (EPU-34, C-24, C-29). The vertical integration story unfolds through HPSA's mine-to-chip pipeline (C-17, C-18) and the Quad-Plus Alliance (C-20, C-22). Financial architecture covers the business model, Series B ($120M), IPO strategy ($2.8–4.2B), and 23-patent IP portfolio (C-39 through C-42). Benchmarks against NVIDIA and Mobileye (C-48) establish performance superiority, while the Entity Scoring Matrix and Valuation Path (C-65, C-63) provide due diligence frameworks.",
+        "This curated 40-slide sequence tells the complete Ghost EPU story through the lens of market opportunity, competitive moat, and financial return. It begins with the foundational physics vision (EPU-1 through EPU-3), establishes the $2.1T market opportunity and competitive landscape (C-2, C-3, C-5), then builds the technical moat through the 10-Gate architecture and PICAPD ISA (EPU-34, C-24, C-29). The vertical integration story unfolds through HPSA's mine-to-chip pipeline (C-17, C-18) and the Quad-Plus Alliance (C-20, C-22). Financial architecture covers the business model, Series B ($120M), IPO strategy, and 23-patent IP portfolio (C-39 through C-42). Benchmarks against NVIDIA and Mobileye (C-48) establish performance superiority, while the Entity Scoring Matrix and Valuation Path (C-65, C-63) provide due diligence frameworks.",
       strategic:
-        "The Investor Pathway is designed for Series B due diligence, board presentations, and LP meetings. It answers the five questions every institutional investor asks: Why now? ($469B autonomous vehicle market by 2035), Why this team? (petroleum engineering → chemical engineering → semiconductor → AI), Why defensible? (physics-grounded determinism vs. probabilistic ML), What's the exit? (NASDAQ IPO at $2.8–4.2B), and What are the risks? (C-44 risk matrix with mitigations). The 40-slide constraint forces maximum information density per slide.",
+        "The Investor Pathway is designed for Series B due diligence, board presentations, and LP meetings. It answers the five questions every institutional investor asks: Why now? ($469B autonomous vehicle market by 2035), Why this team? (petroleum engineering → chemical engineering → semiconductor → AI), Why defensible? (physics-grounded determinism vs. probabilistic ML), What's the exit? (NASDAQ IPO), and What are the risks? (C-44 risk matrix with mitigations). The 40-slide constraint forces maximum information density per slide.",
       keyPoints: [
         "40-slide curated sequence across all 8 decks — the complete investment story in one sitting",
         "Covers: vision → market ($2.1T) → architecture → vertical integration → financials → exit strategy",
         "Benchmarks: Ghost EPU vs. NVIDIA Drive Orin vs. Mobileye EyeQ6 — performance and safety metrics",
-        "Financial arc: Series B ($120M) → IPO ($2.8–4.2B) with 23-patent IP portfolio and Coq-verified proofs",
+        "Financial arc: Series B ($120M) → IPO with 23-patent IP portfolio and Coq-verified proofs",
         "Reading order: EPU-1,2,3 → C-2,3,5 → EPU-30,34 → C-24,29,30,32 → EPU-53 → C-17,18,20,22 → C-39–44 → C-48,50,65,63,67 → D-118,119 → E-25,29 → EPU-55,56,60 → F-1,3,5 → G-1,10",
       ],
       tags: ["investor-pathway", "curated-sequence", "due-diligence", "valuation", "IPO", "Series-B"],
     },
     fa: {
-      title: "مسیر سرمایه‌گذار — از فیزیک تا ارزش‌گذاری ۴.۲ میلیارد دلاری در ۴۰ اسلاید",
+      title: "مسیر سرمایه‌گذار — داستان کامل در ۴۰ اسلاید",
       narrative:
         "این توالی ۴۰ اسلایدی داستان کامل Ghost EPU را از منظر فرصت بازار، خندق رقابتی و بازده مالی روایت می‌کند. از چشم‌انداز فیزیک بنیادین آغاز می‌شود، فرصت بازار ۲.۱ تریلیون دلاری را تثبیت می‌کند، سپس خندق فنی را از طریق معماری ۱۰-دروازه و ISA PICAPD می‌سازد.",
       strategic:
@@ -492,7 +492,7 @@ export const slidesG: SlideG[] = [
         "توالی ۴۰ اسلایدی از هر ۸ Deck — داستان کامل سرمایه‌گذاری در یک نشست",
         "پوشش: چشم‌انداز → بازار (۲.۱T$) → معماری → یکپارچگی عمودی → مالی → استراتژی خروج",
         "معیارسنجی: Ghost EPU در برابر NVIDIA Drive Orin و Mobileye EyeQ6",
-        "مسیر مالی: سری B (۱۲۰M$) → IPO (۲.۸–۴.۲B$) با ۲۳ پتنت و اثبات‌های Coq",
+        "مسیر مالی: سری B (۱۲۰M$) → IPO با ۲۳ پتنت و اثبات‌های Coq",
         "ترتیب خواندن: EPU-1,2,3 → C-2,3,5 → EPU-30,34 → C-24,29,30,32 → EPU-53 → C-17,18,20,22 → C-39–44 → C-48,50,65,63,67 → D-118,119 → E-25,29 → EPU-55,56,60 → F-1,3,5 → G-1,10",
       ],
       tags: ["مسیر-سرمایه‌گذار", "توالی-منتخب", "بررسی-دقیق", "ارزش‌گذاری", "IPO"],

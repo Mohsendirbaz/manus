@@ -59,3 +59,8 @@
 - [x] CP.2 Generate 3 cinematic images for the pathway slides
 - [x] CP.3 Add 3 slides to slidesG.ts with full bilingual content
 - [x] CP.4 Update platform to show 360 total, verify and checkpoint
+
+## Image Inspection
+- [x] IMG.1 Extract and validate all image URLs across all 8 decks (360 URLs checked)
+- [x] IMG.2 Fix 1 broken URL: G-7 sensor_array re-uploaded
+- [x] IMG.3 New URL verified (HTTP 200)
