@@ -1853,6 +1853,93 @@ export const slides60: Slide60[] = [
       tags: ["ترکیب راهبردی", "خندق رقابتی", "روش‌شناسی", "فیزیک", "مالکیت بازار"],
     },
   },
+  {
+    id: 61, act: "I", actLabel: ACT_LABELS.I, imageUrl: img(61),
+    en: {
+      title: "Bridge I\u2192II: From Sensor Chaos to Ordered State Space",
+      narrative: "Act I established that autonomous vehicles face a fundamental physics problem: six conservation laws must be simultaneously satisfied at every control cycle, yet current ML accelerators treat sensor fusion as a statistical pattern-matching task with no physical guarantees. The transition to Act II answers the question: if the problem is physics, what is the tool? The answer is the bilinear form B(u,v).",
+      strategic: "This bridge is critical for investor audiences who need to understand why Ghost did not simply build a better neural network. The answer \u2014 that safety requires physics, and physics requires bilinear algebra \u2014 is the foundational insight that separates Ghost from every competitor.",
+      keyPoints: [
+        "Act I conclusion: 6 conservation laws must hold simultaneously \u2014 no ML accelerator guarantees this",
+        "Pivot question: if the problem is physics, what mathematical tool encodes all 6 laws in one structure?",
+        "Answer: bilinear form B(u,v) \u2014 a single algebraic object unifying mass, momentum, energy, entropy, charge, vorticity",
+        "Act II preview: B(u,v) becomes the design primitive for every EPU gate, register, and data path",
+        "Key insight for investors: Ghost did not build a better neural net \u2014 it built a physics engine in silicon"
+      ],
+      tags: ["bridge", "Act-I-to-II", "bilinear-form", "physics", "paradigm-shift"],
+    },
+    fa: {
+      title: "\u067e\u0644 I\u2192II: \u0627\u0632 \u0622\u0634\u0648\u0628 \u062d\u0633\u06af\u0631\u06cc \u0628\u0647 \u0641\u0636\u0627\u06cc \u062d\u0627\u0644\u062a \u0645\u0646\u0638\u0645",
+      narrative: "\u067e\u0631\u062f\u0647 \u0627\u0648\u0644 \u062b\u0627\u0628\u062a \u06a9\u0631\u062f \u06a9\u0647 \u062e\u0648\u062f\u0631\u0648\u0647\u0627\u06cc \u062e\u0648\u062f\u0631\u0627\u0646 \u0628\u0627 \u0645\u0633\u0626\u0644\u0647 \u0628\u0646\u06cc\u0627\u062f\u06cc \u0641\u06cc\u0632\u06cc\u06a9\u06cc \u0645\u0648\u0627\u062c\u0647\u0646\u062f: \u0634\u0634 \u0642\u0627\u0646\u0648\u0646 \u0628\u0642\u0627 \u0628\u0627\u06cc\u062f \u0647\u0645\u0632\u0645\u0627\u0646 \u0628\u0631\u0642\u0631\u0627\u0631 \u0628\u0627\u0634\u0646\u062f.",
+      strategic: "\u0627\u06cc\u0646 \u067e\u0644 \u0628\u0631\u0627\u06cc \u0645\u062e\u0627\u0637\u0628\u0627\u0646 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631 \u062d\u06cc\u0627\u062a\u06cc \u0627\u0633\u062a.",
+      keyPoints: [
+        "\u0646\u062a\u06cc\u062c\u0647 \u067e\u0631\u062f\u0647 \u0627\u0648\u0644: \u06f6 \u0642\u0627\u0646\u0648\u0646 \u0628\u0642\u0627 \u0628\u0627\u06cc\u062f \u0647\u0645\u0632\u0645\u0627\u0646 \u0628\u0631\u0642\u0631\u0627\u0631 \u0628\u0627\u0634\u0646\u062f",
+        "\u0633\u0624\u0627\u0644 \u0645\u062d\u0648\u0631\u06cc: \u0627\u06af\u0631 \u0645\u0633\u0626\u0644\u0647 \u0641\u06cc\u0632\u06cc\u06a9 \u0627\u0633\u062a\u060c \u06a9\u062f\u0627\u0645 \u0627\u0628\u0632\u0627\u0631 \u0631\u06cc\u0627\u0636\u06cc \u0647\u0631 \u06f6 \u0642\u0627\u0646\u0648\u0646 \u0631\u0627 \u0631\u0645\u0632\u06af\u0630\u0627\u0631\u06cc \u0645\u06cc\u200c\u06a9\u0646\u062f\u061f",
+        "\u067e\u0627\u0633\u062e: \u0641\u0631\u0645 \u062f\u0648\u062e\u0637\u06cc B(u,v)",
+        "\u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc \u067e\u0631\u062f\u0647 \u062f\u0648\u0645: B(u,v) \u0627\u0648\u0644\u06cc\u0647 \u0637\u0631\u0627\u062d\u06cc \u0647\u0631 \u062f\u0631\u0648\u0627\u0632\u0647 EPU \u0645\u06cc\u200c\u0634\u0648\u062f",
+        "\u0628\u06cc\u0646\u0634 \u06a9\u0644\u06cc\u062f\u06cc: Ghost \u0634\u0628\u06a9\u0647 \u0639\u0635\u0628\u06cc \u0628\u0647\u062a\u0631 \u0646\u0633\u0627\u062e\u062a \u2014 \u0645\u0648\u062a\u0648\u0631 \u0641\u06cc\u0632\u06cc\u06a9 \u062f\u0631 \u0633\u06cc\u0644\u06cc\u06a9\u0648\u0646 \u0633\u0627\u062e\u062a"
+      ],
+      tags: ["\u067e\u0644", "\u067e\u0631\u062f\u0647-\u0627\u0648\u0644-\u0628\u0647-\u062f\u0648\u0645", "\u0641\u0631\u0645-\u062f\u0648\u062e\u0637\u06cc", "\u0641\u06cc\u0632\u06cc\u06a9"],
+    },
+  },
+  {
+    id: 62, act: "II", actLabel: ACT_LABELS.II, imageUrl: img(62),
+    en: {
+      title: "Bridge II\u2192III: From Mathematical Tool to Silicon Architecture",
+      narrative: "Act II demonstrated that the bilinear form B(u,v) is not merely an abstract mathematical tool but a computationally efficient one: 89.7:1 moment compression, O(n log n) gate complexity, and deterministic worst-case latency. The transition to Act III answers the next question: how does this mathematical object become a physical chip?",
+      strategic: "This bridge is essential for technical due diligence. Many deep-tech startups have elegant mathematics that never survives contact with silicon. Ghost's 10-Gate Architecture proves that the bilinear form is physically realisable.",
+      keyPoints: [
+        "Act II conclusion: B(u,v) achieves 89.7:1 compression, O(n log n) complexity, deterministic latency",
+        "Pivot question: how does an algebraic object become a physical chip with specific gate counts and power?",
+        "Answer: 10-Gate Architecture \u2014 each gate implements one conservation law, connected by verified data path",
+        "Act III preview: gate-level RTL, register file design, formal verification, and FPGA validation results",
+        "Key insight: Ghost's math is not theoretical \u2014 it maps directly to standard-cell ASIC flow"
+      ],
+      tags: ["bridge", "Act-II-to-III", "10-gate", "silicon", "architecture"],
+    },
+    fa: {
+      title: "\u067e\u0644 II\u2192III: \u0627\u0632 \u0627\u0628\u0632\u0627\u0631 \u0631\u06cc\u0627\u0636\u06cc \u0628\u0647 \u0645\u0639\u0645\u0627\u0631\u06cc \u0633\u06cc\u0644\u06cc\u06a9\u0648\u0646",
+      narrative: "\u067e\u0631\u062f\u0647 \u062f\u0648\u0645 \u0646\u0634\u0627\u0646 \u062f\u0627\u062f \u06a9\u0647 \u0641\u0631\u0645 \u062f\u0648\u062e\u0637\u06cc B(u,v) \u0646\u0647 \u0641\u0642\u0637 \u0627\u0628\u0632\u0627\u0631 \u0631\u06cc\u0627\u0636\u06cc \u0627\u0646\u062a\u0632\u0627\u0639\u06cc \u0628\u0644\u06a9\u0647 \u0627\u0628\u0632\u0627\u0631\u06cc \u0628\u0627 \u06a9\u0627\u0631\u0627\u06cc\u06cc \u0645\u062d\u0627\u0633\u0628\u0627\u062a\u06cc \u0627\u0633\u062a.",
+      strategic: "\u0627\u06cc\u0646 \u067e\u0644 \u0628\u0631\u0627\u06cc \u0628\u0631\u0631\u0633\u06cc \u0641\u0646\u06cc \u0636\u0631\u0648\u0631\u06cc \u0627\u0633\u062a.",
+      keyPoints: [
+        "\u0646\u062a\u06cc\u062c\u0647 \u067e\u0631\u062f\u0647 \u062f\u0648\u0645: B(u,v) \u0641\u0634\u0631\u062f\u0647\u200c\u0633\u0627\u0632\u06cc \u06f8\u06f9.\u06f7:\u06f1\u060c \u067e\u06cc\u0686\u06cc\u062f\u06af\u06cc O(n log n)\u060c \u062a\u0623\u062e\u06cc\u0631 \u0642\u0637\u0639\u06cc",
+        "\u0633\u0624\u0627\u0644 \u0645\u062d\u0648\u0631\u06cc: \u0686\u06af\u0648\u0646\u0647 \u0634\u06cc\u0621 \u062c\u0628\u0631\u06cc \u0628\u0647 \u062a\u0631\u0627\u0634\u0647 \u0641\u06cc\u0632\u06cc\u06a9\u06cc \u062a\u0628\u062f\u06cc\u0644 \u0645\u06cc\u200c\u0634\u0648\u062f\u061f",
+        "\u067e\u0627\u0633\u062e: \u0645\u0639\u0645\u0627\u0631\u06cc \u06f1\u06f0 \u062f\u0631\u0648\u0627\u0632\u0647 \u2014 \u0647\u0631 \u062f\u0631\u0648\u0627\u0632\u0647 \u06cc\u06a9 \u0642\u0627\u0646\u0648\u0646 \u0628\u0642\u0627 \u0631\u0627 \u067e\u06cc\u0627\u062f\u0647\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u062f",
+        "\u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc \u067e\u0631\u062f\u0647 \u0633\u0648\u0645: RTL \u0633\u0637\u062d \u062f\u0631\u0648\u0627\u0632\u0647\u060c \u0637\u0631\u0627\u062d\u06cc \u0641\u0627\u06cc\u0644 \u0631\u062c\u06cc\u0633\u062a\u0631\u060c \u062a\u0623\u06cc\u06cc\u062f \u0631\u0633\u0645\u06cc",
+        "\u0628\u06cc\u0646\u0634 \u06a9\u0644\u06cc\u062f\u06cc: \u0631\u06cc\u0627\u0636\u06cc\u0627\u062a Ghost \u0646\u0638\u0631\u06cc \u0646\u06cc\u0633\u062a \u2014 \u0645\u0633\u062a\u0642\u06cc\u0645\u0627\u064b \u0628\u0647 \u062c\u0631\u06cc\u0627\u0646 ASIC \u0646\u06af\u0627\u0634\u062a \u0645\u06cc\u200c\u0634\u0648\u062f"
+      ],
+      tags: ["\u067e\u0644", "\u067e\u0631\u062f\u0647-\u062f\u0648\u0645-\u0628\u0647-\u0633\u0648\u0645", "\u06f1\u06f0-\u062f\u0631\u0648\u0627\u0632\u0647", "\u0633\u06cc\u0644\u06cc\u06a9\u0648\u0646"],
+    },
+  },
+  {
+    id: 63, act: "III", actLabel: ACT_LABELS.III, imageUrl: img(63),
+    en: {
+      title: "Bridge III\u2192IV: From Architecture to Certified Product",
+      narrative: "Act III detailed the 10-Gate Architecture at RTL level: gate-level netlists, register file organisation (512 registers across 6 banks), formal verification results, and FPGA validation data. The transition to Act IV answers the final question: how does a validated architecture become a certified, shippable product?",
+      strategic: "This is the most important bridge for Tier-1 and OEM audiences. It demonstrates that Ghost is not a research lab but a product company with a clear path from validated silicon to cars on the road.",
+      keyPoints: [
+        "Act III conclusion: 10-Gate Architecture validated \u2014 RTL, 512-register file, formal proofs, FPGA data",
+        "Pivot question: how does validated architecture become a certified, shippable automotive product?",
+        "Answer: 4 parallel workstreams \u2014 ISO 26262 ASIL-D, AEC-Q100 Grade 1, Tier-1 integration, supply chain",
+        "Act IV preview: certification timeline, qualification test plan, reference design, foundry partnership",
+        "Key insight: Ghost pursues certification + qualification + integration + supply chain in parallel, not sequentially"
+      ],
+      tags: ["bridge", "Act-III-to-IV", "certification", "product", "Tier-1"],
+    },
+    fa: {
+      title: "\u067e\u0644 III\u2192IV: \u0627\u0632 \u0645\u0639\u0645\u0627\u0631\u06cc \u0628\u0647 \u0645\u062d\u0635\u0648\u0644 \u06af\u0648\u0627\u0647\u06cc\u200c\u0634\u062f\u0647",
+      narrative: "\u067e\u0631\u062f\u0647 \u0633\u0648\u0645 \u0645\u0639\u0645\u0627\u0631\u06cc \u06f1\u06f0 \u062f\u0631\u0648\u0627\u0632\u0647 \u0631\u0627 \u062f\u0631 \u0633\u0637\u062d RTL \u0634\u0631\u062d \u062f\u0627\u062f.",
+      strategic: "\u0627\u06cc\u0646 \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u067e\u0644 \u0628\u0631\u0627\u06cc \u0645\u062e\u0627\u0637\u0628\u0627\u0646 Tier-1 \u0648 OEM \u0627\u0633\u062a.",
+      keyPoints: [
+        "\u0646\u062a\u06cc\u062c\u0647 \u067e\u0631\u062f\u0647 \u0633\u0648\u0645: \u0645\u0639\u0645\u0627\u0631\u06cc \u06f1\u06f0 \u062f\u0631\u0648\u0627\u0632\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0634\u062f",
+        "\u0633\u0624\u0627\u0644 \u0645\u062d\u0648\u0631\u06cc: \u0686\u06af\u0648\u0646\u0647 \u0645\u0639\u0645\u0627\u0631\u06cc \u0628\u0647 \u0645\u062d\u0635\u0648\u0644 \u06af\u0648\u0627\u0647\u06cc\u200c\u0634\u062f\u0647 \u062a\u0628\u062f\u06cc\u0644 \u0645\u06cc\u200c\u0634\u0648\u062f\u061f",
+        "\u067e\u0627\u0633\u062e: \u06f4 \u062c\u0631\u06cc\u0627\u0646 \u06a9\u0627\u0631\u06cc \u0645\u0648\u0627\u0632\u06cc \u2014 ISO 26262\u060c AEC-Q100\u060c Tier-1\u060c \u0632\u0646\u062c\u06cc\u0631\u0647 \u062a\u0623\u0645\u06cc\u0646",
+        "\u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc \u067e\u0631\u062f\u0647 \u0686\u0647\u0627\u0631\u0645: \u062c\u062f\u0648\u0644 \u0632\u0645\u0627\u0646\u06cc \u06af\u0648\u0627\u0647\u06cc\u0646\u0627\u0645\u0647\u060c \u0637\u0631\u0627\u062d\u06cc \u0645\u0631\u062c\u0639",
+        "\u0628\u06cc\u0646\u0634 \u06a9\u0644\u06cc\u062f\u06cc: Ghost \u06af\u0648\u0627\u0647\u06cc\u0646\u0627\u0645\u0647 + \u0635\u0644\u0627\u062d\u06cc\u062a + \u06cc\u06a9\u067e\u0627\u0631\u0686\u06af\u06cc + \u0632\u0646\u062c\u06cc\u0631\u0647 \u062a\u0623\u0645\u06cc\u0646 \u0631\u0627 \u0645\u0648\u0627\u0632\u06cc \u062f\u0646\u0628\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u062f"
+      ],
+      tags: ["\u067e\u0644", "\u067e\u0631\u062f\u0647-\u0633\u0648\u0645-\u0628\u0647-\u0686\u0647\u0627\u0631\u0645", "\u06af\u0648\u0627\u0647\u06cc\u0646\u0627\u0645\u0647", "\u0645\u062d\u0635\u0648\u0644"],
+    },
+  },
 ];
 
 export const acts: Act[] = ["I", "II", "III", "IV"];

@@ -3837,5 +3837,34 @@ export const slidesD: SlideD[] = [
       ],
       tags: ["برآیند پشته کامل", "چشم‌انداز معماری", "معماری ۸ لایه", "مسیر تجاری", "آماده استقرار"]
     }
-  }
+  },
+  {
+    id: 121, act: "AgentFoundation", actLabel: ACT_LABELS_D.AgentFoundation, imageUrl: imgD(121),
+    en: {
+      title: "Reading Guide: EPU-MAS Architecture in 8 Acts",
+      narrative: "Deck D spans 120 slides organised into 8 Acts covering the complete EPU Multi-Agent System architecture. This reading guide maps each Act to its core question and recommends entry points by audience role.",
+      strategic: "This guide transforms Deck D from a dense 120-slide technical document into a navigable reference. Investors should start at Act 1 and Act 8. Engineers should start at Act 3 and Act 5. Regulators should start at Act 3 and Act 8.",
+      keyPoints: [
+        "8 Acts, 120 slides: Agent Foundation \u2192 Communication \u2192 Trust \u2192 Memory \u2192 Mechanical \u2192 Coordination \u2192 LLM \u2192 Synthesis",
+        "Investor path: Act 1 (overview) \u2192 Act 8 (system-level ASIL-D) \u2192 Act 6 (coordination scalability)",
+        "Engineer path: Act 3 (Byzantine tolerance) \u2192 Act 5 (actuator interface) \u2192 Act 4 (memory persistence)",
+        "Regulator path: Act 3 (fault tolerance proofs) \u2192 Act 8 (ASIL-D compliance) \u2192 Act 7 (LLM safety bounds)",
+        "Each Act is self-contained (15 slides) with cross-references to adjacent Acts for deeper exploration"
+      ],
+      tags: ["reading-guide", "navigation", "8-acts", "audience-paths", "EPU-MAS"],
+    },
+    fa: {
+      title: "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062e\u0648\u0627\u0646\u062f\u0646: \u0645\u0639\u0645\u0627\u0631\u06cc EPU-MAS \u062f\u0631 \u06f8 \u067e\u0631\u062f\u0647",
+      narrative: "Deck D \u0634\u0627\u0645\u0644 \u06f1\u06f2\u06f0 \u0627\u0633\u0644\u0627\u06cc\u062f \u062f\u0631 \u06f8 \u067e\u0631\u062f\u0647 \u0627\u0633\u062a \u06a9\u0647 \u0645\u0639\u0645\u0627\u0631\u06cc \u06a9\u0627\u0645\u0644 \u0633\u06cc\u0633\u062a\u0645 \u0686\u0646\u062f\u0639\u0627\u0645\u0644\u06cc EPU \u0631\u0627 \u067e\u0648\u0634\u0634 \u0645\u06cc\u200c\u062f\u0647\u062f.",
+      strategic: "\u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627 Deck D \u0631\u0627 \u0627\u0632 \u0633\u0646\u062f \u0641\u0646\u06cc \u0645\u062a\u0631\u0627\u06a9\u0645 \u0628\u0647 \u0645\u0631\u062c\u0639 \u0642\u0627\u0628\u0644 \u0646\u0627\u0648\u0628\u0631\u06cc \u062a\u0628\u062f\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u062f.",
+      keyPoints: [
+        "\u06f8 \u067e\u0631\u062f\u0647\u060c \u06f1\u06f2\u06f0 \u0627\u0633\u0644\u0627\u06cc\u062f: \u067e\u0627\u06cc\u0647 \u0639\u0627\u0645\u0644 \u2192 \u0627\u0631\u062a\u0628\u0627\u0637\u0627\u062a \u2192 \u0627\u0639\u062a\u0645\u0627\u062f \u2192 \u062d\u0627\u0641\u0638\u0647 \u2192 \u0633\u06cc\u06af\u0646\u0627\u0644 \u0645\u06a9\u0627\u0646\u06cc\u06a9\u06cc \u2192 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u2192 LLM \u2192 \u062a\u0631\u06a9\u06cc\u0628",
+        "\u0645\u0633\u06cc\u0631 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631: \u067e\u0631\u062f\u0647 \u06f1 \u2192 \u067e\u0631\u062f\u0647 \u06f8 \u2192 \u067e\u0631\u062f\u0647 \u06f6",
+        "\u0645\u0633\u06cc\u0631 \u0645\u0647\u0646\u062f\u0633: \u067e\u0631\u062f\u0647 \u06f3 \u2192 \u067e\u0631\u062f\u0647 \u06f5 \u2192 \u067e\u0631\u062f\u0647 \u06f4",
+        "\u0645\u0633\u06cc\u0631 \u0646\u0627\u0638\u0631: \u067e\u0631\u062f\u0647 \u06f3 \u2192 \u067e\u0631\u062f\u0647 \u06f8 \u2192 \u067e\u0631\u062f\u0647 \u06f7",
+        "\u0647\u0631 \u067e\u0631\u062f\u0647 \u0645\u0633\u062a\u0642\u0644 (\u06f1\u06f5 \u0627\u0633\u0644\u0627\u06cc\u062f) \u0628\u0627 \u0627\u0631\u062c\u0627\u0639\u0627\u062a \u0645\u062a\u0642\u0627\u0628\u0644 \u0628\u0647 \u067e\u0631\u062f\u0647\u200c\u0647\u0627\u06cc \u0645\u062c\u0627\u0648\u0631"
+      ],
+      tags: ["\u0631\u0627\u0647\u0646\u0645\u0627\u06cc-\u062e\u0648\u0627\u0646\u062f\u0646", "\u0646\u0627\u0648\u0628\u0631\u06cc", "\u06f8-\u067e\u0631\u062f\u0647", "\u0645\u0633\u06cc\u0631\u0647\u0627\u06cc-\u0645\u062e\u0627\u0637\u0628"],
+    },
+  },
 ];

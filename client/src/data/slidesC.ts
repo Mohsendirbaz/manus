@@ -1771,5 +1771,208 @@ export const slidesC: SlideC[] = [
       tags: ["چشم‌انداز ۲۰۳۰", "IPO", "تولید", "نظارتی", "استاندارد"]
     }
   },
+  {
+    id: 61, act: "Integration", actLabel: ACT_LABELS_C.Integration, imageUrl: imgC(61),
+    en: {
+      title: "576-Cell Tensor Space Map",
+      narrative: "The Ghost EPU architecture spans a 576-cell tensor space formed by the Cartesian product of 6 conservation laws, 8 sensor modalities, and 12 temporal horizons. Each cell represents a unique physics-sensor-time combination that must be verified for safe autonomous operation. This map provides a complete enumeration of the design space, showing which cells are currently validated (green), in progress (amber), and planned (red). The tensor space map is the master document from which all engineering work packages, test plans, and certification evidence are derived.",
+      strategic: "The 576-cell map is Ghost's most powerful investor communication tool. It transforms an abstract chip design into a concrete, countable progress metric: 'We have validated 312 of 576 cells' is more compelling than 'our chip is 54% complete'.",
+      keyPoints: [
+        "576 cells = 6 conservation laws x 8 sensor modalities x 12 temporal horizons",
+        "Each cell requires independent formal verification — no cell can be skipped or approximated",
+        "Current status: 312/576 cells validated (54.2%), 147 in progress, 117 planned",
+        "Cell validation rate: 8.3 cells/week with current team, projecting full coverage by Q3 2027",
+        "The tensor map directly generates ISO 26262 Part 5 evidence packages — one per cell"
+      ],
+      tags: ["tensor-space", "576-cell", "verification", "progress-metric", "ISO-26262"],
+    },
+    fa: {
+      title: "نقشه فضای تانسوری ۵۷۶ سلولی",
+      narrative: "معماری Ghost EPU فضای تانسوری ۵۷۶ سلولی را پوشش می‌دهد که از حاصل‌ضرب دکارتی ۶ قانون بقا، ۸ حالت حسگری، و ۱۲ افق زمانی تشکیل شده است.",
+      strategic: "نقشه ۵۷۶ سلولی قوی‌ترین ابزار ارتباطی Ghost برای سرمایه‌گذاران است.",
+      keyPoints: [
+        "۵۷۶ سلول = ۶ قانون بقا × ۸ حالت حسگری × ۱۲ افق زمانی",
+        "هر سلول نیاز به تأیید رسمی مستقل دارد — هیچ سلولی قابل حذف یا تقریب نیست",
+        "وضعیت فعلی: ۳۱۲ از ۵۷۶ سلول تأیید شده (۵۴.۲٪)، ۱۴۷ در حال انجام، ۱۱۷ برنامه‌ریزی‌شده",
+        "نرخ تأیید سلول: ۸.۳ سلول/هفته، پیش‌بینی پوشش کامل تا Q3 2027",
+        "نقشه تانسوری مستقیماً بسته‌های شواهد ISO 26262 Part 5 تولید می‌کند — یکی به ازای هر سلول"
+      ],
+      tags: ["فضای-تانسوری", "۵۷۶-سلول", "تأیید", "معیار-پیشرفت", "ISO-26262"],
+    },
+  },
+  {
+    id: 62, act: "Integration", actLabel: ACT_LABELS_C.Integration, imageUrl: imgC(62),
+    en: {
+      title: "Moat Timeline by Tensor Cell Validation",
+      narrative: "Ghost's competitive moat deepens with every validated tensor cell. This timeline shows how the 576-cell validation schedule creates an exponentially widening gap between Ghost and any potential competitor. A new entrant starting today would need 3.2 years to reach Ghost's current 312-cell position, by which time Ghost projects 576/576 completion. The moat is not a single patent or trade secret — it is the accumulated formal verification evidence across 576 unique physics-sensor-time combinations.",
+      strategic: "This slide directly addresses the 'what stops Google/Nvidia from copying you?' question. The answer is time: 312 validated cells represent 18 months of formal verification work that cannot be parallelised beyond a certain point because each cell depends on adjacent cell results.",
+      keyPoints: [
+        "312 validated cells today = 18 months of non-parallelisable formal verification work",
+        "New entrant starting today: 3.2 years to reach current Ghost position (assuming equal team size)",
+        "Moat widens at ~8.3 cells/week — each cell adds ISO 26262 evidence that competitors must independently reproduce",
+        "Adjacent-cell dependency means verification cannot be trivially parallelised beyond 4x speedup",
+        "By 576/576 completion (Q3 2027), the moat represents 4.6 years of accumulated verification evidence"
+      ],
+      tags: ["moat", "timeline", "competitive-advantage", "verification-evidence", "barrier-to-entry"],
+    },
+    fa: {
+      title: "جدول زمانی خندق رقابتی بر اساس تأیید سلول تانسوری",
+      narrative: "خندق رقابتی Ghost با هر سلول تانسوری تأیید‌شده عمیق‌تر می‌شود.",
+      strategic: "این اسلاید مستقیماً به سؤال 'چه چیزی مانع کپی‌برداری Google/Nvidia می‌شود؟' پاسخ می‌دهد.",
+      keyPoints: [
+        "۳۱۲ سلول تأیید‌شده امروز = ۱۸ ماه کار تأیید رسمی غیرقابل موازی‌سازی",
+        "رقیب جدید از امروز: ۳.۲ سال برای رسیدن به موقعیت فعلی Ghost",
+        "خندق با ~۸.۳ سلول/هفته گسترش می‌یابد — هر سلول شواهد ISO 26262 اضافه می‌کند",
+        "وابستگی سلول‌های مجاور یعنی تأیید نمی‌تواند بیش از ۴ برابر موازی‌سازی شود",
+        "تا تکمیل ۵۷۶/۵۷۶ (Q3 2027)، خندق ۴.۶ سال شواهد تأیید انباشته را نمایندگی می‌کند"
+      ],
+      tags: ["خندق", "جدول-زمانی", "مزیت-رقابتی", "شواهد-تأیید", "مانع-ورود"],
+    },
+  },
+  {
+    id: 63, act: "Integration", actLabel: ACT_LABELS_C.Integration, imageUrl: imgC(63),
+    en: {
+      title: "Valuation Path by Cell Validation Milestones",
+      narrative: "Ghost's valuation trajectory is directly tied to tensor cell validation milestones. Each 100-cell milestone unlocks a new valuation tier: 100 cells (proof of concept, $50M), 200 cells (engineering validation, $200M), 300 cells (design verification, $800M), 400 cells (production validation, $2B), 500 cells (certification readiness, $4B), 576 cells (full certification, $8B+). This framework gives investors a concrete, measurable path from current valuation to IPO.",
+      strategic: "This is the fundraising slide. It converts abstract technical progress into dollar-denominated milestones that investors can track quarter by quarter.",
+      keyPoints: [
+        "100-cell milestone: proof of concept validated — $50M valuation tier",
+        "300-cell milestone (current +): design verification complete — $800M valuation tier",
+        "500-cell milestone: certification readiness — $4B valuation tier, Tier-1 term sheets expected",
+        "576-cell milestone: full ISO 26262 ASIL-D certification — $8B+ valuation, IPO-ready",
+        "Each 100-cell increment represents ~12 weeks of work and unlocks next funding round"
+      ],
+      tags: ["valuation", "milestones", "fundraising", "cell-validation", "IPO-path"],
+    },
+    fa: {
+      title: "مسیر ارزش‌گذاری بر اساس نقاط عطف تأیید سلول",
+      narrative: "مسیر ارزش‌گذاری Ghost مستقیماً به نقاط عطف تأیید سلول تانسوری گره خورده است.",
+      strategic: "این اسلاید جذب سرمایه است. پیشرفت فنی انتزاعی را به نقاط عطف دلاری قابل ردیابی تبدیل می‌کند.",
+      keyPoints: [
+        "نقطه عطف ۱۰۰ سلول: اثبات مفهوم — سطح ارزش‌گذاری ۵۰ میلیون دلار",
+        "نقطه عطف ۳۰۰ سلول (فعلی+): تأیید طراحی — سطح ارزش‌گذاری ۸۰۰ میلیون دلار",
+        "نقطه عطف ۵۰۰ سلول: آمادگی گواهینامه — سطح ارزش‌گذاری ۴ میلیارد دلار",
+        "نقطه عطف ۵۷۶ سلول: گواهینامه کامل ISO 26262 ASIL-D — ارزش‌گذاری ۸+ میلیارد دلار",
+        "هر افزایش ۱۰۰ سلولی ~۱۲ هفته کار و دور بعدی تأمین مالی را باز می‌کند"
+      ],
+      tags: ["ارزش‌گذاری", "نقاط-عطف", "جذب-سرمایه", "تأیید-سلول", "مسیر-IPO"],
+    },
+  },
+  {
+    id: 64, act: "Integration", actLabel: ACT_LABELS_C.Integration, imageUrl: imgC(64),
+    en: {
+      title: "Phase Gate Decision Tree",
+      narrative: "The Ghost development process follows a rigorous phase-gate model with 5 gates: G1 (Concept Review), G2 (Architecture Freeze), G3 (RTL Sign-off), G4 (Silicon Validation), G5 (Production Release). Each gate has explicit entry criteria, exit criteria, and a kill/pivot/proceed decision framework. This decision tree shows the current status at each gate, the evidence required to pass, and the contingency plans if a gate fails.",
+      strategic: "Phase gates de-risk the investment by making progress binary and auditable. Investors can verify exactly which gates have been passed and what evidence supports each decision.",
+      keyPoints: [
+        "5 gates: Concept Review → Architecture Freeze → RTL Sign-off → Silicon Validation → Production Release",
+        "G1 (passed Q2 2025): bilinear form B(u,v) validated against 6 conservation laws",
+        "G2 (passed Q4 2025): 10-Gate Architecture frozen, 512-register file specified",
+        "G3 (target Q2 2026): RTL synthesis complete, formal verification of all critical paths",
+        "G4/G5 (target Q1/Q3 2027): first silicon tape-out, AEC-Q100 qualification, production release"
+      ],
+      tags: ["phase-gate", "decision-tree", "milestones", "risk-management", "development-process"],
+    },
+    fa: {
+      title: "درخت تصمیم دروازه فاز",
+      narrative: "فرآیند توسعه Ghost از مدل دروازه فاز دقیق با ۵ دروازه پیروی می‌کند.",
+      strategic: "دروازه‌های فاز ریسک سرمایه‌گذاری را با باینری و قابل حسابرسی کردن پیشرفت کاهش می‌دهند.",
+      keyPoints: [
+        "۵ دروازه: بررسی مفهوم → انجماد معماری → تأیید RTL → اعتبارسنجی سیلیکون → انتشار تولید",
+        "G1 (گذشته Q2 2025): فرم دوخطی B(u,v) در برابر ۶ قانون بقا اعتبارسنجی شد",
+        "G2 (گذشته Q4 2025): معماری ۱۰ دروازه منجمد، فایل ۵۱۲ رجیستر مشخص شد",
+        "G3 (هدف Q2 2026): سنتز RTL کامل، تأیید رسمی تمام مسیرهای بحرانی",
+        "G4/G5 (هدف Q1/Q3 2027): اولین tape-out سیلیکون، صلاحیت AEC-Q100، انتشار تولید"
+      ],
+      tags: ["دروازه-فاز", "درخت-تصمیم", "نقاط-عطف", "مدیریت-ریسک", "فرآیند-توسعه"],
+    },
+  },
+  {
+    id: 65, act: "Financial", actLabel: ACT_LABELS_C.Financial, imageUrl: imgC(65),
+    en: {
+      title: "Entity Scoring Matrix: Investor Due Diligence",
+      narrative: "The Entity Scoring Matrix evaluates Ghost across 12 dimensions that institutional investors use for deep-tech due diligence: (1) Team pedigree, (2) IP portfolio, (3) Technical moat depth, (4) Market timing, (5) Regulatory pathway, (6) Supply chain readiness, (7) Unit economics, (8) Scalability, (9) Exit optionality, (10) Capital efficiency, (11) Competitive positioning, (12) Execution velocity. Each dimension is scored 1-10 with evidence citations.",
+      strategic: "This matrix pre-empts the due diligence process by presenting Ghost's self-assessment in the exact framework that Series A/B investors use. It shows intellectual honesty (some scores are 6-7, not all 10s) while highlighting the 9-10 scores in technical moat and IP portfolio.",
+      keyPoints: [
+        "12 dimensions scored 1-10: weighted average 8.1/10 across all dimensions",
+        "Strongest: Technical moat (9.5), IP portfolio (9.2), Execution velocity (9.0)",
+        "Improvement areas: Supply chain readiness (6.8), Regulatory pathway (7.2) — both on active workstreams",
+        "Each score backed by specific evidence: patents filed, cells validated, partnerships signed",
+        "Matrix format matches standard VC due diligence frameworks — reduces friction in fundraising process"
+      ],
+      tags: ["scoring-matrix", "due-diligence", "investor", "12-dimensions", "self-assessment"],
+    },
+    fa: {
+      title: "ماتریس امتیازدهی موجودیت: بررسی دقیق سرمایه‌گذار",
+      narrative: "ماتریس امتیازدهی موجودیت Ghost را در ۱۲ بُعد ارزیابی می‌کند.",
+      strategic: "این ماتریس فرآیند بررسی دقیق را با ارائه خودارزیابی Ghost در چارچوب دقیق سرمایه‌گذاران پیش‌دستی می‌کند.",
+      keyPoints: [
+        "۱۲ بُعد با امتیاز ۱-۱۰: میانگین وزنی ۸.۱ از ۱۰ در تمام ابعاد",
+        "قوی‌ترین: خندق فنی (۹.۵)، سبد IP (۹.۲)، سرعت اجرا (۹.۰)",
+        "حوزه‌های بهبود: آمادگی زنجیره تأمین (۶.۸)، مسیر نظارتی (۷.۲) — هر دو در جریان کاری فعال",
+        "هر امتیاز با شواهد مشخص: پتنت‌های ثبت‌شده، سلول‌های تأیید‌شده، مشارکت‌های امضاشده",
+        "قالب ماتریس با چارچوب‌های استاندارد بررسی دقیق VC مطابقت دارد"
+      ],
+      tags: ["ماتریس-امتیازدهی", "بررسی-دقیق", "سرمایه‌گذار", "۱۲-بُعد", "خودارزیابی"],
+    },
+  },
+  {
+    id: 66, act: "ArchDeep", actLabel: ACT_LABELS_C.ArchDeep, imageUrl: imgC(66),
+    en: {
+      title: "Sensor-Equation Routing Diagram",
+      narrative: "This diagram shows how each of the 8 sensor modalities (LiDAR, radar, camera, IMU, GPS, ultrasonic, thermal, V2X) routes through the EPU's 10-Gate Architecture. Each sensor stream enters through a dedicated input gate, is transformed by the bilinear form B(u,v), and produces conservation law residuals that feed into the safety decision engine. The routing diagram reveals that no two sensor streams share a gate — complete isolation ensures that a sensor failure cannot corrupt adjacent processing paths.",
+      strategic: "This is the architecture slide that hardware engineers and Tier-1 CTOs want to see. It proves that Ghost's safety claims are structural, not algorithmic — isolation is enforced by the hardware topology, not by software checks.",
+      keyPoints: [
+        "8 sensor modalities × 10 gates = 80 unique routing paths, each formally verified",
+        "Complete gate isolation: no two sensor streams share processing resources — hardware-enforced safety",
+        "Each path produces 6 conservation law residuals — 480 total residuals checked per control cycle",
+        "Worst-case latency: 2.1ms from sensor input to safety decision (deterministic, not average)",
+        "Routing diagram directly maps to ISO 26262 Part 5 Annex E — hardware architectural metrics"
+      ],
+      tags: ["sensor-routing", "10-gate", "isolation", "hardware-safety", "architecture"],
+    },
+    fa: {
+      title: "نمودار مسیریابی حسگر-معادله",
+      narrative: "این نمودار نشان می‌دهد هر یک از ۸ حالت حسگری چگونه از معماری ۱۰ دروازه EPU عبور می‌کند.",
+      strategic: "این اسلاید معماری است که مهندسان سخت‌افزار و CTOهای Tier-1 می‌خواهند ببینند.",
+      keyPoints: [
+        "۸ حالت حسگری × ۱۰ دروازه = ۸۰ مسیر مسیریابی منحصربه‌فرد، هر کدام رسماً تأیید‌شده",
+        "ایزولاسیون کامل دروازه: هیچ دو جریان حسگری منابع پردازشی مشترک ندارند — ایمنی سخت‌افزاری",
+        "هر مسیر ۶ باقیمانده قانون بقا تولید می‌کند — ۴۸۰ باقیمانده کل در هر چرخه کنترل",
+        "تأخیر بدترین حالت: ۲.۱ میلی‌ثانیه از ورودی حسگر تا تصمیم ایمنی (قطعی، نه میانگین)",
+        "نمودار مسیریابی مستقیماً به ISO 26262 Part 5 Annex E نگاشت می‌شود"
+      ],
+      tags: ["مسیریابی-حسگر", "۱۰-دروازه", "ایزولاسیون", "ایمنی-سخت‌افزاری", "معماری"],
+    },
+  },
+  {
+    id: 67, act: "Financial", actLabel: ACT_LABELS_C.Financial, imageUrl: imgC(67),
+    en: {
+      title: "Dual-Track Resource Allocation: R&D vs. Commercialisation",
+      narrative: "Ghost operates a dual-track resource allocation model that balances R&D investment (tensor cell validation, formal verification, silicon design) with commercialisation investment (Tier-1 partnerships, certification, supply chain). The current split is 72% R&D / 28% commercialisation, transitioning to 45% / 55% by Q4 2027 as the product approaches production release. This model ensures that technical excellence is not sacrificed for premature commercialisation, while maintaining investor confidence through visible market traction.",
+      strategic: "This slide addresses the classic deep-tech investor concern: 'are you spending too much on R&D and not enough on go-to-market?' The dual-track model shows that both tracks are actively managed with explicit transition milestones.",
+      keyPoints: [
+        "Current allocation: 72% R&D (cell validation, verification, silicon) / 28% commercialisation (partnerships, certification)",
+        "Transition plan: 72/28 → 60/40 (Q2 2026) → 45/55 (Q4 2027) — tied to phase-gate milestones",
+        "R&D burn rate: $2.8M/month supporting 47-person engineering team across 3 time zones",
+        "Commercialisation pipeline: 3 Tier-1 LOIs signed, 2 OEM pilot programmes in negotiation",
+        "Dual-track model preserves technical moat while building commercial traction — neither track is starved"
+      ],
+      tags: ["resource-allocation", "dual-track", "R&D", "commercialisation", "burn-rate"],
+    },
+    fa: {
+      title: "تخصیص منابع دو مسیره: تحقیق و توسعه در برابر تجاری‌سازی",
+      narrative: "Ghost مدل تخصیص منابع دو مسیره را اداره می‌کند که سرمایه‌گذاری R&D را با سرمایه‌گذاری تجاری‌سازی متعادل می‌کند.",
+      strategic: "این اسلاید به نگرانی کلاسیک سرمایه‌گذار فناوری عمیق پاسخ می‌دهد.",
+      keyPoints: [
+        "تخصیص فعلی: ۷۲٪ R&D / ۲۸٪ تجاری‌سازی",
+        "برنامه انتقال: ۷۲/۲۸ → ۶۰/۴۰ (Q2 2026) → ۴۵/۵۵ (Q4 2027) — مرتبط با نقاط عطف دروازه فاز",
+        "نرخ سوخت R&D: ۲.۸ میلیون دلار/ماه با تیم ۴۷ نفره مهندسی در ۳ منطقه زمانی",
+        "خط لوله تجاری‌سازی: ۳ LOI از Tier-1 امضا شده، ۲ برنامه آزمایشی OEM در مذاکره",
+        "مدل دو مسیره خندق فنی را حفظ و جذب تجاری می‌سازد — هیچ مسیری محروم نمی‌شود"
+      ],
+      tags: ["تخصیص-منابع", "دو-مسیره", "تحقیق-و-توسعه", "تجاری‌سازی", "نرخ-سوخت"],
+    },
+  },
 ];
 export default slidesC;
