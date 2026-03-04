@@ -64,7 +64,7 @@ const IMG_URLS_G: Record<number, string> = {
   8:  `${CDN_G}/g_veh08_power_electronics-YursXh6dAqGpVeNoiX3rPg.png`,
   9:  `${CDN_G}/g_veh09_sw_powertrain-V4AUuCBpMbA4LWvechhNYC.png`,
   10: `${CDN_G}/g_veh10_digital_twin-VpjS5rt9H6L7daTZdoYzcy.png`,
-  11: `${CDN_G}/g11_investor_pathway-5Zq3BeTdFrwJe4ddP39K9L.png`,
+  11: `${CDN_G}/g11_investor_pathway_clean_29cd330e.png`,
   12: `${CDN_G}/g12_engineer_pathway-ULqwoWahkyAvUd7GmEZoDF.png`,
   13: `${CDN_G}/g13_regulator_pathway-QogLKMHW7voYpK5CEXNrPG.png`,
 };
