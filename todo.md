@@ -1,60 +1,38 @@
-# EPU Strategy Site — Full Implementation TODO
+# EPU Portal — Improvement Waves v2.0
 
-## Phase 1 — Preparation
-- [ ] Fix naming: "Environment Processing Unit" → "Event Processing Unit" everywhere
-- [ ] Fix Persian name: پردازشگر رویدادمحور throughout
-- [ ] Update slides.ts Section types: add "10-Gate Architecture", "Register Architecture", "Validation & Certification"
-- [ ] Update sectionColors map with new section colors
-- [ ] Correct register allocation table in slides data (128+96+80+80+64+64=512)
-- [ ] Fix slides60.ts to use correct naming and schema
+## موج ۱ — یکپارچگی داده
+- [x] W1.1 تأیید حساب رجیسترها 512 در اسلایدهای ۴۶–۵۰
+- [x] W1.2 تأیید HTTP 200 برای CDN URLs
+- [x] W1.3 رنگ‌بندی Act برای Deck C/D/E (GA-CONV Dimension 4)
+- [x] W1.4 حذف ۴۴۱ مورد TWIN → EPU-MAS
+- [x] W1.5 عنوان اسلاید ۱ EN+FA
+- [x] W1.6 ۶ اسلاید Deck F با تصاویر سینماتیک
+- [x] W1.7 اصلاح C-26 → 5 keyPoints (EN+FA)
 
-## Phase 2 — Slides 31–40
-- [ ] Slide 31: The EPU Thesis — Physics-Certified Safety
-- [ ] Slide 32: EPU as Event-Driven Processor — Operational Definition
-- [ ] Slide 33: The Architectural Assertion — Pass Gate or Absorb at MRC
-- [ ] Slide 34: The 10-Gate Cascade — Flow Overview
-- [ ] Slide 35: Role of Each Gate — One Line, One Responsibility
-- [ ] Slide 36: Gate 1 — CCA Statistical Sensor Fusion
-- [ ] Slide 37: Gate 2 — Trigonometric Closure (Pythagorean Witness)
-- [ ] Slide 38: Gate 3 — Geometric Validation (Triangle Inequality)
-- [ ] Slide 39: Gate 4 — Topological Governance (Bicameral Democracy)
-- [ ] Slide 40: Gate 5 — Electrochemical Coupling (Nernst Urgency)
-- [ ] Persian translations for slides 31–40
+## موج ۲ — غنی‌سازی keyPoints
+- [ ] W2.1 Deck C: 60 slides → ≥5 keyPoints each (EN+FA)
+- [ ] W2.2 Deck D: 120 slides → ≥5 keyPoints each (EN+FA)
+- [ ] W2.3 Deck E: verify ≥5, fix any under threshold
 
-## Phase 3 — Slides 41–50
-- [ ] Slide 41: Gate 6 — Recursive Regularization (Fibonacci/Golden Ratio)
-- [ ] Slide 42: Gate 7 — Neural Network Inference (Worker→Manager→Queen)
-- [ ] Slide 43: Gate 8 — Equilibrium Validation (Symmetric Matrix)
-- [ ] Slide 44: Gate 9 — Irreversibility Enforcer (sct Watchdog)
-- [ ] Slide 45: Gate 10 — Integration Conservation (AGM Elliptic)
-- [ ] Slide 46: Register Architecture — 512 Working Set
-- [ ] Slide 47: R_sensor Domain — 128 Registers for Sensor Fusion
-- [ ] Slide 48: R_variational Domain — 96 Registers for ε_action
-- [ ] Slide 49: R_moments Domain — 80 Registers for Temporal Consistency
-- [ ] Slide 50: R_safety + R_byzantine — 144 Registers for Fault Tolerance
-- [ ] Persian translations for slides 41–50
+## موج ۳ — اسلایدهای جدید (۱۱ اسلاید)
+- [ ] W3.1 C-NEW-1: 576-Cell Tensor Space Map
+- [ ] W3.2 C-NEW-2: Moat Timeline by Tensor Cell
+- [ ] W3.3 C-NEW-3: Valuation Path by Cell Validation
+- [ ] W3.4 C-NEW-4: Phase Gate Decision Tree
+- [ ] W3.5 C-NEW-5: Entity Scoring Matrix
+- [ ] W3.6 C-NEW-6: Sensor-Equation Routing Diagram
+- [ ] W3.7 C-NEW-7: Dual-Track Resource Allocation
+- [ ] W3.8 EPU-BRIDGE-1: From Sensor Chaos to Ordered State
+- [ ] W3.9 EPU-BRIDGE-2: From Mathematical Tool to Architecture
+- [ ] W3.10 EPU-BRIDGE-3: From Architecture to Certified Product
+- [ ] W3.11 D-GUIDE: Reading Guide EPU-MAS Architecture
 
-## Phase 4 — Slides 51–60
-- [ ] Slide 51: Gasification Proof — 8.6% Error, 200 Cases
-- [ ] Slide 52: CCA Compression — 2.5 Quintillion → 4 Billion
-- [ ] Slide 53: ε_action Calibration — Highway/Urban/Off-road
-- [ ] Slide 54: WAL Budget Constraint — 3.3 GB/sec Ceiling
-- [ ] Slide 55: FPGA Prototype Phase — Validation Roadmap
-- [ ] Slide 56: ASIC Tape-Out — 15mm² @ 28nm, 80W
-- [ ] Slide 57: ISO 26262 ASIL-D — Certification Pathway
-- [ ] Slide 58: IP Portfolio — 7 Patent Families
-- [ ] Slide 59: Deployment Roadmap — $47M Budget
-- [ ] Slide 60: The Strategic Moat — Methodology as Competitive Advantage
-- [ ] Persian translations for slides 51–60
+## موج ۴ — تصاویر زیبایی‌شناختی
+- [ ] W4.1 Generate cinematic images for 7 new Deck C slides
+- [ ] W4.2 Generate co-design images for Deck D
+- [ ] W4.3 Match image tones to Act colors
 
-## Phase 5 — Images
-- [ ] Generate 30 images for slides 31–60 (parallel)
-- [ ] Upload to CDN
-
-## Phase 6 — Integration & QA
-- [ ] Wire CDN URLs into slides data
-- [ ] Run validation checklist (Section 7)
-- [ ] TypeScript: 0 errors
-- [ ] Search "Environment" → 0 results
-- [ ] 60 slides in both languages
-- [ ] Checkpoint and push to GitHub
+## موج ۵ — بهبود UI
+- [ ] W5.1 Audience path filters (investor/engineer/regulator)
+- [ ] W5.2 MVD tags in data file headers
+- [ ] W5.3 Farsi technical term improvements
