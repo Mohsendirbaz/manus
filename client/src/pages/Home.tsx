@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 type DeckId = "EPU" | "A" | "B" | "C" | "F";
 
 interface UnifiedSlide {
-  uid: string;          // unique across all 180: "EPU-1", "A-1", "B-1", "C-1"
+  uid: string;          // unique across all 186: "EPU-1", "A-1", "B-1", "C-1", "F-1"
   deck: DeckId;
   id: number;
   act: string;
@@ -522,7 +522,7 @@ export default function Home() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? "۱۸۰ اسلاید · ۴ Deck" : "180 Slides · 4 Decks"}
+                {isRTL ? `${allSlides.length} اسلاید · ۵ Deck` : `${allSlides.length} Slides · 5 Decks`}
               </p>
             </div>
 
@@ -532,7 +532,7 @@ export default function Home() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={isRTL ? "جستجو در ۱۸۰ اسلاید..." : "Search 180 slides..."}
+                placeholder={isRTL ? `جستجو در ${allSlides.length} اسلاید...` : `Search ${allSlides.length} slides...`}
                 className="w-full px-4 py-2 text-sm border rounded-sm outline-none transition-all focus:border-gray-400"
                 style={{
                   backgroundColor: "#FDFCFA",
