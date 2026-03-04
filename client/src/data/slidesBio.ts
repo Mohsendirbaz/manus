@@ -44,14 +44,14 @@ export const ACT_LABELS_F: Record<ActF, { en: string; fa: string }> = {
 // CDN base — reuse the existing project CDN bucket
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K";
 
-// Custom cinematic marketing images generated for Deck F
+// Custom cinematic marketing images — permanent CDN URLs (manus-upload-file --webdev)
 const IMG_URLS: Record<number, string> = {
-  1: `${CDN}/deck_f1_subsurface-c4hBZaLo26wK32b4TiEvoZ.png`,
-  2: `${CDN}/deck_f2_ammonia-iw4W2QccGKoNAGcw37iPLv.png`,
-  3: `${CDN}/deck_f3_hydrogen-fBWKcxEG4ZLkHhpiMJMHRe.png`,
-  4: `${CDN}/deck_f4_chip-jg5NwerbtBFygWwDtCkrzi.png`,
-  5: `${CDN}/deck_f5_g10-kH2UsuWcRoqCTLWootoWKV.png`,
-  6: `${CDN}/deck_f6_ai-Lazji3AHoMarDuN3qAv7Sk.png`,
+  1: `${CDN}/deck_f1_subsurface_f6b2f640.png`,
+  2: `${CDN}/deck_f2_ammonia_6ece55f9.png`,
+  3: `${CDN}/deck_f3_hydrogen_cb9a84b3.png`,
+  4: `${CDN}/deck_f4_chip_7be36e27.png`,
+  5: `${CDN}/deck_f5_g10_7b820b95.png`,
+  6: `${CDN}/deck_f6_ai_aed0067e.png`,
 };
 
 function imgF(n: number): string {
