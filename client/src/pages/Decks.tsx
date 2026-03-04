@@ -112,6 +112,28 @@ const decks = [
       tag: "TWIN_INT_2026_001",
     },
   },
+  {
+    id: "deck-e",
+    href: "/deck-e",
+    accentColor: "#7C3AED",
+    bgGradient: "linear-gradient(135deg, #0D0A1A 0%, #1A0D33 50%, #0D0A1A 100%)",
+    slideCount: 30,
+    actCount: 8,
+    en: {
+      label: "Deck E",
+      title: "Interior & Cabin View — EPU Strategy Origins",
+      description:
+        "30 slides presenting the original EPU strategy through the lens of interior vehicle design: cabin controller architecture, hoisted dome interface, H2 platform packaging, sensor constitution, safety architecture, modular serviceability, and TEA/LCA strategic moat.",
+      tag: "EPU_INTERIOR_2025_001",
+    },
+    fa: {
+      label: "Deck E",
+      title: "نمای داخلی و کابین — ریشه‌های استراتژی EPU",
+      description:
+        "۳۰ اسلاید ارائه استراتژی اولیه EPU از منظر طراحی داخلی خودرو: معماری کنترلر کابین، رابط گنبدی بالابرنده، بسته‌بندی پلتفرم H2، منشور حسگرها، معماری ایمنی، قابلیت سرویس ماژولار، و مزیت رقابتی TEA/LCA.",
+      tag: "EPU_INTERIOR_2025_001",
+    },
+  },
 ];
 
 export default function Decks() {
@@ -148,7 +170,7 @@ export default function Decks() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? "۳۰۰ اسلاید · ۵ Deck" : "300 Slides · 5 Decks"}
+                {isRTL ? "۳۳۰ اسلاید · ۶ Deck" : "330 Slides · 6 Decks"}
               </p>
             </div>
             <div className="flex-1" />
@@ -191,8 +213,8 @@ export default function Decks() {
               }}
             >
               {isRTL
-                ? "۳۰۰ اسلاید · پنج چارچوب"
-                : "300 Slides · Five Frameworks"}
+                ? "۳۳۰ اسلاید · شش چارچوب"
+                : "330 Slides · Six Frameworks"}
             </h1>
             <p
               className="text-sm leading-relaxed"
