@@ -526,7 +526,7 @@ export default function Home() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? "۳۰۰ اسلاید · ۵ Deck" : "180 Slides · 4 Decks"}
+                {isRTL ? "۳۳۰ اسلاید · ۶ Deck" : "330 Slides · 6 Decks"}
               </p>
             </div>
 
@@ -536,7 +536,7 @@ export default function Home() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={isRTL ? "جستجو در ۳۰۰ اسلاید..." : "Search 300 slides..."}
+                placeholder={isRTL ? "جستجو در ۳۳۰ اسلاید..." : "Search 330 slides..."}
                 className="w-full px-4 py-2 text-sm border rounded-sm outline-none transition-all focus:border-gray-400"
                 style={{
                   backgroundColor: "#FDFCFA",
