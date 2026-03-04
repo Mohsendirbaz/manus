@@ -45,7 +45,7 @@ export const slidesE: SlideE[] = [
     id: 1,
     act: "ExecutiveFraming",
     actLabel: { en: "Executive Framing", fa: "چارچوب اجرایی" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_01_45a8df0a.png",
     en: {
       title: "Physics-Certified, Carbon-Auditable Autonomy: The EPU Vision",
       narrative: "The EPU (Event Processing Unit) represents a paradigm shift in autonomous vehicle architecture — a physics-certified, carbon-auditable safety compute core that is fuel-agnostic and application-agnostic.",
@@ -91,7 +91,7 @@ export const slidesE: SlideE[] = [
     id: 2,
     act: "ExecutiveFraming",
     actLabel: { en: "Executive Framing", fa: "چارچوب اجرایی" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_02_11d6461d.png",
     en: {
       title: "EPU Is a Safety Compute Core, Not a Driving Assistant",
       narrative: "EPU is not an ADAS feature set. It is a sensor-to-decision safety pipeline governed by physics constraints, operating independently of any specific powertrain, HMI, or application domain.",
@@ -137,7 +137,7 @@ export const slidesE: SlideE[] = [
     id: 3,
     act: "ExecutiveFraming",
     actLabel: { en: "Executive Framing", fa: "چارچوب اجرایی" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_ee_evolution_77e6e021.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_03_cc8fd9f5.png",
     en: {
       title: "Scope Discipline — Core Roadmap vs. Application Notes",
       narrative: "Strategic clarity demands explicit scope boundaries. The EPU Core Roadmap encompasses physics proofs, sensor constitution design, certification evidence packages, and TEA/LCA governance integration.",
@@ -184,7 +184,7 @@ export const slidesE: SlideE[] = [
     id: 4,
     act: "ExecutiveFraming",
     actLabel: { en: "Executive Framing", fa: "چارچوب اجرایی" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_modular_serviceability_570859b8.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_04_d04d11f3.png",
     en: {
       title: "Four-Phase Integration Strategy — From TEA/LCA to Full Deployment",
       narrative: "The phased integration roadmap translates EPU strategy into executable milestones across an 8-week horizon and beyond, with four distinct phases and decision gates.",
@@ -230,7 +230,7 @@ export const slidesE: SlideE[] = [
     id: 5,
     act: "CabinController",
     actLabel: { en: "Cabin Controller", fa: "کنترلر کابین" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_cabin_interior_74c5743e.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_05_9b78765a.png",
     en: {
       title: "The Driverless Cabin — Preference-Only Interaction, Zero Override Authority",
       narrative: "The driverless cabin eliminates the steering wheel, pedal cluster, and driver-facing instrument panel entirely. The occupant interacts through a console-integrated semi-dome controller that expresses preferences, not commands.",
@@ -276,7 +276,7 @@ export const slidesE: SlideE[] = [
     id: 6,
     act: "CabinController",
     actLabel: { en: "Cabin Controller", fa: "کنترلر کابین" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_hoisted_controller_8bc01f7d.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_06_c53c695a.png",
     en: {
       title: "Controller Semantics — Direction and Intensity as Separate Channels",
       narrative: "The semi-dome controller resolves the fundamental ambiguity of single-axis joystick interfaces by separating direction and intensity into independent physical channels.",
@@ -322,7 +322,7 @@ export const slidesE: SlideE[] = [
     id: 7,
     act: "CabinController",
     actLabel: { en: "Cabin Controller", fa: "کنترلر کابین" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_cabin_interior_74c5743e.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_07_76295ad1.png",
     en: {
       title: "Three Interaction Modes — Low-Fatigue Default to Expressive Bounded Preference",
       narrative: "The controller supports three distinct interaction modes calibrated to occupant engagement level: two-finger default, five-finger engaged, and hoisted expressive mode.",
@@ -368,7 +368,7 @@ export const slidesE: SlideE[] = [
     id: 8,
     act: "HydrogenPlatform",
     actLabel: { en: "Hydrogen Platform", fa: "پلتفرم هیدروژن" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_08_6a0cad70.png",
     en: {
       title: "Hydrogen Driverless Platform — Full Systems Architecture",
       narrative: "The hydrogen driverless platform integrates LH2 storage, a fuel-cell stack, a buffer battery, centralized compute modules, a full sensor suite, and multi-domain thermal management into a single coherent architecture.",
@@ -414,7 +414,7 @@ export const slidesE: SlideE[] = [
     id: 9,
     act: "HydrogenPlatform",
     actLabel: { en: "Hydrogen Platform", fa: "پلتفرم هیدروژن" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_cabin_interior_74c5743e.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_09_2cb1bb87.png",
     en: {
       title: "Packaging Opportunity — What Removing the Driver Architecture Actually Frees",
       narrative: "Eliminating the conventional driver architecture creates measurable volume and mass opportunities, but these gains must be assessed honestly — safety validation still applies to all freed zones.",
@@ -460,7 +460,7 @@ export const slidesE: SlideE[] = [
     id: 10,
     act: "HydrogenPlatform",
     actLabel: { en: "Hydrogen Platform", fa: "پلتفرم هیدروژن" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_thermal_domain_bdb6d71a.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_10_cda83de0.png",
     en: {
       title: "LH2 Tank and Cryogenic Safety — Engineering Complexity Without Drama",
       narrative: "Liquid hydrogen storage at –253°C demands engineering rigor far beyond conventional fuel tank design, including multi-layer vacuum insulation, pressure relief, and crash deformation zones.",
@@ -506,7 +506,7 @@ export const slidesE: SlideE[] = [
     id: 11,
     act: "HydrogenPlatform",
     actLabel: { en: "Hydrogen Platform", fa: "پلتفرم هیدروژن" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_thermal_domain_bdb6d71a.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_11_162b35c3.png",
     en: {
       title: "Hydrogen Safety Supervisor — Monitoring as a Constitutional Subsystem",
       narrative: "The hydrogen-specific monitoring subsystem is a constitutional layer augmenting the EPU safety supervisor, with graded response from notification to Minimum Risk Condition (MRC) execution.",
@@ -552,7 +552,7 @@ export const slidesE: SlideE[] = [
     id: 12,
     act: "HydrogenPlatform",
     actLabel: { en: "Hydrogen Platform", fa: "پلتفرم هیدروژن" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_thermal_domain_bdb6d71a.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_12_8e858bb2.png",
     en: {
       title: "Triple Thermal Domain Management — Cryo, Fuel Cell, and Compute",
       narrative: "Managing three thermally distinct domains — cryogenic LH2, fuel-cell thermal loop, and compute thermal domain — in a single vehicle platform is one of the most complex systems engineering challenges.",
@@ -598,7 +598,7 @@ export const slidesE: SlideE[] = [
     id: 13,
     act: "HydrogenPlatform",
     actLabel: { en: "Hydrogen Platform", fa: "پلتفرم هیدروژن" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_13_e0aecb2b.png",
     en: {
       title: "2,000-Mile Range Target — Feasibility Study, Not Production Claim",
       narrative: "A 2,000-mile range concept target is an ambitious design aspiration requiring rigorous feasibility analysis. The target is decomposed into range assumptions, efficiency sensitivities, tank volume implications, and packaging constraints.",
@@ -644,7 +644,7 @@ export const slidesE: SlideE[] = [
     id: 14,
     act: "IntegratedElectronics",
     actLabel: { en: "Integrated Electronics", fa: "الکترونیک یکپارچه" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_ee_evolution_77e6e021.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_14_00732803.png",
     en: {
       title: "E/E Architecture Evolution — From Distributed ECUs to Centralized Intelligence",
       narrative: "The automotive E/E architecture has undergone three generations of evolution. EPU is architected for Generation 3: centralized/virtual domains with software-defined vehicle capabilities.",
@@ -690,7 +690,7 @@ export const slidesE: SlideE[] = [
     id: 15,
     act: "IntegratedElectronics",
     actLabel: { en: "Integrated Electronics", fa: "الکترونیک یکپارچه" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_15_f888fc0e.png",
     en: {
       title: "EPU-Centric Compute Architecture — The Constitutional Core",
       narrative: "The EPU compute module is the constitutional center of the vehicle's electronic architecture, connecting to sensor modules, power domains, HMI layer, and actuator interfaces via safety-monitored channels.",
@@ -736,7 +736,7 @@ export const slidesE: SlideE[] = [
     id: 16,
     act: "IntegratedElectronics",
     actLabel: { en: "Integrated Electronics", fa: "الکترونیک یکپارچه" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_ee_evolution_77e6e021.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_16_bd14b56e.png",
     en: {
       title: "Sensor-to-Compute Dataflow — Deterministic Timing as a Safety Guarantee",
       narrative: "The sensor-to-compute dataflow architecture enforces deterministic timing as a first-class safety property, with WCET bounds at every stage and safety monitors observing timing compliance.",
@@ -782,7 +782,7 @@ export const slidesE: SlideE[] = [
     id: 17,
     act: "IntegratedElectronics",
     actLabel: { en: "Integrated Electronics", fa: "الکترونیک یکپارچه" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_thermal_domain_bdb6d71a.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_17_151d591f.png",
     en: {
       title: "Power Domain Isolation and Thermal Zoning — Fault Containment by Design",
       narrative: "Power domain isolation and thermal zoning are the physical implementation of fault containment in the EPU architecture, enabling graceful degradation without MRC triggers for non-critical domain losses.",
@@ -828,7 +828,7 @@ export const slidesE: SlideE[] = [
     id: 18,
     act: "IntegratedElectronics",
     actLabel: { en: "Integrated Electronics", fa: "الکترونیک یکپارچه" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_modular_serviceability_570859b8.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_18_f21ede08.png",
     en: {
       title: "Modular Serviceability — Electronics Designed for Replacement, Not Discard",
       narrative: "The EPU architecture treats modular serviceability as a first-class design requirement. Sensor pods and compute modules use standardized interfaces enabling replacement without core system recertification.",
@@ -874,7 +874,7 @@ export const slidesE: SlideE[] = [
     id: 19,
     act: "SensorGovernance",
     actLabel: { en: "Sensor Suite & Governance", fa: "منشور حسگرها" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_sensor_redundancy_20112784.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_19_928bd066.png",
     en: {
       title: "Sensor Suite Constitution — Budgets as Constitutional Limits",
       narrative: "The Sensor Suite Constitution is the governing document defining modality allocations, resource budgets, and validation requirements for every sensor. It is a binding constraint document, not a wish list.",
@@ -920,7 +920,7 @@ export const slidesE: SlideE[] = [
     id: 20,
     act: "SensorGovernance",
     actLabel: { en: "Sensor Suite & Governance", fa: "منشور حسگرها" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_sensor_redundancy_20112784.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_20_72a83ede.png",
     en: {
       title: "Functional Redundancy by Modality — Philosophy Over Sensor Maximalism",
       narrative: "The EPU sensor philosophy rejects sensor maximalism. Functional redundancy is achieved by ensuring each safety-critical perception function is covered by at least two independent modalities with non-correlated failure modes.",
@@ -966,7 +966,7 @@ export const slidesE: SlideE[] = [
     id: 21,
     act: "SensorGovernance",
     actLabel: { en: "Sensor Suite & Governance", fa: "منشور حسگرها" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_sensor_redundancy_20112784.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_21_f6b7e9c9.png",
     en: {
       title: "Degradation Policy and MRC Trigger Matrix — Failure Behavior Made Legible",
       narrative: "The degradation policy and MRC trigger matrix defines the vehicle's deterministic response to every classified sensor failure state — acceptable, degraded ODD, or MRC trigger.",
@@ -1012,7 +1012,7 @@ export const slidesE: SlideE[] = [
     id: 22,
     act: "SensorGovernance",
     actLabel: { en: "Sensor Suite & Governance", fa: "منشور حسگرها" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_ee_evolution_77e6e021.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_22_fa854060.png",
     en: {
       title: "Validation Courts — Four-Gate Governance for Every Architecture Decision",
       narrative: "Every significant architecture decision must pass through four sequential validation courts: Physics, Safety, TEA, and LCA. Proposals that fail any court are returned for redesign — no conditional approvals.",
@@ -1058,7 +1058,7 @@ export const slidesE: SlideE[] = [
     id: 23,
     act: "SensorGovernance",
     actLabel: { en: "Sensor Suite & Governance", fa: "منشور حسگرها" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_sensor_redundancy_20112784.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_23_fbaeda59.png",
     en: {
       title: "Certification Evidence Stack — The Auditable Safety Case",
       narrative: "The certification evidence stack is the complete documentation package supporting regulatory submission and partner due diligence, designed for full auditability with bidirectional traceability.",
@@ -1104,7 +1104,7 @@ export const slidesE: SlideE[] = [
     id: 24,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_modular_serviceability_570859b8.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_24_8e7ad9d9.png",
     en: {
       title: "Layer X TEA/LCA Governance — Carbon and Cost as First-Class Design Constraints",
       narrative: "TEA and LCA governance is implemented as a cross-cutting Layer X spanning all technical layers of the EPU architecture stack, embedding cost and carbon as design constraints from the first architecture decision.",
@@ -1150,7 +1150,7 @@ export const slidesE: SlideE[] = [
     id: 25,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_25_5446b7b2.png",
     en: {
       title: "Transparent TCO — EPU vs. Traditional ADAS",
       narrative: "The transparent TCO comparison between EPU and traditional ADAS is presented as a scenario-based analysis with explicit sensitivity bands and confidence labels — not a definitive cost claim.",
@@ -1196,7 +1196,7 @@ export const slidesE: SlideE[] = [
     id: 26,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_modular_serviceability_570859b8.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_26_da9956ef.png",
     en: {
       title: "Lifecycle Carbon Dashboard — Subsystem-Level Accountability",
       narrative: "The lifecycle carbon dashboard provides subsystem-level carbon accounting across the full vehicle lifecycle, with uncertainty ranges explicitly shown — no false precision.",
@@ -1242,7 +1242,7 @@ export const slidesE: SlideE[] = [
     id: 27,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_thermal_domain_bdb6d71a.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_27_b7c64d41.png",
     en: {
       title: "H2 vs. Current EV — A Rigorous Comparison Framework, Not a Verdict",
       narrative: "The H2 driverless platform vs. current premium EV comparison is presented as an analysis framework across six dimensions: utility, TCO, lifecycle carbon, infrastructure realism, technology readiness, and sensitivity analysis.",
@@ -1288,7 +1288,7 @@ export const slidesE: SlideE[] = [
     id: 28,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_ee_evolution_77e6e021.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_28_b21a4d1c.png",
     en: {
       title: "Risk Register — What Must Be True for This to Work",
       narrative: "Every ambitious concept carries a risk register. The EPU hydrogen driverless platform requires green hydrogen infrastructure, LH2 certification pathways, EPU formal verification toolchain maturity, and OEM architecture adoption.",
@@ -1334,7 +1334,7 @@ export const slidesE: SlideE[] = [
     id: 29,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_sensor_redundancy_20112784.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_29_5bf431ab.png",
     en: {
       title: "H2 vs. EV Sensitivity Analysis — Three Scenarios, Three Verdicts",
       narrative: "A three-scenario sensitivity analysis (optimistic, baseline, conservative) reveals that the H2 case is compelling only under optimistic assumptions. The framework makes scenario dependencies explicit and auditable.",
@@ -1380,7 +1380,7 @@ export const slidesE: SlideE[] = [
     id: 30,
     act: "TEALCAMoat",
     actLabel: { en: "TEA/LCA & Strategic Moat", fa: "مزیت رقابتی TEA/LCA" },
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_3in1_module_2d031887.png",
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_30_7dd4ffba.png",
     en: {
       title: "The Methodology Is the Moat — EPU as Application-Neutral Deployment Platform",
       narrative: "The closing synthesis: the EPU competitive moat is the methodology — physics-certified safety governance, TEA/LCA transparency as a design constraint, sensor suite constitutionalism, and auditable certification evidence.",
@@ -1423,3 +1423,37 @@ export const slidesE: SlideE[] = [
     },
   },
 ];
+
+
+export const IMG_URLS_E: Record<number, string> = {
+  1: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_01_45a8df0a.png",
+  2: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_02_11d6461d.png",
+  3: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_03_cc8fd9f5.png",
+  4: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_04_d04d11f3.png",
+  5: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_05_9b78765a.png",
+  6: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_06_c53c695a.png",
+  7: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_07_76295ad1.png",
+  8: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_08_6a0cad70.png",
+  9: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_09_2cb1bb87.png",
+  10: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_10_cda83de0.png",
+  11: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_11_162b35c3.png",
+  12: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_12_8e858bb2.png",
+  13: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_13_e0aecb2b.png",
+  14: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_14_00732803.png",
+  15: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_15_f888fc0e.png",
+  16: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_16_bd14b56e.png",
+  17: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_17_151d591f.png",
+  18: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_18_f21ede08.png",
+  19: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_19_928bd066.png",
+  20: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_20_72a83ede.png",
+  21: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_21_f6b7e9c9.png",
+  22: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_22_fa854060.png",
+  23: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_23_fbaeda59.png",
+  24: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_24_8e7ad9d9.png",
+  25: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_25_5446b7b2.png",
+  26: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_26_da9956ef.png",
+  27: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_27_b7c64d41.png",
+  28: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_28_b21a4d1c.png",
+  29: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_29_5bf431ab.png",
+  30: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_30_7dd4ffba.png"
+};
