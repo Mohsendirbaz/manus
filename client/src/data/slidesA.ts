@@ -1,3 +1,4 @@
+// MVD: 2.00 | Source: DECK_A_UFP_2026_001 | Slides: 30 | Lang: EN+FA
 // ─── Deck A: Universal Filtration Primitive ↔ Discriminant Analysis ──────────
 // 30-Slide Bilingual Presentation
 // Source: FilterDesignInventory.pdf (Feb 28, 2026)

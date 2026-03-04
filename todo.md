@@ -15,24 +15,24 @@
 - [ ] W2.3 Deck E: verify ≥5, fix any under threshold
 
 ## موج ۳ — اسلایدهای جدید (۱۱ اسلاید)
-- [ ] W3.1 C-NEW-1: 576-Cell Tensor Space Map
-- [ ] W3.2 C-NEW-2: Moat Timeline by Tensor Cell
-- [ ] W3.3 C-NEW-3: Valuation Path by Cell Validation
-- [ ] W3.4 C-NEW-4: Phase Gate Decision Tree
-- [ ] W3.5 C-NEW-5: Entity Scoring Matrix
-- [ ] W3.6 C-NEW-6: Sensor-Equation Routing Diagram
-- [ ] W3.7 C-NEW-7: Dual-Track Resource Allocation
-- [ ] W3.8 EPU-BRIDGE-1: From Sensor Chaos to Ordered State
-- [ ] W3.9 EPU-BRIDGE-2: From Mathematical Tool to Architecture
-- [ ] W3.10 EPU-BRIDGE-3: From Architecture to Certified Product
-- [ ] W3.11 D-GUIDE: Reading Guide EPU-MAS Architecture
+- [x] W3.1 C-NEW-1: 576-Cell Tensor Space Map
+- [x] W3.2 C-NEW-2: Moat Timeline by Tensor Cell
+- [x] W3.3 C-NEW-3: Valuation Path by Cell Validation
+- [x] W3.4 C-NEW-4: Phase Gate Decision Tree
+- [x] W3.5 C-NEW-5: Entity Scoring Matrix
+- [x] W3.6 C-NEW-6: Sensor-Equation Routing Diagram
+- [x] W3.7 C-NEW-7: Dual-Track Resource Allocation
+- [x] W3.8 EPU-BRIDGE-1: From Sensor Chaos to Ordered State
+- [x] W3.9 EPU-BRIDGE-2: From Mathematical Tool to Architecture
+- [x] W3.10 EPU-BRIDGE-3: From Architecture to Certified Product
+- [x] W3.11 D-GUIDE: Reading Guide EPU-MAS Architecture
 
 ## موج ۴ — تصاویر زیبایی‌شناختی
-- [ ] W4.1 Generate cinematic images for 7 new Deck C slides
-- [ ] W4.2 Generate co-design images for Deck D
-- [ ] W4.3 Match image tones to Act colors
+- [x] W4.1 Generate cinematic images for 7 new Deck C slides + C-01 to C-08
+- [x] W4.2 Generate co-design images for D-121 + EPU bridge slides
+- [x] W4.3 Match image tones to Act colors (dark navy/teal/gold palette)
 
 ## موج ۵ — بهبود UI
-- [ ] W5.1 Audience path filters (investor/engineer/regulator)
-- [ ] W5.2 MVD tags in data file headers
-- [ ] W5.3 Farsi technical term improvements
+- [x] W5.1 Audience path filters (investor/engineer/regulator)
+- [x] W5.2 MVD tags in data file headers
+- [x] W5.3 Farsi technical term review (consistent across all decks)

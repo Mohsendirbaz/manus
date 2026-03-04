@@ -1,3 +1,4 @@
+// MVD: 2.00 | Source: FOUNDER_BIO_2026_001 | Slides: 6 | Lang: EN+FA
 // ─── Deck F · Founder Biography — 6 Slides ───────────────────────────────────
 // Each slide corresponds to one of the six founder-background pillars:
 //   F-1  Petroleum Engineering & Simon subsurface CO₂ sequestration

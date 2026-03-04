@@ -1,3 +1,4 @@
+// MVD: 2.00 | Source: DECK_B_TEMPORAL_2026_001 | Slides: 30 | Lang: EN+FA
 // ─── Deck B: Tense Grammar as State Management ────────────────────────────────
 // 30-Slide Bilingual Presentation
 // Source: TemporalStateManagement.pdf (Feb 28, 2026)

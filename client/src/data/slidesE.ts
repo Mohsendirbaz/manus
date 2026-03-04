@@ -1,3 +1,4 @@
+// MVD: 2.00 | Source: CABIN_THERMAL_2026_001 | Slides: 30 | Lang: EN+FA
 // Deck E — Interior & Cabin View (30 slides)
 // Source: original slides.ts + translations.ts
 // Theme: Violet/Purple (#7C3AED) — Interior Design & Cabin Architecture

@@ -10,6 +10,70 @@ import { slidesBio, ACT_LABELS_F, type SlideF, type ActF } from "@/data/slidesBi
 import { ui60 } from "@/data/translations60";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// ─── Audience paths ──────────────────────────────────────────────────────────
+type AudiencePath = "investor" | "engineer" | "regulator";
+const AUDIENCE_META: Record<AudiencePath, { en: string; fa: string; icon: string }> = {
+  investor:   { en: "Investor",   fa: "سرمایه‌گذار", icon: "📊" },
+  engineer:   { en: "Engineer",   fa: "مهندس",       icon: "⚙️" },
+  regulator:  { en: "Regulator",  fa: "ناظر",        icon: "📋" },
+};
+
+// Map (deck, act) → audience paths
+const AUDIENCE_MAP: Record<string, AudiencePath[]> = {
+  // EPU Strategy deck
+  "EPU:I":   ["investor", "engineer", "regulator"],
+  "EPU:II":  ["engineer", "regulator"],
+  "EPU:III": ["engineer"],
+  "EPU:IV":  ["investor", "regulator"],
+  // Deck A — UFP (deep math)
+  "A:Foundation": ["engineer"],
+  "A:Taxonomy":   ["engineer"],
+  "A:Composition": ["engineer"],
+  "A:LDA":        ["engineer"],
+  "A:Variants":   ["engineer"],
+  "A:Decision":   ["engineer", "regulator"],
+  "A:Performance": ["engineer"],
+  "A:Synthesis":  ["engineer", "investor"],
+  // Deck B — Temporal
+  "B:Foundation": ["engineer"],
+  "B:T0Manager":  ["engineer"],
+  "B:Operators":  ["engineer"],
+  "B:Landauer":   ["engineer"],
+  "B:Constraints": ["engineer", "regulator"],
+  "B:LLM":        ["engineer", "investor"],
+  "B:Synthesis":  ["engineer", "investor"],
+  // Deck C — Ghost (business + tech)
+  "C:Executive":    ["investor"],
+  "C:PDC":          ["engineer", "regulator"],
+  "C:SAGP":         ["investor"],
+  "C:PhysicsFound": ["engineer"],
+  "C:ArchDeep":     ["engineer"],
+  "C:Financial":    ["investor"],
+  "C:Validation":   ["engineer", "regulator"],
+  "C:Integration":  ["investor", "engineer"],
+  // Deck D — Semiconductor
+  "D:AgentFoundation": ["engineer"],
+  "D:Communication":   ["engineer"],
+  "D:Trust":            ["engineer", "regulator"],
+  "D:Memory":           ["engineer"],
+  "D:Signal":           ["engineer"],
+  "D:Coordination":     ["engineer"],
+  "D:Intelligence":     ["engineer", "investor"],
+  "D:SystemSynthesis":  ["investor", "engineer", "regulator"],
+  // Deck E — Thermal
+  "E:Fundamentals":          ["engineer"],
+  "E:CellStack":             ["engineer"],
+  "E:VehicleIntegration":    ["engineer", "regulator"],
+  "E:IntegratedElectronics": ["engineer"],
+  "E:Synthesis":             ["engineer", "investor"],
+  // Deck F — Founder
+  "F:Founder":  ["investor"],
+};
+
+function getAudiencePaths(slide: { deck: string; act: string }): AudiencePath[] {
+  return AUDIENCE_MAP[`${slide.deck}:${slide.act}`] ?? ["engineer"];
+}
+
 // ─── Unified slide type ───────────────────────────────────────────────────────
 type DeckId = "EPU" | "A" | "B" | "C" | "D" | "E" | "F";
 
@@ -479,6 +543,7 @@ export default function Home() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [activeDeck, setActiveDeck] = useState<DeckId | "All">("All");
+  const [activeAudience, setActiveAudience] = useState<AudiencePath | null>(null);
   const [selectedSlide, setSelectedSlide] = useState<UnifiedSlide | null>(null);
 
   // Language toggle listener
@@ -491,6 +556,9 @@ export default function Home() {
   const filteredSlides = useMemo(() => {
     let result = allSlides;
     if (activeDeck !== "All") result = result.filter((s) => s.deck === activeDeck);
+    if (activeAudience) {
+      result = result.filter((s) => getAudiencePaths(s).includes(activeAudience));
+    }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter((s) => {
@@ -508,11 +576,15 @@ export default function Home() {
       });
     }
     return result;
-  }, [searchQuery, activeDeck]);
+  }, [searchQuery, activeDeck, activeAudience]);
 
   const handleDeckChange = useCallback((deck: DeckId | "All") => {
     setActiveDeck(deck);
     setSearchQuery("");
+  }, []);
+
+  const handleAudienceToggle = useCallback((audience: AudiencePath) => {
+    setActiveAudience((prev) => (prev === audience ? null : audience));
   }, []);
 
   const selectedIdx = selectedSlide
@@ -554,9 +626,9 @@ export default function Home() {
               </p>
               <p
                 className="text-xs mt-0.5"
-                style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
+                style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? `${allSlides.length} اسلاید · ۶ Deck` : `${allSlides.length} Slides · 6 Decks`}
+                {isRTL ? `${allSlides.length} اسلاید · ۷ Deck` : `${allSlides.length} Slides · 7 Decks`}
               </p>
             </div>
 
@@ -712,6 +784,46 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* ── Audience Path Filter ── */}
+      <div
+        className="border-b"
+        style={{ backgroundColor: "rgba(248,247,244,0.97)", borderColor: "#E8E5DF" }}
+      >
+        <div className="container mx-auto px-4 lg:px-8" style={{ maxWidth: "1400px" }}>
+          <div className={`flex items-center gap-3 py-2.5 ${isRTL ? "flex-row-reverse" : ""}`}>
+            <span
+              className="text-xs"
+              style={{
+                fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                color: "#9CA3AF",
+              }}
+            >
+              {isRTL ? "مسیر مخاطب:" : "Audience:"}
+            </span>
+            {(["investor", "engineer", "regulator"] as AudiencePath[]).map((aud) => {
+              const meta = AUDIENCE_META[aud];
+              const isActive = activeAudience === aud;
+              return (
+                <button
+                  key={aud}
+                  onClick={() => handleAudienceToggle(aud)}
+                  className="text-xs px-3 py-1.5 rounded-sm border transition-all"
+                  style={{
+                    fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                    borderColor: isActive ? "#C8A96E" : "#D0CCC5",
+                    backgroundColor: isActive ? "#C8A96E18" : "transparent",
+                    color: isActive ? "#8B6914" : "#7A7A7A",
+                    fontWeight: isActive ? "600" : "400",
+                  }}
+                >
+                  {meta.icon} {isRTL ? meta.fa : meta.en}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       {/* ── Main Content ── */}
       <main className="container mx-auto px-4 lg:px-8 py-10" style={{ maxWidth: "1400px" }}>
         {/* Results header */}
@@ -724,9 +836,9 @@ export default function Home() {
               ? `${filteredSlides.length} ${isRTL ? "نتیجه" : "result" + (filteredSlides.length !== 1 ? "s" : "")} — "${searchQuery}"`
               : `${filteredSlides.length} ${isRTL ? "اسلاید" : "slide" + (filteredSlides.length !== 1 ? "s" : "")}`}
           </p>
-          {(searchQuery || activeDeck !== "All") && (
+          {(searchQuery || activeDeck !== "All" || activeAudience) && (
             <button
-              onClick={() => { setSearchQuery(""); setActiveDeck("All"); }}
+              onClick={() => { setSearchQuery(""); setActiveDeck("All"); setActiveAudience(null); }}
               className="text-xs px-3 py-1 border rounded-sm transition-all hover:bg-gray-50"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",

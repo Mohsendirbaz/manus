@@ -1,4 +1,5 @@
-// ─── EPU Strategy: Complete 60-Slide Bilingual Data Layer ────────────────────
+// ─── EPU Strategy: Complete 63-Slide Bilingual Data Layer ────────────────
+// MVD: 2.00 | Source: EPU_STRATEGY_2026_001 | Slides: 63 | Lang: EN+FA
 // Act I  (1–15):  The Problem & The Paradigm Shift
 // Act II (16–30): The "Priceless Tool" & Strategic Vision
 // Act III(31–50): The 10-Gate Architecture (The "How")
@@ -87,6 +88,9 @@ const IMG_URLS: Record<number, string> = {
   58: `${CDN}/slide_58_dea462dc.png`,
   59: `${CDN}/slide_59_58fa87a4.png`,
   60: `${CDN}/slide_60_7b29ec69.png`,
+  61: `${CDN}/wave3_epu61_bridge-D38CvgaGdofLDVwyjsnXtP.png`,
+  62: `${CDN}/wave3_epu62_bridge-4BncdUAEVVYg6oEFpDZzNS.png`,
+  63: `${CDN}/wave3_epu63_bridge-fZjZ5nLimB3Cf5RP6GLina.png`,
 };
 const img = (n: number) => IMG_URLS[n] ?? IMG_URLS[1];
 

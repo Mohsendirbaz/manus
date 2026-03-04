@@ -1,3 +1,4 @@
+// MVD: 2.00 | Source: GA_IMPL_2026_001 | Slides: 67 | Lang: EN+FA
 // Deck C — Ghost Autonomy Implementation (60 slides)
 // Source: GA_IMPL_2026_001_Source_Package
 // Theme: Amber/Gold (#D97706) — Implementation & Engineering
@@ -46,14 +47,14 @@ export const ACT_LABELS_C: Record<ActC, { en: string; fa: string }> = {
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K";
 const IMG_URLS: Record<number, string> = {
-  1:  `${CDN}/slide_01_41a8b16a.png`,
-  2:  `${CDN}/slide_02_736334c1.png`,
-  3:  `${CDN}/slide_03_ee0ec9ff.png`,
-  4:  `${CDN}/slide_04_f1ccf72b.png`,
-  5:  `${CDN}/slide_05_b528566b.png`,
-  6:  `${CDN}/slide_06_38cfa8f0.png`,
-  7:  `${CDN}/slide_07_2d6777b1.png`,
-  8:  `${CDN}/slide_08_2954027f.png`,
+  1:  `${CDN}/c01_three_pillars-g6XQMEZamWaNDxCGasCQ3p.png`,
+  2:  `${CDN}/c02_market_size-URAWY8devu3g5i3kkHNn5L.png`,
+  3:  `${CDN}/c03_competitive-UTWmuRYgJUB99yK9fHtSn2.png`,
+  4:  `${CDN}/c04_milestones-mnfAhoGZpcCQhpT9ooBgtq.png`,
+  5:  `${CDN}/c05_value_prop-8BrK25pQvjyo4Eq3ZkHVaz.png`,
+  6:  `${CDN}/c06_provenance-JqRjsUWNXbFXaujUt8mMKX.png`,
+  7:  `${CDN}/c07_risk_mgmt-iLA7rzAX3HfhUV4ktjsj25.png`,
+  8:  `${CDN}/c08_roadmap-4utYrb4fS6aERzHA7brBZK.png`,
   9:  `${CDN}/slide_09_1c63fc39.png`,
   10: `${CDN}/slide_10_390e1cfe.png`,
   11: `${CDN}/slide_11_f9b8191d.png`,
@@ -106,6 +107,13 @@ const IMG_URLS: Record<number, string> = {
   58: `${CDN}/slide_58_dd656965.png`,
   59: `${CDN}/slide_59_d538c8f5.png`,
   60: `${CDN}/slide_60_3ac3aba2.png`,
+  61: `${CDN}/wave3_c61_tensor-gagqGYKr3DgJ4tLY7sfguf.png`,
+  62: `${CDN}/wave3_c62_moat-L7CbUMzEx3o3WtUKjCB7fK.png`,
+  63: `${CDN}/wave3_c63_valuation-8SUVPP3BkwFcfK9wx5YXUc.png`,
+  64: `${CDN}/wave3_c64_phasegate-24ohAVybKzPsDMQopMdUC7.png`,
+  65: `${CDN}/wave3_c65_scoring-W5TCbHHMacScBoX9MyeezB.png`,
+  66: `${CDN}/wave3_c66_sensor-HDtkeHHgEGxk3dCBrbWfQZ.png`,
+  67: `${CDN}/wave3_c67_dualtrack-HJTZ9aSTofmh9Ag2nQ6PTw.png`,
 };
 
 const imgC = (n: number) => IMG_URLS[n] || "";

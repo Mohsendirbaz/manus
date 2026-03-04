@@ -1,3 +1,4 @@
+// MVD: 2.00 | Source: EPU_MAS_2026_001 | Slides: 121 | Lang: EN+FA
 // Deck D — EPU Multi-Agent System Integration into EPU (120 slides)
 // Source: AutoAgents-Backup — 101 markdown documentation files (twin directory mirrors each code file with a dedicated doc file)
 // Theme: Teal/Cyan (#0D9488) — Software Intelligence & Agent Architecture
@@ -165,6 +166,7 @@ const IMG_URLS_D: Record<number, string> = {
   118: `${CDN_D}/deck_d_118_d894e157.png`,
   119: `${CDN_D}/deck_d_119_bc7bf8cd.png`,
   120: `${CDN_D}/deck_d_120_b105d6cd.png`,
+  121: `${CDN_D}/wave3_d121_guide-CJo6sTrcqCGsb3dAWSuUYQ.png`,
 };
 const imgD = (n: number) => IMG_URLS_D[n] || "";
 
