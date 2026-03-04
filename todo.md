@@ -36,3 +36,20 @@
 - [x] W5.1 Audience path filters (investor/engineer/regulator)
 - [x] W5.2 MVD tags in data file headers
 - [x] W5.3 Farsi technical term review (consistent across all decks)
+
+## Deck G — Luxury Auto Customization Independence (5 slides)
+- [x] G.1 Design 5-slide content architecture from 61-page technical guide
+- [x] G.2 Generate 5 cinematic images for the slides (v2 modern machinery)
+- [x] G.3 Create slidesG.ts data file with EN+FA bilingual content (expanded to 10 slides)
+- [x] G.4 Integrate Deck G into Home.tsx navigation and filtering
+- [x] G.5 Verify rendering and save checkpoint
+- [x] G.2-REDO Regenerate all 5 Deck G images with modern machinery aesthetic (no hand-craft, focus on CNC/robotics/laser/autoclave)
+- [x] G.REDO-1 Re-study guide: extract 5 categorical competitive moats (billion-dollar framing)
+- [x] G.REDO-2 Regenerate 5 premium images — category-defining, not workshop tours (v3 moat-level)
+- [x] G.REDO-3 Rewrite slidesG.ts with moat-level content (10 slides)
+- [x] G.REDO-4 Integrate and verify
+- [x] G.V3-1 Study McKinsey Auto SW & Electronics 2030 report
+- [x] G.V3-2 Synthesize luxury guide + McKinsey into 10-image architecture (interior + vehicle modules)
+- [x] G.V3-3 Generate 10 premium images combining physical craft with SDV architecture
+- [x] G.V3-4 Create/update slidesG.ts with 10 slides
+- [x] G.V3-5 Integrate and verify

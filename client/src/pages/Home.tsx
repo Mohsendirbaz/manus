@@ -7,6 +7,7 @@ import { slidesC, ACT_LABELS_C, type SlideC, type ActC } from "@/data/slidesC";
 import { slidesD, ACT_LABELS_D, type SlideD, type ActD } from "@/data/slidesD";
 import { slidesE, ACT_LABELS_E, type SlideE, type ActE } from "@/data/slidesE";
 import { slidesBio, ACT_LABELS_F, type SlideF, type ActF } from "@/data/slidesBio";
+import { slidesG, ACT_LABELS_G, type SlideG, type ActG } from "@/data/slidesG";
 import { ui60 } from "@/data/translations60";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -68,6 +69,17 @@ const AUDIENCE_MAP: Record<string, AudiencePath[]> = {
   "E:Synthesis":             ["engineer", "investor"],
   // Deck F — Founder
   "F:Founder":  ["investor"],
+  // Deck G — Luxury Customization
+  "G:CockpitDomain":    ["investor", "engineer"],
+  "G:SensorCabin":      ["engineer", "regulator"],
+  "G:AmbientArch":      ["investor"],
+  "G:AcousticEng":      ["engineer"],
+  "G:HapticSurface":    ["investor", "engineer"],
+  "G:CentralCompute":   ["engineer"],
+  "G:PerceptionArray":  ["engineer", "regulator"],
+  "G:PowerElectronics": ["engineer", "investor"],
+  "G:SWPowertrain":     ["engineer", "investor"],
+  "G:DigitalTwin":      ["investor", "engineer", "regulator"],
 };
 
 function getAudiencePaths(slide: { deck: string; act: string }): AudiencePath[] {
@@ -75,7 +87,7 @@ function getAudiencePaths(slide: { deck: string; act: string }): AudiencePath[] 
 }
 
 // ─── Unified slide type ───────────────────────────────────────────────────────
-type DeckId = "EPU" | "A" | "B" | "C" | "D" | "E" | "F";
+type DeckId = "EPU" | "A" | "B" | "C" | "D" | "E" | "F" | "G";
 
 interface UnifiedSlide {
   uid: string;          // unique across all 300: "EPU-1", "A-1", "B-1", "C-1", "D-1"
@@ -96,6 +108,7 @@ const DECK_META: Record<DeckId, { en: string; fa: string; accent: string }> = {
   D:   { en: "Deck D · Semiconductor", fa: "Deck D · نیمه‌هادی", accent: "#E879F9" },
   E:   { en: "Deck E · Thermal", fa: "Deck E · حرارتی", accent: "#F87171" },
   F:   { en: "Deck F · Founder", fa: "Deck F · بنیان‌گذار", accent: "#A78BFA" },
+  G:   { en: "Deck G · Customization", fa: "Deck G · سفارشی‌سازی", accent: "#14B8A6" },
 };
 
 // Act color lookup — EPU uses its own map; A and B get deck accent
@@ -145,6 +158,7 @@ function getActColor(slide: UnifiedSlide): string {
   if (slide.deck === "D")   return ACT_COLORS_D[slide.act as ActD] ?? "#0D9488";
   if (slide.deck === "E")   return ACT_COLORS_E[slide.act as ActE] ?? "#7C3AED";
   if (slide.deck === "F")   return "#A78BFA";
+  if (slide.deck === "G")   return "#14B8A6";
   return ACT_COLORS_B[slide.act as ActB] ?? "#4CAF82";
 }
 
@@ -182,6 +196,11 @@ const allSlides: UnifiedSlide[] = [
   })),
   ...slidesBio.map((s: SlideF): UnifiedSlide => ({
     uid: `F-${s.id}`, deck: "F", id: s.id,
+    act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
+    en: s.en, fa: s.fa,
+  })),
+  ...slidesG.map((s: SlideG): UnifiedSlide => ({
+    uid: `G-${s.id}`, deck: "G", id: s.id,
     act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
     en: s.en, fa: s.fa,
   })),
@@ -592,7 +611,7 @@ export default function Home() {
     : -1;
 
   const deckCounts = useMemo(() => {
-    const c: Record<DeckId, number> = { EPU: 0, A: 0, B: 0, C: 0, D: 0, E: 0, F: 0 };
+    const c: Record<DeckId, number> = { EPU: 0, A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0 };
     allSlides.forEach((s) => c[s.deck]++);
     return c;
   }, []);
@@ -628,7 +647,7 @@ export default function Home() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? `${allSlides.length} اسلاید · ۷ Deck` : `${allSlides.length} Slides · 7 Decks`}
+                {isRTL ? `${allSlides.length} اسلاید · ۸ Deck` : `${allSlides.length} Slides · 8 Decks`}
               </p>
             </div>
 
@@ -718,7 +737,7 @@ export default function Home() {
             </p>
             {/* Deck pills */}
             <div className={`flex flex-wrap gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
-              {(["EPU", "A", "B", "C", "D", "E", "F"] as DeckId[]).map((deck) => {
+              {(["EPU", "A", "B", "C", "D", "E", "F", "G"] as DeckId[]).map((deck) => {
                 const meta = DECK_META[deck];
                 return (
                   <button
@@ -762,7 +781,7 @@ export default function Home() {
               {isRTL ? `همه (${allSlides.length})` : `All (${allSlides.length})`}
             </button>
             {/* EPU */}
-            {(["EPU", "A", "B", "C", "D", "E", "F"] as DeckId[]).map((deck) => {
+            {(["EPU", "A", "B", "C", "D", "E", "F", "G"] as DeckId[]).map((deck) => {
               const meta = DECK_META[deck];
               return (
                 <button
