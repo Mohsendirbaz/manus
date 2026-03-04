@@ -104,7 +104,7 @@ export const slides60: Slide60[] = [
   {
     id: 1, act: "I", actLabel: ACT_LABELS.I, imageUrl: img(1),
     en: {
-      title: "Hydrogen Powered Autonomous Vehicle",
+      title: "Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip",
       narrative: "The Event Processing Unit (EPU) constructs the sensor-to-decision pathway on the laws of physics and controllable timing. The goal is behavior that is not merely reliable, but defensible and auditable.",
       strategic: "Carbon auditing and lifecycle reporting form the pillars of our 'Sustainable Pace' brand. This strategic orientation permeates all decisions, yet is always kept separate from safety claims so both remain clear and credible.",
       keyPoints: [
@@ -117,7 +117,7 @@ export const slides60: Slide60[] = [
       tags: ["EPU", "Vision", "Physics", "Auditability", "Sustainable Pace"],
     },
     fa: {
-      title: "خودروی خودران با سوخت هیدروژن",
+      title: "درگاه اطلاع‌رسانی خودروی هیدروژنی شبح با راهبرد EPU",
       narrative: "پردازشگر رویدادمحور (EPU) مسیر حسگر تا تصمیم را بر پایه قوانین فیزیک و زمان‌بندی قابل کنترل می‌سازد. هدف، رفتاری است که فراتر از قابل‌اتکا بودن، قابل دفاع و ممیزی باشد.",
       strategic: "ممیزی کربن و گزارش‌دهی چرخه‌حیات، پایه‌های اصلی برند «سبک پایدار» ما را تشکیل می‌دهند. این جهت‌گیری راهبردی در همه تصمیمات نفوذ دارد، اما همواره از ادعاهای ایمنی جدا نگه داشته می‌شود تا هر دو بخش شفاف و معتبر بمانند.",
       keyPoints: [
