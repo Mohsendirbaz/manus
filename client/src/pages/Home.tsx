@@ -718,6 +718,7 @@ export default function Home() {
         className="py-16 px-4"
         style={{
           background: "linear-gradient(135deg, #0A1628 0%, #0D2137 50%, #0A2840 100%)",
+          minHeight: "556px",
         }}
       >
         <div className="container mx-auto" style={{ maxWidth: "1400px" }}>
