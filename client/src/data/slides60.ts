@@ -1480,7 +1480,7 @@ export const slides60: Slide60[] = [
     id: 48, act: "III", actLabel: ACT_LABELS.III, imageUrl: img(48),
     en: {
       title: "Dimensionless Physics-Rooted Distance Metric — The Priceless Tool",
-      narrative: "The T-distance is a single number that measures how \"far\" any two system states are from each other, grounded in physical configuration rather than arbitrary coordinates. This is what allows the same 512-register chip to navigate both a gasification reactor and a highway — the distance metric is universal. Formally: T-distance d_T(i,j)=|z_i-z_j|×κ(S_c) is dimensionless, scale-invariant, physics-meaningful, certification-enabling. Same tool navigated 4B gasification states and 1T sensor states. Gasification: 4 billion space navigated with 200 working set. Automotive: 1 trillion space navigated with 512 registers. Compression ratio: Both achieve ~20M:1 effective compression.",
+      narrative: "T-distance d_T(i,j)=|z_i-z_j|×κ(S_c) is dimensionless, scale-invariant, physics-meaningful, certification-enabling. Same tool navigated 4B gasification states and 1T sensor states. Gasification: 4 billion space navigated with 200 working set. Automotive: 1 trillion space navigated with 512 registers. Compression ratio: Both achieve ~20M:1 effective compression.",
       strategic: "Physics-grounded: sct scaling factor κ(S_c) reflects configuration stiffness. Metric axioms: d(i,i)=0, d(i,j)=d(j,i), d(i,k)≤d(i,j)+d(j,k) (provable). Universal transferability: Same methodology works for ANY multi-modal system.",
       keyPoints: [
         "Dimensionless: d_T(i,j)=|z_i-z_j|×κ(S_c) — no units",

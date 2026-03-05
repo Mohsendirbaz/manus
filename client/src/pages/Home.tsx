@@ -8,6 +8,7 @@ import { slidesD, ACT_LABELS_D, type SlideD, type ActD } from "@/data/slidesD";
 import { slidesE, ACT_LABELS_E, type SlideE, type ActE } from "@/data/slidesE";
 import { slidesBio, ACT_LABELS_F, type SlideF, type ActF } from "@/data/slidesBio";
 import { slidesG, ACT_LABELS_G, type SlideG, type ActG } from "@/data/slidesG";
+import slidesTOC, { ACT_LABELS_TOC, type SlideTOC, type ActTOC } from "@/data/slidesTOC";
 import { ui60 } from "@/data/translations60";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -90,7 +91,7 @@ function getAudiencePaths(slide: { deck: string; act: string }): AudiencePath[] 
 }
 
 // ─── Unified slide type ───────────────────────────────────────────────────────
-type DeckId = "EPU" | "A" | "B" | "C" | "D" | "E" | "F" | "G";
+type DeckId = "EPU" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "TOC";
 
 interface UnifiedSlide {
   uid: string;          // unique across all 300: "EPU-1", "A-1", "B-1", "C-1", "D-1"
@@ -112,6 +113,7 @@ const DECK_META: Record<DeckId, { en: string; fa: string; accent: string }> = {
   E:   { en: "Deck E · Thermal", fa: "Deck E · حرارتی", accent: "#F87171" },
   F:   { en: "Deck F · Founder", fa: "Deck F · بنیان‌گذار", accent: "#A78BFA" },
   G:   { en: "Deck G · Customization", fa: "Deck G · سفارشی‌سازی", accent: "#14B8A6" },
+  TOC: { en: "Deck TOC · فهرست", fa: "Deck TOC · فهرست", accent: "#94A3B8" },
 };
 
 // Act color lookup — EPU uses its own map; A and B get deck accent
@@ -153,6 +155,16 @@ const ACT_COLORS_E: Record<ActE, string> = {
   SensorGovernance:      "#059669", // emerald
   TEALCAMoat:            "#9D174D", // crimson
 };
+const ACT_COLORS_TOC: Record<ActTOC, string> = {
+  PartI_Executive:      "#94A3B8", // slate — neutral index
+  PartII_Philosophy:    "#7DD3FC", // sky — philosophical
+  PartIII_Strategic:    "#86EFAC", // green — strategic assets
+  PartIV_Technical:     "#FCA5A5", // red — technical foundation
+  PartV_Architecture:   "#C4B5FD", // violet — architecture
+  PartVI_Financial:     "#FCD34D", // amber — financial
+  PartVII_Validation:   "#6EE7B7", // emerald — validation
+  PartVIII_Appendices:  "#CBD5E1", // slate-light — appendices
+};
 
 function getActColor(slide: UnifiedSlide): string {
   if (slide.deck === "EPU") return actColorsEPU[slide.act as Act] ?? "#C8A96E";
@@ -162,6 +174,7 @@ function getActColor(slide: UnifiedSlide): string {
   if (slide.deck === "E")   return ACT_COLORS_E[slide.act as ActE] ?? "#7C3AED";
   if (slide.deck === "F")   return "#A78BFA";
   if (slide.deck === "G")   return "#14B8A6";
+  if (slide.deck === "TOC") return ACT_COLORS_TOC[slide.act as ActTOC] ?? "#94A3B8";
   return ACT_COLORS_B[slide.act as ActB] ?? "#4CAF82";
 }
 
@@ -204,6 +217,11 @@ const allSlides: UnifiedSlide[] = [
   })),
   ...slidesG.map((s: SlideG): UnifiedSlide => ({
     uid: `G-${s.id}`, deck: "G", id: s.id,
+    act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
+    en: s.en, fa: s.fa,
+  })),
+  ...slidesTOC.map((s: SlideTOC): UnifiedSlide => ({
+    uid: `TOC-${s.partId}`, deck: "TOC", id: s.id,
     act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
     en: s.en, fa: s.fa,
   })),
@@ -614,7 +632,7 @@ export default function Home() {
     : -1;
 
   const deckCounts = useMemo(() => {
-    const c: Record<DeckId, number> = { EPU: 0, A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0 };
+    const c: Record<DeckId, number> = { EPU: 0, A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, TOC: 0 };
     allSlides.forEach((s) => c[s.deck]++);
     return c;
   }, []);
@@ -650,7 +668,7 @@ export default function Home() {
                 className="text-xs mt-0.5"
                 style={{ fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace", color: "#9CA3AF" }}
               >
-                {isRTL ? `${allSlides.length} اسلاید · ۸ Deck` : `${allSlides.length} Slides · 8 Decks`}
+                {isRTL ? `${allSlides.length} اسلاید · ۹ Deck` : `${allSlides.length} Slides · 9 Decks`}
               </p>
             </div>
 
@@ -740,7 +758,7 @@ export default function Home() {
             </p>
             {/* Deck pills */}
             <div className={`flex flex-wrap gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
-              {(["EPU", "A", "B", "C", "D", "E", "F", "G"] as DeckId[]).map((deck) => {
+              {(["EPU", "A", "B", "C", "D", "E", "F", "G", "TOC"] as DeckId[]).map((deck) => {
                 const meta = DECK_META[deck];
                 return (
                   <button
@@ -784,7 +802,7 @@ export default function Home() {
               {isRTL ? `همه (${allSlides.length})` : `All (${allSlides.length})`}
             </button>
             {/* EPU */}
-            {(["EPU", "A", "B", "C", "D", "E", "F", "G"] as DeckId[]).map((deck) => {
+            {(["EPU", "A", "B", "C", "D", "E", "F", "G", "TOC"] as DeckId[]).map((deck) => {
               const meta = DECK_META[deck];
               return (
                 <button

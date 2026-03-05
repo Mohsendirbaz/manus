@@ -46,7 +46,7 @@ export const ACT_LABELS_D: Record<ActD, { en: string; fa: string }> = {
 
 const CDN_D = "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K";
 const IMG_URLS_D: Record<number, string> = {
-  1: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d01_mas_overview_b38e17fb.png`,
+  1: `${CDN_D}/deck_d_001_7c0e8cdf.png`,
   2: `${CDN_D}/deck_d_002_52a345fa.png`,
   3: `${CDN_D}/deck_d_003_cf07dd42.png`,
   4: `${CDN_D}/deck_d_004_26f56681.png`,
@@ -55,7 +55,7 @@ const IMG_URLS_D: Record<number, string> = {
   7: `${CDN_D}/deck_d_007_e1ba9c7b.png`,
   8: `${CDN_D}/deck_d_008_1f40610a.png`,
   9: `${CDN_D}/deck_d_009_af28561e.png`,
-  10: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d10_task_contract_68970b55.png`,
+  10: `${CDN_D}/deck_d_010_a7cb590e.png`,
   11: `${CDN_D}/deck_d_011_55a782c9.png`,
   12: `${CDN_D}/deck_d_012_88e381b5.png`,
   13: `${CDN_D}/deck_d_013_6bf1ff6b.png`,
@@ -65,7 +65,7 @@ const IMG_URLS_D: Record<number, string> = {
   17: `${CDN_D}/deck_d_017_3520fed1.png`,
   18: `${CDN_D}/deck_d_018_5b25517a.png`,
   19: `${CDN_D}/deck_d_019_12734cad.png`,
-  20: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d20_eventbus_8ddc5bcd.png`,
+  20: `${CDN_D}/deck_d_020_c79ecb02.png`,
   21: `${CDN_D}/deck_d_021_93d4b6ee.png`,
   22: `${CDN_D}/deck_d_022_8b903531.png`,
   23: `${CDN_D}/deck_d_023_9ea46464.png`,
@@ -75,7 +75,7 @@ const IMG_URLS_D: Record<number, string> = {
   27: `${CDN_D}/deck_d_027_4422cea3.png`,
   28: `${CDN_D}/deck_d_028_54aad7b6.png`,
   29: `${CDN_D}/deck_d_029_41dbfbfb.png`,
-  30: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d30_consensus_de25fdd8.png`,
+  30: `${CDN_D}/deck_d_030_89e95aee.png`,
   31: `${CDN_D}/deck_d_031_88650081.png`,
   32: `${CDN_D}/deck_d_032_c4c051bb.png`,
   33: `${CDN_D}/deck_d_033_0643bb8a.png`,
@@ -85,7 +85,7 @@ const IMG_URLS_D: Record<number, string> = {
   37: `${CDN_D}/deck_d_037_8d68ab64.png`,
   38: `${CDN_D}/deck_d_038_fc7378e6.png`,
   39: `${CDN_D}/deck_d_039_a1d250fb.png`,
-  40: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d40_trust_bootstrap_cbaceabe.png`,
+  40: `${CDN_D}/deck_d_040_dc734e9d.png`,
   41: `${CDN_D}/deck_d_041_3cd0d81b.png`,
   42: `${CDN_D}/deck_d_042_11ee2f88.png`,
   43: `${CDN_D}/deck_d_043_08db1fdf.png`,
@@ -95,7 +95,7 @@ const IMG_URLS_D: Record<number, string> = {
   47: `${CDN_D}/deck_d_047_ab7a6d5b.png`,
   48: `${CDN_D}/deck_d_048_94c1fb6f.png`,
   49: `${CDN_D}/deck_d_049_47838286.png`,
-  50: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d50_semantic_memory_02ee1f3f.png`,
+  50: `${CDN_D}/deck_d_050_f3fffe1f.png`,
   51: `${CDN_D}/deck_d_051_64226620.png`,
   52: `${CDN_D}/deck_d_052_1059fd1c.png`,
   53: `${CDN_D}/deck_d_053_e4b6019f.png`,
@@ -105,7 +105,7 @@ const IMG_URLS_D: Record<number, string> = {
   57: `${CDN_D}/deck_d_057_7000762c.png`,
   58: `${CDN_D}/deck_d_058_f3c95412.png`,
   59: `${CDN_D}/deck_d_059_6a356ac6.png`,
-  60: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d60_mechanical_signal_d984759f.png`,
+  60: `${CDN_D}/deck_d_060_ab824f23.png`,
   61: `${CDN_D}/deck_d_061_eb199116.png`,
   62: `${CDN_D}/deck_d_062_33381751.png`,
   63: `${CDN_D}/deck_d_063_67800ff2.png`,
@@ -115,7 +115,7 @@ const IMG_URLS_D: Record<number, string> = {
   67: `${CDN_D}/deck_d_067_466622b1.png`,
   68: `${CDN_D}/deck_d_068_bb9a66d8.png`,
   69: `${CDN_D}/deck_d_069_1ce5a3d6.png`,
-  70: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d70_signal_logging_e2f0197d.png`,
+  70: `${CDN_D}/deck_d_070_fbb0069c.png`,
   71: `${CDN_D}/deck_d_071_27438061.png`,
   72: `${CDN_D}/deck_d_072_6100ba55.png`,
   73: `${CDN_D}/deck_d_073_5e658848.png`,
@@ -125,7 +125,7 @@ const IMG_URLS_D: Record<number, string> = {
   77: `${CDN_D}/deck_d_077_85e72df9.png`,
   78: `${CDN_D}/deck_d_078_94b01744.png`,
   79: `${CDN_D}/deck_d_079_d24c70ef.png`,
-  80: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d80_coordination_arch_522b97fc.png`,
+  80: `${CDN_D}/deck_d_080_573bd50f.png`,
   81: `${CDN_D}/deck_d_081_b63cfd23.png`,
   82: `${CDN_D}/deck_d_082_45b7a23e.png`,
   83: `${CDN_D}/deck_d_083_9ca65a69.png`,
@@ -165,8 +165,9 @@ const IMG_URLS_D: Record<number, string> = {
   117: `${CDN_D}/deck_d_117_c1a383a9.png`,
   118: `${CDN_D}/deck_d_118_d894e157.png`,
   119: `${CDN_D}/deck_d_119_bc7bf8cd.png`,
-  120: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d120_synthesis_286618cf.png`,
+  120: `${CDN_D}/deck_d_120_b105d6cd.png`,
   121: `${CDN_D}/wave3_d121_guide-CJo6sTrcqCGsb3dAWSuUYQ.png`,
+  122: `${CDN_D}/wave3_d121_guide-CJo6sTrcqCGsb3dAWSuUYQ.png`,
 };
 const imgD = (n: number) => IMG_URLS_D[n] || "";
 
@@ -583,7 +584,7 @@ export const slidesD: SlideD[] = [
     id: 15, act: "AgentFoundation", actLabel: ACT_LABELS_D.AgentFoundation, imageUrl: imgD(15),
     en: {
       title: "Agent Foundation Synthesis — EPU-MAS Hierarchy Mapped onto EPU Silicon",
-      narrative: "The PICAPD ISA is the single architectural decision that makes Ghost EPU impossible to replicate without starting from the mathematics — it is not a chip design, it is a mathematical structure cast in silicon. Act I established the three-layer foundation: (1) Bilinear form as the universal computational primitive — every sensor fusion operation reduces to a bilinear map. (2) PICAPD as the hardware-native ISA — 512 registers, each holding a bilinear form coefficient, executing in 1.8 ns deterministic cycles. (3) ASIL-D as the design constraint, not a post-hoc certification — every architectural choice was made with ISO 26262 decomposition in mind. The synthesis: a competitor cannot copy the chip without copying the mathematics, and the mathematics is protected by 23 patent families covering the bilinear form ISA.",
+      narrative: "The fifteen slides of Act I establish the complete agent foundation: a taxonomy of roles, a lifecycle state machine, a factory for deterministic instantiation, a scheduler for WCET-bounded execution, and a metrics system for cross-layer observability. Every element of this foundation has a direct counterpart in EPU silicon: roles map to privilege rings, lifecycle maps to PDC states, factory maps to boot sequence, scheduler maps to PICAPD timing, and metrics map to hardware counters.",
       strategic: "This one-to-one mapping between EPU-MAS software abstractions and EPU hardware structures is the defining architectural property of the EPU-MAS integration. It means that the EPU multi-agent layer is not a generic agent framework running on top of EPU — it is a purpose-built software layer that is structurally isomorphic to EPU's hardware architecture. This isomorphism enables formal verification of the combined system, a capability that no other autonomous driving software stack provides.",
       keyPoints: [
         "Complete foundation: taxonomy, lifecycle, factory, scheduler, metrics — all with EPU hardware counterparts",
@@ -1022,7 +1023,7 @@ export const slidesD: SlideD[] = [
     id: 30, act: "TrustConsensus", actLabel: ACT_LABELS_D.TrustConsensus, imageUrl: imgD(30),
     en: {
       title: "Consensus Protocol Variants — Optimistic Fast Path vs. Byzantine Fallback",
-      narrative: "The Queen Bee consensus protocol is the only distributed consensus mechanism designed specifically for real-time vehicle control — it achieves Byzantine fault tolerance in 1.2 ms, which is 400× faster than PBFT. Act II established the multi-agent coordination layer: (1) Task contract language — a formal specification system that eliminates ambiguity in agent-to-agent communication. (2) Event bus architecture — deterministic message passing with sub-microsecond latency guarantees. (3) Queen Bee BFT — consensus in O(n) rather than O(n²) by exploiting the physical topology of the vehicle network. The synthesis: distributed intelligence without distributed latency — the fleet thinks as one but each node acts independently within 1.2 ms of consensus.",
+      narrative: "EPU-MAS implements two consensus protocol variants to balance performance and safety. The optimistic fast path (2-phase) operates when all agents are behaving correctly — achieving consensus in 2 message rounds with O(n) message complexity. When the fast path fails (detected by timeout or inconsistent responses), the system falls back to the full BFT protocol (3-phase) with O(n²) message complexity. The fast path handles >99% of decisions in normal operation.",
       strategic: "The dual-protocol approach is the performance engineering solution that makes BFT practical for real-time automotive control. Pure BFT with O(n²) message complexity would exceed latency budgets for large agent networks. By using the fast path for normal operation and falling back to full BFT only when needed, the EPU multi-agent layer achieves both the performance required for real-time control and the safety guarantees required for ASIL-D certification.",
       keyPoints: [
         "Fast path (2-phase): O(n) complexity, handles >99% of decisions in normal operation",
@@ -1457,7 +1458,7 @@ export const slidesD: SlideD[] = [
     id: 45, act: "TrustConsensus", actLabel: ACT_LABELS_D.TrustConsensus, imageUrl: imgD(45),
     en: {
       title: "Act III Synthesis — Trust and Consensus as the Safety Backbone of EPU-MAS",
-      narrative: "Trust bootstrapping is the mechanism that converts mathematical guarantees into operational safety — without it, a formally verified chip is still a liability in a regulatory submission. Act III established the trust architecture: (1) Cryptographic identity — each EPU has a hardware-rooted identity that cannot be spoofed or cloned. (2) Attestation protocol — the EPU proves its software state to the OEM's safety monitor before each ignition cycle. (3) Trust chain — from silicon to OEM to regulator, every step is cryptographically auditable. The synthesis: Ghost EPU doesn't just compute correctly — it proves it computes correctly, on every boot, to every stakeholder in the safety chain.",
+      narrative: "Act III establishes trust and consensus as the safety backbone of EPU MAS's agent network. The 18-slide arc covered: BFT consensus (formal safety foundation), trust scoring (dynamic reliability), consensus protocol variants (performance-safety balance), view change (liveness), anomaly detection (early warning), reputation propagation (network intelligence), consensus group formation (adaptive safety), safety boundaries (constrained optimization), formal verification (mathematical proof), graceful degradation (operational resilience), audit trails (accountability), network partition handling, trust bootstrap (security), performance benchmarks, multi-vehicle consensus, observability, and integration synthesis.",
       strategic: "The trust and consensus architecture is the differentiating technical achievement that makes EPU-MAS suitable for ASIL-D certification. Competing multi-agent systems use ad-hoc coordination without formal safety guarantees. EPU MAS's BFT-based trust architecture provides mathematical guarantees that are verifiable by certification bodies — creating a defensible technical foundation that competitors cannot easily replicate.",
       keyPoints: [
         "18-slide arc: complete trust and consensus architecture from theory to implementation",
@@ -1870,7 +1871,7 @@ export const slidesD: SlideD[] = [
         "Cognitive elevation: memory transforms reactive control into genuine autonomous intelligence",
         "Continuous improvement: agents improve from operational experience without retraining",
         "Bridge to Act V: mechanical signal protocol builds on memory for reliable sensor-to-decision pipeline",
-        "Fleet-scale compounding: every operational hour adds to shared episodic memory, widening the performance gap over competitors with static rule sets",
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Act IV Synthesis", "Cognitive Foundation", "Autonomous Intelligence", "Continuous Improvement", "Memory Architecture"],
     },
@@ -1883,7 +1884,7 @@ export const slidesD: SlideD[] = [
         "ارتقای شناختی: حافظه کنترل واکنشی را به هوشمندی خودمختار واقعی تبدیل می‌کند",
         "بهبود پیوسته: کارگزاران از تجربه عملیاتی بدون بازآموزی بهبود می‌یابند",
         "پل به پرده پنجم: پروتکل سیگنال مکانیکی بر پایه حافظه برای خط لوله حسگر-به-تصمیم قابل اعتماد بنا می‌شود",
-        "ترکیب مقیاس ناوگان: هر ساعت عملیاتی به حافظه رویدادی مشترک افزوده می‌شود و شکاف عملکردی نسبت به رقبا با مجموعه قوانین ایستا را گسترش می‌دهد",
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["برآیند پرده چهارم", "پایه شناختی", "هوشمندی خودمختار", "بهبود پیوسته", "معماری حافظه"],
     },
@@ -1895,14 +1896,14 @@ export const slidesD: SlideD[] = [
     imageUrl: imgD(60),
     en: {
       title: "Mechanical Signal Protocol — Bridging Software Agents and Physical Actuators",
-      narrative: "The mechanical signal protocol is the single layer that converts EPU-MAS software intelligence into physical vehicle control with deterministic timing — it is the boundary between computation and physics. Act IV established the physical interface layer: (1) Signal encoding — bilinear form outputs mapped to CAN-FD and Ethernet AVB with deterministic latency. (2) Actuator contracts — formal specifications for steering, braking, and throttle that guarantee response within 2 ms of EPU command. (3) Sensor ingestion — 128-channel LiDAR, 8-camera, 6-radar fusion pipeline completing in 1.8 ms. The synthesis: the mechanical signal protocol is what makes the EPU's mathematical guarantees physically real — it is the last mile of determinism.",
+      narrative: "The mechanical signal protocol is the critical interface layer that translates EPU MAS's software agent decisions into precise physical actuator commands. This protocol addresses the fundamental challenge of autonomous systems: software agents reason in abstract state spaces, but vehicles operate in continuous physical reality. The protocol defines: (1) signal encoding — how agent decisions are encoded as typed mechanical commands; (2) timing guarantees — hard real-time delivery within WCET bounds; (3) priority arbitration — resolving conflicts between concurrent agent commands; (4) feedback integration — closing the loop from physical sensors back to agent state.",
       strategic: "The mechanical signal protocol is the EPU integration point where EPU MAS's software intelligence becomes physical capability. Without this protocol, EPU MAS's agents are powerful reasoning engines with no connection to the vehicle. With it, every agent decision — from collision avoidance to energy optimization — translates directly into wheel torque, steering angle, and brake pressure with deterministic timing guarantees.",
       keyPoints: [
         "Signal encoding: typed mechanical commands with physical unit validation",
         "Hard real-time delivery: WCET-bounded signal transmission within 1ms",
         "Priority arbitration: safety-critical signals preempt optimization commands",
         "Feedback integration: physical sensor data closes the agent decision loop",
-        "Hardware moat at the physics boundary: the PICAPD ISA's actuator abstraction layer cannot be replicated without co-designing silicon and signal protocol simultaneously",
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["پروتکل سیگنال مکانیکی", "رابط نرم‌افزار-سخت‌افزار", "WCET", "آکچوئاتور", "یکپارچه‌سازی EPU"]
     },
@@ -1915,7 +1916,7 @@ export const slidesD: SlideD[] = [
         "تحویل بلادرنگ سخت: انتقال سیگنال محدود به WCET در ۱ms",
         "داوری اولویت: سیگنال‌های حیاتی ایمنی دستورات بهینه‌سازی را پیش می‌اندازند",
         "یکپارچه‌سازی بازخورد: داده‌های حسگر فیزیکی حلقه تصمیم کارگزار را می‌بندند",
-        "خندق سخت‌افزاری در مرز فیزیک: لایه انتزاع محرک ISA PICAPD بدون طراحی مشترک سیلیکون و پروتکل سیگنال به‌طور همزمان قابل تکرار نیست",
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["پروتکل سیگنال مکانیکی", "رابط نرم‌افزار-سخت‌افزار", "WCET", "محرک", "یکپارچه‌سازی EPU"]
     }
@@ -1934,7 +1935,7 @@ export const slidesD: SlideD[] = [
         "Hard real-time for SC: deterministic delivery within 0.5ms, no preemption",
         "Redundancy scaling: SC signals require triple redundancy, OP requires dual",
         "Failure mode differentiation: SC failures trigger emergency stop, CF failures are silent",
-        "Signal taxonomy is the hardware moat: the PICAPD ISA enforces tier boundaries at the register level — a Safety-Critical signal cannot be downgraded to Comfort by any software layer"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Signal Taxonomy", "ASIL-D", "Safety Criticality", "Signal Classification", "Redundancy"]
     },
@@ -1947,7 +1948,7 @@ export const slidesD: SlideD[] = [
         "بلادرنگ سخت برای SC: تحویل قطعی در ۰.۵ms، بدون پیش‌انداختن",
         "مقیاس‌بندی افزونگی: سیگنال‌های SC نیاز به افزونگی سه‌گانه دارند",
         "تمایز حالت خرابی: خرابی‌های SC توقف اضطراری را فعال می‌کنند",
-        "طبقه‌بندی سیگنال خندق سخت‌افزاری است: ISA PICAPD مرزهای سطح را در سطح رجیستری اجرا می‌کند — یک سیگنال Safety-Critical نمی‌تواند توسط هیچ لایه نرم‌افزاری به Comfort تنزل یابد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["طبقه‌بندی سیگنال", "ASIL-D", "اهمیت ایمنی", "دسته‌بندی سیگنال", "افزونگی"]
     }
@@ -1966,7 +1967,7 @@ export const slidesD: SlideD[] = [
         "Physical unit type system: commands rejected at encoding if units are inconsistent",
         "Complete semantic payload: quantity, value, units, target, timing, originating agent",
         "Schema evolution: backward-compatible encoding enables rolling software updates",
-        "Typed commands with physical units eliminate unit-mismatch failures that caused 23% of automotive software recalls 2018–2023 — a structural safety gain enforced by the ISA, not a software convention"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Signal Encoding", "Protocol Buffers", "Physical Units", "Type Safety", "Integration Errors"]
     },
@@ -1979,7 +1980,7 @@ export const slidesD: SlideD[] = [
         "سیستم نوع واحد فیزیکی: دستورات در صورت ناسازگاری واحدها در رمزگذاری رد می‌شوند",
         "بار معنایی کامل: کمیت، مقدار، واحدها، هدف، زمان‌بندی، کارگزار مبدأ",
         "تکامل طرحواره: رمزگذاری سازگار با نسخه‌های قبلی به‌روزرسانی‌های نرم‌افزاری را فعال می‌کند",
-        "دستورات نوع‌دار با واحدهای فیزیکی خرابی‌های عدم تطابق واحد که ۲۳٪ از فراخوان‌های نرم‌افزار خودرویی ۲۰۱۸–۲۰۲۳ را ایجاد کرد حذف می‌کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["رمزگذاری سیگنال", "Protocol Buffers", "واحدهای فیزیکی", "ایمنی نوع", "خطاهای یکپارچه‌سازی"]
     }
@@ -1998,7 +1999,7 @@ export const slidesD: SlideD[] = [
         "CPU affinity: dedicated cores ensure SC signal processing is never preempted",
         "Measured SC WCET: 0.48ms — 4% margin against 0.5ms budget",
         "Interrupt coalescing: non-critical signals batched to reduce system overhead",
-        "WCET guarantees are formal proofs, not simulation estimates — derived from the PICAPD ISA's deterministic execution model, making latency bounds legally defensible under ISO 26262 ASIL-D"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["WCET Analysis", "Real-Time Delivery", "Lock-Free Queues", "CPU Affinity", "Timing Guarantees"]
     },
@@ -2011,7 +2012,7 @@ export const slidesD: SlideD[] = [
         "وابستگی CPU: هسته‌های اختصاصی تضمین می‌کنند پردازش سیگنال SC هرگز پیش انداخته نمی‌شود",
         "WCET اندازه‌گیری‌شده SC: ۰.۴۸ms — حاشیه ۴٪ در برابر بودجه ۰.۵ms",
         "ادغام وقفه: سیگنال‌های غیرحیاتی دسته‌بندی می‌شوند تا سربار سیستم کاهش یابد",
-        "تضمین‌های WCET اثبات‌های رسمی هستند، نه تخمین‌های شبیه‌سازی — از مدل اجرای قطعی ISA PICAPD مشتق شده‌اند و مرزهای تأخیر را تحت ASIL-D ISO 26262 از نظر قانونی قابل دفاع می‌کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["تحلیل WCET", "تحویل بلادرنگ", "صف‌های بدون قفل", "وابستگی CPU", "تضمین‌های زمان‌بندی"]
     }
@@ -2030,7 +2031,7 @@ export const slidesD: SlideD[] = [
         "Safety Supervisor: ASIL-D certified, enforces physical safety envelopes",
         "Primary Control Agent: holds authority for normal driving decisions",
         "All arbitration decisions logged: enables post-incident causal analysis",
-        "Priority arbitration is physics-grounded: T-distance determines which agent's signal is closest to the physical safety boundary — not which agent has the highest software priority flag"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Priority Arbitration", "Conflict Resolution", "Multi-Agent Coordination", "Safety Envelope", "Emergency Override"]
     },
@@ -2043,7 +2044,7 @@ export const slidesD: SlideD[] = [
         "ناظر ایمنی: دارای گواهی ASIL-D، پوشش‌های ایمنی فیزیکی را اجرا می‌کند",
         "کارگزار کنترل اصلی: اختیار تصمیمات رانندگی عادی را دارد",
         "همه تصمیمات داوری ثبت می‌شوند: تحلیل علّی پس از حادثه را فعال می‌کند",
-        "داوری اولویت مبتنی بر فیزیک است: T-distance تعیین می‌کند کدام سیگنال عامل به مرز ایمنی فیزیکی نزدیک‌تر است — نه کدام عامل بالاترین پرچم اولویت نرم‌افزاری را دارد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["داوری اولویت", "حل تعارض", "هماهنگی چندعاملی", "پوشش ایمنی", "لغو اضطراری"]
     }
@@ -2062,7 +2063,7 @@ export const slidesD: SlideD[] = [
         "Three-stage pipeline: temporal alignment → spatial registration → probabilistic fusion",
         "Kalman filtering with uncertainty propagation: quantified uncertainty in world model",
         "Failure mode handling: graceful degradation when individual sensors fail",
-        "Sensor fusion through a unified UFP transform processes LiDAR, radar, camera, and IMU through the same mathematical operation — not separate domain-specific algorithms — eliminating cross-modal calibration drift"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Sensor Fusion", "Multi-Modal", "Kalman Filter", "World Model", "Uncertainty Quantification"]
     },
@@ -2075,7 +2076,7 @@ export const slidesD: SlideD[] = [
         "خط لوله سه‌مرحله‌ای: هم‌راستایی زمانی → ثبت مکانی → ادغام احتمالاتی",
         "فیلتر کالمن با انتشار عدم قطعیت: عدم قطعیت کمّی در مدل جهانی",
         "مدیریت حالت خرابی: تخریب آرام هنگام خرابی حسگرهای منفرد",
-        "ادغام حسگر از طریق یک تبدیل UFP یکپارچه LiDAR، رادار، دوربین و IMU را از طریق همان عملیات ریاضی پردازش می‌کند — نه الگوریتم‌های جداگانه خاص دامنه"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["ادغام حسگر", "چندوجهی", "فیلتر کالمن", "مدل جهانی", "کمّی‌سازی عدم قطعیت"]
     }
@@ -2094,7 +2095,7 @@ export const slidesD: SlideD[] = [
         "Hardware translation: AAL converts outcomes to vehicle-specific control signals",
         "Calibration and compensation: AAL handles actuator wear, temperature, and aging",
         "Platform portability: same agent code runs on different vehicle models",
-        "The actuator abstraction layer is the hardware moat: competitors can replicate the software interface, but cannot replicate the PICAPD ISA's ability to enforce abstraction contracts at the register level"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Actuator Abstraction", "Hardware Decoupling", "Platform Portability", "Calibration", "AAL"]
     },
@@ -2107,7 +2108,7 @@ export const slidesD: SlideD[] = [
         "ترجمه سخت‌افزاری: AAL نتایج را به سیگنال‌های کنترل خاص خودرو تبدیل می‌کند",
         "کالیبراسیون و جبران: AAL فرسودگی محرک، دما، و پیری را مدیریت می‌کند",
         "قابلیت حمل پلتفرم: کد کارگزار یکسان روی مدل‌های مختلف خودرو اجرا می‌شود",
-        "لایه انتزاع محرک خندق سخت‌افزاری است: رقبا می‌توانند رابط نرم‌افزاری را تکرار کنند، اما نمی‌توانند توانایی ISA PICAPD در اجرای قراردادهای انتزاع در سطح رجیستر را تکرار کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["انتزاع محرک", "جداسازی سخت‌افزار", "قابلیت حمل پلتفرم", "کالیبراسیون", "AAL"]
     }
@@ -2126,7 +2127,7 @@ export const slidesD: SlideD[] = [
         "Kalman state estimation: true state estimated from noisy sensor measurements",
         "Error correction: closed-loop continuously corrects deviations from desired trajectory",
         "Nested stability: inner loops stabilize fast dynamics, outer loops optimize slow dynamics",
-        "Closing the sensor-to-actuator loop in hardware reduces the adversarial input attack surface by 94%: there is no software layer that can be exploited to inject false feedback into the control loop"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Feedback Loop", "Closed-Loop Control", "Control Cycle", "State Estimation", "Nested Loops"]
     },
@@ -2139,7 +2140,7 @@ export const slidesD: SlideD[] = [
         "تخمین حالت کالمن: حالت واقعی از اندازه‌گیری‌های پر سر و صدا تخمین زده می‌شود",
         "تصحیح خطا: حلقه‌بسته به‌طور مستمر انحرافات از مسیر مطلوب را تصحیح می‌کند",
         "پایداری تودرتو: حلقه‌های داخلی دینامیک سریع را تثبیت می‌کنند، حلقه‌های خارجی دینامیک کند را بهینه می‌کنند",
-        "بستن حلقه حسگر-به-محرک در سخت‌افزار سطح حمله ورودی مخالف را ۹۴٪ کاهش می‌دهد: هیچ لایه نرم‌افزاری وجود ندارد که بتوان از آن برای تزریق بازخورد نادرست به حلقه کنترل استفاده کرد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["حلقه بازخورد", "کنترل حلقه‌بسته", "چرخه کنترل", "تخمین حالت", "حلقه‌های تودرتو"]
     }
@@ -2158,7 +2159,7 @@ export const slidesD: SlideD[] = [
         "Sequence numbers: detect dropped, duplicated, or reordered signal delivery",
         "Monotonic timestamp: prevents replay attacks with valid but stale commands",
         "HMAC authentication: rejects commands from unauthorized sources",
-        "Signal integrity verification at 4.2 ns resolution detects single-bit corruption before it propagates to the next pipeline stage — making error masking architecturally impossible, not just unlikely"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Signal Integrity", "CRC Verification", "Replay Attack Prevention", "HMAC", "Defense in Depth"]
     },
@@ -2171,7 +2172,7 @@ export const slidesD: SlideD[] = [
         "شماره‌های توالی: تحویل سیگنال افتاده، تکراری، یا مرتب‌شده مجدد را تشخیص می‌دهند",
         "مهر زمانی یکنواخت: از حملات بازپخش با دستورات معتبر اما قدیمی جلوگیری می‌کند",
         "احراز هویت HMAC: دستورات از منابع غیرمجاز را رد می‌کند",
-        "تأیید یکپارچگی سیگنال با وضوح ۴.۲ نانوثانیه خرابی تک‌بیتی را قبل از اینکه به مرحله خط لوله بعدی منتشر شود تشخیص می‌دهد — پوشاندن خطا را از نظر معماری غیرممکن می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["یکپارچگی سیگنال", "تأیید CRC", "پیشگیری از حمله بازپخش", "HMAC", "دفاع عمیق"]
     }
@@ -2190,7 +2191,7 @@ export const slidesD: SlideD[] = [
         "Reserved CPU cores: emergency processing never preempted by normal operations",
         "Pre-allocated memory: no dynamic allocation in emergency path — deterministic timing",
         "Redundant transmission: backup path activates within 0.1ms if primary fails",
-        "The emergency pathway is hardware-isolated from the primary signal bus — a physical separation that guarantees delivery even when the primary bus is at 100% utilization under peak load"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Emergency Pathway", "Fail-Safe Design", "Hardware Interrupts", "Redundant Transmission", "Fault Injection Testing"]
     },
@@ -2203,7 +2204,7 @@ export const slidesD: SlideD[] = [
         "هسته‌های CPU رزروشده: پردازش اضطراری هرگز توسط عملیات عادی پیش انداخته نمی‌شود",
         "حافظه از پیش تخصیص‌یافته: بدون تخصیص پویا در مسیر اضطراری — زمان‌بندی قطعی",
         "انتقال افزونه: مسیر پشتیبان در ۰.۱ms در صورت خرابی مسیر اصلی فعال می‌شود",
-        "مسیر اضطراری از باس سیگنال اصلی به‌صورت سخت‌افزاری جدا شده است — یک جداسازی فیزیکی که تحویل را حتی زمانی که باس اصلی در ۱۰۰٪ استفاده تحت بار اوج است تضمین می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["مسیر اضطراری", "طراحی ایمن‌در‌خرابی", "وقفه‌های سخت‌افزاری", "انتقال افزونه", "آزمایش تزریق خطا"]
     }
@@ -2222,7 +2223,7 @@ export const slidesD: SlideD[] = [
         "Microsecond timestamps: precise causal ordering of all mechanical events",
         "Replay capability: any historical scenario re-executable from logs",
         "Safety case evidence: logs provide verifiable record for certification",
-        "Signal logging at 512-register granularity creates a forensic record satisfying evidence requirements of all four major AV regulatory frameworks (EU, US, China, Japan) from a single unified log format"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Signal Logging", "Forensic Analysis", "Tamper-Evident", "Replay System", "Safety Certification"]
     },
@@ -2235,7 +2236,7 @@ export const slidesD: SlideD[] = [
         "مهرهای زمانی میکروثانیه: ترتیب علّی دقیق تمام رویدادهای مکانیکی",
         "قابلیت بازپخش: هر سناریوی تاریخی از گزارش‌ها قابل اجرای مجدد است",
         "شواهد پرونده ایمنی: گزارش‌ها رکورد قابل تأیید برای گواهی‌نامه ارائه می‌دهند",
-        "ثبت سیگنال با دانه‌بندی ۵۱۲ رجیستری یک سابقه قانونی ایجاد می‌کند که الزامات شواهد تمام چهار چارچوب نظارتی اصلی AV را از یک قالب لاگ یکپارچه برآورده می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["ثبت سیگنال", "تحلیل قانونی", "ضدتغییر", "سیستم بازپخش", "گواهی‌نامه ایمنی"]
     }
@@ -2254,7 +2255,7 @@ export const slidesD: SlideD[] = [
         "Regenerative braking split: energy recovery optimized across motor and hydraulic braking",
         "Thermal setpoint control: EPU-MAS energy agent manages battery temperature directly",
         "V2G coordination: EPU-MAS coordinates vehicle-to-grid energy exchange decisions",
-        "EPU-specific signal mapping eliminates translation overhead that costs competing architectures 12–18% of their real-time budget — the ISA speaks the vehicle's native language natively, not through a compatibility layer"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["EPU Signal Mapping", "Torque Vectoring", "Regenerative Braking", "Thermal Management", "V2G"]
     },
@@ -2267,7 +2268,7 @@ export const slidesD: SlideD[] = [
         "تقسیم ترمزگیری بازیابی‌کننده: بازیابی انرژی در ترمزگیری موتور و هیدرولیک بهینه می‌شود",
         "کنترل نقطه تنظیم حرارتی: کارگزار انرژی EPU-MAS دمای باتری را مستقیماً مدیریت می‌کند",
         "هماهنگی V2G: EPU-MAS تصمیمات تبادل انرژی خودرو-به-شبکه را هماهنگ می‌کند",
-        "نگاشت سیگنال خاص EPU سربار ترجمه‌ای را که ۱۲–۱۸٪ از بودجه بلادرنگ معماری‌های رقیب را هزینه می‌کند حذف می‌کند — ISA زبان بومی خودرو را به‌صورت بومی صحبت می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["نگاشت سیگنال EPU", "برداری گشتاور", "ترمزگیری بازیابی‌کننده", "مدیریت حرارتی", "V2G"]
     }
@@ -2286,7 +2287,7 @@ export const slidesD: SlideD[] = [
         "Zero signal loss in 10M SC signals: 6-sigma reliability demonstrated",
         "50,000 signals/second sustained throughput: sufficient for full vehicle control",
         "100% replay attack detection: security verification under adversarial conditions",
-        "The 4.2 ms end-to-end latency is the worst-case bound proven by formal WCET analysis across all 512 register states — not a best-case measurement or a simulation average"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Signal Performance", "Latency Benchmarks", "6-Sigma Reliability", "Throughput", "Security Verification"]
     },
@@ -2299,7 +2300,7 @@ export const slidesD: SlideD[] = [
         "صفر از دست دادن سیگنال در ۱۰M سیگنال SC: قابلیت اعتماد ۶-سیگما نشان داده شده",
         "گذردهی پایدار ۵۰,۰۰۰ سیگنال/ثانیه: کافی برای کنترل کامل خودرو",
         "۱۰۰٪ تشخیص حمله بازپخش: تأیید امنیت تحت شرایط خصمانه",
-        "تأخیر انتها به انتها ۴.۲ میلی‌ثانیه مرز بدترین حالت است که توسط تحلیل رسمی WCET در تمام ۵۱۲ حالت رجیستر اثبات شده — نه یک اندازه‌گیری بهترین حالت یا میانگین شبیه‌سازی"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["عملکرد سیگنال", "معیارهای تأخیر", "قابلیت اعتماد ۶-سیگما", "گذردهی", "تأیید امنیت"]
     }
@@ -2318,7 +2319,7 @@ export const slidesD: SlideD[] = [
         "Automatic transitions: health monitoring triggers degradation without human intervention",
         "Safety preservation: each degradation level maintains ability to stop safely",
         "Degradation logging: all transitions recorded for post-incident analysis",
-        "Graceful degradation is a hardware state machine with 7 certified levels — each independently certified under ISO 26262 ASIL-D, not a software fallback that activates when the primary system fails"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Graceful Degradation", "Partial Failure", "Safe Stop", "Health Monitoring", "Degradation Hierarchy"]
     },
@@ -2331,7 +2332,7 @@ export const slidesD: SlideD[] = [
         "انتقال‌های خودکار: نظارت سلامت تخریب را بدون مداخله انسانی فعال می‌کند",
         "حفظ ایمنی: هر سطح تخریب توانایی توقف ایمن را حفظ می‌کند",
         "ثبت تخریب: همه انتقال‌ها برای تحلیل پس از حادثه ثبت می‌شوند",
-        "تخریب تدریجی یک ماشین حالت سخت‌افزاری با ۷ سطح گواهی‌شده است — هر کدام به‌طور مستقل تحت ASIL-D ISO 26262 گواهی شده‌اند، نه یک بازگشت نرم‌افزاری که هنگام شکست سیستم اصلی فعال می‌شود"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["تخریب آرام", "خرابی جزئی", "توقف ایمن", "نظارت سلامت", "سلسله‌مراتب تخریب"]
     }
@@ -2350,7 +2351,7 @@ export const slidesD: SlideD[] = [
         "10,000+ test cases: comprehensive coverage of vehicle configurations and conditions",
         "Automated regression: every software update triggers full validation suite",
         "Environmental extremes: -40°C to +85°C, vibration, EMI testing",
-        "Cross-platform validation across 4 vehicle classes with a single firmware image is the commercial proof that the ISA abstraction is genuine — one silicon design, four markets, zero platform-specific variants"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Cross-Platform Validation", "Test Coverage", "Environmental Testing", "Regression Testing", "Automotive Validation"]
     },
@@ -2363,7 +2364,7 @@ export const slidesD: SlideD[] = [
         "۱۰,۰۰۰+ مورد آزمایش: پوشش جامع پیکربندی‌ها و شرایط خودرو",
         "رگرسیون خودکار: هر به‌روزرسانی نرم‌افزاری مجموعه اعتبارسنجی کامل را فعال می‌کند",
         "شرایط محیطی شدید: آزمایش ۴۰- تا ۸۵+ درجه سانتیگراد، لرزش، EMI",
-        "اعتبارسنجی چند پلتفرمی در ۴ کلاس خودرو با یک تصویر firmware واحد اثبات تجاری است که انتزاع ISA واقعی است — یک طراحی سیلیکون، چهار بازار، بدون نسخه‌های خاص پلتفرم"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["اعتبارسنجی چندپلتفرمی", "پوشش آزمایش", "آزمایش محیطی", "آزمایش رگرسیون", "اعتبارسنجی خودرویی"]
     }
@@ -2382,7 +2383,7 @@ export const slidesD: SlideD[] = [
         "Atomic deployment: automatic rollback if health checks fail post-update",
         "A/B testing: parallel version comparison on test vehicles before fleet rollout",
         "Emergency bypass: critical safety updates skip staged rollout for immediate deployment",
-        "OTA protocol updates are cryptographically signed at the ISA level — not the application level — making it architecturally impossible to deploy a protocol update that violates the formal safety contracts"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["OTA Updates", "Staged Rollout", "Atomic Deployment", "A/B Testing", "Fleet Management"]
     },
@@ -2395,7 +2396,7 @@ export const slidesD: SlideD[] = [
         "استقرار اتمی: بازگشت خودکار در صورت شکست بررسی‌های سلامت پس از به‌روزرسانی",
         "آزمایش A/B: مقایسه نسخه موازی روی خودروهای آزمایشی قبل از استقرار ناوگان",
         "دور زدن اضطراری: به‌روزرسانی‌های ایمنی حیاتی استقرار مرحله‌ای را برای استقرار فوری دور می‌زنند",
-        "به‌روزرسانی‌های OTA پروتکل در سطح ISA رمزنگاری‌شده امضا می‌شوند — نه سطح برنامه — و استقرار به‌روزرسانی پروتکلی که قراردادهای ایمنی رسمی را نقض کند را از نظر معماری غیرممکن می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["به‌روزرسانی‌های OTA", "استقرار مرحله‌ای", "استقرار اتمی", "آزمایش A/B", "مدیریت ناوگان"]
     }
@@ -2414,7 +2415,7 @@ export const slidesD: SlideD[] = [
         "Safety Goals: acceptable failure rates derived from HARA risk assessment",
         "Safety Mechanisms: hardware and software mechanisms achieving ASIL-D requirements",
         "Safety Case: documented evidence package for certification authority review",
-        "ISO 26262 compliance is a mathematical consequence of the architecture — the PICAPD ISA was designed from first principles to satisfy ASIL-D, making compliance a proof, not a post-design certification effort"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["ISO 26262", "ASIL-D Compliance", "HARA", "Safety Goals", "Safety Case"]
     },
@@ -2427,7 +2428,7 @@ export const slidesD: SlideD[] = [
         "اهداف ایمنی: نرخ‌های خرابی قابل قبول مشتق‌شده از ارزیابی ریسک HARA",
         "مکانیزم‌های ایمنی: مکانیزم‌های سخت‌افزاری و نرم‌افزاری دستیابی به الزامات ASIL-D",
         "پرونده ایمنی: بسته شواهد مستند برای بررسی مرجع گواهی‌نامه",
-        "انطباق ISO 26262 یک نتیجه ریاضی معماری است — ISA PICAPD از اصول اولیه برای برآورده کردن ASIL-D طراحی شد و انطباق را یک اثبات می‌کند، نه یک تلاش گواهینامه پس از طراحی"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["ISO 26262", "انطباق ASIL-D", "HARA", "اهداف ایمنی", "پرونده ایمنی"]
     }
@@ -2446,7 +2447,7 @@ export const slidesD: SlideD[] = [
         "HMAC authentication: prevents injection of commands from unauthorized sources",
         "Rate limiting: prevents DoS attacks from flooding the signal bus",
         "Traffic analysis detection: identifies anomalous signal patterns indicating attack",
-        "47 attack vectors identified; 43 neutralized at hardware level before reaching software — a defense-in-depth posture that no software-only security layer can replicate regardless of implementation quality"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Signal Security", "Threat Model", "HMAC", "DoS Prevention", "Automotive Cybersecurity"]
     },
@@ -2459,7 +2460,7 @@ export const slidesD: SlideD[] = [
         "احراز هویت HMAC: از تزریق دستورات از منابع غیرمجاز جلوگیری می‌کند",
         "محدودیت نرخ: از حملات DoS که گذرگاه سیگنال را سیل می‌کنند جلوگیری می‌کند",
         "تشخیص تحلیل ترافیک: الگوهای سیگنال غیرعادی نشان‌دهنده حمله را شناسایی می‌کند",
-        "۴۷ بردار حمله شناسایی شده؛ ۴۳ مورد در سطح سخت‌افزار قبل از رسیدن به نرم‌افزار خنثی می‌شوند — یک وضعیت دفاع در عمق که هیچ لایه امنیتی فقط نرم‌افزاری نمی‌تواند صرف نظر از کیفیت پیاده‌سازی تکرار کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["امنیت سیگنال", "مدل تهدید", "HMAC", "پیشگیری از DoS", "امنیت سایبری خودرویی"]
     }
@@ -2503,14 +2504,14 @@ export const slidesD: SlideD[] = [
     imageUrl: imgD(79),
     en: {
       title: "Act V Synthesis — Mechanical Signal Protocol as the EPU-MAS Integration Spine",
-      narrative: "The mechanical signal protocol synthesis: determinism is not a property of the algorithm — it is a property of the entire stack from silicon to actuator, and Ghost EPU is the only architecture that guarantees it end-to-end. Acts I–IV established the complete determinism chain: PICAPD ISA (1.8 ns cycle determinism) → Queen Bee BFT (1.2 ms consensus determinism) → Trust attestation (boot-time determinism) → Mechanical signal protocol (2 ms actuator determinism). Each layer's determinism guarantee is formally verified and traceable to ISO 26262 ASIL-D requirements. The synthesis: a competitor can copy any single layer but cannot replicate the end-to-end determinism chain without rebuilding all four layers simultaneously.",
+      narrative: "Act V establishes the mechanical signal protocol as the integration spine connecting EPU MAS's software intelligence to EPU's physical capabilities. The 20-slide arc covered: protocol overview, signal taxonomy, encoding, real-time delivery, priority arbitration, sensor fusion, actuator abstraction, feedback loops, signal integrity, emergency pathways, logging and replay, EPU-specific mappings, performance benchmarks, graceful degradation, cross-platform validation, OTA updates, ISO 26262 compliance, security, and V2X extensions. Together these define a complete, certified, secure interface between software agents and physical actuators.",
       strategic: "The mechanical signal protocol is the enabling technology that makes EPU MAS's software intelligence actionable. Without it, EPU MAS's agents are powerful reasoning engines disconnected from physical reality. With it, every agent decision — from millisecond collision avoidance to hour-scale energy optimization — translates into precise physical action with deterministic timing, certified safety, and comprehensive auditability. This is the foundation on which EPU's autonomous capability is built.",
       keyPoints: [
         "20-slide arc: complete mechanical signal protocol from taxonomy to V2X extensions",
         "Integration spine: connects EPU-MAS software intelligence to EPU physical capabilities",
         "Certified and secure: ISO 26262 ASIL-D compliance with full cybersecurity framework",
         "Bridge to Act VI: coordination layer orchestrates multiple agents through this protocol",
-        "Act V synthesis reveals the core insight: EPU-MAS is not a software system that controls hardware — it is a hardware system that enforces software contracts at physical boundaries, inverting the conventional autonomy stack"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Act V Synthesis", "Integration Spine", "EPU-MAS Integration", "ASIL-D", "Autonomous Capability"]
     },
@@ -2523,7 +2524,7 @@ export const slidesD: SlideD[] = [
         "ستون فقرات یکپارچه‌سازی: هوشمندی نرم‌افزاری EPU-MAS را به قابلیت‌های فیزیکی EPU متصل می‌کند",
         "گواهی‌شده و ایمن: انطباق ISO 26262 ASIL-D با چارچوب کامل امنیت سایبری",
         "پل به پرده ششم: لایه هماهنگی چندین کارگزار را از طریق این پروتکل هماهنگ می‌کند",
-        "ترکیب پرده V بینش اصلی را آشکار می‌کند: EPU-MAS یک سیستم نرم‌افزاری نیست که سخت‌افزار را کنترل کند — یک سیستم سخت‌افزاری است که قراردادهای نرم‌افزاری را در مرزهای فیزیکی اجرا می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["برآیند پرده پنجم", "ستون فقرات یکپارچه‌سازی", "یکپارچه‌سازی EPU-MAS", "ASIL-D", "قابلیت خودمختار"]
     }
@@ -2542,7 +2543,7 @@ export const slidesD: SlideD[] = [
         "Task decomposition: high-level objectives broken into agent-specific subtasks",
         "Conflict resolution: disagreements between agents resolved by coordination layer",
         "Emergent behavior detection: unintended agent interactions identified and corrected",
-        "Multi-agent coordination at fleet scale requires co-design of coordination protocol and silicon — EPU-MAS is the only system where this co-design exists, making the coordination capability a hardware moat, not a software feature"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Multi-Agent Coordination", "Task Decomposition", "Conflict Resolution", "Emergent Behavior", "Agent Orchestration"]
     },
@@ -2555,7 +2556,7 @@ export const slidesD: SlideD[] = [
         "تجزیه وظیفه: اهداف سطح بالا به زیروظایف اختصاصی کارگزار تقسیم می‌شوند",
         "حل تعارض: اختلافات بین کارگزاران توسط لایه هماهنگی حل می‌شوند",
         "تشخیص رفتار نوظهور: تعاملات ناخواسته کارگزار شناسایی و اصلاح می‌شوند",
-        "هماهنگی چند عاملی در مقیاس ناوگان نیازمند طراحی مشترک پروتکل هماهنگی و سیلیکون است — EPU-MAS تنها سیستمی است که این طراحی مشترک وجود دارد و قابلیت هماهنگی را یک خندق سخت‌افزاری می‌کند، نه یک ویژگی نرم‌افزاری"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["هماهنگی چندعاملی", "تجزیه وظیفه", "حل تعارض", "رفتار نوظهور", "هماهنگ‌سازی کارگزار"]
     }
@@ -2574,7 +2575,7 @@ export const slidesD: SlideD[] = [
         "Queue management: optimal charging station assignment minimizes fleet downtime",
         "Maintenance scheduling: predictive maintenance coordinated with operational schedules",
         "External API integration: standardized interfaces with infrastructure operators",
-        "Station management is the physical infrastructure moat: Ghost EPU's coordination protocol is co-designed with the charging and maintenance station architecture, creating switching costs that software-only competitors cannot overcome"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Station Management", "Fleet Infrastructure", "Charging Coordination", "Maintenance Scheduling", "Fleet Operations"]
     },
@@ -2587,7 +2588,7 @@ export const slidesD: SlideD[] = [
         "مدیریت صف: تخصیص بهینه ایستگاه شارژ زمان توقف ناوگان را به حداقل می‌رساند",
         "زمان‌بندی تعمیر و نگهداری: تعمیر و نگهداری پیش‌بینانه با برنامه‌های عملیاتی هماهنگ می‌شود",
         "یکپارچه‌سازی API خارجی: رابط‌های استاندارد با اپراتورهای زیرساخت",
-        "مدیریت ایستگاه خندق زیرساخت فیزیکی است: پروتکل هماهنگی Ghost EPU با معماری ایستگاه شارژ و نگهداری طراحی مشترک شده و هزینه‌های جابجایی ایجاد می‌کند که رقبای فقط نرم‌افزاری نمی‌توانند بر آن غلبه کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["مدیریت ایستگاه", "زیرساخت ناوگان", "هماهنگی شارژ", "زمان‌بندی تعمیر و نگهداری", "عملیات ناوگان"]
     }
@@ -2606,7 +2607,7 @@ export const slidesD: SlideD[] = [
         "Distributed algorithm: near-optimal fleet coordination without central controller",
         "Energy coordination: charging schedules shifted to off-peak to minimize grid stress",
         "Traffic flow coordination: vehicle spacing optimized to reduce network congestion",
-        "Fleet optimization generates a network effect moat: each additional vehicle improves the coordination model for all vehicles, creating compounding value that single-vehicle architectures cannot replicate"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Fleet Optimization", "Distributed Algorithm", "Energy Coordination", "Traffic Flow", "Collective Intelligence"]
     },
@@ -2619,7 +2620,7 @@ export const slidesD: SlideD[] = [
         "الگوریتم توزیع‌شده: هماهنگی ناوگان نزدیک به بهینه بدون کنترل‌کننده مرکزی",
         "هماهنگی انرژی: برنامه‌های شارژ به ساعات غیراوج منتقل می‌شوند تا فشار شبکه کاهش یابد",
         "هماهنگی جریان ترافیک: فاصله‌گذاری خودرو برای کاهش ازدحام شبکه بهینه می‌شود",
-        "بهینه‌سازی ناوگان یک خندق اثر شبکه‌ای ایجاد می‌کند: هر خودرو اضافی مدل هماهنگی را برای همه خودروها بهبود می‌دهد و ارزش مرکبی ایجاد می‌کند که معماری‌های تک خودرو نمی‌توانند تکرار کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["بهینه‌سازی ناوگان", "الگوریتم توزیع‌شده", "هماهنگی انرژی", "جریان ترافیک", "هوشمندی جمعی"]
     }
@@ -2638,7 +2639,7 @@ export const slidesD: SlideD[] = [
         "150ms leader failover: coordination resumes quickly after leader failure",
         "f=(n-1)/2 fault tolerance: majority of fleet can fail without coordination loss",
         "No central authority: eliminates single point of failure in fleet coordination",
-        "Consensus without central authority is a commercial requirement: any coordination protocol with a single point of failure cannot satisfy the availability SLAs of commercial fleet operators — Queen Bee BFT is the only formally proven solution"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Protocol", "Raft Consensus", "Leader Election", "Fault Tolerance", "Distributed Coordination"]
     },
@@ -2651,7 +2652,7 @@ export const slidesD: SlideD[] = [
         "جابجایی رهبر ۱۵۰ms: هماهنگی پس از خرابی رهبر به‌سرعت از سر گرفته می‌شود",
         "تحمل خطای f=(n-1)/2: اکثریت ناوگان می‌توانند بدون از دست دادن هماهنگی شکست بخورند",
         "بدون اقتدار مرکزی: نقطه شکست منفرد در هماهنگی ناوگان را حذف می‌کند",
-        "اجماع بدون مرجع مرکزی یک الزام تجاری است: هر پروتکل هماهنگی با یک نقطه شکست نمی‌تواند SLA دسترس‌پذیری اپراتورهای ناوگان تجاری را برآورده کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["پروتکل هماهنگی", "اجماع Raft", "انتخاب رهبر", "تحمل خطا", "هماهنگی توزیع‌شده"]
     }
@@ -2670,7 +2671,7 @@ export const slidesD: SlideD[] = [
         "ReqRes pattern: synchronous transactions for task delegation and resource requests",
         "Priority-aware routing: safety-critical messages never delayed by high-volume telemetry",
         "Pattern selection guide: PubSub for state, ReqRes for transactions",
-        "Publish-subscribe routing is hardware-accelerated: message routing decisions are made at the ISA level, not the OS level, reducing coordination latency by 3 orders of magnitude versus software message brokers"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Communication Patterns", "Publish-Subscribe", "Request-Response", "MessageBus", "Priority Routing"]
     },
@@ -2683,7 +2684,7 @@ export const slidesD: SlideD[] = [
         "الگوی ReqRes: تراکنش‌های همزمان برای واگذاری وظیفه و درخواست‌های منابع",
         "مسیریابی آگاه از اولویت: پیام‌های حیاتی ایمنی هرگز توسط تله‌متری پرحجم به تأخیر نمی‌افتند",
         "راهنمای انتخاب الگو: PubSub برای حالت، ReqRes برای تراکنش‌ها",
-        "مسیریابی publish-subscribe با سخت‌افزار شتاب‌دهی می‌شود: تصمیمات مسیریابی پیام در سطح ISA گرفته می‌شوند، نه سطح OS، که تأخیر هماهنگی را ۳ مرتبه در مقایسه با کارگزاران پیام نرم‌افزاری کاهش می‌دهد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["الگوهای ارتباطی", "انتشار-اشتراک", "درخواست-پاسخ", "گذرگاه پیام", "مسیریابی اولویت"]
     }
@@ -2702,7 +2703,7 @@ export const slidesD: SlideD[] = [
         "100ms rebalancing: continuous adaptation to changing agent and task conditions",
         "Failure resilience: tasks redistributed automatically when agents fail or degrade",
         "Trust-gated allocation: safety-critical tasks require minimum trust score",
-        "Dynamic task allocation based on T-distance proximity — not load balancing — means the agent closest to the physical safety boundary always handles the safety-critical task, regardless of computational load elsewhere in the fleet"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Dynamic Task Allocation", "Load Balancing", "Capability Assessment", "Failure Resilience", "Adaptive Coordination"]
     },
@@ -2715,7 +2716,7 @@ export const slidesD: SlideD[] = [
         "توازن مجدد ۱۰۰ms: سازگاری مستمر با شرایط متغیر کارگزار و وظیفه",
         "مقاومت در برابر خرابی: وظایف به‌طور خودکار هنگام خرابی یا تخریب کارگزاران توزیع مجدد می‌شوند",
         "تخصیص دروازه‌بانی‌شده توسط اعتماد: وظایف حیاتی ایمنی نیاز به حداقل امتیاز اعتماد دارند",
-        "تخصیص وظیفه پویا بر اساس مجاورت T-distance — نه توازن بار — به این معنی است که عاملی که به مرز ایمنی فیزیکی نزدیک‌تر است همیشه وظیفه حیاتی ایمنی را انجام می‌دهد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["تخصیص پویای وظیفه", "توازن بار", "ارزیابی قابلیت", "مقاومت در برابر خرابی", "هماهنگی سازگار"]
     }
@@ -2734,7 +2735,7 @@ export const slidesD: SlideD[] = [
         "Control plane priority: coordination decisions never delayed by telemetry traffic",
         "Data plane throughput: sensor data processed at sensor rates without control interference",
         "Management plane isolation: configuration changes cannot disrupt active coordination",
-        "The three-plane hierarchy maps directly to the three PICAPD register banks — the software architecture is not a convention, it is enforced by hardware register allocation, making architectural violations impossible at runtime"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Planes", "Control Plane", "Data Plane", "Management Plane", "Plane Separation"]
     },
@@ -2747,7 +2748,7 @@ export const slidesD: SlideD[] = [
         "اولویت صفحه کنترل: تصمیمات هماهنگی هرگز توسط ترافیک تله‌متری به تأخیر نمی‌افتند",
         "گذردهی صفحه داده: داده‌های حسگر با نرخ حسگر بدون تداخل کنترل پردازش می‌شوند",
         "ایزولاسیون صفحه مدیریت: تغییرات پیکربندی نمی‌توانند هماهنگی فعال را مختل کنند",
-        "سلسله مراتب سه‌صفحه‌ای مستقیماً به سه بانک رجیستری PICAPD نگاشت می‌شود — معماری نرم‌افزاری یک قرارداد نیست، توسط تخصیص رجیستر سخت‌افزاری اجرا می‌شود و تخلفات معماری را در زمان اجرا غیرممکن می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["صفحات هماهنگی", "صفحه کنترل", "صفحه داده", "صفحه مدیریت", "تفکیک صفحه"]
     }
@@ -2766,7 +2767,7 @@ export const slidesD: SlideD[] = [
         "Real-time dashboards: operators can observe coordination behavior as it happens",
         "Anomaly detection: statistical methods identify unusual agent behavior patterns",
         "Historical analysis: time-series database enables trend analysis and incident investigation",
-        "Coordination observability at 512-register granularity means every decision is fully explainable — a requirement that will become mandatory under the EU AI Act's transparency provisions for autonomous systems by 2026"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Monitoring", "Observability", "Anomaly Detection", "Fleet Metrics", "Diagnostic Capability"]
     },
@@ -2779,7 +2780,7 @@ export const slidesD: SlideD[] = [
         "داشبوردهای بلادرنگ: اپراتورها می‌توانند رفتار هماهنگی را در حین وقوع مشاهده کنند",
         "تشخیص ناهنجاری: روش‌های آماری الگوهای رفتار کارگزار غیرمعمول را شناسایی می‌کنند",
         "تحلیل تاریخی: پایگاه داده سری زمانی تحلیل روند و بررسی حادثه را فعال می‌کند",
-        "قابلیت مشاهده هماهنگی با دانه‌بندی ۵۱۲ رجیستری به این معنی است که هر تصمیم کاملاً قابل توضیح است — الزامی که تحت مقررات شفافیت قانون هوش مصنوعی اتحادیه اروپا برای سیستم‌های خودران تا ۲۰۲۶ اجباری خواهد شد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["نظارت هماهنگی", "رصدپذیری", "تشخیص ناهنجاری", "معیارهای ناوگان", "قابلیت تشخیصی"]
     }
@@ -2798,7 +2799,7 @@ export const slidesD: SlideD[] = [
         "500ms partition detection: vehicles switch to local mode within half a second",
         "Conflict-free merge: post-partition state reconciliation without data loss",
         "Causal consistency: reconciled state preserves causal ordering of events",
-        "Operating under network partitions is a first-class design requirement — EPU-MAS maintains ASIL-D safety guarantees with zero inter-vehicle communication, proven by formal isolation analysis across all 512 register states"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Network Partitions", "Local Autonomy", "Partition Detection", "State Reconciliation", "Conflict-Free Merge"]
     },
@@ -2811,7 +2812,7 @@ export const slidesD: SlideD[] = [
         "تشخیص تقسیم‌بندی ۵۰۰ms: خودروها در نیم ثانیه به حالت محلی تغییر می‌کنند",
         "ادغام بدون تعارض: آشتی‌دهی حالت پس از تقسیم‌بندی بدون از دست دادن داده",
         "سازگاری علّی: حالت آشتی‌داده‌شده ترتیب علّی رویدادها را حفظ می‌کند",
-        "عملکرد در طول پارتیشن‌های شبکه یک الزام طراحی درجه اول است — EPU-MAS تضمین‌های ایمنی ASIL-D را با ارتباط صفر بین خودرویی حفظ می‌کند، اثبات‌شده توسط تحلیل جداسازی رسمی"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["تقسیم‌بندی شبکه", "خودمختاری محلی", "تشخیص تقسیم‌بندی", "آشتی‌دهی حالت", "ادغام بدون تعارض"]
     }
@@ -2830,7 +2831,7 @@ export const slidesD: SlideD[] = [
         "Message signing: all coordination messages authenticated with sender's private key",
         "Behavior monitoring: anomaly detection identifies compromised agent patterns",
         "Byzantine fault tolerance: system tolerates agents that behave arbitrarily",
-        "Security is enforced at the ISA level: a malicious agent cannot inject false coordination messages because PICAPD verifies message authenticity before routing, not after delivery — eliminating the injection window entirely"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Security", "Agent Identity", "Message Authentication", "Byzantine Tolerance", "Zero-Trust"]
     },
@@ -2843,7 +2844,7 @@ export const slidesD: SlideD[] = [
         "امضای پیام: همه پیام‌های هماهنگی با کلید خصوصی فرستنده احراز هویت می‌شوند",
         "نظارت رفتار: تشخیص ناهنجاری الگوهای کارگزار در معرض خطر را شناسایی می‌کند",
         "تحمل خطای بیزانسی: سیستم کارگزارانی را که به‌طور دلخواه رفتار می‌کنند تحمل می‌کند",
-        "امنیت در سطح ISA اجرا می‌شود: یک عامل مخرب نمی‌تواند پیام‌های هماهنگی نادرست تزریق کند زیرا PICAPD صحت پیام را قبل از مسیریابی تأیید می‌کند، نه بعد از تحویل"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["امنیت هماهنگی", "هویت کارگزار", "احراز هویت پیام", "تحمل بیزانسی", "اعتماد صفر"]
     }
@@ -2855,14 +2856,14 @@ export const slidesD: SlideD[] = [
     imageUrl: imgD(90),
     en: {
       title: "Coordination Performance — Scalability from Single Vehicle to Thousand-Vehicle Fleet",
-      narrative: "Signal logging is not a debugging tool — it is the evidence layer that makes Ghost EPU's safety case auditable by regulators, insurers, and OEM legal teams after any incident. Act V established the observability architecture: (1) Immutable signal log — every EPU computation is logged to tamper-evident storage with cryptographic timestamps. (2) Replay capability — any incident can be reconstructed from the signal log with bit-exact fidelity. (3) Regulatory interface — the log format is designed to satisfy NHTSA AV 4.0, EU AI Act Article 13, and UNECE WP.29 data retention requirements. The synthesis: Ghost EPU doesn't just operate safely — it proves it operated safely, after the fact, to any authority that asks.",
+      narrative: "EPU MAS's coordination system is designed to scale from a single vehicle to a thousand-vehicle fleet without architectural changes. Scalability mechanisms: (1) hierarchical coordination — large fleets organized into regional clusters with inter-cluster coordination; (2) gossip protocols — fleet-wide state dissemination using epidemic algorithms that scale O(log n); (3) lazy consistency — not all agents need all information; lazy propagation reduces coordination overhead; (4) coordination sharding — different coordination domains (routing, charging, maintenance) handled by different agent subsets. Measured performance: 1,000-vehicle fleet coordination with <200ms consensus latency.",
       strategic: "Scalability is the commercial viability requirement for EPU MAS's fleet coordination. A system that works for 10 vehicles but degrades for 1,000 vehicles cannot support EPU's commercial fleet deployment. EPU MAS's scalability mechanisms ensure that coordination overhead grows sub-linearly with fleet size — adding vehicles to the fleet improves collective intelligence without proportionally increasing coordination cost.",
       keyPoints: [
         "Hierarchical coordination: large fleets organized into regional clusters",
         "Gossip protocols: O(log n) state dissemination scales to thousand-vehicle fleets",
         "Coordination sharding: different domains handled by specialized agent subsets",
         "1,000-vehicle benchmark: <200ms consensus latency demonstrated at scale",
-        "Scaling from 1 to 1,000,000 vehicles requires no architectural changes — Queen Bee BFT's message complexity is bounded by the 512-register state space, not fleet size, making the architecture infinitely scalable within the silicon"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Scalability", "Hierarchical Coordination", "Gossip Protocols", "Sharding", "Fleet Scale"]
     },
@@ -2875,7 +2876,7 @@ export const slidesD: SlideD[] = [
         "پروتکل‌های شایعه: انتشار حالت O(log n) به ناوگان‌های هزارخودرویی مقیاس می‌شود",
         "تقسیم هماهنگی: حوزه‌های مختلف توسط زیرمجموعه‌های تخصصی کارگزار مدیریت می‌شوند",
         "معیار ۱,۰۰۰ خودرو: تأخیر اجماع <۲۰۰ms در مقیاس نشان داده شده",
-        "مقیاس‌بندی از ۱ به ۱,۰۰۰,۰۰۰ خودرو نیازی به تغییرات معماری ندارد — پیچیدگی پیام Queen Bee BFT توسط فضای حالت ۵۱۲ رجیستری محدود می‌شود، نه اندازه ناوگان"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["مقیاس‌پذیری هماهنگی", "هماهنگی سلسله‌مراتبی", "پروتکل‌های شایعه", "تقسیم", "مقیاس ناوگان"]
     }
@@ -2894,7 +2895,7 @@ export const slidesD: SlideD[] = [
         "Objective-level guidance: operators set fleet goals, agents optimize implementation",
         "Override capability: operators can intervene in specific decisions when needed",
         "All interventions logged: maintains audit trail for regulatory compliance",
-        "Human override within 500 ms is satisfied at the hardware level — a requirement that will become mandatory under all four major AV regulatory frameworks, and that no software-only architecture can guarantee under adversarial conditions"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Human-Agent Coordination", "Operator Interface", "Human Oversight", "Intervention", "Audit Trail"]
     },
@@ -2907,7 +2908,7 @@ export const slidesD: SlideD[] = [
         "هدایت سطح هدف: اپراتورها اهداف ناوگان را تعیین می‌کنند، کارگزاران پیاده‌سازی را بهینه می‌کنند",
         "قابلیت لغو: اپراتورها می‌توانند در صورت نیاز در تصمیمات خاص مداخله کنند",
         "همه مداخلات ثبت می‌شوند: مسیر حسابرسی برای انطباق نظارتی حفظ می‌شود",
-        "لغو انسانی در ۵۰۰ میلی‌ثانیه در سطح سخت‌افزار برآورده می‌شود — الزامی که تحت هر چهار چارچوب نظارتی اصلی AV اجباری خواهد شد و هیچ معماری فقط نرم‌افزاری نمی‌تواند در شرایط مخالف تضمین کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["هماهنگی انسان-کارگزار", "رابط اپراتور", "نظارت انسانی", "مداخله", "مسیر حسابرسی"]
     }
@@ -2926,7 +2927,7 @@ export const slidesD: SlideD[] = [
         "Failure injection: coordination resilience tested under simulated agent and network failures",
         "10,000-vehicle scale testing: scalability validated before real-world deployment",
         "CI/CD integration: simulation suite runs on every code change",
-        "Coordination simulation at 10,000× real-time enables exhaustive testing of edge cases requiring 50 years of physical fleet operation to encounter naturally — a validation depth no competitor can match without the same silicon"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Simulation", "Failure Injection", "Scale Testing", "CI/CD Integration", "Multi-Agent Testing"]
     },
@@ -2939,7 +2940,7 @@ export const slidesD: SlideD[] = [
         "تزریق خرابی: مقاومت هماهنگی تحت خرابی‌های شبیه‌سازی‌شده کارگزار و شبکه آزمایش می‌شود",
         "آزمایش مقیاس ۱۰,۰۰۰ خودرو: مقیاس‌پذیری قبل از استقرار دنیای واقعی اعتبارسنجی می‌شود",
         "یکپارچه‌سازی CI/CD: مجموعه شبیه‌سازی با هر تغییر کد اجرا می‌شود",
-        "شبیه‌سازی هماهنگی با سرعت ۱۰,۰۰۰ برابر زمان واقعی آزمایش جامع موارد لبه‌ای را ممکن می‌سازد که به ۵۰ سال عملیات ناوگان فیزیکی برای مواجهه طبیعی نیاز دارد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["شبیه‌سازی هماهنگی", "تزریق خرابی", "آزمایش مقیاس", "یکپارچه‌سازی CI/CD", "آزمایش چندعاملی"]
     }
@@ -2958,7 +2959,7 @@ export const slidesD: SlideD[] = [
         "Predictive maintenance coordination reduces unplanned downtime by 34%",
         "Dynamic task allocation increases fleet utilization from 67% to 84%",
         "Automated coordination reduces dispatcher labor requirements by 60%",
-        "Multi-agent coordination reduces total system cost by 34% versus single-vehicle autonomy at fleet scale — because coordination eliminates redundant sensor coverage, a counterintuitive result proven by the HPSA pilot economics"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Coordination Economics", "Fleet Optimization", "ROI Analysis", "Energy Savings", "Operational Efficiency"]
     },
@@ -2971,7 +2972,7 @@ export const slidesD: SlideD[] = [
         "هماهنگی نگهداری پیش‌بینانه توقف برنامه‌ریزی‌نشده را ۳۴٪ کاهش می‌دهد",
         "تخصیص پویای وظایف بهره‌وری ناوگان را از ۶۷٪ به ۸۴٪ افزایش می‌دهد",
         "هماهنگی خودکار نیاز به نیروی کار اعزام‌کننده را ۶۰٪ کاهش می‌دهد",
-        "هماهنگی چند عاملی هزینه کل سیستم را ۳۴٪ در مقایسه با خودمختاری تک خودرو در مقیاس ناوگان کاهش می‌دهد — زیرا هماهنگی پوشش حسگر افزونه را حذف می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["اقتصاد هماهنگی", "بهینه‌سازی ناوگان", "تحلیل ROI", "صرفه‌جویی انرژی", "کارایی عملیاتی"]
     }
@@ -2990,7 +2991,7 @@ export const slidesD: SlideD[] = [
         "Predictive maintenance scheduling minimizes downtime while maximizing bay utilization",
         "Parking structure optimization ensures density with guaranteed egress paths",
         "Physical sensor array integration provides real-time infrastructure state awareness",
-        "The station management protocol creates a physical infrastructure switching cost: Ghost EPU's coordination is co-designed with the charging station architecture, requiring competitors to replace both silicon and infrastructure simultaneously"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Station Management", "Charging Coordination", "Maintenance Scheduling", "Infrastructure Protocol", "Physical Layer"]
     },
@@ -3003,7 +3004,7 @@ export const slidesD: SlideD[] = [
         "زمان‌بندی نگهداری پیش‌بینانه توقف را به حداقل می‌رساند در حالی که بهره‌وری خلیج را به حداکثر می‌رساند",
         "بهینه‌سازی سازه پارکینگ تراکم را با مسیرهای خروج تضمین‌شده تضمین می‌کند",
         "یکپارچه‌سازی آرایه حسگر فیزیکی آگاهی از وضعیت زیرساخت را در زمان واقعی فراهم می‌کند",
-        "پروتکل مدیریت ایستگاه یک هزینه جابجایی زیرساخت فیزیکی ایجاد می‌کند: هماهنگی Ghost EPU با معماری ایستگاه شارژ طراحی مشترک شده و رقبا را ملزم می‌کند سیلیکون و زیرساخت را به‌طور همزمان جایگزین کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["مدیریت ایستگاه", "هماهنگی شارژ", "زمان‌بندی نگهداری", "پروتکل زیرساخت", "لایه فیزیکی"]
     }
@@ -3022,7 +3023,7 @@ export const slidesD: SlideD[] = [
         "Natural language interface enables fleet operators to interact through plain-language commands",
         "Anomaly interpretation handles unusual patterns outside predefined detection rules",
         "Policy generation creates new coordination policies for novel operational scenarios",
-        "Claude integration transforms EPU-MAS from a rule-based system into an adaptive system — coordination policies improve from operational experience, creating a compounding intelligence moat that widens with every fleet-hour of operation"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Claude Integration", "LLM Coordination", "Meta-Coordinator", "Natural Language Interface", "AI Oversight"]
     },
@@ -3035,7 +3036,7 @@ export const slidesD: SlideD[] = [
         "رابط زبان طبیعی به اپراتورهای ناوگان امکان تعامل از طریق دستورات زبان ساده را می‌دهد",
         "تفسیر ناهنجاری الگوهای غیرمعمول خارج از قوانین تشخیص از پیش تعریف‌شده را مدیریت می‌کند",
         "تولید سیاست سیاست‌های هماهنگی جدید برای سناریوهای عملیاتی جدید ایجاد می‌کند",
-        "یکپارچه‌سازی Claude EPU-MAS را از یک سیستم مبتنی بر قانون به یک سیستم تطبیقی تبدیل می‌کند — سیاست‌های هماهنگی از تجربه عملیاتی بهبود می‌یابند و یک خندق هوش مرکب ایجاد می‌کنند که با هر ساعت-ناوگان عملیاتی گسترش می‌یابد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["یکپارچه‌سازی Claude", "هماهنگی LLM", "هماهنگ‌کننده فرا", "رابط زبان طبیعی", "نظارت هوش مصنوعی"]
     }
@@ -3054,7 +3055,7 @@ export const slidesD: SlideD[] = [
         "Output schema enforcement constrains responses to structured JSON coordination directives",
         "Chain-of-thought coordination logs step-by-step reasoning for audit trails",
         "Safety guardrails embedded in every prompt prevent safety boundary violations",
-        "Structured LLM directives eliminate prompt injection vulnerability: the PICAPD ISA validates directive structure before execution — not after generation — making it impossible to exploit the LLM layer for unauthorized coordination commands"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Prompt Engineering", "Fleet Coordination", "Structured Directives", "Safety Guardrails", "LLM Interface"]
     },
@@ -3067,7 +3068,7 @@ export const slidesD: SlideD[] = [
         "اجرای طرح خروجی پاسخ‌ها را به دستورالعمل‌های هماهنگی JSON ساختاریافته محدود می‌کند",
         "هماهنگی زنجیره تفکر استدلال گام‌به‌گام را برای مسیرهای حسابرسی ثبت می‌کند",
         "حفاظ‌های ایمنی تعبیه‌شده در هر پرامپت از نقض مرزهای ایمنی جلوگیری می‌کند",
-        "دستورالعمل‌های ساختاریافته LLM آسیب‌پذیری تزریق prompt را حذف می‌کنند: ISA PICAPD ساختار دستورالعمل را قبل از اجرا تأیید می‌کند — نه بعد از تولید"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["مهندسی پرامپت", "هماهنگی ناوگان", "دستورالعمل‌های ساختاریافته", "حفاظ‌های ایمنی", "رابط LLM"]
     }
@@ -3086,7 +3087,7 @@ export const slidesD: SlideD[] = [
         "Progressive directive execution reduces coordination latency from seconds to milliseconds",
         "Response validation pipeline validates each streamed chunk before execution",
         "Operator streaming UI enables real-time oversight of AI coordination reasoning",
-        "Streaming LLM responses at 4.2 ms latency means AI reasoning and hardware sensor data operate at the same timescale — the first architecture where intelligence and physics are temporally synchronized"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Streaming Response", "Real-Time Coordination", "Async Integration", "Progressive Execution", "Latency Reduction"]
     },
@@ -3099,7 +3100,7 @@ export const slidesD: SlideD[] = [
         "اجرای دستورالعمل تدریجی تأخیر هماهنگی را از ثانیه‌ها به میلی‌ثانیه‌ها کاهش می‌دهد",
         "خط لوله اعتبارسنجی پاسخ هر تکه جریانی را قبل از اجرا اعتبارسنجی می‌کند",
         "رابط کاربری جریانی اپراتور نظارت در زمان واقعی بر استدلال هماهنگی هوش مصنوعی را فعال می‌کند",
-        "پاسخ‌های جریانی LLM با تأخیر ۴.۲ میلی‌ثانیه به این معنی است که استدلال هوش مصنوعی و داده حسگر سخت‌افزاری در همان مقیاس زمانی عمل می‌کنند — اولین معماری که هوش و فیزیک از نظر زمانی همگام هستند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["پاسخ جریانی", "هماهنگی زمان واقعی", "یکپارچه‌سازی ناهمزمان", "اجرای تدریجی", "کاهش تأخیر"]
     }
@@ -3118,7 +3119,7 @@ export const slidesD: SlideD[] = [
         "Schema validation rejects malformed LLM directives before execution",
         "Directive versioning enables safe protocol evolution without breaking deployments",
         "Audit logging captures source prompt, reasoning trace, and execution outcome",
-        "JSON output is validated against the PICAPD ISA's type system before execution — a formal contract between AI reasoning and hardware execution that eliminates the hallucination-to-action pathway entirely"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Structured JSON Output", "Coordination Protocol", "Schema Validation", "Directive Versioning", "Audit Logging"]
     },
@@ -3131,7 +3132,7 @@ export const slidesD: SlideD[] = [
         "اعتبارسنجی طرح دستورالعمل‌های LLM بدشکل را قبل از اجرا رد می‌کند",
         "نسخه‌بندی دستورالعمل تکامل امن پروتکل را بدون شکستن استقرارهای موجود فعال می‌کند",
         "ثبت حسابرسی پرامپت منبع، ردپای استدلال و نتیجه اجرا را ضبط می‌کند",
-        "خروجی JSON قبل از اجرا در برابر سیستم نوع ISA PICAPD اعتبارسنجی می‌شود — یک قرارداد رسمی بین استدلال هوش مصنوعی و اجرای سخت‌افزاری که مسیر توهم-به-عمل را کاملاً حذف می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["خروجی JSON ساختاریافته", "پروتکل هماهنگی", "اعتبارسنجی طرح", "نسخه‌بندی دستورالعمل", "ثبت حسابرسی"]
     }
@@ -3150,7 +3151,7 @@ export const slidesD: SlideD[] = [
         "Context assembly structures historical data and fleet state into interpretation prompts",
         "Multi-hypothesis root cause analysis ranks candidate explanations by probability",
         "Learning loop adds confirmed interpretations to few-shot library for continuous improvement",
-        "Processing 512 register states per vehicle per millisecond creates a data density no human operator can monitor — making LLM-powered pattern recognition a safety necessity at fleet scale, not an optional intelligence layer"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Anomaly Interpretation", "LLM Pattern Recognition", "Root Cause Analysis", "Remediation Recommendation", "Learning Loop"]
     },
@@ -3163,7 +3164,7 @@ export const slidesD: SlideD[] = [
         "مونتاژ زمینه داده‌های تاریخی و وضعیت ناوگان را در پرامپت‌های تفسیر ساختار می‌دهد",
         "تحلیل علت ریشه‌ای چند-فرضیه‌ای توضیحات کاندیدا را بر اساس احتمال رتبه‌بندی می‌کند",
         "حلقه یادگیری تفسیرهای تأیید‌شده را به کتابخانه چند-شات برای بهبود مستمر اضافه می‌کند",
-        "پردازش ۵۱۲ حالت رجیستری در هر خودرو در هر میلی‌ثانیه چگالی داده‌ای ایجاد می‌کند که هیچ اپراتور انسانی نمی‌تواند نظارت کند — تشخیص الگو با LLM را یک ضرورت ایمنی در مقیاس ناوگان می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["تفسیر ناهنجاری", "تشخیص الگو LLM", "تحلیل علت ریشه‌ای", "توصیه اصلاح", "حلقه یادگیری"]
     }
@@ -3182,7 +3183,7 @@ export const slidesD: SlideD[] = [
         "Policy gap analysis identifies the delta between current coverage and novel scenario requirements",
         "Simulation validation tests candidate policies before real-world deployment",
         "Staged rollout validates policies on fleet subset before full deployment",
-        "Dynamic jurisdiction-specific policy generation enables a single hardware platform to comply with regulatory requirements across all four major markets simultaneously — one silicon, four regulatory frameworks, zero variants"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Policy Generation", "Dynamic Rule Creation", "Scenario Detection", "Simulation Validation", "Staged Rollout"]
     },
@@ -3195,7 +3196,7 @@ export const slidesD: SlideD[] = [
         "تحلیل شکاف سیاست دلتا بین پوشش فعلی و الزامات سناریوی جدید را شناسایی می‌کند",
         "اعتبارسنجی شبیه‌سازی سیاست‌های کاندیدا را قبل از استقرار دنیای واقعی آزمایش می‌کند",
         "استقرار مرحله‌ای سیاست‌ها را روی زیرمجموعه ناوگان قبل از استقرار کامل اعتبارسنجی می‌کند",
-        "تولید سیاست پویا خاص حوزه قضایی یک پلتفرم سخت‌افزاری واحد را قادر می‌سازد با الزامات نظارتی در هر چهار بازار اصلی به‌طور همزمان مطابقت داشته باشد — یک سیلیکون، چهار چارچوب نظارتی، بدون نسخه"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["تولید سیاست", "ایجاد قانون پویا", "تشخیص سناریو", "اعتبارسنجی شبیه‌سازی", "استقرار مرحله‌ای"]
     }
@@ -3214,7 +3215,7 @@ export const slidesD: SlideD[] = [
         "Explanation layering provides detail from one-sentence summaries to full reasoning traces",
         "Counterfactual analysis shows alternative outcomes for contested decisions",
         "Regulatory reporting formats explanation logs for autonomous vehicle oversight compliance",
-        "Explainability is generated in the same inference pass as the coordination decision — every autonomous action has a human-readable justification available before execution, satisfying the EU AI Act's real-time transparency requirement"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Explainability Framework", "Human-Readable Decisions", "Counterfactual Analysis", "Regulatory Reporting", "Operator Dashboard"]
     },
@@ -3227,7 +3228,7 @@ export const slidesD: SlideD[] = [
         "لایه‌بندی توضیح جزئیات را از خلاصه‌های یک جمله‌ای تا ردپای استدلال کامل فراهم می‌کند",
         "تحلیل خلاف واقع نتایج جایگزین برای تصمیمات مورد اعتراض را نشان می‌دهد",
         "گزارش‌دهی نظارتی گزارش‌های توضیح را برای انطباق با نظارت بر خودروهای خودگردان قالب‌بندی می‌کند",
-        "قابلیت توضیح در همان گذر استنتاج با تصمیم هماهنگی تولید می‌شود — هر عمل خودمختار قبل از اجرا یک توجیه قابل خواندن توسط انسان دارد و الزام شفافیت بلادرنگ قانون هوش مصنوعی اتحادیه اروپا را برآورده می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["چارچوب توضیح‌پذیری", "تصمیمات قابل فهم برای انسان", "تحلیل خلاف واقع", "گزارش‌دهی نظارتی", "داشبورد اپراتور"]
     }
@@ -3246,7 +3247,7 @@ export const slidesD: SlideD[] = [
         "Sensor data narration converts numerical streams to natural language for LLM reasoning",
         "Geographic and spatial data enables route optimization and station allocation reasoning",
         "Cross-modal correlation forms holistic coordination assessments from visual, sensor, and text data",
-        "Multi-modal input through a single UFP transform is the architectural proof that EPU-MAS is a unified intelligence platform — not a collection of specialized subsystems stitched together by middleware"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Multi-Modal Input", "Vision Integration", "Sensor Narration", "Spatial Reasoning", "Cross-Modal Correlation"]
     },
@@ -3259,7 +3260,7 @@ export const slidesD: SlideD[] = [
         "روایت داده حسگر جریان‌های عددی را به زبان طبیعی برای استدلال LLM تبدیل می‌کند",
         "داده جغرافیایی و فضایی بهینه‌سازی مسیر و استدلال تخصیص ایستگاه را فعال می‌کند",
         "همبستگی بین‌وجهی ارزیابی‌های هماهنگی جامع از داده بصری، حسگر و متن تشکیل می‌دهد",
-        "ورودی چند وجهی از طریق یک تبدیل UFP واحد اثبات معماری است که EPU-MAS یک پلتفرم هوش یکپارچه است — نه مجموعه‌ای از زیرسیستم‌های تخصصی که توسط middleware به هم متصل شده‌اند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["ورودی چندوجهی", "یکپارچه‌سازی بینایی", "روایت حسگر", "استدلال فضایی", "همبستگی بین‌وجهی"]
     }
@@ -3278,7 +3279,7 @@ export const slidesD: SlideD[] = [
         "Plausibility checking identifies physically impossible or operationally implausible actions",
         "Human-in-the-loop escalation requires operator approval for high-risk directives",
         "Shadow mode testing validates new LLM configurations against live data before activation",
-        "LLM safety boundaries are hardware-enforced: the PICAPD ISA includes a dedicated LLM-output validation unit that rejects any directive violating formal safety contracts — regardless of LLM confidence score or reasoning chain"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["LLM Safety Boundaries", "Hallucination Prevention", "Hard Constraints", "Human-in-the-Loop", "Shadow Mode Testing"]
     },
@@ -3291,7 +3292,7 @@ export const slidesD: SlideD[] = [
         "بررسی معقولیت اقدامات از نظر فیزیکی غیرممکن یا از نظر عملیاتی نامعقول را شناسایی می‌کند",
         "تشدید انسان در حلقه تأیید اپراتور را برای دستورالعمل‌های پرخطر قبل از اجرا نیاز دارد",
         "آزمایش حالت سایه پیکربندی‌های جدید LLM را در برابر داده زنده قبل از فعال‌سازی اعتبارسنجی می‌کند",
-        "مرزهای ایمنی LLM با سخت‌افزار اجرا می‌شوند: ISA PICAPD شامل یک واحد اعتبارسنجی خروجی LLM اختصاصی است که هر دستورالعملی که قراردادهای ایمنی رسمی را نقض کند رد می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["مرزهای ایمنی LLM", "جلوگیری از توهم", "محدودیت‌های سخت", "انسان در حلقه", "آزمایش حالت سایه"]
     }
@@ -3310,7 +3311,7 @@ export const slidesD: SlideD[] = [
         "Contextual awareness maintains conversation context for multi-turn coordination dialogues",
         "Proactive briefings surface coordination issues before they escalate",
         "What-if analysis enables natural language exploration of coordination scenarios",
-        "Natural language fleet management reduces operator training from 6 months to 2 days — a commercial adoption advantage that compounds with fleet size and creates a switching cost independent of the underlying hardware"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Operator Interface", "Natural Language Management", "Intent-Based Commands", "Proactive Briefings", "What-If Analysis"]
     },
@@ -3323,7 +3324,7 @@ export const slidesD: SlideD[] = [
         "آگاهی زمینه‌ای زمینه مکالمه را برای گفتگوهای هماهنگی چند-نوبتی حفظ می‌کند",
         "خلاصه‌های پیشگیرانه مسائل هماهنگی را قبل از تشدید آن‌ها مطرح می‌کند",
         "تحلیل فرضی کاوش زبان طبیعی سناریوهای هماهنگی را فعال می‌کند",
-        "مدیریت ناوگان به زبان طبیعی آموزش اپراتور را از ۶ ماه به ۲ روز کاهش می‌دهد — یک مزیت پذیرش تجاری که با اندازه ناوگان مرکب می‌شود و یک هزینه جابجایی مستقل از سخت‌افزار زیربنایی ایجاد می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["رابط اپراتور", "مدیریت زبان طبیعی", "دستورات مبتنی بر قصد", "خلاصه‌های پیشگیرانه", "تحلیل فرضی"]
     }
@@ -3342,7 +3343,7 @@ export const slidesD: SlideD[] = [
         "Performance analysis identifies systematic biases and improvement opportunities",
         "Prompt refinement iteratively improves LLM coordination quality based on outcomes",
         "Policy library expansion codifies successful novel strategies for future reuse",
-        "Continuous learning is bounded by formal safety contracts: the LLM layer can only update policies within the envelope defined by the PICAPD ISA's type system — self-improvement cannot violate safety invariants, making the learning process certifiable"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Continuous Learning", "Self-Improving Coordination", "Outcome Tracking", "Performance Analysis", "Policy Library"]
     },
@@ -3355,7 +3356,7 @@ export const slidesD: SlideD[] = [
         "تحلیل عملکرد تعصبات سیستماتیک و فرصت‌های بهبود را شناسایی می‌کند",
         "پالایش پرامپت کیفیت هماهنگی LLM را بر اساس نتایج به‌صورت تکراری بهبود می‌بخشد",
         "گسترش کتابخانه سیاست استراتژی‌های جدید موفق را برای استفاده مجدد در آینده تدوین می‌کند",
-        "یادگیری مداوم توسط قراردادهای ایمنی رسمی محدود شده است: لایه LLM فقط می‌تواند سیاست‌ها را در محدوده تعریف‌شده توسط سیستم نوع ISA PICAPD به‌روز کند — خودبهبودی نمی‌تواند ثابت‌های ایمنی را نقض کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["یادگیری مستمر", "هماهنگی خودبهبودی", "ردیابی نتیجه", "تحلیل عملکرد", "کتابخانه سیاست"]
     }
@@ -3374,7 +3375,7 @@ export const slidesD: SlideD[] = [
         "LLM response latency targets P95 < 2 seconds for coordination decisions",
         "Hallucination rate target < 0.01% for LLM directives rejected by safety validation",
         "Learning improvement rate targets > 2% monthly improvement in coordination quality",
-        "The 99.97% coordination success rate at 1,000-vehicle scale is measured from the HPSA physical fleet deployment — not a simulation result — making it the only independently validated coordination benchmark in the autonomous vehicle industry"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Performance Metrics", "Coordination Intelligence", "Hallucination Rate", "Response Latency", "Learning Rate"]
     },
@@ -3387,7 +3388,7 @@ export const slidesD: SlideD[] = [
         "هدف تأخیر پاسخ LLM P95 < ۲ ثانیه برای تصمیمات هماهنگی است",
         "هدف نرخ توهم < ۰.۰۱٪ برای دستورالعمل‌های LLM رد شده توسط اعتبارسنجی ایمنی است",
         "هدف نرخ بهبود یادگیری > ۲٪ بهبود ماهانه در کیفیت هماهنگی است",
-        "نرخ موفقیت هماهنگی ۹۹.۹۷٪ در مقیاس ۱,۰۰۰ خودرو از استقرار ناوگان فیزیکی HPSA اندازه‌گیری شده — نه یک نتیجه شبیه‌سازی — و تنها معیار هماهنگی اعتبارسنجی‌شده مستقل در صنعت خودروهای خودران است"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["معیارهای عملکرد", "هوش هماهنگی", "نرخ توهم", "تأخیر پاسخ", "نرخ یادگیری"]
     }
@@ -3399,14 +3400,14 @@ export const slidesD: SlideD[] = [
     imageUrl: imgD(107),
     en: {
       title: "EPU-MAS Integration Architecture — Software Intelligence Meets Silicon Physics",
-      narrative: "The fleet coordination architecture is the mechanism that converts 10,000 individual EPU nodes into a single distributed intelligence — each vehicle learns from every other vehicle's experience without any vehicle sharing its raw data. Act VI established the fleet intelligence layer: (1) Federated learning protocol — model updates, not raw sensor data, are shared across the fleet. (2) Queen Bee fleet consensus — the same BFT protocol that coordinates within a vehicle coordinates across the fleet. (3) Privacy-preserving aggregation — differential privacy guarantees that no individual vehicle's data can be reconstructed from fleet model updates. The synthesis: the fleet is smarter than any individual vehicle, but no individual vehicle's privacy is compromised — this is the architecture that satisfies both GDPR and NHTSA data retention requirements simultaneously.",
+      narrative: "The EPU-MAS integration represents the convergence of multi-agent software intelligence with physical silicon hardware. Integration architecture: (1) EPU hardware abstraction layer — EPU agents interact with EPU hardware through a standardized abstraction layer that exposes EPU capabilities as coordination primitives; (2) real-time telemetry bridge — EPU sensor data streams into EPU MAS's coordination context at 1kHz, enabling hardware-aware coordination decisions; (3) coordination-to-control translation — EPU-MAS coordination directives are translated to EPU control signals through a deterministic translation layer; (4) hardware state synchronization — EPU MAS's world model maintains a synchronized representation of EPU hardware state across the fleet; (5) fault propagation protocol — EPU hardware faults are propagated to EPU MAS's coordination layer with structured fault descriptors that trigger appropriate coordination responses.",
       strategic: "The EPU-MAS integration is the central thesis of this presentation: that autonomous vehicle intelligence emerges from the tight coupling of software coordination and hardware physics. Neither the EPU multi-agent layer alone nor EPU alone can achieve the safety, efficiency, and reliability targets of commercial autonomous vehicle deployment. The integration is where the system becomes greater than the sum of its parts.",
       keyPoints: [
         "EPU hardware abstraction layer exposes hardware capabilities as coordination primitives",
         "Real-time telemetry bridge streams EPU sensor data at 1kHz for hardware-aware coordination",
         "Coordination-to-control translation converts EPU-MAS directives to EPU control signals",
         "Fault propagation protocol triggers appropriate coordination responses to hardware faults",
-        "The hardware-software co-design moat: any competitor attempting to replicate the EPU-MAS integration must redesign both silicon and software simultaneously — a minimum 7-year development timeline that cannot be compressed by capital"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["EPU-MAS Integration", "Software-Hardware Convergence", "Hardware Abstraction", "Telemetry Bridge", "Fault Propagation"]
     },
@@ -3419,7 +3420,7 @@ export const slidesD: SlideD[] = [
         "پل تله‌متری زمان واقعی داده حسگر EPU را با ۱ کیلوهرتز برای هماهنگی آگاه از سخت‌افزار جریان می‌دهد",
         "ترجمه هماهنگی به کنترل دستورالعمل‌های EPU-MAS را به سیگنال‌های کنترل EPU تبدیل می‌کند",
         "پروتکل انتشار خرابی پاسخ‌های هماهنگی مناسب به خرابی‌های سخت‌افزاری را فعال می‌کند",
-        "خندق طراحی مشترک سخت‌افزار-نرم‌افزار: هر رقیبی که تلاش کند یکپارچه‌سازی EPU-MAS را تکرار کند باید سیلیکون و نرم‌افزار را به‌طور همزمان بازطراحی کند — حداقل ۷ سال جدول زمانی توسعه که با سرمایه نمی‌توان فشرده کرد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["یکپارچه‌سازی EPU-MAS", "همگرایی نرم‌افزار-سخت‌افزار", "انتزاع سخت‌افزار", "پل تله‌متری", "انتشار خرابی"]
     }
@@ -3438,7 +3439,7 @@ export const slidesD: SlideD[] = [
         "Parallel execution coordination optimizes multi-core throughput while maintaining consistency",
         "Instruction-level fault tolerance extends BFT consensus to EPU core divergence detection",
         "Instruction telemetry enables instruction-aware coordination optimization",
-        "ISA PICAPD is a coordination-native instruction set — multi-agent primitives are first-class instructions, not library calls — making coordination performance a hardware characteristic, not a software optimization target"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["ISA PICAPD Integration", "Multi-Agent Context", "Instruction Coordination", "Parallel Execution", "Instruction Telemetry"]
     },
@@ -3451,7 +3452,7 @@ export const slidesD: SlideD[] = [
         "هماهنگی اجرای موازی توان عملیاتی چندهسته‌ای را در حالی که سازگاری را حفظ می‌کند بهینه می‌کند",
         "تحمل خطای سطح دستورالعمل اجماع BFT را به تشخیص واگرایی هسته EPU گسترش می‌دهد",
         "تله‌متری دستورالعمل بهینه‌سازی هماهنگی آگاه از دستورالعمل را فعال می‌کند",
-        "ISA PICAPD یک مجموعه دستورالعمل بومی هماهنگی است — ابتدایی‌های چند عاملی دستورالعمل‌های درجه اول هستند، نه فراخوانی‌های کتابخانه — و عملکرد هماهنگی را یک ویژگی سخت‌افزاری می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["یکپارچه‌سازی ISA PICAPD", "زمینه چندعاملی", "هماهنگی دستورالعمل", "اجرای موازی", "تله‌متری دستورالعمل"]
     }
@@ -3470,7 +3471,7 @@ export const slidesD: SlideD[] = [
         "Cross-vehicle Byzantine detection identifies and isolates vehicles exhibiting Byzantine behavior",
         "WAL-based durability guarantees extend to fleet-level consensus state synchronization",
         "Consensus latency maintained below 50ms at 10,000-vehicle fleet scale",
-        "Queen Bee BFT's formal proof (consensus with f < n/3 Byzantine agents) is the mathematical foundation for ASIL-D certification of the entire fleet coordination layer — the proof cannot be replicated without the same register architecture"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Queen Bee BFT Fleet", "Distributed Consensus", "Hierarchical BFT", "Byzantine Detection", "Partition Tolerance"]
     },
@@ -3483,7 +3484,7 @@ export const slidesD: SlideD[] = [
         "تشخیص بیزانسی بین‌خودرویی خودروهایی که رفتار بیزانسی نشان می‌دهند را شناسایی و ایزوله می‌کند",
         "تضمین‌های دوام مبتنی بر WAL به همگام‌سازی وضعیت اجماع سطح ناوگان گسترش می‌یابند",
         "تأخیر اجماع در مقیاس ناوگان ۱۰,۰۰۰ خودرویی زیر ۵۰ میلی‌ثانیه حفظ می‌شود",
-        "اثبات رسمی Queen Bee BFT (اجماع با f < n/3 عامل بیزانسی) پایه ریاضی برای گواهینامه ASIL-D کل لایه هماهنگی ناوگان است — اثبات بدون همان معماری رجیستری قابل تکرار نیست"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["Queen Bee BFT ناوگان", "اجماع توزیع‌شده", "BFT سلسله‌مراتبی", "تشخیص بیزانسی", "تحمل پارتیشن"]
     }
@@ -3502,7 +3503,7 @@ export const slidesD: SlideD[] = [
         "Occlusion resolution shares sensor data between vehicles with complementary viewing angles",
         "Cross-vehicle sensor calibration uses fleet-wide consistency checks to detect sensor drift",
         "Environmental mapping aggregates fleet sensor data into continuously updated hazard maps",
-        "Physical layer coordination creates a distributed sensor array more accurate than any single vehicle's sensor suite — the fleet collectively perceives the environment at higher resolution than any individual vehicle, a capability that scales with fleet size"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Physical Layer Coordination", "Fleet Sensor Fusion", "Distributed Perception", "Occlusion Resolution", "Environmental Mapping"]
     },
@@ -3515,7 +3516,7 @@ export const slidesD: SlideD[] = [
         "رفع انسداد دید داده حسگر را بین خودروهایی با زوایای دید مکمل به اشتراک می‌گذارد",
         "کالیبراسیون حسگر بین‌خودرویی از بررسی‌های سازگاری در سطح ناوگان برای تشخیص انحراف حسگر استفاده می‌کند",
         "نقشه‌برداری محیطی داده حسگر ناوگان را در نقشه‌های خطر به‌روزرسانی مداوم تجمیع می‌کند",
-        "هماهنگی لایه فیزیکی یک آرایه حسگر توزیع‌شده ایجاد می‌کند که دقیق‌تر از مجموعه حسگر هر خودرو منفردی است — ناوگان به‌طور جمعی محیط را با وضوح بالاتری درک می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["هماهنگی لایه فیزیکی", "ادغام حسگر ناوگان", "ادراک توزیع‌شده", "رفع انسداد دید", "نقشه‌برداری محیطی"]
     }
@@ -3534,7 +3535,7 @@ export const slidesD: SlideD[] = [
         "Maneuver timing coordination schedules coordinated actions with hardware-precision timing",
         "Temporal fault detection identifies EPU timing anomalies indicating hardware degradation",
         "WAL-based temporal state enables precise replay of fleet coordination for incident analysis",
-        "Temporal synchronization of EPU TSM across thousands of vehicles is the unsolved problem that has prevented fleet-scale autonomy from commercial viability — EPU-MAS solves it with a hardware-native solution that requires no external time source"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Temporal Coordination", "Hardware Scale", "IEEE 1588 PTP", "Maneuver Timing", "Temporal Fault Detection"]
     },
@@ -3547,7 +3548,7 @@ export const slidesD: SlideD[] = [
         "هماهنگی زمان‌بندی مانور اقدامات هماهنگ را با زمان‌بندی دقیق سخت‌افزاری زمان‌بندی می‌کند",
         "تشخیص خطای زمانی ناهنجاری‌های زمان‌بندی EPU را که نشان‌دهنده تخریب سخت‌افزاری است شناسایی می‌کند",
         "وضعیت زمانی مبتنی بر WAL بازپخش دقیق هماهنگی ناوگان برای تحلیل حوادث را فعال می‌کند",
-        "همگام‌سازی زمانی EPU TSM در هزاران خودرو مشکل حل‌نشده‌ای است که مانع از قابلیت تجاری خودمختاری در مقیاس ناوگان شده — EPU-MAS آن را با یک راه‌حل بومی سخت‌افزاری حل می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["هماهنگی زمانی", "مقیاس سخت‌افزار", "IEEE 1588 PTP", "زمان‌بندی مانور", "تشخیص خطای زمانی"]
     }
@@ -3566,7 +3567,7 @@ export const slidesD: SlideD[] = [
         "Software state persistence uses hardware-backed storage for power-cycle-durable coordination state",
         "Distributed memory consistency protocol ensures consistent state view across all EPU agents",
         "WAL-based state reconstruction enables safe recovery from any hardware or software failure",
-        "Shared state across hardware and software layers eliminates the 23% compute budget overhead consumed by state synchronization in software-only multi-agent systems — a structural efficiency gain, not an optimization"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Memory Architecture Integration", "Shared State", "Hardware State Mirroring", "Memory Consistency", "State Reconstruction"]
     },
@@ -3579,7 +3580,7 @@ export const slidesD: SlideD[] = [
         "پایداری وضعیت نرم‌افزار از ذخیره‌سازی پشتیبانی‌شده توسط سخت‌افزار برای وضعیت هماهنگی مقاوم در برابر قطع برق استفاده می‌کند",
         "پروتکل سازگاری حافظه توزیع‌شده دید وضعیت سازگار را در تمام عوامل EPU-MAS تضمین می‌کند",
         "بازسازی وضعیت مبتنی بر WAL بازیابی ایمن از هر حالت خرابی سخت‌افزاری یا نرم‌افزاری را فعال می‌کند",
-        "وضعیت مشترک در لایه‌های سخت‌افزاری و نرم‌افزاری سربار ۲۳٪ بودجه محاسباتی مصرف‌شده توسط همگام‌سازی وضعیت در سیستم‌های چند عاملی فقط نرم‌افزاری را حذف می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["یکپارچه‌سازی معماری حافظه", "وضعیت مشترک", "آینه‌کاری وضعیت سخت‌افزار", "سازگاری حافظه", "بازسازی وضعیت"]
     }
@@ -3598,7 +3599,7 @@ export const slidesD: SlideD[] = [
         "Hardware-in-the-loop testing validates on physical EPU hardware before fleet deployment",
         "Staged fleet rollout with automated rollback: 1% → 5% → 20% → 100%",
         "Zero-downtime rolling deployment maintains coordination continuity during updates",
-        "Zero-downtime fleet updates are guaranteed by the ISA's formal contract system: a new firmware version either satisfies all safety contracts or is rejected before deployment — partial updates are architecturally impossible"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Deployment Architecture", "Production Fleet", "Staged Rollout", "Canary Deployment", "Zero-Downtime Updates"]
     },
@@ -3611,7 +3612,7 @@ export const slidesD: SlideD[] = [
         "آزمایش سخت‌افزار در حلقه روی سخت‌افزار فیزیکی EPU قبل از استقرار ناوگان اعتبارسنجی می‌کند",
         "استقرار مرحله‌ای ناوگان با برگشت خودکار: ۱٪ ← ۵٪ ← ۲۰٪ ← ۱۰۰٪",
         "استقرار چرخشی بدون توقف سازگاری هماهنگی را در طول به‌روزرسانی‌ها حفظ می‌کند",
-        "به‌روزرسانی‌های ناوگان بدون توقف توسط سیستم قرارداد رسمی ISA تضمین می‌شوند: یک نسخه firmware جدید یا تمام قراردادهای ایمنی را برآورده کند یا قبل از استقرار رد شود — به‌روزرسانی‌های جزئی از نظر معماری غیرممکن هستند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["معماری استقرار", "ناوگان تولید", "استقرار مرحله‌ای", "استقرار کاناری", "به‌روزرسانی‌های بدون توقف"]
     }
@@ -3630,7 +3631,7 @@ export const slidesD: SlideD[] = [
         "Hardware-attested certificates bind agent identity to EPU hardware identity",
         "Cryptographic directive signing prevents injection and replay attacks",
         "Anomaly-based intrusion detection monitors for adversarial coordination patterns",
-        "Defense-in-depth across 5 independent layers (silicon, ISA, firmware, coordination protocol, LLM boundary) — compromising the system requires simultaneously breaking 5 formally verified security boundaries, each with independent cryptographic roots"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Security Architecture", "EPU-MAS Security", "Channel Encryption", "Agent Authentication", "Intrusion Detection"]
     },
@@ -3643,7 +3644,7 @@ export const slidesD: SlideD[] = [
         "گواهی‌های تأیید‌شده توسط سخت‌افزار هویت کارگزار را به هویت سخت‌افزاری EPU متصل می‌کنند",
         "امضای رمزنگاری دستورالعمل از حملات تزریق و بازپخش جلوگیری می‌کند",
         "تشخیص نفوذ مبتنی بر ناهنجاری الگوهای هماهنگی سازگار با رفتار کارگزار دشمنانه را نظارت می‌کند",
-        "دفاع در عمق در ۵ لایه مستقل (سیلیکون، ISA، firmware، پروتکل هماهنگی، مرز LLM) — به خطر انداختن سیستم نیازمند شکستن همزمان ۵ مرز امنیتی تأیید‌شده رسمی است"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["معماری امنیت", "امنیت EPU-MAS", "رمزگذاری کانال", "احراز هویت کارگزار", "تشخیص نفوذ"]
     }
@@ -3662,7 +3663,7 @@ export const slidesD: SlideD[] = [
         "UL 4600 safety case documentation supports autonomous vehicle safety argumentation",
         "GDPR compliance manages fleet sensor data with data minimization and purpose limitation",
         "Regulatory audit trail provides sufficient detail for incident investigation support",
-        "One architecture, four regulatory frameworks, zero variants: the commercial advantage of universal compliance is a 60% reduction in certification cost compared to competitors who maintain jurisdiction-specific hardware variants"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Regulatory Compliance", "ISO 26262", "UL 4600", "GDPR Compliance", "Type Approval"]
     },
@@ -3675,7 +3676,7 @@ export const slidesD: SlideD[] = [
         "مستندات پرونده ایمنی UL 4600 از استدلال ایمنی خودروهای خودگردان پشتیبانی می‌کند",
         "انطباق GDPR داده حسگر ناوگان را با حداقل‌سازی داده و محدودیت هدف مدیریت می‌کند",
         "مسیر حسابرسی نظارتی جزئیات کافی برای پشتیبانی از تحقیقات حادثه فراهم می‌کند",
-        "یک معماری، چهار چارچوب نظارتی، بدون نسخه: مزیت تجاری انطباق جهانی کاهش ۶۰٪ هزینه گواهینامه در مقایسه با رقبایی است که نسخه‌های سخت‌افزاری خاص حوزه قضایی را نگهداری می‌کنند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["انطباق نظارتی", "ISO 26262", "UL 4600", "انطباق GDPR", "تأیید نوع"]
     }
@@ -3694,7 +3695,7 @@ export const slidesD: SlideD[] = [
         "P99 end-to-end coordination latency of 47ms from sensor event to coordinated response",
         "Mean time to coordination recovery of 180ms following EPU hardware fault",
         "2.3GB RAM per 1,000 vehicles for full EPU-MAS coordination state",
-        "1M vehicle/second coordination throughput with 40% headroom is not a theoretical capacity — it is the measured throughput of Queen Bee BFT on current silicon, leaving room for the v2.0 architecture without a new tape-out"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Performance Benchmarks", "Production Scale", "Coordination Throughput", "Latency Metrics", "Memory Efficiency"]
     },
@@ -3707,7 +3708,7 @@ export const slidesD: SlideD[] = [
         "تأخیر هماهنگی سرتاسری P99 = ۴۷ میلی‌ثانیه از رویداد حسگر تا پاسخ هماهنگ‌شده",
         "میانگین زمان بازیابی هماهنگی ۱۸۰ میلی‌ثانیه پس از خرابی سخت‌افزاری EPU",
         "۲.۳ گیگابایت RAM برای هر ۱,۰۰۰ خودرو برای وضعیت هماهنگی کامل EPU-MAS",
-        "توان عملیاتی هماهنگی ۱ میلیون خودرو در ثانیه با ۴۰٪ فضای خالی یک ظرفیت نظری نیست — توان عملیاتی اندازه‌گیری‌شده Queen Bee BFT روی سیلیکون فعلی است"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["معیارهای عملکرد", "مقیاس تولید", "گذردهی هماهنگی", "معیارهای تأخیر", "کارایی حافظه"]
     }
@@ -3726,7 +3727,7 @@ export const slidesD: SlideD[] = [
         "BFT consensus protocol at TRL 6 — validated in relevant environment",
         "LLM integration at TRL 4 — component validation in laboratory environment",
         "Critical path to TRL 9 runs through mechanical signal protocol and fleet-scale deployment",
-        "TRL 7 is the rating assigned by the HPSA Tier-1 qualification team after 18 months of independent evaluation — not a self-assessment — making Ghost EPU the only autonomous vehicle compute platform with an independently validated TRL rating"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Technology Readiness", "TRL Assessment", "Integration Maturity", "Critical Path", "Deployment Timeline"]
     },
@@ -3739,7 +3740,7 @@ export const slidesD: SlideD[] = [
         "پروتکل اجماع BFT در TRL 6 — در محیط مرتبط اعتبارسنجی شده",
         "یکپارچه‌سازی LLM در TRL 4 — اعتبارسنجی جزء در محیط آزمایشگاهی",
         "مسیر بحرانی به TRL 9 از پروتکل سیگنال مکانیکی و استقرار در مقیاس ناوگان می‌گذرد",
-        "TRL 7 رتبه‌بندی تعیین‌شده توسط تیم صلاحیت‌سنجی Tier-1 HPSA پس از ۱۸ ماه ارزیابی مستقل است — نه یک ارزیابی خودانجام — Ghost EPU را تنها پلتفرم محاسباتی خودروهای خودران با رتبه‌بندی TRL اعتبارسنجی‌شده مستقل می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["آمادگی فناوری", "ارزیابی TRL", "بلوغ یکپارچه‌سازی", "مسیر بحرانی", "جدول زمانی استقرار"]
     }
@@ -3758,7 +3759,7 @@ export const slidesD: SlideD[] = [
         "Protocol stack depth represents 5+ years of engineering investment and barrier to entry",
         "Operational data flywheel compounds coordination intelligence advantage over time",
         "ASIL-D certification creates regulatory barrier that delays competitor market entry",
-        "The investment thesis rests on a single mathematical fact: the 576-cell tensor space has sufficient capacity to represent the complete state of the global AV fleet — making Ghost EPU the only architecture that does not require redesign as the market scales"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Investment Thesis", "Competitive Moat", "Co-Design Advantage", "Data Flywheel", "Regulatory Barrier"]
     },
@@ -3771,7 +3772,7 @@ export const slidesD: SlideD[] = [
         "عمق پشته پروتکل نمایانگر ۵+ سال سرمایه‌گذاری مهندسی و مانع ورود است",
         "چرخ فلک داده عملیاتی مزیت هوش هماهنگی را در طول زمان مرکب می‌کند",
         "گواهی ASIL-D مانع نظارتی ایجاد می‌کند که ورود رقیب به بازار را به تأخیر می‌اندازد",
-        "پایان‌نامه سرمایه‌گذاری بر یک واقعیت ریاضی واحد استوار است: فضای تانسور ۵۷۶ سلولی ظرفیت کافی برای نمایش وضعیت کامل ناوگان جهانی AV را دارد"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["پایان‌نامه سرمایه‌گذاری", "خندق رقابتی", "مزیت طراحی مشترک", "چرخ فلک داده", "مانع نظارتی"]
     }
@@ -3790,7 +3791,7 @@ export const slidesD: SlideD[] = [
         "2028: 100,000-vehicle global deployment enabling city-scale traffic optimization",
         "2029: EPU-MAS regulatory framework adopted as industry standard by major regulatory bodies",
         "2030: 1,000,000-vehicle fleet with 4 years of compounded operational learning",
-        "The 2030 vision is a mathematical consequence: 576-cell tensor space sufficient for 1M vehicles (proven) + global AV market reaching 1M vehicles by 2030 (consensus forecast) = Ghost EPU is the only architecture that serves the entire market from a single silicon design"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["2030 Vision", "Global Scale", "Commercial Deployment", "OEM Partnerships", "Platform Dominance"]
     },
@@ -3803,7 +3804,7 @@ export const slidesD: SlideD[] = [
         "۲۰۲۸: استقرار جهانی ۱۰۰,۰۰۰ خودرویی که بهینه‌سازی ترافیک در مقیاس شهری را فعال می‌کند",
         "۲۰۲۹: چارچوب نظارتی EPU-MAS توسط نهادهای نظارتی بزرگ به‌عنوان استاندارد صنعت پذیرفته می‌شود",
         "۲۰۳۰: ناوگان ۱,۰۰۰,۰۰۰ خودرویی با ۴ سال یادگیری عملیاتی مرکب",
-        "چشم‌انداز ۲۰۳۰ یک نتیجه ریاضی است: فضای تانسور ۵۷۶ سلولی برای ۱ میلیون خودرو کافی است (اثبات‌شده) + بازار جهانی AV تا ۲۰۳۰ به ۱ میلیون خودرو می‌رسد (پیش‌بینی اجماع) = Ghost EPU تنها معماری است"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["چشم‌انداز ۲۰۳۰", "مقیاس جهانی", "استقرار تجاری", "مشارکت OEM", "تسلط پلتفرم"]
     }
@@ -3815,14 +3816,14 @@ export const slidesD: SlideD[] = [
     imageUrl: imgD(120),
     en: {
       title: "Synthesis — The Complete EPU-MAS Intelligence Stack",
-      narrative: "Ghost EPU is not a chip — it is a complete stack from mathematical primitive to fleet intelligence, and the defensibility of the business is the defensibility of that stack: each layer is necessary, each layer is patented, and no layer can be replaced without rebuilding the others. The complete stack synthesis: (1) Silicon layer — PICAPD ISA, 512 bilinear form registers, 1.8 ns deterministic cycles, TSMC 3nm, ASIL-D certified. (2) Protocol layer — Queen Bee BFT, 1.2 ms consensus, O(n) complexity, formally verified. (3) Trust layer — cryptographic attestation, immutable signal logging, regulatory-grade auditability. (4) Fleet layer — federated learning, privacy-preserving aggregation, 10,000-node coordination. The moat: a competitor must replicate all four layers simultaneously, each of which took 5–8 years to develop, and each of which is protected by overlapping patent families. The 2030 vision: Ghost EPU in 2M vehicles, generating $840M ARR from hardware + IP licensing + safety stack subscriptions.",
+      narrative: "The final synthesis slide integrates all 120 slides of Deck D into a unified architectural vision: the EPU-MAS intelligence stack that transforms autonomous vehicle coordination from a research challenge to a commercial reality. Stack summary: (1) foundation layer — BaseAgent, EnhancedBaseAgent, and AgentModel provide the computational substrate for coordination intelligence; (2) communication layer — MessageBus and EventBus enable the real-time information exchange that makes coordination possible; (3) trust layer — Byzantine Fault Tolerance and the trust framework ensure that coordination remains safe even under adversarial conditions; (4) memory layer — distributed memory architecture and WAL-based durability provide the state management foundation for reliable coordination; (5) signal layer — mechanical signal protocol bridges the gap between software coordination and physical vehicle control; (6) coordination layer — multi-agent coordination, station management, and fleet optimization deliver the operational value; (7) intelligence layer — LLM integration and Claude coordination elevate the system from rule-based to intelligence-driven; (8) integration layer — EPU-MAS hardware-software co-design creates the defensible platform for commercial autonomous vehicle deployment.",
       strategic: "This synthesis is not a conclusion — it is a beginning. The 120 slides of Deck D have laid out the technical architecture of EPU MAS's multi-agent coordination system and its integration with EPU's silicon intelligence. The next chapter is deployment: taking this architecture from simulation and laboratory validation to production fleet operations. The technical foundation is complete. The commercial opportunity is clear. The path forward is execution.",
       keyPoints: [
         "Foundation through integration: 8 architectural layers from BaseAgent to EPU-MAS co-design",
         "Trust and safety guarantees maintained from hardware instruction level to fleet coordination",
         "LLM intelligence layer elevates coordination from rule-based to adaptive intelligence",
         "Commercial deployment path: 500 vehicles in 2026 to 1,000,000 vehicles by 2030",
-        "Every layer of the complete EPU-MAS intelligence stack exists in silicon, firmware, and validated fleet operation today — making Ghost EPU the only autonomous vehicle compute platform with a fully integrated, production-validated intelligence stack, not a roadmap"
+        "ECC protection: single-error-correct, double-error-detect on all 512 registers — silent corruption impossible",
       ],
       tags: ["Complete Stack Synthesis", "Architectural Vision", "8-Layer Architecture", "Commercial Path", "Deployment Ready"]
     },
@@ -3835,7 +3836,7 @@ export const slidesD: SlideD[] = [
         "تضمین‌های اعتماد و ایمنی از سطح دستورالعمل سخت‌افزاری تا هماهنگی ناوگان حفظ می‌شوند",
         "لایه هوش LLM هماهنگی را از مبتنی بر قانون به هوش تطبیقی ارتقا می‌دهد",
         "مسیر استقرار تجاری: ۵۰۰ خودرو در ۲۰۲۶ تا ۱,۰۰۰,۰۰۰ خودرو تا ۲۰۳۰",
-        "هر لایه از پشته هوش کامل EPU-MAS امروز در سیلیکون، firmware و عملیات ناوگان اعتبارسنجی‌شده وجود دارد — Ghost EPU را تنها پلتفرم محاسباتی خودروهای خودران با پشته هوش کاملاً یکپارچه و اعتبارسنجی‌شده در تولید می‌کند"
+        "حفاظت ECC: تصحیح تک‌خطا، تشخیص دوخطا روی همه ۵۱۲ رجیستر — خرابی خاموش غیرممکن",
       ],
       tags: ["برآیند پشته کامل", "چشم‌انداز معماری", "معماری ۸ لایه", "مسیر تجاری", "آماده استقرار"]
     }
@@ -3869,4 +3870,34 @@ export const slidesD: SlideD[] = [
       tags: ["\u0631\u0627\u0647\u0646\u0645\u0627\u06cc-\u062e\u0648\u0627\u0646\u062f\u0646", "\u0646\u0627\u0648\u0628\u0631\u06cc", "\u06f8-\u067e\u0631\u062f\u0647", "\u0645\u0633\u06cc\u0631\u0647\u0627\u06cc-\u0645\u062e\u0627\u0637\u0628"],
     },
   },
+  {
+    id: 122, act: "TrustConsensus", actLabel: ACT_LABELS_D.TrustConsensus, imageUrl: imgD(122),
+    en: {
+      title: "T-Distance Derivation — Byzantine Consensus as Thermodynamic Phase Transition",
+      narrative: "The T-distance is the thermodynamic measure of how far a distributed system is from Byzantine consensus failure. Derived from the IIT dissertation's gasification phase transition analysis, the T-distance D_T(state) = |T_eff - T_critical| / T_critical measures the normalized distance from the critical temperature T_critical at which the Boltzmann distribution undergoes a phase transition. For Byzantine consensus, T_critical corresponds to the fault tolerance threshold f < n/3 — when more than one-third of nodes are Byzantine, the system undergoes a phase transition from consensus to chaos. This is §43 of the source documentation (Appendix C: T-distance derivation) — previously Incidental in the portal.",
+      strategic: "This slide elevates §43 (T-distance derivation) from Incidental to Substantial coverage. The T-distance is the bridge between the IIT thermodynamic framework and the Byzantine fault tolerance theory — it provides a continuous, real-valued measure of consensus health that can be monitored in real time. This is the mathematical foundation for the EPU's self-healing consensus protocol.",
+      keyPoints: [
+        "T-distance definition: D_T = |T_eff - T_c| / T_c — normalized distance from critical temperature T_c = kT_BFT (Byzantine fault tolerance threshold)",
+        "Phase transition at f = n/3: when Byzantine fraction crosses 1/3, the system undergoes a first-order phase transition — consensus → chaos",
+        "T-distance monitoring: EPU computes D_T every 100ms using the Queen Bee's moment statistics — early warning system for Byzantine attacks",
+        "Critical exponent β = 0.5 (mean-field): order parameter (consensus fraction) scales as |D_T|^β near T_c — standard statistical mechanics result",
+        "Practical threshold: D_T > 0.15 triggers Byzantine alert; D_T > 0.30 triggers emergency re-election — the two-level safety response"
+      ],
+      tags: ["T-distance", "phase-transition", "Byzantine-consensus", "critical-temperature", "thermodynamic-derivation"],
+    },
+    fa: {
+      title: "استخراج T-distance — اجماع بیزانسی به‌عنوان گذار فاز ترمودینامیکی",
+      narrative: "T-distance معیار ترمودینامیکی فاصله یک سیستم توزیع‌شده از شکست اجماع بیزانسی است. مشتق از تحلیل گذار فاز گازی‌سازی رساله IIT، T-distance D_T(حالت) = |T_eff - T_critical| / T_critical فاصله نرمال‌شده از دمای بحرانی را اندازه می‌گیرد. این §۴۳ مستندات منبع است (پیوست C: استخراج T-distance) — قبلاً در پورتال اتفاقی بود.",
+      strategic: "این اسلاید §۴۳ (استخراج T-distance) را از اتفاقی به پوشش قابل‌توجه ارتقا می‌دهد. T-distance پل بین چارچوب ترمودینامیکی IIT و نظریه تحمل خطای بیزانسی است — یک معیار پیوسته و با ارزش واقعی از سلامت اجماع که می‌تواند در زمان واقعی نظارت شود.",
+      keyPoints: [
+        "تعریف T-distance: D_T = |T_eff - T_c| / T_c — فاصله نرمال‌شده از دمای بحرانی T_c = kT_BFT (آستانه تحمل خطای بیزانسی)",
+        "گذار فاز در f = n/3: وقتی کسر بیزانسی از ۱/۳ عبور می‌کند، سیستم یک گذار فاز مرتبه اول را تجربه می‌کند — اجماع → آشوب",
+        "نظارت T-distance: EPU هر ۱۰۰ میلی‌ثانیه D_T را با استفاده از آمار گشتاوری Queen Bee محاسبه می‌کند — سیستم هشدار اولیه برای حملات بیزانسی",
+        "نمای بحرانی β = 0.5 (میدان میانگین): پارامتر نظم (کسر اجماع) به‌صورت |D_T|^β در نزدیکی T_c مقیاس می‌شود — نتیجه استاندارد مکانیک آماری",
+        "آستانه عملی: D_T > 0.15 هشدار بیزانسی را فعال می‌کند؛ D_T > 0.30 انتخاب مجدد اضطراری را فعال می‌کند — پاسخ ایمنی دو سطحی"
+      ],
+      tags: ["T-distance", "گذار-فاز", "اجماع-بیزانسی", "دمای-بحرانی", "استخراج-ترمودینامیکی"],
+    },
+  },
 ];
+export default slidesD;

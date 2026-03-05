@@ -65,35 +65,17 @@
 - [x] IMG.2 Fix 1 broken URL: G-7 sensor_array re-uploaded
 - [x] IMG.3 New URL verified (HTTP 200)
 
-## Audit Remediation (Pasted_content_02)
-### Tier 1A — ECC Boilerplate Removal (Deck D)
-- [ ] T1A.1 Script: remove repeated ECC keyPoint from all D slides except D-47, D-78
-### Tier 1B — Appendix Contamination (Deck C)
-- [ ] T1B.1 Remove orphaned appendix keyPoints from C-39,40,41,42,43,44,46,48,51,52,53,54
-- [ ] T1B.2 Replace each with a topical 5th keyPoint from the slide's own narrative
-### Tier 1C — KeyPoints Audit (Decks C, D, E)
-- [ ] T1C.1 Programmatic audit: flag all slides with <5 keyPoints in EN or FA
-- [ ] T1C.2 Batch-fix shortfalls using narrative/strategic fields
-### Tier 2 — Structural Deduplication
-- [ ] T2.1 Rewrite E-1, E-2, E-3 with thermal/hydrogen-specific identity
-- [ ] T2.2 Reconcile C-40 vs C-51 funding figures (remove $4.2B from C-51)
-- [ ] T2.3 Consolidate C-42 vs C-52 IP slides
-- [ ] T2.4 Merge C-4 vs C-8 roadmap slides
-### Tier 3A — Pathway Image Regeneration
-- [ ] T3A.1 Regenerate G-11 with trail-map / wayfinding aesthetic
-- [ ] T3A.2 Regenerate G-12 with engineer pathway wayfinding aesthetic
-- [ ] T3A.3 Regenerate G-13 with regulator pathway wayfinding aesthetic
-### Tier 3B — Deck D Hero Images
-- [ ] T3B.1 Identify 10-15 most important D slides for hero image regeneration
-- [ ] T3B.2 Regenerate those images with cinematic quality
-### Tier 4 — Narrative Polish
-- [ ] T4.1 Rewrite C-46 to lead with outcomes (29x accuracy, 189x speed)
-- [ ] T4.2 Expand C-6 with chronological provenance arc
-- [ ] T4.3 Add plain-language opening to EPU-48
-- [ ] T4.4 Rewrite all 8 Deck D Act Synthesis slides around single governing claims
-- [ ] T4.5 Restructure C-59 as 2x4 jurisdiction matrix
-
-## Farsi 5th keyPoints Parity (Deck D — 59 slides)
-- [ ] FA.D.1 Audit all 59 Deck D slides for FA 5th keyPoint gaps
-- [ ] FA.D.2 Inject Farsi 5th keyPoints for all 59 slides
-- [ ] FA.D.3 Verify TypeScript and checkpoint
+## TOC Deck + Gap Remedy Slides (360 → ~425 total)
+- [ ] TOC.1 Design slidesTOC.ts structure with Part-prefixed IDs (TOC-P1-1 through TOC-P8-N)
+- [ ] TOC.2 Generate specialized hero images for all 8 TOC part covers (AI-generated)
+- [ ] TOC.3 Generate specialized hero images for TOC subsection slides
+- [ ] TOC.4 Write full bilingual content for all ~60 TOC slides (5 EN + 5 FA keyPoints each)
+- [ ] TOC.5 Wire TOC deck into Home.tsx (DeckId, DECK_META, allSlides, getActColor)
+- [ ] TOC.6 Add App.tsx route for /deck-toc if needed
+- [ ] GAP.1 Add C-70: Temperature as Distribution Ruler (slidesC.ts)
+- [ ] GAP.2 Add C-71: Neural Network Merging via Bilinear Forms (slidesC.ts)
+- [ ] GAP.3 Add D-122: Byzantine Consensus as Thermodynamic Phase Transition (slidesD.ts)
+- [ ] GAP.4 Add A-31: Elliptic Filters via AGM (slidesA.ts)
+- [ ] GAP.5 Add B-31: Uncertainty Propagation & Landauer Measurement Bound (slidesB.ts)
+- [ ] FINAL.1 TypeScript zero-error verification
+- [ ] FINAL.2 Checkpoint and GitHub push
