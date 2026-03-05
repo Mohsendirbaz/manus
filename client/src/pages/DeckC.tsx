@@ -209,7 +209,7 @@ function SlideModalC({
                 ← {isRTL ? "قبلی" : "Prev"}
               </button>
               <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "11px", color: "#9CA3AF", alignSelf: "center" }}>
-                {slide.id} / 60
+                {slide.id} / 74
               </span>
               <button
                 onClick={onNext}
@@ -461,7 +461,7 @@ export default function DeckC() {
               className="text-xs ml-auto"
               style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
             >
-              {filteredSlides.length} / 60
+              {filteredSlides.length} / 74
             </span>
           </div>
         </div>

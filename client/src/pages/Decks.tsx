@@ -7,7 +7,7 @@ const decks = [
     href: "/",
     accentColor: "#C8A96E",
     bgGradient: "linear-gradient(135deg, #0A1628 0%, #0D2137 50%, #0A2840 100%)",
-    slideCount: 60,
+    slideCount: 74,
     actCount: 8,
     en: {
       label: "EPU Strategy",
@@ -29,7 +29,7 @@ const decks = [
     href: "/deck-a",
     accentColor: "#4FC3F7",
     bgGradient: "linear-gradient(135deg, #0A1628 0%, #0D2137 50%, #0A2840 100%)",
-    slideCount: 30,
+    slideCount: 36,
     actCount: 8,
     en: {
       label: "Deck A",
@@ -51,7 +51,7 @@ const decks = [
     href: "/deck-b",
     accentColor: "#4CAF82",
     bgGradient: "linear-gradient(135deg, #0A1628 0%, #0D2137 50%, #0A2840 100%)",
-    slideCount: 30,
+    slideCount: 36,
     actCount: 7,
     en: {
       label: "Deck B",
@@ -73,7 +73,7 @@ const decks = [
     href: "/deck-c",
     accentColor: "#F59E0B",
     bgGradient: "linear-gradient(135deg, #1A0A00 0%, #2D1500 50%, #1A0A00 100%)",
-    slideCount: 60,
+    slideCount: 74,
     actCount: 8,
     en: {
       label: "Deck C",

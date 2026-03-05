@@ -186,7 +186,7 @@ function SlideModalA({
         >
           <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
             <span className="text-xs font-bold" style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}>
-              {String(slide.id).padStart(2, "0")} / 30
+              {String(slide.id).padStart(2, "0")} / 36
             </span>
             <ActBadgeA act={slide.act} lang={lang} />
           </div>
@@ -282,7 +282,7 @@ function SlideModalA({
             {isRTL ? "بعدی ›" : "‹ Prev"}
           </button>
           <span className="text-xs" style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}>
-            {slide.id} / 30
+            {slide.id} / 36
           </span>
           <button
             onClick={isRTL ? onPrev : onNext}
@@ -374,7 +374,7 @@ export default function DeckA() {
                 {isRTL ? "Deck A — پریمیتیو فیلتراسیون جهانی" : "Deck A — Universal Filtration Primitive"}
               </p>
               <p className="text-xs mt-0.5" style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}>
-                {isRTL ? "۳۰ اسلاید · ۸ پرده" : "30 Slides · 8 Acts"}
+                {isRTL ? "۳۶ اسلاید · ۸ پرده" : "36 Slides · 8 Acts"}
               </p>
             </div>
             {/* Search */}
@@ -480,7 +480,7 @@ export default function DeckA() {
               className="text-xs ml-auto"
               style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
             >
-              {filteredSlides.length} / 30
+              {filteredSlides.length} / 36
             </span>
           </div>
         </div>

@@ -185,7 +185,7 @@ function SlideModalB({
         >
           <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
             <span className="text-xs font-bold" style={{ fontFamily: "'Space Mono', monospace", color: accentColor }}>
-              {String(slide.id).padStart(2, "0")} / 30
+              {String(slide.id).padStart(2, "0")} / 36
             </span>
             <ActBadgeB act={slide.act} lang={lang} />
           </div>
@@ -281,7 +281,7 @@ function SlideModalB({
             {isRTL ? "بعدی ›" : "‹ Prev"}
           </button>
           <span className="text-xs" style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}>
-            {slide.id} / 30
+            {slide.id} / 36
           </span>
           <button
             onClick={isRTL ? onPrev : onNext}
@@ -373,7 +373,7 @@ export default function DeckB() {
                 {isRTL ? "Deck B — دستور زمانی به عنوان مدیریت حالت" : "Deck B — Tense Grammar as State Management"}
               </p>
               <p className="text-xs mt-0.5" style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}>
-                {isRTL ? "۳۰ اسلاید · ۷ پرده" : "30 Slides · 7 Acts"}
+                {isRTL ? "۳۶ اسلاید · ۷ پرده" : "36 Slides · 7 Acts"}
               </p>
             </div>
             {/* Search */}
@@ -479,7 +479,7 @@ export default function DeckB() {
               className="text-xs ml-auto"
               style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
             >
-              {filteredSlides.length} / 30
+              {filteredSlides.length} / 36
             </span>
           </div>
         </div>
