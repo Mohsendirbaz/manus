@@ -587,56 +587,6 @@ export default function Home() {
   const [activeAudience, setActiveAudience] = useState<AudiencePath | null>(null);
   const [selectedSlide, setSelectedSlide] = useState<UnifiedSlide | null>(null);
 
-  // Shared coordinate for language toggle scroll preservation.
-  // The grid is the stable coordinate system: card dimensions are identical in both
-  // EN and FA. Only the hero section height differs between languages.
-  // We store (card.offsetTop - grid.offsetTop) before the toggle, then restore
-  // scroll to (grid.offsetTop_new + anchorOffset - stickyH) after re-render.
-  const anchorOffsetRef = React.useRef<number>(-1);
-
-  const handleLanguageToggle = useCallback(() => {
-    const cards = Array.from(document.querySelectorAll<HTMLElement>("article[data-uid]"));
-    const grid = document.querySelector<HTMLElement>(".grid");
-    const header = document.querySelector<HTMLElement>("header");
-    const nav = document.querySelector<HTMLElement>("nav");
-    const stickyH = (header?.offsetHeight ?? 63) + (nav?.offsetHeight ?? 62);
-
-    // Find the first card whose bottom edge clears the sticky header.
-    let anchorCard: HTMLElement | null = null;
-    for (const card of cards) {
-      if (card.getBoundingClientRect().bottom > stickyH) {
-        anchorCard = card;
-        break;
-      }
-    }
-
-    if (anchorCard && grid) {
-      // Store position of anchor card relative to grid start.
-      // This is the shared coordinate: identical in both languages.
-      anchorOffsetRef.current = anchorCard.offsetTop - grid.offsetTop;
-    } else {
-      anchorOffsetRef.current = -1;
-    }
-
-    setLanguage(language === "fa" ? "en" : "fa");
-  }, [language, setLanguage]);
-
-  // After language re-render: restore scroll using the grid-relative coordinate.
-  // grid.offsetTop changes with hero height, but anchorOffset is invariant.
-  useEffect(() => {
-    const anchorOffset = anchorOffsetRef.current;
-    if (anchorOffset < 0) return;
-    anchorOffsetRef.current = -1; // consume
-
-    const grid = document.querySelector<HTMLElement>(".grid");
-    const header = document.querySelector<HTMLElement>("header");
-    const nav = document.querySelector<HTMLElement>("nav");
-    if (!grid) return;
-
-    const stickyH = (header?.offsetHeight ?? 63) + (nav?.offsetHeight ?? 62);
-    window.scrollTo({ top: grid.offsetTop + anchorOffset - stickyH, behavior: "instant" });
-  }, [language]);
-
   const filteredSlides = useMemo(() => {
     let result = allSlides;
     if (activeDeck !== "All") result = result.filter((s) => s.deck === activeDeck);
@@ -745,7 +695,7 @@ export default function Home() {
 
             {/* Language toggle */}
             <button
-              onClick={handleLanguageToggle}
+              onClick={() => setLanguage(language === "fa" ? "en" : "fa")}
               aria-pressed={!isRTL}
               className="text-xs px-3 py-1.5 border rounded-sm transition-all"
               style={{
