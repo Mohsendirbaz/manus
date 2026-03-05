@@ -24,8 +24,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const isRTL = language === "fa";
 
   const setLanguage = (lang: Language) => {
+    // Save current scroll position before React re-renders the layout
+    const scrollY = window.scrollY;
     setLanguageState(lang);
     localStorage.setItem("epu-language", lang);
+    // Restore scroll position after the DOM has updated
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: scrollY, behavior: "instant" });
+      });
+    });
   };
 
   useEffect(() => {
@@ -40,7 +48,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     };
     window.addEventListener("toggle-language", handler);
     return () => window.removeEventListener("toggle-language", handler);
-  }, [language]);
+  }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, isRTL }}>
