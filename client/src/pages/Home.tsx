@@ -578,7 +578,7 @@ function SlideModal({
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function Home() {
-  const { language, isRTL } = useLanguage();
+  const { language, setLanguage, isRTL } = useLanguage();
   const lang = language as "en" | "fa";
   const t = ui60[lang];
 
@@ -587,12 +587,43 @@ export default function Home() {
   const [activeAudience, setActiveAudience] = useState<AudiencePath | null>(null);
   const [selectedSlide, setSelectedSlide] = useState<UnifiedSlide | null>(null);
 
-  // Language toggle listener
+  // Index of the topmost visible card — used as shared coordinate across language renders.
+  // Slide cards have identical fixed dimensions in both EN and FA, so the same
+  // card index maps to the same visual position regardless of language.
+  const anchorIndexRef = React.useRef<number>(-1);
+
+  const handleLanguageToggle = useCallback(() => {
+    // 1. Find the index of the first card whose bottom edge is below the sticky header.
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("article[data-uid]"));
+    const HEADER_H = document.querySelector("header")?.offsetHeight ?? 64;
+    let topIdx = 0;
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].getBoundingClientRect().bottom > HEADER_H) {
+        topIdx = i;
+        break;
+      }
+    }
+    anchorIndexRef.current = topIdx;
+
+    // 2. Switch language — triggers re-render with identical card dimensions.
+    setLanguage(language === "fa" ? "en" : "fa");
+  }, [language, setLanguage]);
+
+  // 3. After the language re-render, restore scroll so the anchor card is at
+  //    the same position relative to the sticky header.
+  //    Cards have identical fixed dimensions in both languages, so
+  //    cardTop - HEADER_H gives the exact same visual position.
   useEffect(() => {
-    const handler = () => {};
-    window.addEventListener("toggle-language", handler);
-    return () => window.removeEventListener("toggle-language", handler);
-  }, []);
+    const idx = anchorIndexRef.current;
+    if (idx < 0) return;
+    anchorIndexRef.current = -1; // consume so normal scrolls are not affected
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("article[data-uid]"));
+    const target = cards[idx];
+    if (!target) return;
+    const HEADER_H = document.querySelector("header")?.offsetHeight ?? 64;
+    const cardTop = target.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: cardTop - HEADER_H, behavior: "instant" });
+  }, [language]); // runs once after each language change
 
   const filteredSlides = useMemo(() => {
     let result = allSlides;
@@ -702,15 +733,15 @@ export default function Home() {
 
             {/* Language toggle */}
             <button
-              onClick={() => {
-                const event = new CustomEvent("toggle-language");
-                window.dispatchEvent(event);
-              }}
-              className="text-xs px-3 py-1.5 border rounded-sm transition-all hover:bg-gray-50"
+              onClick={handleLanguageToggle}
+              aria-pressed={!isRTL}
+              className="text-xs px-3 py-1.5 border rounded-sm transition-all"
               style={{
                 fontFamily: "'Space Mono', monospace",
-                borderColor: "#D0CCC5",
-                color: "#5A5A5A",
+                borderColor: isRTL ? "#D0CCC5" : "#1A1A1A",
+                color: isRTL ? "#5A5A5A" : "#1A1A1A",
+                backgroundColor: isRTL ? "transparent" : "#1A1A1A18",
+                fontWeight: isRTL ? "400" : "600",
               }}
             >
               {isRTL ? "EN" : "فا"}
@@ -892,7 +923,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Grid */}
         {filteredSlides.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {filteredSlides.map((slide, idx) => (
