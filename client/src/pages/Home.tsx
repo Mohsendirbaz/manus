@@ -8,7 +8,7 @@ import { slidesD, ACT_LABELS_D, type SlideD, type ActD } from "@/data/slidesD";
 import { slidesE, ACT_LABELS_E, type SlideE, type ActE } from "@/data/slidesE";
 import { slidesBio, ACT_LABELS_F, type SlideF, type ActF } from "@/data/slidesBio";
 import { slidesG, ACT_LABELS_G, type SlideG, type ActG } from "@/data/slidesG";
-import slidesTOC, { ACT_LABELS_TOC, type SlideTOC, type ActTOC } from "@/data/slidesTOC";
+import { slidesTOC, ACT_LABELS_TOC, type SlideTOC, type ActTOC } from "@/data/slidesTOC";
 import { ui60 } from "@/data/translations60";
 import { useLanguage } from "@/contexts/LanguageContext";
 

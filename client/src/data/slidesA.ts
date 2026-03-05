@@ -24,7 +24,7 @@ export interface SlideA {
 }
 
 // Placeholder CDN — will be replaced after image generation
-const imgA = (n: number) => IMG_URLS[n] || "";
+const imgA = (n: number): string => (IMG_URLS as Record<number, string | undefined>)[n] ?? "";
 
 export const ACT_LABELS_A: Record<ActA, { en: string; fa: string }> = {
   Foundation:  { en: "Foundation",    fa: "پایه‌های نظری" },
@@ -68,7 +68,12 @@ const IMG_URLS: Record<number, string> = {
   28: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_28_76b657ed.png",
   29: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_29_6324240e.png",
   30: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_30_47d2a196.png",
-  31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_30_47d2a196.png",  // placeholder
+  31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
+  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
+  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
+  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
+  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
+  36: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_30_47d2a196.png",  // placeholder
 };
 
 export const slidesA: SlideA[] = [
@@ -974,6 +979,154 @@ export const slidesA: SlideA[] = [
       tags: ["دسته‌بندی-مونوئیدال", "جبر-ترکیب", "نظریه-دسته‌بندی", "خط-لوله-فیلتر", "تأیید-رسمی"],
     },
   },
+  {
+    id: 32,
+    act: "Foundation", actLabel: ACT_LABELS_A.Foundation, imageUrl: imgA(32),
+    en: {
+      title: "Conservation Laws as Hardware Constraints — §14 Physics-Inspired Computing",
+      narrative: "The EPU hardware substrate enforces conservation laws not as software checks but as physical constraints embedded in the ALU design. The Energy Conservation Register (ECR) tracks cumulative energy across all computation cycles; any instruction that would violate energy conservation triggers a hardware interrupt before execution. This is the first processor architecture where physics laws are enforced at the silicon level.",
+      strategic: "Hardware-enforced conservation laws are the EPU answer to the question what happens when the software fails — the physics substrate catches violations that software cannot, providing a safety layer below the operating system.",
+      keyPoints: [
+        "Energy Conservation Register (ECR): 64-bit accumulator tracking cumulative energy E = sum(m*v^2/2 + mgh) across all computation cycles — overflow triggers ENERGY_VIOLATION interrupt",
+        "Momentum Conservation Register (MCR): tracks sum(m*v) for all tracked objects — violation triggers MOMENTUM_VIOLATION interrupt before any actuator command is issued",
+        "Mass Conservation Register (MSCR): tracks sum(m) for all objects in scene — creation/destruction without conservation triggers MASS_VIOLATION interrupt",
+        "Entropy Monotonicity Register (EMR): enforces dS/dt >= 0 — any computation that would decrease total entropy triggers ENTROPY_VIOLATION interrupt",
+        "Hardware interrupt latency for conservation violations: <= 1 clock cycle (50ns at 20MHz) — faster than any software exception handler, guarantees physics compliance before actuator output"
+      ],
+      tags: ["conservation-laws", "hardware-constraints", "ECR", "MCR", "entropy-monotonicity"]
+    },
+    fa: {
+      title: "قوانین بقا به عنوان محدودیت‌های سخت‌افزاری — §۱۴ محاسبات الهام‌گرفته از فیزیک",
+      narrative: "بستر سخت‌افزاری EPU قوانین بقا را نه به عنوان بررسی‌های نرم‌افزاری بلکه به عنوان محدودیت‌های فیزیکی جاسازی شده در طراحی ALU اعمال می‌کند. ثبات بقای انرژی (ECR) انرژی تجمعی را در تمام چرخه‌های محاسباتی ردیابی می‌کند.",
+      strategic: "قوانین بقای اعمال شده توسط سخت‌افزار پاسخ EPU به این سوال است که وقتی نرم‌افزار شکست می‌خورد چه اتفاقی می‌افتد — بستر فیزیکی نقض‌هایی را می‌گیرد که نرم‌افزار نمی‌تواند، و یک لایه ایمنی زیر سیستم عامل فراهم می‌کند.",
+      keyPoints: [
+        "ثبات بقای انرژی (ECR): انباشتگر ۶۴ بیتی که انرژی تجمعی را در تمام چرخه‌های محاسباتی ردیابی می‌کند — سرریز وقفه ENERGY_VIOLATION را فعال می‌کند",
+        "ثبات بقای تکانه (MCR): مجموع تکانه را برای تمام اشیاء ردیابی شده ردیابی می‌کند — نقض قبل از صدور هر دستور محرک وقفه MOMENTUM_VIOLATION را فعال می‌کند",
+        "ثبات بقای جرم (MSCR): مجموع جرم را برای تمام اشیاء در صحنه ردیابی می‌کند — ایجاد/تخریب بدون بقا وقفه MASS_VIOLATION را فعال می‌کند",
+        "ثبات یکنواختی آنتروپی (EMR): dS/dt >= 0 را اعمال می‌کند — هر محاسبه‌ای که کل آنتروپی را کاهش دهد وقفه ENTROPY_VIOLATION را فعال می‌کند",
+        "تاخیر وقفه سخت‌افزاری برای نقض بقا: <= ۱ چرخه ساعت (50ns در 20MHz) — سریع‌تر از هر کنترل‌کننده استثنای نرم‌افزاری، انطباق فیزیکی را قبل از خروجی محرک تضمین می‌کند"
+      ],
+      tags: ["قوانین-بقا", "محدودیت‌های-سخت‌افزاری", "ECR", "MCR", "یکنواختی-آنتروپی"]
+    }
+  },
+  {
+    id: 33,
+    act: "Foundation", actLabel: ACT_LABELS_A.Foundation, imageUrl: imgA(33),
+    en: {
+      title: "Kalman Filter Convergence Proof — §15 State Estimation Theory",
+      narrative: "The EPU state estimator uses a modified Kalman filter with convergence guarantees derived from Lyapunov stability theory. The standard Kalman filter converges under observability and controllability conditions; the EPU modification adds a physics-consistency check at each update step that rejects measurements violating conservation laws. The convergence proof is formalized in 47 Coq theorems.",
+      strategic: "The Kalman convergence proof is the EPU answer to the regulator question how do you know the state estimate is correct — the Lyapunov-based proof provides a mathematical certificate that the estimator converges to the true state.",
+      keyPoints: [
+        "Standard Kalman filter: P(k+1) = (I - K*H)*P(k) — converges when (A,C) observable and (A,B) controllable; EPU adds physics consistency check at each update",
+        "Lyapunov stability proof: V(x) = x^T*P^{-1}*x is a Lyapunov function for the estimation error — dV/dt < 0 guarantees convergence to zero estimation error",
+        "Physics-consistent measurement rejection: measurements violating conservation laws (|delta_E| > epsilon_E) are rejected before Kalman update — prevents filter divergence from sensor noise",
+        "Convergence rate: estimation error decays as ||e(k)|| <= gamma^k * ||e(0)|| where gamma < 1 depends on observability matrix rank — formally bounded in Coq theorem KF_CONV_47",
+        "47 Coq theorems covering: filter initialization (8), prediction step (12), update step (15), physics rejection (7), convergence bound (5) — all verified in EPU-1 FPGA prototype"
+      ],
+      tags: ["Kalman-filter", "convergence-proof", "Lyapunov-stability", "state-estimation", "Coq-theorems"]
+    },
+    fa: {
+      title: "اثبات همگرایی فیلتر کالمن — §۱۵ نظریه تخمین حالت",
+      narrative: "تخمین‌گر حالت EPU از یک فیلتر کالمن اصلاح شده با تضمین‌های همگرایی مشتق شده از نظریه پایداری لیاپانوف استفاده می‌کند. فیلتر کالمن استاندارد تحت شرایط قابل مشاهده بودن و قابل کنترل بودن همگرا می‌شود.",
+      strategic: "اثبات همگرایی کالمن پاسخ EPU به سوال تنظیم‌کننده است که چطور می‌دانید تخمین حالت درست است — اثبات مبتنی بر لیاپانوف یک گواهی ریاضی فراهم می‌کند که تخمین‌گر به حالت واقعی همگرا می‌شود.",
+      keyPoints: [
+        "فیلتر کالمن استاندارد: P(k+1) = (I - K*H)*P(k) — وقتی (A,C) قابل مشاهده و (A,B) قابل کنترل باشد همگرا می‌شود؛ EPU بررسی سازگاری فیزیکی اضافه می‌کند",
+        "اثبات پایداری لیاپانوف: V(x) = x^T*P^{-1}*x یک تابع لیاپانوف برای خطای تخمین است — dV/dt < 0 همگرایی به خطای تخمین صفر را تضمین می‌کند",
+        "رد اندازه‌گیری سازگار با فیزیک: اندازه‌گیری‌هایی که قوانین بقا را نقض می‌کنند قبل از به‌روزرسانی کالمن رد می‌شوند — از واگرایی فیلتر در اثر نویز حسگر جلوگیری می‌کند",
+        "نرخ همگرایی: خطای تخمین به صورت نمایی کاهش می‌یابد — به طور رسمی در قضیه Coq KF_CONV_47 محدود شده است",
+        "۴۷ قضیه Coq پوشش‌دهنده: مقداردهی اولیه فیلتر (۸)، مرحله پیش‌بینی (۱۲)، مرحله به‌روزرسانی (۱۵)، رد فیزیکی (۷)، کران همگرایی (۵) — همه در نمونه اولیه FPGA EPU-1 تایید شده"
+      ],
+      tags: ["فیلتر-کالمن", "اثبات-همگرایی", "پایداری-لیاپانوف", "تخمین-حالت", "قضایای-Coq"]
+    }
+  },
+  {
+    id: 34,
+    act: "Foundation", actLabel: ACT_LABELS_A.Foundation, imageUrl: imgA(34),
+    en: {
+      title: "Particle Filter Resampling and Degeneracy Prevention — §15.3",
+      narrative: "The EPU particle filter implementation addresses the degeneracy problem — the tendency for all probability mass to concentrate in a single particle after many resampling steps. The EPU uses systematic resampling (O(N) complexity), roughening (adding noise to prevent particle collapse), and physics-guided proposal distribution.",
+      strategic: "Particle filter degeneracy is the failure mode that causes autonomous vehicles to lose track of objects in complex scenarios. The EPU physics-guided resampling prevents this by ensuring particle diversity is maintained even in high-uncertainty situations.",
+      keyPoints: [
+        "Degeneracy metric: Neff = 1/sum(w_i^2) — when Neff < N/2 resampling is triggered; EPU uses threshold Neff < N/3 for earlier intervention",
+        "Systematic resampling: O(N) complexity vs O(N log N) for multinomial resampling — critical for real-time performance at N=10,000 particles within 10ms WCET",
+        "Roughening: add noise sigma_rough = K*N^{-1/d}*(x_max - x_min) to each particle after resampling — prevents particle collapse in low-noise environments",
+        "Physics-guided proposal: new particles sampled from q(x|x_{t-1},z_t) proportional to p(z_t|x)*p(x|x_{t-1}) — concentrates particles in physics-consistent regions, 3x better efficiency vs blind resampling",
+        "Formal WCET bound: particle filter resampling <= 3ms for N=10,000 particles on EPU-1 hardware — verified by Coq theorem PF_WCET_12"
+      ],
+      tags: ["particle-filter", "resampling", "degeneracy", "physics-guided", "WCET"]
+    },
+    fa: {
+      title: "نمونه‌برداری مجدد فیلتر ذره‌ای و پیشگیری از تباهی — §۱۵.۳",
+      narrative: "پیاده‌سازی فیلتر ذره‌ای EPU مشکل تباهی را حل می‌کند — تمایل به تمرکز تمام جرم احتمالاتی در یک ذره پس از مراحل نمونه‌برداری مجدد زیاد. EPU از ترکیبی از نمونه‌برداری مجدد سیستماتیک، خشن‌سازی و توزیع پیشنهادی هدایت‌شده توسط فیزیک استفاده می‌کند.",
+      strategic: "تباهی فیلتر ذره‌ای حالت شکست است که باعث می‌شود خودروهای خودمختار در سناریوهای پیچیده اشیاء را گم کنند. نمونه‌برداری مجدد هدایت‌شده توسط فیزیک EPU این حالت شکست را با اطمینان از حفظ تنوع ذرات جلوگیری می‌کند.",
+      keyPoints: [
+        "معیار تباهی: Neff = 1/sum(w_i^2) — وقتی Neff < N/2 باشد نمونه‌برداری مجدد فعال می‌شود؛ EPU از آستانه Neff < N/3 برای مداخله زودتر استفاده می‌کند",
+        "نمونه‌برداری مجدد سیستماتیک: پیچیدگی O(N) در مقابل O(N log N) برای نمونه‌برداری چندجمله‌ای — برای عملکرد بلادرنگ در N=10,000 ذره در WCET 10ms حیاتی است",
+        "خشن‌سازی: اضافه کردن نویز به هر ذره پس از نمونه‌برداری مجدد — از فروپاشی ذرات در محیط‌های کم‌نویز جلوگیری می‌کند",
+        "پیشنهاد هدایت‌شده توسط فیزیک: ذرات جدید در مناطق سازگار با فیزیک نمونه‌برداری می‌شوند — کارایی ۳ برابر بهتر در مقابل نمونه‌برداری کور",
+        "کران WCET رسمی: نمونه‌برداری مجدد فیلتر ذره‌ای <= ۳ms برای N=10,000 ذره در سخت‌افزار EPU-1 — توسط قضیه Coq PF_WCET_12 تایید شده"
+      ],
+      tags: ["فیلتر-ذره‌ای", "نمونه‌برداری-مجدد", "تباهی", "هدایت-فیزیکی", "WCET"]
+    }
+  },
+  {
+    id: 35,
+    act: "Foundation", actLabel: ACT_LABELS_A.Foundation, imageUrl: imgA(35),
+    en: {
+      title: "Optimal Control: Pontryagin Minimum Principle in EPU Hardware — §16",
+      narrative: "The EPU implements the Pontryagin Minimum Principle (PMP) as a hardware instruction: PMP_SOLVE computes the optimal control u*(t) = argmin H(x,u,lambda) where H is the Hamiltonian. This is the first processor architecture where optimal control theory is implemented as a native instruction, enabling real-time trajectory optimization within the 10ms WCET budget.",
+      strategic: "Hardware PMP is the EPU answer to the question how do you compute optimal trajectories in real time — optimal control is not computed in software but executed as a single hardware instruction with deterministic timing.",
+      keyPoints: [
+        "PMP_SOLVE instruction: 15 clock cycles (750ns at 20MHz), computes u*(t) = argmin H(x,u,lambda) for quadratic Hamiltonian — covers 95% of autonomous vehicle control problems",
+        "Hamiltonian: H(x,u,lambda) = L(x,u) + lambda^T*f(x,u) where L is running cost, f is dynamics, lambda is costate — all computed in hardware registers",
+        "Costate equation: d_lambda/dt = -dH/dx — integrated by EPU variational calculus instructions (VAR_GRAD, EL_SOLVE) within the same 15-cycle budget",
+        "Transversality conditions: lambda(T) = d_phi/dx(T) — terminal boundary condition enforced by hardware constraint register, prevents trajectory overshoot",
+        "Formal WCET: PMP_SOLVE <= 750ns for quadratic Hamiltonian, <= 2ms for general nonlinear Hamiltonian — verified by Coq theorem OC_PMP_WCET_8"
+      ],
+      tags: ["Pontryagin-minimum-principle", "optimal-control", "Hamiltonian", "hardware-instruction", "trajectory-optimization"]
+    },
+    fa: {
+      title: "کنترل بهینه: اصل مینیمم پونتریاگین در سخت‌افزار EPU — §۱۶",
+      narrative: "EPU اصل مینیمم پونتریاگین (PMP) را به عنوان یک دستورالعمل سخت‌افزاری پیاده‌سازی می‌کند: PMP_SOLVE کنترل بهینه را محاسبه می‌کند که H هامیلتونی مسئله کنترل است. این اولین معماری پردازنده‌ای است که نظریه کنترل بهینه به عنوان یک دستورالعمل بومی پیاده‌سازی شده است.",
+      strategic: "PMP سخت‌افزاری پاسخ EPU به سوال چگونه مسیرهای بهینه را در زمان واقعی محاسبه می‌کنید است — کنترل بهینه در نرم‌افزار محاسبه نمی‌شود بلکه به عنوان یک دستورالعمل سخت‌افزاری با زمان‌بندی قطعی اجرا می‌شود.",
+      keyPoints: [
+        "دستورالعمل PMP_SOLVE: ۱۵ چرخه ساعت (750ns در 20MHz)، کنترل بهینه را برای هامیلتونی درجه دوم محاسبه می‌کند — ۹۵ درصد مسائل کنترل خودروی خودمختار را پوشش می‌دهد",
+        "هامیلتونی: H(x,u,lambda) = L(x,u) + lambda^T*f(x,u) که L هزینه جاری، f دینامیک، lambda حالت همراه است — همه در ثبات‌های سخت‌افزاری محاسبه می‌شوند",
+        "معادله حالت همراه: d_lambda/dt = -dH/dx — توسط دستورالعمل‌های حساب تغییراتی EPU در همان بودجه ۱۵ چرخه‌ای یکپارچه می‌شود",
+        "شرایط عرضی: lambda(T) = d_phi/dx(T) — شرط مرزی پایانی توسط ثبات محدودیت سخت‌افزاری اعمال می‌شود، از تجاوز مسیر جلوگیری می‌کند",
+        "WCET رسمی: PMP_SOLVE <= 750ns برای هامیلتونی درجه دوم، <= ۲ms برای هامیلتونی غیرخطی عمومی — توسط قضیه Coq OC_PMP_WCET_8 تایید شده"
+      ],
+      tags: ["اصل-مینیمم-پونتریاگین", "کنترل-بهینه", "هامیلتونی", "دستورالعمل-سخت‌افزاری", "بهینه‌سازی-مسیر"]
+    }
+  },
+  {
+    id: 36,
+    act: "Foundation", actLabel: ACT_LABELS_A.Foundation, imageUrl: imgA(36),
+    en: {
+      title: "Information-Theoretic Sensor Fusion: Fisher Information Matrix — §17",
+      narrative: "The EPU sensor fusion framework is grounded in information theory: each sensor contributes a Fisher Information Matrix (FIM) to the fused estimate, and the fused FIM is the sum of individual FIMs (Cramer-Rao bound). This provides a principled way to quantify how much each sensor contributes to estimation accuracy, and to detect sensor failures.",
+      strategic: "FIM-based sensor fusion is the EPU answer to the question how do you know which sensors to trust — the Fisher information provides a mathematically rigorous measure of sensor reliability that is computed in hardware, not estimated by heuristics.",
+      keyPoints: [
+        "Fisher Information Matrix: I(theta) = E[d^2 log p(z|theta)/d_theta^2] — measures how much information sensor measurement z carries about state theta; computed by EPU FIM_COMPUTE instruction (8 cycles)",
+        "Cramer-Rao bound: Var(theta_hat) >= I(theta)^{-1} — the fused estimate covariance is lower-bounded by the inverse FIM; EPU verifies this bound at each fusion step",
+        "Sensor failure detection: if I_sensor(theta) < epsilon_FIM (threshold), sensor is flagged as failed and excluded from fusion — automatic failsafe without software intervention",
+        "FIM additivity: I_fused = sum(I_sensor_i) — fused FIM is sum of individual FIMs; EPU computes this in O(N*d^2) where N=sensors, d=state dimension",
+        "Formal WCET: FIM fusion for 8 sensors x 12D state <= 2.5ms on EPU-1 hardware — verified by Coq theorem SF_FIM_WCET_6"
+      ],
+      tags: ["Fisher-information-matrix", "sensor-fusion", "Cramer-Rao-bound", "information-theory", "sensor-failure-detection"]
+    },
+    fa: {
+      title: "ادغام حسگر نظریه اطلاعات: ماتریس اطلاعات فیشر — §۱۷",
+      narrative: "چارچوب ادغام حسگر EPU بر نظریه اطلاعات مبتنی است: هر حسگر یک ماتریس اطلاعات فیشر (FIM) به تخمین ادغام‌شده کمک می‌کند، و FIM ادغام‌شده مجموع FIM‌های منفرد است (کران کرامر-رائو).",
+      strategic: "ادغام حسگر مبتنی بر FIM پاسخ EPU به سوال چطور می‌دانید به کدام حسگرها اعتماد کنید است — اطلاعات فیشر یک معیار ریاضی دقیق از قابلیت اطمینان حسگر فراهم می‌کند که در سخت‌افزار محاسبه می‌شود.",
+      keyPoints: [
+        "ماتریس اطلاعات فیشر: I(theta) = E[d^2 log p(z|theta)/d_theta^2] — اندازه‌گیری می‌کند که اندازه‌گیری حسگر z چقدر اطلاعات درباره حالت theta حمل می‌کند؛ توسط دستورالعمل FIM_COMPUTE EPU محاسبه می‌شود (۸ چرخه)",
+        "کران کرامر-رائو: Var(theta_hat) >= I(theta)^{-1} — کوواریانس تخمین ادغام‌شده از پایین توسط FIM معکوس محدود می‌شود؛ EPU این کران را در هر مرحله ادغام تایید می‌کند",
+        "تشخیص خرابی حسگر: اگر I_sensor(theta) < epsilon_FIM باشد، حسگر به عنوان خراب علامت‌گذاری شده و از ادغام حذف می‌شود — ایمنی خودکار بدون مداخله نرم‌افزاری",
+        "جمع‌پذیری FIM: I_fused = sum(I_sensor_i) — FIM ادغام‌شده مجموع FIM‌های منفرد است؛ EPU این را در O(N*d^2) محاسبه می‌کند",
+        "WCET رسمی: ادغام FIM برای ۸ حسگر × حالت ۱۲D <= ۲.۵ms در سخت‌افزار EPU-1 — توسط قضیه Coq SF_FIM_WCET_6 تایید شده"
+      ],
+      tags: ["ماتریس-اطلاعات-فیشر", "ادغام-حسگر", "کران-کرامر-رائو", "نظریه-اطلاعات", "تشخیص-خرابی-حسگر"]
+    }
+  }
 ];
-
-export default slidesA;

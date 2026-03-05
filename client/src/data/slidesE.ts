@@ -1423,38 +1423,164 @@ export const slidesE: SlideE[] = [
       ],
     },
   },
+  {
+    id: 31,
+    act: "CabinController" as ActE,
+    actLabel: ACT_LABELS_E.CabinController,
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/e31_pcm_thermal_buffering_ef4fc72e.png",
+    en: {
+      title: "Phase-Change Material Integration for Cabin Thermal Buffering",
+      narrative: "The EPU cabin thermal management system integrates phase-change materials (PCMs) into the seat foam and door panels to buffer thermal transients. PCMs absorb latent heat during phase transition (solid-to-liquid at 28°C for occupant comfort zone), storing thermal energy without temperature rise. This reduces peak HVAC load by 23% and extends battery range by 8% in hot climates.",
+      strategic: "PCM integration is the EPU answer to the question how do you reduce peak HVAC load without sacrificing comfort — by storing thermal energy in the phase transition rather than in sensible heat, PCMs act as a thermal capacitor that smooths out demand spikes.",
+      keyPoints: [
+        "PCM selection: n-octadecane (C18H38) with melting point 28°C, latent heat 244 kJ/kg — chosen for comfort zone alignment; 2.3 kg PCM per seat provides 561 kJ thermal buffer",
+        "Thermal model: dT/dt = (Q_HVAC - Q_occupant - Q_PCM_discharge) / (m_cabin * c_p) — PCM discharge rate Q_PCM = m_PCM * L * (dX/dt) where X is liquid fraction",
+        "Peak load reduction: PCM absorbs 23% of peak HVAC load during first 15 minutes of cabin pre-conditioning — reduces compressor peak power from 4.2kW to 3.2kW",
+        "Range extension: 1kW reduction in HVAC peak power × 0.5 hours average peak duration = 0.5 kWh saved per trip — 8% range extension at 35°C ambient",
+        "Lifecycle: PCM encapsulated in micro-capsules (10-50 μm diameter) embedded in foam — 50,000 thermal cycles tested without degradation; PCM replaced with seat foam at 150,000 km service"
+      ],
+      tags: ["phase-change-material", "PCM", "thermal-buffering", "HVAC-optimization", "cabin-thermal"]
+    },
+    fa: {
+      title: "یکپارچه‌سازی مواد تغییر فاز برای بافرینگ حرارتی کابین",
+      narrative: "سیستم مدیریت حرارتی کابین EPU مواد تغییر فاز (PCM) را در فوم صندلی و پانل‌های در ادغام می‌کند تا گذراهای حرارتی را بافر کند. PCM‌ها در طول انتقال فاز (جامد به مایع در 28°C برای منطقه آسایش سرنشین) گرمای نهان جذب می‌کنند.",
+      strategic: "یکپارچه‌سازی PCM پاسخ EPU به سوال چگونه بار اوج HVAC را بدون فداکاری در راحتی کاهش می‌دهید است — با ذخیره انرژی حرارتی در انتقال فاز به جای گرمای محسوس، PCM‌ها به عنوان خازن حرارتی عمل می‌کنند.",
+      keyPoints: [
+        "انتخاب PCM: n-octadecane (C18H38) با نقطه ذوب 28°C، گرمای نهان 244 kJ/kg — برای هماهنگی با منطقه آسایش انتخاب شده؛ 2.3 کیلوگرم PCM در هر صندلی 561 kJ بافر حرارتی فراهم می‌کند",
+        "مدل حرارتی: dT/dt = (Q_HVAC - Q_occupant - Q_PCM_discharge) / (m_cabin * c_p) — نرخ تخلیه PCM Q_PCM = m_PCM * L * (dX/dt) که X کسر مایع است",
+        "کاهش بار اوج: PCM 23 درصد از بار اوج HVAC را در 15 دقیقه اول پیش‌آماده‌سازی کابین جذب می‌کند — توان اوج کمپرسور را از 4.2kW به 3.2kW کاهش می‌دهد",
+        "افزایش برد: کاهش 1kW در توان اوج HVAC × 0.5 ساعت مدت اوج متوسط = 0.5 kWh صرفه‌جویی در هر سفر — افزایش برد 8 درصدی در دمای محیط 35°C",
+        "چرخه عمر: PCM در میکروکپسول‌ها (قطر 10-50 میکرومتر) جاسازی شده در فوم — 50,000 چرخه حرارتی بدون تخریب آزمایش شده؛ PCM با فوم صندلی در 150,000 کیلومتر سرویس تعویض می‌شود"
+      ],
+      tags: ["مواد-تغییر-فاز", "PCM", "بافرینگ-حرارتی", "بهینه‌سازی-HVAC", "حرارت-کابین"]
+    }
+  },
+  {
+    id: 32,
+    act: "HydrogenPlatform" as ActE,
+    actLabel: ACT_LABELS_E.HydrogenPlatform,
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/e32_fuel_cell_degradation_d0ed6ed1.png",
+    en: {
+      title: "Hydrogen Fuel Cell Stack Degradation Model and Lifetime Prediction",
+      narrative: "The EPU hydrogen platform uses a physics-based degradation model to predict fuel cell stack lifetime. The model tracks three degradation mechanisms: platinum dissolution (Pt → Pt²⁺ + 2e⁻, accelerated by voltage cycling), carbon corrosion (C + 2H₂O → CO₂ + 4H⁺ + 4e⁻, accelerated by start-stop), and membrane thinning (chemical degradation by H₂O₂ radicals). Each mechanism has a separate rate equation calibrated against accelerated stress tests.",
+      strategic: "Fuel cell degradation modeling is the EPU answer to the question how do you guarantee 500,000 km fuel cell lifetime — by tracking each degradation mechanism separately and optimizing operating conditions to minimize the dominant mechanism.",
+      keyPoints: [
+        "Platinum dissolution: rate r_Pt = k_Pt * exp(-E_a/(RT)) * (V - V_eq)^2 — accelerated by voltage cycling above 0.9V; EPU limits upper voltage to 0.85V, reducing Pt dissolution rate by 73%",
+        "Carbon corrosion: rate r_C = k_C * exp(-E_a/(RT)) * exp(alpha*F*V/(RT)) — accelerated during start-stop (voltage spikes to 1.5V); EPU uses hydrogen purge protocol at shutdown, eliminating carbon corrosion",
+        "Membrane thinning: rate r_mem = k_mem * [H₂O₂] * [Fe²⁺] — H₂O₂ generated by O₂ crossover; EPU uses reinforced PFSA membrane with Ce³⁺ radical scavenger, reducing membrane thinning by 89%",
+        "Lifetime prediction: integrated degradation model predicts 12% performance loss at 500,000 km — within 10% end-of-life threshold; validated against 3 accelerated stress test campaigns",
+        "Adaptive control: EPU adjusts operating voltage and current density in real-time based on degradation state — extends lifetime by 15% compared to fixed operating point"
+      ],
+      tags: ["fuel-cell-degradation", "platinum-dissolution", "carbon-corrosion", "membrane-thinning", "lifetime-prediction"]
+    },
+    fa: {
+      title: "مدل تخریب پشته پیل سوختی هیدروژن و پیش‌بینی طول عمر",
+      narrative: "پلتفرم هیدروژن EPU از یک مدل تخریب مبتنی بر فیزیک برای پیش‌بینی طول عمر پشته پیل سوختی استفاده می‌کند. مدل سه مکانیزم تخریب را ردیابی می‌کند: انحلال پلاتین (تسریع شده توسط چرخه ولتاژ)، خوردگی کربن (تسریع شده توسط شروع-توقف)، و نازک شدن غشا.",
+      strategic: "مدل‌سازی تخریب پیل سوختی پاسخ EPU به سوال چگونه طول عمر 500,000 کیلومتری پیل سوختی را تضمین می‌کنید است — با ردیابی جداگانه هر مکانیزم تخریب و بهینه‌سازی شرایط عملیاتی برای به حداقل رساندن مکانیزم غالب.",
+      keyPoints: [
+        "انحلال پلاتین: نرخ r_Pt = k_Pt * exp(-E_a/(RT)) * (V - V_eq)^2 — توسط چرخه ولتاژ بالای 0.9V تسریع می‌شود؛ EPU ولتاژ بالایی را به 0.85V محدود می‌کند و نرخ انحلال Pt را 73 درصد کاهش می‌دهد",
+        "خوردگی کربن: نرخ r_C = k_C * exp(-E_a/(RT)) * exp(alpha*F*V/(RT)) — در طول شروع-توقف تسریع می‌شود؛ EPU از پروتکل تخلیه هیدروژن در خاموش شدن استفاده می‌کند و خوردگی کربن را حذف می‌کند",
+        "نازک شدن غشا: نرخ r_mem = k_mem * [H₂O₂] * [Fe²⁺] — H₂O₂ توسط عبور O₂ تولید می‌شود؛ EPU از غشای PFSA تقویت شده با پاک‌کننده رادیکال Ce³⁺ استفاده می‌کند و نازک شدن غشا را 89 درصد کاهش می‌دهد",
+        "پیش‌بینی طول عمر: مدل تخریب یکپارچه 12 درصد افت عملکرد در 500,000 کیلومتر را پیش‌بینی می‌کند — در محدوده آستانه پایان عمر 10 درصد؛ در برابر 3 کمپین آزمون تنش شتاب‌دار تایید شده",
+        "کنترل تطبیقی: EPU ولتاژ عملیاتی و چگالی جریان را بر اساس حالت تخریب در زمان واقعی تنظیم می‌کند — طول عمر را 15 درصد در مقایسه با نقطه عملیاتی ثابت افزایش می‌دهد"
+      ],
+      tags: ["تخریب-پیل-سوختی", "انحلال-پلاتین", "خوردگی-کربن", "نازک-شدن-غشا", "پیش‌بینی-طول-عمر"]
+    }
+  },
+  {
+    id: 33,
+    act: "SensorGovernance" as ActE,
+    actLabel: ACT_LABELS_E.SensorGovernance,
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/e33_biometric_monitoring_c59cf379.png",
+    en: {
+      title: "Occupant Biometric Monitoring: Drowsiness and Stress Detection",
+      narrative: "The EPU cabin sensor suite includes occupant biometric monitoring for drowsiness and stress detection. The system uses a combination of: steering wheel grip sensors (galvanic skin response, skin temperature), driver-facing camera (eye blink rate, gaze direction, head pose), and seat pressure sensors (micro-movements indicating restlessness). A multi-modal fusion model combines these signals to estimate drowsiness level (0-10 scale) and stress level (0-10 scale).",
+      strategic: "Biometric monitoring is the EPU answer to the question how do you detect driver impairment before it affects driving — by monitoring physiological signals continuously, the system can intervene before the driver makes a dangerous maneuver.",
+      keyPoints: [
+        "Drowsiness detection: PERCLOS (percentage of eye closure) > 80% for > 3 seconds → drowsiness level 7; head pose deviation > 15° for > 5 seconds → drowsiness level 6; validated against Karolinska Sleepiness Scale",
+        "Stress detection: galvanic skin response (GSR) increase > 2 μS from baseline → stress level 5; heart rate variability (HRV) decrease > 20% from baseline → stress level 6; combined → stress level 8",
+        "Multi-modal fusion: Bayesian network combines PERCLOS, head pose, GSR, HRV, micro-movements — posterior P(drowsy | evidence) updated at 10Hz; alert triggered when P(drowsy) > 0.85",
+        "Privacy: all biometric processing on-device (no cloud upload); biometric data stored in encrypted ring buffer (last 60 seconds only); GDPR-compliant data minimization",
+        "Intervention protocol: drowsiness level 6 → auditory alert; level 7 → haptic steering wheel vibration + auditory; level 8 → automatic speed reduction + request to pull over"
+      ],
+      tags: ["biometric-monitoring", "drowsiness-detection", "PERCLOS", "galvanic-skin-response", "occupant-safety"]
+    },
+    fa: {
+      title: "نظارت بیومتریک سرنشین: تشخیص خواب‌آلودگی و استرس",
+      narrative: "منشور حسگرهای کابین EPU شامل نظارت بیومتریک سرنشین برای تشخیص خواب‌آلودگی و استرس است. سیستم از ترکیبی از: حسگرهای گیره فرمان (پاسخ گالوانیک پوست، دمای پوست)، دوربین رو به راننده (نرخ پلک زدن، جهت نگاه، وضعیت سر)، و حسگرهای فشار صندلی استفاده می‌کند.",
+      strategic: "نظارت بیومتریک پاسخ EPU به سوال چگونه اختلال راننده را قبل از تأثیر بر رانندگی تشخیص می‌دهید است — با نظارت مستمر بر سیگنال‌های فیزیولوژیکی، سیستم می‌تواند قبل از اینکه راننده یک مانور خطرناک انجام دهد مداخله کند.",
+      keyPoints: [
+        "تشخیص خواب‌آلودگی: PERCLOS (درصد بسته شدن چشم) > 80 درصد برای > 3 ثانیه → سطح خواب‌آلودگی 7؛ انحراف وضعیت سر > 15 درجه برای > 5 ثانیه → سطح خواب‌آلودگی 6؛ در برابر مقیاس خواب‌آلودگی کارولینسکا تایید شده",
+        "تشخیص استرس: افزایش پاسخ گالوانیک پوست (GSR) > 2 μS از خط پایه → سطح استرس 5؛ کاهش تغییرپذیری ضربان قلب (HRV) > 20 درصد از خط پایه → سطح استرس 6",
+        "ادغام چندوجهی: شبکه بیزی PERCLOS، وضعیت سر، GSR، HRV، میکروحرکات را ترکیب می‌کند — احتمال پسین P(خواب‌آلود | شواهد) در 10Hz به‌روزرسانی می‌شود؛ هشدار هنگامی که P(خواب‌آلود) > 0.85 فعال می‌شود",
+        "حریم خصوصی: تمام پردازش بیومتریک روی دستگاه (بدون آپلود ابری)؛ داده‌های بیومتریک در بافر حلقه رمزگذاری شده ذخیره می‌شوند (فقط 60 ثانیه آخر)؛ کاهش داده مطابق GDPR",
+        "پروتکل مداخله: سطح خواب‌آلودگی 6 → هشدار صوتی؛ سطح 7 → لرزش لمسی فرمان + صوتی؛ سطح 8 → کاهش خودکار سرعت + درخواست توقف"
+      ],
+      tags: ["نظارت-بیومتریک", "تشخیص-خواب‌آلودگی", "PERCLOS", "پاسخ-گالوانیک-پوست", "ایمنی-سرنشین"]
+    }
+  },
+  {
+    id: 34,
+    act: "IntegratedElectronics" as ActE,
+    actLabel: ACT_LABELS_E.IntegratedElectronics,
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/e34_can_fd_architecture_3a48cde2.png",
+    en: {
+      title: "CAN FD Bus Architecture for Cabin Electronics Integration",
+      narrative: "The EPU cabin electronics integration uses CAN FD (Controller Area Network with Flexible Data-rate) as the primary communication backbone. CAN FD extends classic CAN with data rates up to 8 Mbps (vs 1 Mbps for classic CAN) and frame sizes up to 64 bytes (vs 8 bytes). The EPU cabin network has 47 ECUs connected across 3 CAN FD segments: comfort (HVAC, seats, lighting), infotainment (displays, audio, connectivity), and safety (airbags, seatbelts, occupant monitoring).",
+      strategic: "CAN FD architecture is the EPU answer to the question how do you integrate 47 cabin ECUs with deterministic real-time communication — CAN FD provides the bandwidth for high-frequency sensor data while maintaining the deterministic timing guarantees required for safety-critical systems.",
+      keyPoints: [
+        "CAN FD segments: comfort segment (8 Mbps, 23 ECUs) — HVAC, seats, ambient lighting, door modules; infotainment segment (5 Mbps, 14 ECUs) — head unit, displays, audio amplifier; safety segment (8 Mbps, 10 ECUs) — airbag ECU, seatbelt pretensioners, occupant monitoring",
+        "Bandwidth utilization: comfort 62%, infotainment 71%, safety 34% — safety segment kept below 50% to ensure deterministic response time < 1ms for airbag deployment trigger",
+        "Gateway ECU: central gateway bridges CAN FD segments and connects to vehicle backbone (Automotive Ethernet 100BASE-T1) — firewall prevents unauthorized cross-segment messages",
+        "Diagnostics: UDS (Unified Diagnostic Services) over CAN FD — fault codes, live data streaming, ECU reprogramming; OTA updates via Automotive Ethernet with CAN FD gateway relay",
+        "EMC compliance: CAN FD transceivers with integrated ESD protection (±8kV IEC 61000-4-2) and common-mode choke — meets CISPR 25 Class 5 radiated emissions for automotive environments"
+      ],
+      tags: ["CAN-FD", "cabin-electronics", "ECU-integration", "automotive-network", "gateway-ECU"]
+    },
+    fa: {
+      title: "معماری باس CAN FD برای یکپارچه‌سازی الکترونیک کابین",
+      narrative: "یکپارچه‌سازی الکترونیک کابین EPU از CAN FD (شبکه ناحیه کنترلر با نرخ داده انعطاف‌پذیر) به عنوان ستون فقرات ارتباطی اصلی استفاده می‌کند. CAN FD کلاسیک CAN را با نرخ داده تا 8 Mbps و اندازه فریم تا 64 بایت گسترش می‌دهد. شبکه کابین EPU دارای 47 ECU در 3 بخش CAN FD است.",
+      strategic: "معماری CAN FD پاسخ EPU به سوال چگونه 47 ECU کابین را با ارتباط بلادرنگ قطعی یکپارچه می‌کنید است — CAN FD پهنای باند لازم برای داده‌های حسگر با فرکانس بالا را فراهم می‌کند در حالی که تضمین‌های زمان‌بندی قطعی مورد نیاز برای سیستم‌های حیاتی از نظر ایمنی را حفظ می‌کند.",
+      keyPoints: [
+        "بخش‌های CAN FD: بخش آسایش (8 Mbps، 23 ECU) — HVAC، صندلی‌ها، روشنایی محیطی، ماژول‌های در؛ بخش سرگرمی (5 Mbps، 14 ECU) — واحد اصلی، نمایشگرها، آمپلی‌فایر صوتی؛ بخش ایمنی (8 Mbps، 10 ECU)",
+        "استفاده از پهنای باند: آسایش 62 درصد، سرگرمی 71 درصد، ایمنی 34 درصد — بخش ایمنی زیر 50 درصد نگه داشته می‌شود تا زمان پاسخ قطعی < 1ms برای ماشه استقرار کیسه هوا تضمین شود",
+        "ECU دروازه: دروازه مرکزی بخش‌های CAN FD را پل می‌زند و به ستون فقرات خودرو (Automotive Ethernet 100BASE-T1) متصل می‌شود — فایروال از پیام‌های متقاطع غیرمجاز جلوگیری می‌کند",
+        "تشخیص: UDS (خدمات تشخیصی یکپارچه) روی CAN FD — کدهای خطا، جریان داده زنده، بازبرنامه‌ریزی ECU؛ به‌روزرسانی‌های OTA از طریق Automotive Ethernet با رله دروازه CAN FD",
+        "انطباق EMC: ترانسیورهای CAN FD با حفاظت ESD یکپارچه (±8kV IEC 61000-4-2) و چوک حالت مشترک — استانداردهای CISPR 25 کلاس 5 برای محیط‌های خودرویی را برآورده می‌کند"
+      ],
+      tags: ["CAN-FD", "الکترونیک-کابین", "یکپارچه‌سازی-ECU", "شبکه-خودرویی", "ECU-دروازه"]
+    }
+  },
+  {
+    id: 35,
+    act: "TEALCAMoat" as ActE,
+    actLabel: ACT_LABELS_E.TEALCAMoat,
+    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/e35_tco_analysis_aa870be4.png",
+    en: {
+      title: "Total Cost of Ownership: EPU Cabin vs. Conventional HVAC — 10-Year TCO Model",
+      narrative: "The EPU cabin system 10-year Total Cost of Ownership (TCO) model compares EPU-equipped vehicles against conventional HVAC systems. The model accounts for: initial hardware cost differential (+$2,800 for EPU cabin package), energy savings (8% range extension × $0.12/kWh × 15,000 km/year), maintenance savings (PCM no moving parts, 50% fewer HVAC service events), and residual value premium (EPU-equipped vehicles command 4% higher resale value).",
+      strategic: "TCO analysis is the EPU answer to the question what is the business case for the EPU cabin premium — the 10-year TCO model shows that the $2,800 hardware premium is recovered in 3.2 years through energy and maintenance savings, with $4,100 net positive TCO over 10 years.",
+      keyPoints: [
+        "Hardware premium: +$2,800 for EPU cabin package (PCM integration, biometric sensors, CAN FD gateway) — amortized over 10 years = $280/year additional capital cost",
+        "Energy savings: 8% range extension × 15,000 km/year × $0.12/kWh × 0.18 kWh/km = $259/year energy savings — cumulative $2,590 over 10 years",
+        "Maintenance savings: 50% fewer HVAC service events × $180/event × 0.8 events/year = $72/year maintenance savings — cumulative $720 over 10 years",
+        "Residual value: 4% higher resale value on $35,000 vehicle = $1,400 residual value premium at year 5 — net present value $1,050 (discounted at 7%)",
+        "10-year TCO: hardware premium -$2,800 + energy savings +$2,590 + maintenance +$720 + residual +$1,050 = +$1,560 net positive TCO — payback period 3.2 years"
+      ],
+      tags: ["TCO", "total-cost-of-ownership", "cabin-economics", "payback-period", "residual-value"]
+    },
+    fa: {
+      title: "کل هزینه مالکیت: کابین EPU در مقابل HVAC معمولی — مدل TCO ۱۰ ساله",
+      narrative: "مدل کل هزینه مالکیت (TCO) ۱۰ ساله سیستم کابین EPU خودروهای مجهز به EPU را در مقابل سیستم‌های HVAC معمولی مقایسه می‌کند. مدل حساب می‌کند: تفاوت هزینه سخت‌افزار اولیه (+2,800 دلار برای بسته کابین EPU)، صرفه‌جویی در انرژی، صرفه‌جویی در نگهداری، و حق بیمه ارزش باقیمانده.",
+      strategic: "تحلیل TCO پاسخ EPU به سوال توجیه تجاری برای حق بیمه کابین EPU چیست است — مدل TCO ۱۰ ساله نشان می‌دهد که حق بیمه سخت‌افزاری 2,800 دلاری در 3.2 سال از طریق صرفه‌جویی در انرژی و نگهداری بازیابی می‌شود.",
+      keyPoints: [
+        "حق بیمه سخت‌افزاری: +2,800 دلار برای بسته کابین EPU (یکپارچه‌سازی PCM، حسگرهای بیومتریک، دروازه CAN FD) — در ۱۰ سال استهلاک می‌شود = 280 دلار در سال هزینه سرمایه اضافی",
+        "صرفه‌جویی در انرژی: افزایش برد 8 درصد × 15,000 کیلومتر در سال × 0.12 دلار در kWh × 0.18 kWh/km = 259 دلار در سال صرفه‌جویی انرژی — مجموع 2,590 دلار در ۱۰ سال",
+        "صرفه‌جویی در نگهداری: 50 درصد رویدادهای سرویس HVAC کمتر × 180 دلار در رویداد × 0.8 رویداد در سال = 72 دلار در سال صرفه‌جویی نگهداری — مجموع 720 دلار در ۱۰ سال",
+        "ارزش باقیمانده: ارزش فروش مجدد 4 درصد بالاتر روی خودروی 35,000 دلاری = 1,400 دلار حق بیمه ارزش باقیمانده در سال 5 — ارزش فعلی خالص 1,050 دلار (تنزیل شده با 7 درصد)",
+        "TCO ۱۰ ساله: حق بیمه سخت‌افزاری -2,800 دلار + صرفه‌جویی انرژی +2,590 دلار + نگهداری +720 دلار + باقیمانده +1,050 دلار = +1,560 دلار TCO مثبت خالص — دوره بازگشت سرمایه 3.2 سال"
+      ],
+      tags: ["TCO", "کل-هزینه-مالکیت", "اقتصاد-کابین", "دوره-بازگشت-سرمایه", "ارزش-باقیمانده"]
+    }
+  }
 ];
-
-
-export const IMG_URLS_E: Record<number, string> = {
-  1: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_01_45a8df0a.png",
-  2: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_02_11d6461d.png",
-  3: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_03_cc8fd9f5.png",
-  4: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_04_d04d11f3.png",
-  5: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_05_9b78765a.png",
-  6: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_06_c53c695a.png",
-  7: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_07_76295ad1.png",
-  8: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_08_6a0cad70.png",
-  9: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_09_2cb1bb87.png",
-  10: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_10_cda83de0.png",
-  11: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_11_162b35c3.png",
-  12: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_12_8e858bb2.png",
-  13: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_13_e0aecb2b.png",
-  14: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_14_00732803.png",
-  15: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_15_f888fc0e.png",
-  16: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_16_bd14b56e.png",
-  17: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_17_151d591f.png",
-  18: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_18_f21ede08.png",
-  19: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_19_928bd066.png",
-  20: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_20_72a83ede.png",
-  21: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_21_f6b7e9c9.png",
-  22: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_22_fa854060.png",
-  23: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_23_fbaeda59.png",
-  24: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_24_8e7ad9d9.png",
-  25: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_25_5446b7b2.png",
-  26: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_26_da9956ef.png",
-  27: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_27_b7c64d41.png",
-  28: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_28_b21a4d1c.png",
-  29: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_29_5bf431ab.png",
-  30: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/epu_e_30_7dd4ffba.png"
-};

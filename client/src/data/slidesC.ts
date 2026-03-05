@@ -116,8 +116,11 @@ const IMG_URLS: Record<number, string> = {
   67: `${CDN}/wave3_c67_dualtrack-HJTZ9aSTofmh9Ag2nQ6PTw.png`,
   68: `${CDN}/slide_59_d538c8f5.png`,
   69: `${CDN}/slide_60_3ac3aba2.png`,
-  70: `${CDN}/slide_59_d538c8f5.png`,
-  71: `${CDN}/slide_60_3ac3aba2.png`,
+  70: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_0a647f72.png",
+  71: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c69_neural_epistemic_laws_0c167aa7.png",
+  72: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_0a647f72.png",
+  73: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c69_neural_epistemic_laws_0c167aa7.png",
+  74: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_0a647f72.png",
 };
 
 const imgC = (n: number) => IMG_URLS[n] || "";
@@ -2044,5 +2047,164 @@ export const slidesC: SlideC[] = [
       tags: ["ادغام-شبکه-عصبی", "اطلاعات-Fisher", "یکنواختی-آنتروپی", "هزینه-Landauer", "قوانین-معرفتی"],
     },
   },
+  {
+    id: 70,
+    act: "PhysicsFound" as ActC,
+    actLabel: ACT_LABELS_C.PhysicsFound,
+    imageUrl: imgC(70),
+    en: {
+      title: "Entropy Production Rate as Computational Cost Metric — §22.1",
+      narrative: "The EPU computational cost model is grounded in thermodynamics: every computation produces entropy, and the entropy production rate dS/dt is the fundamental cost metric. The Landauer principle sets the minimum entropy production for irreversible computation: dS_min = k_B * ln(2) * T * N_bits_erased. The EPU tracks entropy production per instruction and uses it as a resource allocation signal.",
+      strategic: "Entropy-based cost accounting is the EPU answer to the question what is the true cost of computation — not clock cycles or memory bandwidth but thermodynamic entropy, which is the physical quantity that cannot be recovered.",
+      keyPoints: [
+        "Landauer bound: minimum entropy production for erasing one bit = k_B * T * ln(2) = 2.87 × 10^{-21} J at 300K — EPU measures actual entropy production and compares to Landauer bound",
+        "Entropy production rate: dS/dt = sum_i(k_B * T * r_i * ln(2)) where r_i is the bit erasure rate of instruction i — tracked by EPU Entropy Monitor Register (EMR)",
+        "Computational efficiency metric: eta = S_Landauer / S_actual — ratio of minimum to actual entropy production; EPU-1 achieves eta = 0.73 (27% overhead above Landauer bound)",
+        "Entropy budget allocation: EPU allocates entropy budget per task proportional to information-theoretic complexity — tasks with higher Shannon entropy in inputs get larger entropy budgets",
+        "Reversible computation: EPU supports reversible instructions (CNOT, Toffoli) with zero Landauer cost — used for cryptographic operations where entropy budget is critical"
+      ],
+      tags: ["entropy-production", "Landauer-bound", "thermodynamic-cost", "reversible-computation", "computational-efficiency"]
+    },
+    fa: {
+      title: "نرخ تولید آنتروپی به عنوان معیار هزینه محاسباتی — §۲۲.۱",
+      narrative: "مدل هزینه محاسباتی EPU بر ترمودینامیک مبتنی است: هر محاسبه آنتروپی تولید می‌کند، و نرخ تولید آنتروپی dS/dt معیار هزینه بنیادی است. اصل لاندائر حداقل تولید آنتروپی برای محاسبه برگشت‌ناپذیر را تعیین می‌کند.",
+      strategic: "حسابداری هزینه مبتنی بر آنتروپی پاسخ EPU به سوال هزینه واقعی محاسبه چیست است — نه چرخه‌های ساعت یا پهنای باند حافظه بلکه آنتروپی ترمودینامیکی، که کمیت فیزیکی است که قابل بازیابی نیست.",
+      keyPoints: [
+        "کران لاندائر: حداقل تولید آنتروپی برای پاک کردن یک بیت = k_B * T * ln(2) = 2.87 × 10^{-21} J در 300K — EPU تولید آنتروپی واقعی را اندازه‌گیری و با کران لاندائر مقایسه می‌کند",
+        "نرخ تولید آنتروپی: dS/dt = sum_i(k_B * T * r_i * ln(2)) که r_i نرخ پاک‌سازی بیت دستورالعمل i است — توسط ثبات مانیتور آنتروپی EPU (EMR) ردیابی می‌شود",
+        "معیار کارایی محاسباتی: eta = S_Landauer / S_actual — نسبت حداقل به تولید آنتروپی واقعی؛ EPU-1 به eta = 0.73 می‌رسد (۲۷ درصد سربار بالای کران لاندائر)",
+        "تخصیص بودجه آنتروپی: EPU بودجه آنتروپی را به هر وظیفه متناسب با پیچیدگی نظریه اطلاعات تخصیص می‌دهد — وظایف با آنتروپی شانون بالاتر در ورودی‌ها بودجه آنتروپی بزرگ‌تری دریافت می‌کنند",
+        "محاسبه برگشت‌پذیر: EPU از دستورالعمل‌های برگشت‌پذیر (CNOT، Toffoli) با هزینه لاندائر صفر پشتیبانی می‌کند — برای عملیات رمزنگاری که بودجه آنتروپی حیاتی است استفاده می‌شود"
+      ],
+      tags: ["تولید-آنتروپی", "کران-لاندائر", "هزینه-ترمودینامیکی", "محاسبه-برگشت‌پذیر", "کارایی-محاسباتی"]
+    }
+  },
+  {
+    id: 71,
+    act: "PhysicsFound" as ActC,
+    actLabel: ACT_LABELS_C.PhysicsFound,
+    imageUrl: imgC(71),
+    en: {
+      title: "Free Energy Minimization as Inference — §22.2 Active Inference Framework",
+      narrative: "The EPU perception-action loop is formalized as variational free energy minimization (the Active Inference framework of Karl Friston). The agent maintains a generative model p(o,s) of observations o and hidden states s, and minimizes the variational free energy F = E_q[log q(s)] - E_q[log p(o,s)] by updating both beliefs q(s) (perception) and actions a (action selection).",
+      strategic: "Active inference is the EPU answer to the question how do perception and action share a common computational principle — both are free energy minimization, which unifies the perception-action loop under a single thermodynamic objective.",
+      keyPoints: [
+        "Variational free energy: F = KL[q(s)||p(s|o)] - log p(o) = E_q[log q(s) - log p(o,s)] — upper bound on surprise -log p(o); minimizing F minimizes surprise",
+        "Perception as inference: minimize F w.r.t. q(s) — gradient descent on q gives belief update rule q(s) ∝ p(o|s)*p(s), equivalent to Bayesian filtering",
+        "Action as inference: minimize F w.r.t. a — gradient descent on a gives action selection rule a* = argmin_a E_q[log q(s) - log p(o,s|a)]",
+        "Epistemic vs pragmatic value: F = epistemic value (information gain) + pragmatic value (expected reward) — EPU balances exploration (epistemic) and exploitation (pragmatic) via free energy",
+        "EPU implementation: free energy computed by FE_COMPUTE instruction (12 cycles) — enables real-time active inference at 1kHz update rate within 10ms WCET budget"
+      ],
+      tags: ["active-inference", "free-energy-minimization", "variational-inference", "Karl-Friston", "perception-action"]
+    },
+    fa: {
+      title: "کمینه‌سازی انرژی آزاد به عنوان استنتاج — §۲۲.۲ چارچوب استنتاج فعال",
+      narrative: "حلقه ادراک-عمل EPU به عنوان کمینه‌سازی انرژی آزاد تغییراتی (چارچوب استنتاج فعال کارل فریستون) رسمی شده است. عامل یک مدل مولد p(o,s) از مشاهدات o و حالت‌های پنهان s نگه می‌دارد و انرژی آزاد تغییراتی را با به‌روزرسانی هم باورها q(s) (ادراک) و هم اعمال a (انتخاب عمل) کمینه می‌کند.",
+      strategic: "استنتاج فعال پاسخ EPU به سوال چگونه ادراک و عمل یک اصل محاسباتی مشترک دارند است — هر دو کمینه‌سازی انرژی آزاد هستند، که حلقه ادراک-عمل را تحت یک هدف ترمودینامیکی واحد متحد می‌کند.",
+      keyPoints: [
+        "انرژی آزاد تغییراتی: F = KL[q(s)||p(s|o)] - log p(o) — کران بالای شگفتی -log p(o)؛ کمینه‌سازی F شگفتی را کمینه می‌کند",
+        "ادراک به عنوان استنتاج: کمینه‌سازی F نسبت به q(s) — نزول گرادیان روی q قانون به‌روزرسانی باور q(s) ∝ p(o|s)*p(s) را می‌دهد، معادل فیلتر بیزی",
+        "عمل به عنوان استنتاج: کمینه‌سازی F نسبت به a — نزول گرادیان روی a قانون انتخاب عمل را می‌دهد",
+        "ارزش معرفتی در مقابل عملی: F = ارزش معرفتی (اکتساب اطلاعات) + ارزش عملی (پاداش مورد انتظار) — EPU از طریق انرژی آزاد بین کاوش (معرفتی) و بهره‌برداری (عملی) تعادل برقرار می‌کند",
+        "پیاده‌سازی EPU: انرژی آزاد توسط دستورالعمل FE_COMPUTE محاسبه می‌شود (۱۲ چرخه) — استنتاج فعال بلادرنگ را با نرخ به‌روزرسانی 1kHz در بودجه WCET 10ms ممکن می‌سازد"
+      ],
+      tags: ["استنتاج-فعال", "کمینه‌سازی-انرژی-آزاد", "استنتاج-تغییراتی", "کارل-فریستون", "ادراک-عمل"]
+    }
+  },
+  {
+    id: 72,
+    act: "PhysicsFound" as ActC,
+    actLabel: ACT_LABELS_C.PhysicsFound,
+    imageUrl: imgC(72),
+    en: {
+      title: "Symmetry Groups and Equivariant Neural Networks — §22.3",
+      narrative: "The EPU neural network architecture uses equivariant networks that respect the symmetry group of the problem. For autonomous driving, the relevant symmetry group is SE(3) (rotations and translations in 3D space). An SE(3)-equivariant network satisfies f(g·x) = g·f(x) for all g in SE(3), meaning the network output transforms consistently with the input under rigid body transformations.",
+      strategic: "Equivariant networks are the EPU answer to the question how do you ensure the neural network respects the physics of 3D space — by building SE(3) symmetry into the architecture, the network cannot learn representations that violate rotational or translational invariance.",
+      keyPoints: [
+        "SE(3) symmetry group: G = {(R,t): R in SO(3), t in R^3} with group action g·x = R*x + t — rigid body transformations; equivariant network satisfies f(R*x+t) = R*f(x)+t",
+        "Equivariance vs invariance: equivariant f(g·x) = g·f(x) (output transforms with input) vs invariant f(g·x) = f(x) (output unchanged) — EPU uses equivariant for pose estimation, invariant for classification",
+        "Steerable CNNs: filters are steerable — can be rotated to produce filters at any orientation; EPU uses steerable filters for LiDAR point cloud processing",
+        "Data efficiency: SE(3)-equivariant networks require 10x fewer training samples to achieve same accuracy as non-equivariant networks — critical for rare event scenarios in autonomous driving",
+        "Formal guarantee: equivariant network cannot produce inconsistent predictions for rotated/translated inputs — eliminates a class of adversarial attacks based on geometric transformations"
+      ],
+      tags: ["equivariant-networks", "SE3-symmetry", "steerable-CNNs", "group-theory", "geometric-deep-learning"]
+    },
+    fa: {
+      title: "گروه‌های تقارن و شبکه‌های عصبی هم‌متغیر — §۲۲.۳",
+      narrative: "معماری شبکه عصبی EPU از شبکه‌های هم‌متغیر استفاده می‌کند که گروه تقارن مسئله را رعایت می‌کنند. برای رانندگی خودمختار، گروه تقارن مرتبط SE(3) (چرخش‌ها و انتقال‌ها در فضای سه‌بعدی) است. یک شبکه SE(3)-هم‌متغیر f(g·x) = g·f(x) را برای همه g در SE(3) برآورده می‌کند.",
+      strategic: "شبکه‌های هم‌متغیر پاسخ EPU به سوال چگونه اطمینان حاصل می‌کنید که شبکه عصبی فیزیک فضای سه‌بعدی را رعایت می‌کند است — با ساختن تقارن SE(3) در معماری، شبکه نمی‌تواند بازنمایی‌هایی یاد بگیرد که ثابت چرخشی یا انتقالی را نقض کنند.",
+      keyPoints: [
+        "گروه تقارن SE(3): G = {(R,t): R در SO(3)، t در R^3} با عمل گروهی g·x = R*x + t — تبدیل‌های جسم صلب؛ شبکه هم‌متغیر f(R*x+t) = R*f(x)+t را برآورده می‌کند",
+        "هم‌متغیری در مقابل ثابت‌بودن: هم‌متغیر f(g·x) = g·f(x) (خروجی با ورودی تبدیل می‌شود) در مقابل ثابت f(g·x) = f(x) (خروجی بدون تغییر) — EPU از هم‌متغیر برای تخمین وضعیت، ثابت برای طبقه‌بندی استفاده می‌کند",
+        "CNN‌های هدایت‌پذیر: فیلترها هدایت‌پذیر هستند — می‌توانند برای تولید فیلترها در هر جهتی چرخانده شوند؛ EPU از فیلترهای هدایت‌پذیر برای پردازش ابر نقطه LiDAR استفاده می‌کند",
+        "کارایی داده: شبکه‌های SE(3)-هم‌متغیر برای رسیدن به همان دقت به ۱۰ برابر نمونه‌های آموزشی کمتر نیاز دارند — برای سناریوهای رویداد نادر در رانندگی خودمختار حیاتی است",
+        "تضمین رسمی: شبکه هم‌متغیر نمی‌تواند پیش‌بینی‌های ناسازگار برای ورودی‌های چرخانده/انتقال‌یافته تولید کند — یک کلاس از حملات دشمنانه مبتنی بر تبدیل‌های هندسی را حذف می‌کند"
+      ],
+      tags: ["شبکه‌های-هم‌متغیر", "تقارن-SE3", "CNN‌های-هدایت‌پذیر", "نظریه-گروه", "یادگیری-عمیق-هندسی"]
+    }
+  },
+  {
+    id: 73,
+    act: "Validation" as ActC,
+    actLabel: ACT_LABELS_C.Validation,
+    imageUrl: imgC(73),
+    en: {
+      title: "Formal Verification of Neural Networks: SMT Solver Integration — §23.1",
+      narrative: "The EPU neural network verification framework uses SMT (Satisfiability Modulo Theories) solvers to formally verify properties of neural networks. The Reluplex algorithm (Katz et al. 2017) extends the Simplex method to handle ReLU activations, enabling formal verification of properties like robustness (no adversarial examples within epsilon-ball) and safety (output always in safe region).",
+      strategic: "SMT-based neural network verification is the EPU answer to the question how do you formally prove that the neural network is safe — unlike empirical testing, formal verification provides a mathematical certificate that the property holds for all inputs in the specified domain.",
+      keyPoints: [
+        "Reluplex algorithm: extends Simplex to handle ReLU(x) = max(0,x) — encodes neural network as linear arithmetic constraints with ReLU case splits; DPLL(T) framework",
+        "Robustness verification: forall x' in B_epsilon(x): argmax f(x') = argmax f(x) — no adversarial example within L-infinity ball of radius epsilon; verified by Reluplex in O(2^n) worst case",
+        "Safety verification: forall x in Input_region: f(x) in Safe_output_region — output always in safe region; EPU verifies this for all 847 critical input regions in the test suite",
+        "Abstraction-refinement: CEGAR (Counterexample-Guided Abstraction Refinement) reduces verification complexity — abstract network verified first, counterexamples used to refine abstraction",
+        "Scalability: Reluplex verified EPU-1 perception network (12 layers, 4096 neurons) in 47 hours — feasible for offline certification, not real-time; EPU uses runtime monitors for online safety"
+      ],
+      tags: ["SMT-solver", "Reluplex", "neural-network-verification", "formal-safety", "adversarial-robustness"]
+    },
+    fa: {
+      title: "تایید رسمی شبکه‌های عصبی: یکپارچه‌سازی حل‌کننده SMT — §۲۳.۱",
+      narrative: "چارچوب تایید شبکه عصبی EPU از حل‌کننده‌های SMT (نظریه‌های رضایت‌پذیری مدولو) برای تایید رسمی خواص شبکه‌های عصبی استفاده می‌کند. الگوریتم Reluplex روش سیمپلکس را برای مدیریت فعال‌سازی‌های ReLU گسترش می‌دهد.",
+      strategic: "تایید شبکه عصبی مبتنی بر SMT پاسخ EPU به سوال چگونه به طور رسمی ثابت می‌کنید که شبکه عصبی ایمن است است — برخلاف آزمایش تجربی، تایید رسمی یک گواهی ریاضی فراهم می‌کند که خاصیت برای همه ورودی‌ها در دامنه مشخص شده برقرار است.",
+      keyPoints: [
+        "الگوریتم Reluplex: سیمپلکس را برای مدیریت ReLU(x) = max(0,x) گسترش می‌دهد — شبکه عصبی را به عنوان قیود حساب خطی با تقسیم‌بندی‌های حالت ReLU کدگذاری می‌کند",
+        "تایید استحکام: هیچ نمونه دشمنانه‌ای در توپ L-infinity با شعاع epsilon وجود ندارد — توسط Reluplex در بدترین حالت O(2^n) تایید شده",
+        "تایید ایمنی: خروجی همیشه در ناحیه ایمن است — EPU این را برای همه ۸۴۷ ناحیه ورودی بحرانی در مجموعه آزمون تایید می‌کند",
+        "انتزاع-پالایش: CEGAR پیچیدگی تایید را کاهش می‌دهد — شبکه انتزاعی ابتدا تایید می‌شود، نقض‌های مثال برای پالایش انتزاع استفاده می‌شوند",
+        "مقیاس‌پذیری: Reluplex شبکه ادراک EPU-1 (۱۲ لایه، ۴۰۹۶ نورون) را در ۴۷ ساعت تایید کرد — برای صدور گواهینامه آفلاین امکان‌پذیر است"
+      ],
+      tags: ["حل‌کننده-SMT", "Reluplex", "تایید-شبکه-عصبی", "ایمنی-رسمی", "استحکام-دشمنانه"]
+    }
+  },
+  {
+    id: 74,
+    act: "Validation" as ActC,
+    actLabel: ACT_LABELS_C.Validation,
+    imageUrl: imgC(74),
+    en: {
+      title: "Runtime Monitoring with Signal Temporal Logic — §23.2",
+      narrative: "The EPU runtime monitor uses Signal Temporal Logic (STL) to specify and monitor safety properties over continuous-time signals. STL formulas like G[0,T](speed < v_max) (always within [0,T] speed is below v_max) or F[0,T](distance > d_min) (eventually within [0,T] distance exceeds d_min) are evaluated online using the STL robustness metric rho.",
+      strategic: "STL runtime monitoring is the EPU answer to the question how do you detect safety violations before they become accidents — the STL robustness metric provides a quantitative measure of how far the system is from violating a safety property, enabling proactive intervention.",
+      keyPoints: [
+        "STL syntax: phi ::= p | !phi | phi1 && phi2 | phi1 U[a,b] phi2 | G[a,b] phi | F[a,b] phi — temporal operators G (globally), F (eventually), U (until) with time bounds [a,b]",
+        "STL robustness: rho(phi, s, t) — real-valued measure of how much signal s satisfies phi at time t; rho > 0 means satisfied, rho < 0 means violated, |rho| measures margin",
+        "Online computation: STL robustness computed incrementally as new signal samples arrive — O(|phi|) per time step; EPU evaluates 47 STL formulas at 100Hz within 1ms budget",
+        "Predictive monitoring: EPU predicts future STL robustness using MPC trajectory — if predicted rho < delta_warning, triggers SAFETY_WARNING interrupt before violation occurs",
+        "Formal guarantee: if STL monitor detects rho < 0, safety property is violated — zero false negatives (no missed violations); false positive rate < 0.1% from prediction uncertainty"
+      ],
+      tags: ["signal-temporal-logic", "runtime-monitoring", "STL-robustness", "safety-properties", "predictive-monitoring"]
+    },
+    fa: {
+      title: "نظارت بلادرنگ با منطق زمانی سیگنال — §۲۳.۲",
+      narrative: "مانیتور بلادرنگ EPU از منطق زمانی سیگنال (STL) برای مشخص‌سازی و نظارت بر خواص ایمنی روی سیگنال‌های زمان پیوسته استفاده می‌کند. فرمول‌های STL مانند G[0,T](speed < v_max) به صورت آنلاین با استفاده از معیار استحکام STL rho ارزیابی می‌شوند.",
+      strategic: "نظارت بلادرنگ STL پاسخ EPU به سوال چگونه نقض‌های ایمنی را قبل از اینکه به تصادف تبدیل شوند تشخیص می‌دهید است — معیار استحکام STL یک اندازه‌گیری کمی از فاصله سیستم از نقض یک خاصیت ایمنی فراهم می‌کند.",
+      keyPoints: [
+        "نحو STL: عملگرهای زمانی G (همیشه)، F (در نهایت)، U (تا) با کران‌های زمانی [a,b] — رسمی‌سازی خواص ایمنی پیوسته",
+        "استحکام STL: rho(phi, s, t) — اندازه‌گیری با مقدار واقعی از میزان ارضای سیگنال s از phi در زمان t؛ rho > 0 یعنی ارضا شده، rho < 0 یعنی نقض شده",
+        "محاسبه آنلاین: استحکام STL به صورت افزایشی با رسیدن نمونه‌های جدید سیگنال محاسبه می‌شود — O(|phi|) در هر مرحله زمانی؛ EPU ۴۷ فرمول STL را در 100Hz در بودجه ۱ms ارزیابی می‌کند",
+        "نظارت پیش‌بینانه: EPU استحکام STL آینده را با استفاده از مسیر MPC پیش‌بینی می‌کند — اگر rho پیش‌بینی شده < delta_warning باشد، قبل از وقوع نقض وقفه SAFETY_WARNING را فعال می‌کند",
+        "تضمین رسمی: اگر مانیتور STL rho < 0 را تشخیص دهد، خاصیت ایمنی نقض شده است — صفر منفی کاذب (هیچ نقضی از دست نمی‌رود)؛ نرخ مثبت کاذب < ۰.۱ درصد از عدم قطعیت پیش‌بینی"
+      ],
+      tags: ["منطق-زمانی-سیگنال", "نظارت-بلادرنگ", "استحکام-STL", "خواص-ایمنی", "نظارت-پیش‌بینانه"]
+    }
+  }
 ];
-export default slidesC;
