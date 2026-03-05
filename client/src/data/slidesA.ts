@@ -69,11 +69,11 @@ const IMG_URLS: Record<number, string> = {
   29: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_29_6324240e.png",
   30: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_30_47d2a196.png",
   31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
-  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
-  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
-  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
-  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a31_ufp_monoidal_category_baba526e.png",
-  36: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideA_30_47d2a196.png",  // placeholder
+  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a32_lie_algebra_so3_1889a009.png",
+  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a33_riemannian_spd_manifold_d0d6b8d6.png",
+  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a34_clifford_algebra_cl31_69bf3279.png",
+  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a35_spectral_decomposition_svd_5606be0e.png",
+  36: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/a36_grassmann_manifold_lane_9a852d34.png",  // placeholder
 };
 
 export const slidesA: SlideA[] = [

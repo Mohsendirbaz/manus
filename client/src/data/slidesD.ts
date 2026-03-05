@@ -169,10 +169,10 @@ const IMG_URLS_D: Record<number, string> = {
   121: `${CDN_D}/wave3_d121_guide-CJo6sTrcqCGsb3dAWSuUYQ.png`,
   122: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d122_bft_thermodynamic_phase_3b68be1b.png",
   123: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d123_pbft_latency_tpm_6fa5acd8.png",  // placeholder
-  124: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d122_bft_thermodynamic_phase_3b68be1b.png",  // placeholder
-  125: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d123_pbft_latency_tpm_6fa5acd8.png",  // placeholder
-  126: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d122_bft_thermodynamic_phase_3b68be1b.png",  // placeholder
-  127: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d123_pbft_latency_tpm_6fa5acd8.png",  // placeholder
+  124: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d124_t_distance_decomposition_8c89d23f.png",  // placeholder
+  125: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d125_pbft_state_machine_badc4dc3.png",  // placeholder
+  126: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d126_t_distance_clustering_b87563ff.png",  // placeholder
+  127: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d127_byzantine_bilinear_voting_be2da251.png",  // placeholder
 };
 const imgD = (n: number) => IMG_URLS_D[n] || "";
 

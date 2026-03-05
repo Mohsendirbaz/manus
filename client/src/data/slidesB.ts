@@ -68,11 +68,11 @@ const IMG_URLS: Record<number, string> = {
   29: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_29_75922858.png",
   30: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_30_7e35e980.png",
   31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
-  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
-  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
-  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
-  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
-  36: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_30_7e35e980.png",  // placeholder
+  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b32_bayesian_multimodal_fusion_d8a54fc1.png",
+  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b33_lidar_spectral_analysis_51c0ed9c.png",
+  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b34_kalman_filter_cycle_e4e3869e.png",
+  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b35_cramer_rao_fisher_1d1a577f.png",
+  36: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b36_particle_filter_monte_carlo_94f8de6b.png",  // placeholder
 };
 
 export const slidesB: SlideB[] = [
