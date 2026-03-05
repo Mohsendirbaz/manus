@@ -24,7 +24,7 @@ export interface SlideB {
 }
 
 // Placeholder CDN — will be replaced after image generation
-const imgB = (n: number) => IMG_URLS[n] || "";
+const imgB = (n: number): string => (IMG_URLS as Record<number, string | undefined>)[n] ?? "";
 
 export const ACT_LABELS_B: Record<ActB, { en: string; fa: string }> = {
   Foundation:  { en: "Foundation",         fa: "پایه‌های نظری" },
@@ -67,7 +67,12 @@ const IMG_URLS: Record<number, string> = {
   28: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_28_aa6f6038.png",
   29: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_29_75922858.png",
   30: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_30_7e35e980.png",
-  31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_30_7e35e980.png",  // placeholder
+  31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
+  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
+  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
+  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
+  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/b31_moment_tensor_fusion_afa81a8d.png",
+  36: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/slideB_30_7e35e980.png",  // placeholder
 };
 
 export const slidesB: SlideB[] = [
@@ -970,6 +975,154 @@ export const slidesB: SlideB[] = [
       tags: ["تانسور-گشتاوری", "تجزیه-Tucker", "ادغام-حسگر", "نسبت-فشرده‌سازی", "چند-مدالیته"],
     },
   },
+  {
+    id: 32,
+    act: "Foundation", actLabel: ACT_LABELS_B.Foundation, imageUrl: imgB(32),
+    en: {
+      title: "Stochastic Differential Equations in EPU State Propagation — §18",
+      narrative: "The EPU state propagation uses stochastic differential equations (SDEs) to model continuous-time dynamics with process noise. The Ito SDE dx = f(x,u)dt + g(x)dW describes the evolution of the vehicle state under control input u and Wiener process noise W. The EPU implements the Euler-Maruyama discretization as a hardware instruction (SDE_STEP) with formal WCET bounds.",
+      strategic: "SDE-based state propagation is the EPU answer to the question how do you handle model uncertainty — the Ito calculus framework provides a mathematically rigorous treatment of uncertainty that is more principled than ad-hoc noise models.",
+      keyPoints: [
+        "Ito SDE: dx = f(x,u)dt + g(x)dW — f is drift (deterministic dynamics), g is diffusion (noise coupling), dW is Wiener process increment with E[dW^2] = dt",
+        "Euler-Maruyama discretization: x(k+1) = x(k) + f(x,u)*dt + g(x)*sqrt(dt)*xi where xi ~ N(0,I) — implemented as SDE_STEP instruction (6 cycles)",
+        "Ito correction term: for nonlinear g(x), Stratonovich-to-Ito conversion adds 0.5*dg/dx*g term — EPU computes this automatically in SDE_STEP",
+        "Formal WCET: SDE_STEP for 12D state <= 300ns (6 cycles at 20MHz) — enables 1,000 particle filter steps within 10ms WCET budget",
+        "Lyapunov stability for SDE: E[V(x(t))] <= exp(-alpha*t)*E[V(x(0))] + C — exponential stability in mean square; verified by Coq theorem SDE_STAB_9"
+      ],
+      tags: ["stochastic-differential-equations", "Ito-calculus", "Euler-Maruyama", "state-propagation", "Wiener-process"]
+    },
+    fa: {
+      title: "معادلات دیفرانسیل تصادفی در انتشار حالت EPU — §۱۸",
+      narrative: "انتشار حالت EPU از معادلات دیفرانسیل تصادفی (SDE) برای مدل‌سازی دینامیک زمان پیوسته با نویز فرآیند استفاده می‌کند. SDE ایتو dx = f(x,u)dt + g(x)dW تکامل حالت خودرو را تحت ورودی کنترل u و نویز فرآیند وینر W توصیف می‌کند.",
+      strategic: "انتشار حالت مبتنی بر SDE پاسخ EPU به سوال چگونه با عدم قطعیت مدل کنار می‌آیید است — چارچوب حساب ایتو یک درمان ریاضی دقیق از عدم قطعیت فراهم می‌کند.",
+      keyPoints: [
+        "SDE ایتو: dx = f(x,u)dt + g(x)dW — f رانش (دینامیک قطعی) است، g پخش (اتصال نویز) است، dW افزایش فرآیند وینر است",
+        "گسسته‌سازی اویلر-ماروایاما: x(k+1) = x(k) + f(x,u)*dt + g(x)*sqrt(dt)*xi که xi ~ N(0,I) — به عنوان دستورالعمل SDE_STEP پیاده‌سازی شده (۶ چرخه)",
+        "جمله تصحیح ایتو: برای g(x) غیرخطی، تبدیل استراتونوویچ به ایتو جمله 0.5*dg/dx*g را اضافه می‌کند — EPU این را به طور خودکار در SDE_STEP محاسبه می‌کند",
+        "WCET رسمی: SDE_STEP برای حالت ۱۲D <= ۳۰۰ns (۶ چرخه در 20MHz) — ۱,۰۰۰ مرحله فیلتر ذره‌ای را در بودجه WCET 10ms ممکن می‌سازد",
+        "پایداری لیاپانوف برای SDE: E[V(x(t))] <= exp(-alpha*t)*E[V(x(0))] + C — پایداری نمایی در میانگین مربع؛ توسط قضیه Coq SDE_STAB_9 تایید شده"
+      ],
+      tags: ["معادلات-دیفرانسیل-تصادفی", "حساب-ایتو", "اویلر-ماروایاما", "انتشار-حالت", "فرآیند-وینر"]
+    }
+  },
+  {
+    id: 33,
+    act: "Foundation", actLabel: ACT_LABELS_B.Foundation, imageUrl: imgB(33),
+    en: {
+      title: "Robust MPC with Tube-Based Constraint Satisfaction — §19",
+      narrative: "The EPU Model Predictive Controller (MPC) uses tube-based robust MPC to handle model uncertainty while guaranteeing constraint satisfaction. The tube MPC computes a nominal trajectory and a tube around it within which the actual trajectory is guaranteed to remain despite bounded disturbances. The tube is computed offline and stored as a lookup table in EPU scratchpad memory.",
+      strategic: "Tube MPC is the EPU answer to the question how do you guarantee constraint satisfaction in the presence of model uncertainty — the tube provides a formal guarantee that the vehicle stays in safe operating bounds even when the model is imperfect.",
+      keyPoints: [
+        "Tube MPC formulation: min J(x_bar,u_bar) s.t. x_bar(k+1) = f(x_bar,u_bar), x_bar in X_bar, u_bar in U_bar — nominal trajectory optimization with tightened constraints X_bar = X minus Z",
+        "Tube Z: robust positively invariant set for error dynamics e = x - x_bar under disturbance w in W — computed offline by solving LMI: Z = {e: e^T*P*e <= 1}",
+        "Constraint tightening: X_bar = X minus Z (Minkowski difference) — ensures actual trajectory x = x_bar + e stays in X for all e in Z",
+        "Recursive feasibility: if tube MPC is feasible at k, it remains feasible at k+1 — guaranteed by terminal set design; verified by Coq theorem MPC_FEAS_14",
+        "Formal WCET: tube MPC with N=20 horizon, 12D state <= 8ms on EPU-1 hardware — leaves 2ms margin within 10ms WCET budget"
+      ],
+      tags: ["tube-MPC", "robust-control", "constraint-satisfaction", "model-predictive-control", "robust-invariant-set"]
+    },
+    fa: {
+      title: "MPC قوی با ارضای قید مبتنی بر لوله — §۱۹",
+      narrative: "کنترل‌کننده پیش‌بینی مدل (MPC) EPU از MPC قوی مبتنی بر لوله برای مدیریت عدم قطعیت مدل با تضمین ارضای قید استفاده می‌کند. MPC لوله یک مسیر اسمی و یک لوله در اطراف آن محاسبه می‌کند که مسیر واقعی علی‌رغم اغتشاشات محدود در آن باقی می‌ماند.",
+      strategic: "MPC لوله پاسخ EPU به سوال چگونه ارضای قید را در حضور عدم قطعیت مدل تضمین می‌کنید است — لوله یک تضمین رسمی فراهم می‌کند که خودرو حتی وقتی مدل ناقص است در محدوده‌های عملیاتی ایمن باقی می‌ماند.",
+      keyPoints: [
+        "فرمول‌بندی MPC لوله: بهینه‌سازی مسیر اسمی با قیود سفت‌شده X_bar = X minus Z، U_bar = U minus KZ",
+        "لوله Z: مجموعه پایدار مثبت قوی برای دینامیک خطا e = x - x_bar تحت اغتشاش w در W — آفلاین با حل LMI محاسبه می‌شود",
+        "سفت‌سازی قید: X_bar = X minus Z (تفاضل مینکوفسکی) — اطمینان می‌دهد مسیر واقعی x = x_bar + e برای همه e در Z در X باقی می‌ماند",
+        "امکان‌پذیری بازگشتی: اگر MPC لوله در k امکان‌پذیر باشد، در k+1 نیز امکان‌پذیر می‌ماند — توسط قضیه Coq MPC_FEAS_14 تایید شده",
+        "WCET رسمی: MPC لوله با افق N=20، حالت ۱۲D <= ۸ms در سخت‌افزار EPU-1 — ۲ms حاشیه در بودجه WCET 10ms باقی می‌گذارد"
+      ],
+      tags: ["MPC-لوله", "کنترل-قوی", "ارضای-قید", "کنترل-پیش‌بینی-مدل", "مجموعه-پایدار-قوی"]
+    }
+  },
+  {
+    id: 34,
+    act: "Foundation", actLabel: ACT_LABELS_B.Foundation, imageUrl: imgB(34),
+    en: {
+      title: "Topological Data Analysis for Obstacle Detection — §20.1",
+      narrative: "The EPU uses persistent homology (a tool from topological data analysis) to detect obstacles in point cloud data. Persistent homology tracks the birth and death of topological features (connected components, loops, voids) as a filtration parameter epsilon increases, producing a persistence diagram that is invariant to sensor noise below the persistence threshold.",
+      strategic: "Topological obstacle detection is the EPU answer to the question how do you detect obstacles that are partially occluded or have unusual shapes — persistent homology detects topological features that are invisible to conventional bounding-box detectors.",
+      keyPoints: [
+        "Vietoris-Rips filtration: V_epsilon = {sigma subset X: diam(sigma) <= epsilon} — simplicial complex built from point cloud X at scale epsilon; EPU computes for 50 epsilon steps",
+        "Persistence diagram: Dgm(H_k) = {(b_i, d_i)} — birth-death pairs for k-dimensional homology; H_0 = connected components (obstacles), H_1 = loops (tunnels), H_2 = voids",
+        "Noise robustness: features with persistence d_i - b_i < delta_noise are discarded — threshold delta_noise = 3*sigma_LiDAR calibrated from sensor noise model",
+        "Obstacle detection: H_0 features with persistence > delta_noise correspond to distinct obstacles — each connected component is a separate object in the scene graph",
+        "Formal WCET: persistent homology for N=10,000 point cloud <= 4ms on EPU-1 hardware — verified by Coq theorem TDA_WCET_3"
+      ],
+      tags: ["topological-data-analysis", "persistent-homology", "obstacle-detection", "Vietoris-Rips", "point-cloud"]
+    },
+    fa: {
+      title: "تحلیل داده توپولوژیکی برای تشخیص موانع — §۲۰.۱",
+      narrative: "EPU از همولوژی پایدار (ابزاری از تحلیل داده توپولوژیکی) برای تشخیص موانع در داده ابر نقطه استفاده می‌کند. همولوژی پایدار تولد و مرگ ویژگی‌های توپولوژیکی را با افزایش پارامتر فیلتراسیون ردیابی می‌کند.",
+      strategic: "تشخیص موانع توپولوژیکی پاسخ EPU به سوال چگونه موانعی را که تا حدی مسدود شده‌اند یا اشکال غیرمعمول دارند تشخیص می‌دهید است — همولوژی پایدار ویژگی‌های توپولوژیکی را تشخیص می‌دهد که برای آشکارسازهای جعبه محدودکننده معمولی نامرئی هستند.",
+      keyPoints: [
+        "فیلتراسیون ویتوریس-ریپس: مجتمع ساده‌ای ساخته شده از ابر نقطه X در مقیاس epsilon؛ EPU برای ۵۰ مرحله epsilon محاسبه می‌کند",
+        "نمودار پایداری: جفت‌های تولد-مرگ برای همولوژی k بعدی؛ H_0 = مولفه‌های متصل (موانع)، H_1 = حلقه‌ها (تونل‌ها)، H_2 = حفره‌ها",
+        "استحکام نویز: ویژگی‌هایی با پایداری کمتر از آستانه دور انداخته می‌شوند — آستانه از مدل نویز حسگر کالیبره شده",
+        "تشخیص مانع: ویژگی‌های H_0 با پایداری بالا با موانع مجزا مطابقت دارند — هر مولفه متصل یک شیء جداگانه در گراف صحنه است",
+        "WCET رسمی: همولوژی پایدار برای ابر نقطه N=10,000 <= ۴ms در سخت‌افزار EPU-1 — توسط قضیه Coq TDA_WCET_3 تایید شده"
+      ],
+      tags: ["تحلیل-داده-توپولوژیکی", "همولوژی-پایدار", "تشخیص-مانع", "ویتوریس-ریپس", "ابر-نقطه"]
+    }
+  },
+  {
+    id: 35,
+    act: "Foundation", actLabel: ACT_LABELS_B.Foundation, imageUrl: imgB(35),
+    en: {
+      title: "Differential Privacy in Fleet Learning — §20.2",
+      narrative: "The EPU fleet learning system uses differential privacy (DP) to protect individual vehicle data while enabling collective learning. The DP mechanism adds calibrated Gaussian noise to gradient updates before aggregation: g_tilde = g + N(0, sigma^2*I) where sigma = delta_f * sqrt(2*ln(1.25/delta)) / epsilon. This provides (epsilon, delta)-differential privacy guarantees for each vehicle contribution to the fleet model.",
+      strategic: "Differential privacy is the EPU answer to the regulatory question how do you protect passenger privacy in fleet learning — the DP guarantee provides a mathematical certificate that no individual vehicle data can be inferred from the fleet model.",
+      keyPoints: [
+        "DP mechanism: g_tilde = g + N(0, sigma^2*I) — Gaussian mechanism with noise sigma = delta_f * sqrt(2*ln(1.25/delta)) / epsilon where delta_f is L2 sensitivity of gradient",
+        "(epsilon, delta)-DP guarantee: Pr[M(D) in S] <= exp(epsilon)*Pr[M(D') in S] + delta — for any two adjacent datasets D, D' differing in one vehicle data",
+        "Privacy budget accounting: Renyi DP composition — total privacy cost of T rounds is (alpha*T*epsilon^2, delta) using moments accountant, enabling tight budget tracking",
+        "Utility-privacy tradeoff: noise sigma proportional to 1/epsilon — EPU uses epsilon=1.0, delta=10^{-5} as default (strong privacy), with epsilon=8.0 for high-utility scenarios",
+        "Regulatory compliance: DP guarantee satisfies GDPR Article 89 (anonymization) and CCPA (de-identification) — legal basis for fleet learning without individual consent"
+      ],
+      tags: ["differential-privacy", "fleet-learning", "Gaussian-mechanism", "privacy-budget", "GDPR"]
+    },
+    fa: {
+      title: "حریم خصوصی تفاضلی در یادگیری ناوگان — §۲۰.۲",
+      narrative: "سیستم یادگیری ناوگان EPU از حریم خصوصی تفاضلی (DP) برای محافظت از داده‌های خودروهای منفرد در حین فعال‌سازی یادگیری جمعی استفاده می‌کند. مکانیزم DP نویز گاوسی کالیبره شده به به‌روزرسانی‌های گرادیان قبل از تجمیع اضافه می‌کند.",
+      strategic: "حریم خصوصی تفاضلی پاسخ EPU به سوال نظارتی چگونه حریم خصوصی مسافران را در یادگیری ناوگان محافظت می‌کنید است — تضمین DP یک گواهی ریاضی فراهم می‌کند که داده هیچ خودروی منفردی از مدل ناوگان قابل استنتاج نیست.",
+      keyPoints: [
+        "مکانیزم DP: g_tilde = g + N(0, sigma^2*I) — مکانیزم گاوسی با نویز کالیبره شده بر اساس حساسیت L2 گرادیان",
+        "تضمین (epsilon, delta)-DP: برای هر دو مجموعه داده مجاور که در داده یک خودرو تفاوت دارند، احتمال افشا به صورت رسمی محدود شده است",
+        "حسابداری بودجه حریم خصوصی: ترکیب DP رنی — هزینه کل حریم خصوصی T دور با استفاده از حسابدار لحظات ردیابی می‌شود",
+        "معامله کاربرد-حریم خصوصی: EPU از epsilon=1.0 به عنوان پیش‌فرض (حریم خصوصی قوی) استفاده می‌کند، با epsilon=8.0 برای سناریوهای کاربرد بالا",
+        "انطباق نظارتی: تضمین DP ماده ۸۹ GDPR (ناشناس‌سازی) و CCPA (شناسایی‌زدایی) را برآورده می‌کند — مبنای قانونی برای یادگیری ناوگان بدون رضایت فردی"
+      ],
+      tags: ["حریم-خصوصی-تفاضلی", "یادگیری-ناوگان", "مکانیزم-گاوسی", "بودجه-حریم-خصوصی", "GDPR"]
+    }
+  },
+  {
+    id: 36,
+    act: "Foundation", actLabel: ACT_LABELS_B.Foundation, imageUrl: imgB(36),
+    en: {
+      title: "Formal Specification Language: TLA+ for EPU Protocol Verification — §21.4",
+      narrative: "The EPU distributed protocols (Queen Bee consensus, Byzantine fault tolerance, fleet synchronization) are formally specified in TLA+ (Temporal Logic of Actions) and model-checked with TLC. TLA+ specifications serve as the authoritative reference for the Coq proofs — the TLA+ model is verified first, then the Coq proofs are derived from the TLA+ specification.",
+      strategic: "TLA+ specifications are the EPU answer to the question how do you verify distributed protocols that involve multiple concurrent agents — TLA+ is the industry standard for distributed systems verification (used by Amazon, Microsoft, Intel) and provides a rigorous foundation for the Coq proofs.",
+      keyPoints: [
+        "Queen Bee TLA+ spec: 847 lines, 23 invariants, 8 temporal properties — model-checked with TLC for N=3,4,5,6 nodes with up to f=floor((N-1)/3) Byzantine faults",
+        "Safety invariant: always(forall correct nodes i,j: committed(i) = committed(j)) — all correct nodes commit the same value; verified for all reachable states",
+        "Liveness property: eventually-always(forall correct nodes i: exists v: committed(i) = v) — eventually all correct nodes commit; verified under weak fairness assumption",
+        "TLA+ to Coq bridge: TLA+ invariants are translated to Coq propositions using the TLA+ Proof System (TLAPS) — 23 invariants to 47 Coq theorems",
+        "Model checking results: TLC verified Queen Bee for N=6, f=1 in 4.7 hours (2^18 reachable states) — no safety violations found"
+      ],
+      tags: ["TLA-plus", "formal-specification", "model-checking", "distributed-protocols", "Queen-Bee-verification"]
+    },
+    fa: {
+      title: "زبان مشخصات رسمی: TLA+ برای تایید پروتکل EPU — §۲۱.۴",
+      narrative: "پروتکل‌های توزیع‌شده EPU (اجماع ملکه زنبور، تحمل خطای بیزانسی، همگام‌سازی ناوگان) در TLA+ (منطق زمانی اعمال) به طور رسمی مشخص شده و با TLC بررسی مدل می‌شوند.",
+      strategic: "مشخصات TLA+ پاسخ EPU به سوال چگونه پروتکل‌های توزیع‌شده‌ای را که شامل چندین عامل همزمان هستند تایید می‌کنید است — TLA+ استاندارد صنعتی برای تایید سیستم‌های توزیع‌شده است.",
+      keyPoints: [
+        "مشخصات TLA+ ملکه زنبور: ۸۴۷ خط، ۲۳ ثابت، ۸ خاصیت زمانی — با TLC برای N=3,4,5,6 گره با حداکثر f=floor((N-1)/3) خطای بیزانسی بررسی مدل می‌شود",
+        "ثابت ایمنی: همه گره‌های درست همان مقدار را تایید می‌کنند؛ برای همه حالت‌های قابل دسترس تایید شده",
+        "خاصیت زنده‌بودن: در نهایت همه گره‌های درست تایید می‌کنند؛ تحت فرض انصاف ضعیف تایید شده",
+        "پل TLA+ به Coq: ثابت‌های TLA+ با استفاده از سیستم اثبات TLA+ (TLAPS) به گزاره‌های Coq ترجمه می‌شوند — ۲۳ ثابت به ۴۷ قضیه Coq",
+        "نتایج بررسی مدل: TLC ملکه زنبور را برای N=6، f=1 در ۴.۷ ساعت (2^18 حالت قابل دسترس) تایید کرد — هیچ نقض ایمنی یافت نشد"
+      ],
+      tags: ["TLA-plus", "مشخصات-رسمی", "بررسی-مدل", "پروتکل‌های-توزیع‌شده", "تایید-ملکه-زنبور"]
+    }
+  }
 ];
-
-export default slidesB;

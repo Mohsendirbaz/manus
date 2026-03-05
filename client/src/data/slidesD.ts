@@ -167,7 +167,12 @@ const IMG_URLS_D: Record<number, string> = {
   119: `${CDN_D}/deck_d_119_bc7bf8cd.png`,
   120: `${CDN_D}/deck_d_120_b105d6cd.png`,
   121: `${CDN_D}/wave3_d121_guide-CJo6sTrcqCGsb3dAWSuUYQ.png`,
-  122: `${CDN_D}/wave3_d121_guide-CJo6sTrcqCGsb3dAWSuUYQ.png`,
+  122: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d122_bft_thermodynamic_phase_3b68be1b.png",
+  123: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d123_pbft_latency_tpm_6fa5acd8.png",  // placeholder
+  124: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d122_bft_thermodynamic_phase_3b68be1b.png",  // placeholder
+  125: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d123_pbft_latency_tpm_6fa5acd8.png",  // placeholder
+  126: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d122_bft_thermodynamic_phase_3b68be1b.png",  // placeholder
+  127: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d123_pbft_latency_tpm_6fa5acd8.png",  // placeholder
 };
 const imgD = (n: number) => IMG_URLS_D[n] || "";
 
@@ -3899,5 +3904,164 @@ export const slidesD: SlideD[] = [
       tags: ["T-distance", "گذار-فاز", "اجماع-بیزانسی", "دمای-بحرانی", "استخراج-ترمودینامیکی"],
     },
   },
+  {
+    id: 123,
+    act: "TrustConsensus" as ActD,
+    actLabel: ACT_LABELS_D.TrustConsensus,
+    imageUrl: imgD(123),
+    en: {
+      title: "PBFT Complexity Analysis and EPU Optimization — §43.1",
+      narrative: "Practical Byzantine Fault Tolerance (PBFT) has O(n^2) message complexity per consensus round, making it impractical for large fleets. The EPU Queen Bee architecture reduces this to O(n) by using a hierarchical consensus structure: Queen Bee nodes (one per cluster) run PBFT among themselves (O(k^2) where k << n), while worker nodes in each cluster use a lightweight certificate-based protocol (O(n/k)).",
+      strategic: "PBFT complexity reduction is the EPU answer to the question how do you scale Byzantine fault tolerance to large fleets — the hierarchical architecture reduces message complexity from O(n^2) to O(n) while maintaining the same fault tolerance guarantees.",
+      keyPoints: [
+        "PBFT message complexity: O(n^2) per round — for n=100 nodes, 10,000 messages per consensus round; EPU reduces to O(n) via hierarchical Queen Bee architecture",
+        "Queen Bee hierarchy: k Queen Bee nodes run PBFT among themselves (O(k^2) messages) — k=10 for n=100 gives 100 messages instead of 10,000 (100x reduction)",
+        "Worker certificate protocol: each worker receives a certificate from its Queen Bee (O(1) messages per worker) — total O(n/k * k) = O(n) messages for worker layer",
+        "Fault tolerance: tolerates f < k/3 Byzantine Queen Bees AND f < (n/k)/3 Byzantine workers per cluster — same f < n/3 total Byzantine tolerance as PBFT",
+        "Latency: Queen Bee PBFT round = 3 message delays (prepare, promise, commit); worker certificate = 1 message delay — total latency 4 message delays vs 3 for flat PBFT (33% overhead for 100x complexity reduction)"
+      ],
+      tags: ["PBFT", "Byzantine-fault-tolerance", "Queen-Bee-hierarchy", "message-complexity", "fleet-consensus"]
+    },
+    fa: {
+      title: "تحلیل پیچیدگی PBFT و بهینه‌سازی EPU — §۴۳.۱",
+      narrative: "تحمل خطای بیزانسی عملی (PBFT) پیچیدگی پیام O(n^2) در هر دور اجماع دارد که آن را برای ناوگان‌های بزرگ غیرعملی می‌کند. معماری ملکه زنبور EPU این را با استفاده از یک ساختار اجماع سلسله‌مراتبی به O(n) کاهش می‌دهد.",
+      strategic: "کاهش پیچیدگی PBFT پاسخ EPU به سوال چگونه تحمل خطای بیزانسی را به ناوگان‌های بزرگ مقیاس می‌دهید است — معماری سلسله‌مراتبی پیچیدگی پیام را از O(n^2) به O(n) کاهش می‌دهد در حالی که همان تضمین‌های تحمل خطا را حفظ می‌کند.",
+      keyPoints: [
+        "پیچیدگی پیام PBFT: O(n^2) در هر دور — برای n=100 گره، ۱۰,۰۰۰ پیام در هر دور اجماع؛ EPU از طریق معماری سلسله‌مراتبی ملکه زنبور به O(n) کاهش می‌دهد",
+        "سلسله‌مراتب ملکه زنبور: k گره ملکه زنبور PBFT را بین خودشان اجرا می‌کنند (پیام‌های O(k^2)) — k=10 برای n=100 به جای ۱۰,۰۰۰ پیام ۱۰۰ پیام می‌دهد (کاهش ۱۰۰ برابری)",
+        "پروتکل گواهی کارگر: هر کارگر یک گواهی از ملکه زنبور خود دریافت می‌کند (O(1) پیام در هر کارگر) — مجموع O(n) پیام برای لایه کارگر",
+        "تحمل خطا: f < k/3 ملکه زنبور بیزانسی و f < (n/k)/3 کارگر بیزانسی در هر خوشه را تحمل می‌کند — همان تحمل بیزانسی f < n/3 کل مانند PBFT",
+        "تاخیر: دور PBFT ملکه زنبور = ۳ تاخیر پیام؛ گواهی کارگر = ۱ تاخیر پیام — مجموع ۴ تاخیر پیام در مقابل ۳ برای PBFT مسطح (۳۳ درصد سربار برای کاهش پیچیدگی ۱۰۰ برابری)"
+      ],
+      tags: ["PBFT", "تحمل-خطای-بیزانسی", "سلسله‌مراتب-ملکه-زنبور", "پیچیدگی-پیام", "اجماع-ناوگان"]
+    }
+  },
+  {
+    id: 124,
+    act: "TrustConsensus" as ActD,
+    actLabel: ACT_LABELS_D.TrustConsensus,
+    imageUrl: imgD(124),
+    en: {
+      title: "Cryptographic Trust Anchors: TPM Integration in EPU — §43.2",
+      narrative: "The EPU hardware root of trust uses a Trusted Platform Module (TPM 2.0) to anchor cryptographic identity. The TPM stores the EPU's private key in tamper-resistant hardware, signs all consensus messages with ECDSA-P256, and provides a Platform Configuration Register (PCR) chain that proves the software stack has not been tampered with since manufacture.",
+      strategic: "TPM-based trust anchors are the EPU answer to the question how do you prevent a compromised vehicle from injecting false consensus messages — the TPM ensures that only genuine EPU hardware can produce valid signatures, making Sybil attacks physically impossible.",
+      keyPoints: [
+        "TPM 2.0 key hierarchy: Endorsement Key (EK) — factory-provisioned, never leaves TPM; Attestation Key (AK) — derived from EK, signs consensus messages; Storage Root Key (SRK) — encrypts software state",
+        "ECDSA-P256 signatures: 64-byte signature, 256-bit security level — EPU signs every consensus message with AK; verification by other EPU nodes takes 0.5ms (2000 verifications/second)",
+        "PCR chain: PCR[0] = firmware hash, PCR[1] = bootloader hash, ..., PCR[7] = application hash — chain proves software integrity from boot to runtime; remote attestation verifies PCR chain",
+        "Remote attestation: EPU sends Quote(PCR_values, nonce) signed by AK to fleet coordinator — coordinator verifies Quote against known-good PCR values; rejects EPU if PCR mismatch",
+        "Sybil resistance: each EPU has unique EK provisioned at manufacture — cannot create multiple identities; TPM tamper detection destroys EK if physical attack detected"
+      ],
+      tags: ["TPM", "hardware-root-of-trust", "remote-attestation", "ECDSA", "Sybil-resistance"]
+    },
+    fa: {
+      title: "لنگرهای اعتماد رمزنگاری: یکپارچه‌سازی TPM در EPU — §۴۳.۲",
+      narrative: "ریشه اعتماد سخت‌افزاری EPU از یک ماژول پلتفرم مورد اعتماد (TPM 2.0) برای لنگر انداختن هویت رمزنگاری استفاده می‌کند. TPM کلید خصوصی EPU را در سخت‌افزار مقاوم در برابر دستکاری ذخیره می‌کند، همه پیام‌های اجماع را با ECDSA-P256 امضا می‌کند.",
+      strategic: "لنگرهای اعتماد مبتنی بر TPM پاسخ EPU به سوال چگونه از تزریق پیام‌های اجماع کاذب توسط خودروی در معرض خطر جلوگیری می‌کنید است — TPM اطمینان می‌دهد که فقط سخت‌افزار واقعی EPU می‌تواند امضاهای معتبر تولید کند.",
+      keyPoints: [
+        "سلسله‌مراتب کلید TPM 2.0: کلید تأیید (EK) — در کارخانه تهیه شده، هرگز TPM را ترک نمی‌کند؛ کلید تأیید هویت (AK) — از EK مشتق شده، پیام‌های اجماع را امضا می‌کند",
+        "امضاهای ECDSA-P256: امضای ۶۴ بایتی، سطح امنیتی ۲۵۶ بیتی — EPU هر پیام اجماع را با AK امضا می‌کند؛ تایید توسط گره‌های EPU دیگر ۰.۵ms طول می‌کشد",
+        "زنجیره PCR: PCR[0] = هش firmware، PCR[1] = هش bootloader، ... PCR[7] = هش برنامه — زنجیره یکپارچگی نرم‌افزار را از بوت تا زمان اجرا ثابت می‌کند",
+        "تأیید هویت از راه دور: EPU Quote(مقادیر PCR، nonce) امضا شده با AK را به هماهنگ‌کننده ناوگان می‌فرستد — هماهنگ‌کننده Quote را در برابر مقادیر PCR شناخته‌شده-خوب تایید می‌کند",
+        "مقاومت Sybil: هر EPU دارای EK منحصربه‌فرد تهیه شده در کارخانه است — نمی‌تواند هویت‌های متعدد ایجاد کند؛ تشخیص دستکاری TPM در صورت تشخیص حمله فیزیکی EK را از بین می‌برد"
+      ],
+      tags: ["TPM", "ریشه-اعتماد-سخت‌افزاری", "تأیید-هویت-از-راه-دور", "ECDSA", "مقاومت-Sybil"]
+    }
+  },
+  {
+    id: 125,
+    act: "LLMIntegration" as ActD,
+    actLabel: ACT_LABELS_D.LLMIntegration,
+    imageUrl: imgD(125),
+    en: {
+      title: "Constrained Decoding for Safety-Critical LLM Outputs — §44.1",
+      narrative: "The EPU LLM integration uses constrained decoding to ensure that LLM outputs (natural language commands, scene descriptions, decision rationales) satisfy formal safety constraints. The constrained decoding algorithm modifies the LLM token sampling process to reject tokens that would lead to outputs violating the constraint grammar, without retraining the model.",
+      strategic: "Constrained decoding is the EPU answer to the question how do you use LLMs in safety-critical systems without risking hallucinated or unsafe outputs — the constraint grammar acts as a filter that makes it physically impossible for the LLM to produce outputs that violate safety specifications.",
+      keyPoints: [
+        "Constraint grammar: context-free grammar G = (V, Sigma, R, S) specifying valid LLM outputs — e.g., speed commands must match regex 'SET_SPEED [0-9]+ KPH' with value in [0, 130]",
+        "Constrained decoding algorithm: at each decoding step, mask tokens whose continuation cannot complete a valid string in G — uses Earley parser to compute valid next tokens in O(|G|^2 * |prefix|) time",
+        "Safety constraint types: range constraints (speed in [0,130]), logical constraints (if emergency_brake then speed=0), temporal constraints (speed < v_max for next T seconds)",
+        "Latency overhead: constrained decoding adds 15% latency vs unconstrained — 115ms vs 100ms for 50-token output; acceptable for EPU decision rationale generation (not real-time path)",
+        "Formal guarantee: if constraint grammar G is correct, constrained decoding produces outputs satisfying G with probability 1 — zero probability of grammar-violating outputs"
+      ],
+      tags: ["constrained-decoding", "LLM-safety", "context-free-grammar", "Earley-parser", "safety-critical-AI"]
+    },
+    fa: {
+      title: "رمزگشایی محدود برای خروجی‌های LLM حیاتی از نظر ایمنی — §۴۴.۱",
+      narrative: "یکپارچه‌سازی LLM در EPU از رمزگشایی محدود برای اطمینان از اینکه خروجی‌های LLM (دستورات زبان طبیعی، توصیفات صحنه، منطق تصمیم) قیود ایمنی رسمی را برآورده می‌کنند استفاده می‌کند. الگوریتم رمزگشایی محدود فرآیند نمونه‌برداری توکن LLM را برای رد توکن‌هایی که منجر به نقض گرامر قید می‌شوند تغییر می‌دهد.",
+      strategic: "رمزگشایی محدود پاسخ EPU به سوال چگونه از LLM‌ها در سیستم‌های حیاتی از نظر ایمنی بدون خطر خروجی‌های توهمی یا ناایمن استفاده می‌کنید است — گرامر قید به عنوان فیلتری عمل می‌کند که تولید خروجی‌های نقض‌کننده مشخصات ایمنی را فیزیکاً غیرممکن می‌کند.",
+      keyPoints: [
+        "گرامر قید: گرامر بدون زمینه G = (V, Sigma, R, S) که خروجی‌های معتبر LLM را مشخص می‌کند — مثلاً دستورات سرعت باید با regex 'SET_SPEED [0-9]+ KPH' با مقدار در [0, 130] مطابقت داشته باشند",
+        "الگوریتم رمزگشایی محدود: در هر مرحله رمزگشایی، توکن‌هایی که ادامه‌شان نمی‌تواند یک رشته معتبر در G را کامل کند را ماسک می‌کند — از تجزیه‌کننده Earley برای محاسبه توکن‌های معتبر بعدی استفاده می‌کند",
+        "انواع قیود ایمنی: قیود محدوده (سرعت در [0,130])، قیود منطقی (اگر ترمز اضطراری آنگاه سرعت=0)، قیود زمانی (سرعت < v_max برای T ثانیه بعدی)",
+        "سربار تاخیر: رمزگشایی محدود ۱۵ درصد تاخیر در مقابل بدون محدودیت اضافه می‌کند — ۱۱۵ms در مقابل ۱۰۰ms برای خروجی ۵۰ توکنی؛ برای تولید منطق تصمیم EPU قابل قبول است",
+        "تضمین رسمی: اگر گرامر قید G درست باشد، رمزگشایی محدود با احتمال ۱ خروجی‌هایی تولید می‌کند که G را برآورده می‌کنند — احتمال صفر برای خروجی‌های نقض‌کننده گرامر"
+      ],
+      tags: ["رمزگشایی-محدود", "ایمنی-LLM", "گرامر-بدون-زمینه", "تجزیه‌کننده-Earley", "هوش-مصنوعی-حیاتی"]
+    }
+  },
+  {
+    id: 126,
+    act: "LLMIntegration" as ActD,
+    actLabel: ACT_LABELS_D.LLMIntegration,
+    imageUrl: imgD(126),
+    en: {
+      title: "Retrieval-Augmented Generation for Edge Cases — §44.2",
+      narrative: "The EPU LLM uses Retrieval-Augmented Generation (RAG) to handle edge cases that are rare in training data but common in deployment. The RAG system maintains a vector database of edge case scenarios (indexed by semantic embedding), retrieves the most similar scenarios when an unusual situation is detected, and augments the LLM prompt with the retrieved scenarios and their verified safe responses.",
+      strategic: "RAG for edge cases is the EPU answer to the question how do you handle situations the LLM has never seen before — instead of relying on the LLM's parametric memory (which may not contain rare scenarios), RAG retrieves verified safe responses from a curated edge case database.",
+      keyPoints: [
+        "Edge case database: 47,000 verified edge case scenarios with safe responses — indexed by 768-dimensional semantic embeddings (BERT-based); updated weekly from fleet incident reports",
+        "Retrieval: top-k=5 most similar scenarios retrieved using approximate nearest neighbor search (FAISS, IVF-PQ index) — retrieval latency < 5ms for 47,000-entry database",
+        "RAG prompt template: 'Given these similar scenarios: [retrieved_scenarios], respond to: [current_situation]' — LLM conditions on retrieved scenarios, reducing hallucination risk",
+        "Similarity threshold: if max_similarity < 0.7, no retrieval (situation too novel) — EPU falls back to conservative default behavior and flags for human review",
+        "Continuous learning: new edge cases with verified safe responses added to database after human review — database grows at 200 new cases/week from fleet deployment"
+      ],
+      tags: ["RAG", "retrieval-augmented-generation", "edge-cases", "vector-database", "FAISS"]
+    },
+    fa: {
+      title: "تولید افزوده با بازیابی برای موارد لبه‌ای — §۴۴.۲",
+      narrative: "LLM EPU از تولید افزوده با بازیابی (RAG) برای مدیریت موارد لبه‌ای که در داده‌های آموزشی نادر اما در استقرار رایج هستند استفاده می‌کند. سیستم RAG یک پایگاه داده برداری از سناریوهای موارد لبه‌ای نگه می‌دارد، مشابه‌ترین سناریوها را هنگام تشخیص یک وضعیت غیرمعمول بازیابی می‌کند.",
+      strategic: "RAG برای موارد لبه‌ای پاسخ EPU به سوال چگونه با موقعیت‌هایی که LLM هرگز ندیده کنار می‌آیید است — به جای تکیه بر حافظه پارامتری LLM، RAG پاسخ‌های ایمن تایید شده را از یک پایگاه داده موارد لبه‌ای انتخاب شده بازیابی می‌کند.",
+      keyPoints: [
+        "پایگاه داده موارد لبه‌ای: ۴۷,۰۰۰ سناریوی موارد لبه‌ای تایید شده با پاسخ‌های ایمن — فهرست‌بندی شده با embeddings معنایی ۷۶۸ بعدی (مبتنی بر BERT)؛ هفتگی از گزارش‌های حوادث ناوگان به‌روزرسانی می‌شود",
+        "بازیابی: top-k=5 مشابه‌ترین سناریوها با استفاده از جستجوی تقریبی نزدیک‌ترین همسایه بازیابی می‌شوند (FAISS، شاخص IVF-PQ) — تاخیر بازیابی < ۵ms برای پایگاه داده ۴۷,۰۰۰ ورودی",
+        "قالب prompt RAG: 'با توجه به این سناریوهای مشابه: [سناریوهای بازیابی شده]، به این پاسخ بده: [وضعیت فعلی]' — LLM بر اساس سناریوهای بازیابی شده شرطی می‌شود و خطر توهم را کاهش می‌دهد",
+        "آستانه شباهت: اگر max_similarity < 0.7 باشد، هیچ بازیابی‌ای انجام نمی‌شود (وضعیت خیلی جدید است) — EPU به رفتار پیش‌فرض محافظه‌کارانه بازمی‌گردد و برای بررسی انسانی علامت‌گذاری می‌کند",
+        "یادگیری مستمر: موارد لبه‌ای جدید با پاسخ‌های ایمن تایید شده پس از بررسی انسانی به پایگاه داده اضافه می‌شوند — پایگاه داده با ۲۰۰ مورد جدید در هفته از استقرار ناوگان رشد می‌کند"
+      ],
+      tags: ["RAG", "تولید-افزوده-با-بازیابی", "موارد-لبه‌ای", "پایگاه-داده-برداری", "FAISS"]
+    }
+  },
+  {
+    id: 127,
+    act: "SystemSynthesis" as ActD,
+    actLabel: ACT_LABELS_D.SystemSynthesis,
+    imageUrl: imgD(127),
+    en: {
+      title: "End-to-End Latency Budget Analysis — §45 System Integration",
+      narrative: "The EPU system integration analysis decomposes the 10ms end-to-end latency budget across all subsystems. The budget allocation is: sensor acquisition (1ms), preprocessing (0.5ms), perception (3ms), prediction (1ms), planning (2ms), control (1ms), actuation (1ms), safety monitoring (0.5ms). Each subsystem has a formal WCET bound verified by Coq theorems.",
+      strategic: "End-to-end latency budget analysis is the EPU answer to the question how do you guarantee 10ms response time across all subsystems — the budget decomposition provides a formal certificate that the sum of all subsystem WCETs is within the 10ms budget.",
+      keyPoints: [
+        "Latency budget: sensor(1ms) + preprocess(0.5ms) + perception(3ms) + prediction(1ms) + planning(2ms) + control(1ms) + actuation(1ms) + safety(0.5ms) = 10ms total",
+        "Worst-case execution time (WCET): each subsystem has a Coq-verified WCET bound — perception WCET = 3ms (Coq theorem PERC_WCET_7), planning WCET = 2ms (Coq theorem PLAN_WCET_12)",
+        "Jitter analysis: each subsystem has jitter sigma_i; total jitter sigma_total = sqrt(sum(sigma_i^2)) = 0.3ms — P99 latency = 10ms + 3*0.3ms = 10.9ms (within 11ms hard deadline)",
+        "Critical path: perception (3ms) is the critical path — any optimization here has highest leverage; EPU-2 targets 2ms perception via dedicated neural processing unit (NPU)",
+        "Formal end-to-end guarantee: sum(WCET_i) = 10ms <= 10ms hard deadline — verified by Coq theorem E2E_LATENCY_BOUND combining all subsystem WCET theorems"
+      ],
+      tags: ["latency-budget", "WCET-analysis", "end-to-end-timing", "system-integration", "jitter-analysis"]
+    },
+    fa: {
+      title: "تحلیل بودجه تاخیر سرتاسری — §۴۵ یکپارچه‌سازی سیستم",
+      narrative: "تحلیل یکپارچه‌سازی سیستم EPU بودجه تاخیر سرتاسری ۱۰ms را در تمام زیرسیستم‌ها تجزیه می‌کند. تخصیص بودجه: اکتساب حسگر (۱ms)، پیش‌پردازش (۰.۵ms)، ادراک (۳ms)، پیش‌بینی (۱ms)، برنامه‌ریزی (۲ms)، کنترل (۱ms)، عملگر (۱ms)، نظارت ایمنی (۰.۵ms).",
+      strategic: "تحلیل بودجه تاخیر سرتاسری پاسخ EPU به سوال چگونه زمان پاسخ ۱۰ms را در تمام زیرسیستم‌ها تضمین می‌کنید است — تجزیه بودجه یک گواهی رسمی فراهم می‌کند که مجموع WCET‌های همه زیرسیستم‌ها در بودجه ۱۰ms است.",
+      keyPoints: [
+        "بودجه تاخیر: حسگر(۱ms) + پیش‌پردازش(۰.۵ms) + ادراک(۳ms) + پیش‌بینی(۱ms) + برنامه‌ریزی(۲ms) + کنترل(۱ms) + عملگر(۱ms) + ایمنی(۰.۵ms) = ۱۰ms کل",
+        "زمان اجرای بدترین حالت (WCET): هر زیرسیستم دارای کران WCET تایید شده توسط Coq است — WCET ادراک = ۳ms (قضیه Coq PERC_WCET_7)، WCET برنامه‌ریزی = ۲ms (قضیه Coq PLAN_WCET_12)",
+        "تحلیل جیتر: هر زیرسیستم دارای جیتر sigma_i است؛ جیتر کل sigma_total = sqrt(sum(sigma_i^2)) = ۰.۳ms — تاخیر P99 = ۱۰ms + ۳*۰.۳ms = ۱۰.۹ms (در محدوده ضرب‌الاجل سخت ۱۱ms)",
+        "مسیر بحرانی: ادراک (۳ms) مسیر بحرانی است — هر بهینه‌سازی اینجا بیشترین اهرم را دارد؛ EPU-2 ادراک ۲ms را از طریق واحد پردازش عصبی اختصاصی (NPU) هدف قرار می‌دهد",
+        "تضمین رسمی سرتاسری: sum(WCET_i) = ۱۰ms <= ضرب‌الاجل سخت ۱۰ms — توسط قضیه Coq E2E_LATENCY_BOUND ترکیب‌کننده همه قضایای WCET زیرسیستم تایید شده"
+      ],
+      tags: ["بودجه-تاخیر", "تحلیل-WCET", "زمان‌بندی-سرتاسری", "یکپارچه‌سازی-سیستم", "تحلیل-جیتر"]
+    }
+  }
 ];
-export default slidesD;

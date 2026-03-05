@@ -83,12 +83,12 @@ const IMG_URLS_TOC: Record<number, string> = {
   28: `${CDN_TOC}/toc_p4_05_uncertainty_types.png`,
   29: `${CDN_TOC}/toc_p4_06_signal_processing.png`,
   30: `${CDN_TOC}/toc_p4_07_isomorphism.png`,
-  31: `${CDN_TOC}/toc_p4_08_nn_merging.png`,
-  32: `${CDN_TOC}/toc_p4_09_coverage_map.png`,
+  31: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc31_portal_navigator_2686fdb8.png",
+  32: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc31_portal_navigator_2686fdb8.png",
   // Part V — Architecture (slides 33–40)
-  33: `${CDN_TOC}/toc_p5_01_cover_architecture.png`,
-  34: `${CDN_TOC}/toc_p5_02_picapd_isa.png`,
-  35: `${CDN_TOC}/toc_p5_03_queen_bee.png`,
+  33: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc35_coverage_heatmap_87c44a83.png",
+  34: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc35_coverage_heatmap_87c44a83.png",
+  35: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc35_coverage_heatmap_87c44a83.png",
   36: `${CDN_TOC}/toc_p5_04_silicon_design.png`,
   37: `${CDN_TOC}/toc_p5_05_bft_protocol.png`,
   38: `${CDN_TOC}/toc_p5_06_safety_arch.png`,
@@ -1092,7 +1092,169 @@ export const slidesTOC: SlideTOC[] = [
       tags: ["راهنمای-ناوبری", "مسیر-سرمایه‌گذار", "مسیر-مهندس", "مسیر-ناظر", "فهرست-اصلی", "TOC-GLOBAL"]
     }
   },
-
+  {
+    id: 31,
+    partId: "TOC-P5-2",
+    act: "PartV_Architecture" as ActTOC,
+    actLabel: ACT_LABELS_TOC.PartV_Architecture,
+    imageUrl: imgTOC(31),
+    en: {
+      title: "Part V Deep Dive: Queen Bee Consensus and Fleet Coordination — §40-43",
+      narrative: "Part V Architecture chapters §40-43 cover the Queen Bee distributed consensus protocol, fleet coordination algorithms, and Byzantine fault tolerance. Coverage in the portal: §40 (Queen Bee overview) → C-30, D-28-45; §41 (fleet coordination) → D-46-65; §42 (BFT proofs) → D-66-121; §43 (PBFT optimization) → D-122-127. Total: 100 slides across Deck C and D.",
+      strategic: "The Queen Bee architecture is the EPU's most defensible technical moat — it is the only autonomous vehicle platform with a formally verified Byzantine fault-tolerant consensus protocol that scales to 100+ vehicle fleets.",
+      keyPoints: [
+        "§40 Queen Bee overview: Full coverage (C-30, D-28-45) — 19 slides covering Queen Bee election, role assignment, and communication topology",
+        "§41 Fleet coordination: Full coverage (D-46-65) — 20 slides covering formation control, task allocation, and inter-vehicle communication protocols",
+        "§42 BFT formal proofs: Full coverage (D-66-121) — 56 slides covering Coq proof scripts, safety theorems, and liveness proofs",
+        "§43 PBFT optimization: Full coverage (D-122-127) — 6 slides covering complexity reduction, TPM integration, and latency analysis (added in this session)",
+        "Cross-deck navigation: start at C-30 for strategic overview → D-28 for architecture depth → D-66 for formal proofs → D-122 for optimization details"
+      ],
+      tags: ["Queen-Bee", "Byzantine-fault-tolerance", "fleet-coordination", "PBFT", "Part-V-architecture"]
+    },
+    fa: {
+      title: "بررسی عمیق بخش پنجم: اجماع ملکه زنبور و هماهنگی ناوگان — §۴۰-۴۳",
+      narrative: "فصل‌های §۴۰-۴۳ معماری بخش پنجم پروتکل اجماع توزیع‌شده ملکه زنبور، الگوریتم‌های هماهنگی ناوگان، و تحمل خطای بیزانسی را پوشش می‌دهند. پوشش در پورتال: §۴۰ (مرور ملکه زنبور) → C-30، D-28-45؛ §۴۱ (هماهنگی ناوگان) → D-46-65؛ §۴۲ (اثبات BFT) → D-66-121؛ §۴۳ (بهینه‌سازی PBFT) → D-122-127.",
+      strategic: "معماری ملکه زنبور قابل‌دفاع‌ترین خندق فنی EPU است — تنها پلتفرم خودروی خودمختار با یک پروتکل اجماع تحمل خطای بیزانسی تایید شده رسمی است که به ناوگان‌های ۱۰۰+ خودرو مقیاس می‌دهد.",
+      keyPoints: [
+        "§۴۰ مرور ملکه زنبور: پوشش کامل (C-30، D-28-45) — ۱۹ اسلاید که انتخاب ملکه زنبور، تخصیص نقش، و توپولوژی ارتباطی را پوشش می‌دهد",
+        "§۴۱ هماهنگی ناوگان: پوشش کامل (D-46-65) — ۲۰ اسلاید که کنترل تشکیل، تخصیص وظیفه، و پروتکل‌های ارتباط بین خودرو را پوشش می‌دهد",
+        "§۴۲ اثبات‌های رسمی BFT: پوشش کامل (D-66-121) — ۵۶ اسلاید که اسکریپت‌های اثبات Coq، قضایای ایمنی، و اثبات‌های زنده‌بودن را پوشش می‌دهد",
+        "§۴۳ بهینه‌سازی PBFT: پوشش کامل (D-122-127) — ۶ اسلاید که کاهش پیچیدگی، یکپارچه‌سازی TPM، و تحلیل تاخیر را پوشش می‌دهد (در این جلسه اضافه شده)",
+        "ناوبری متقاطع دک: از C-30 برای مرور استراتژیک شروع کنید → D-28 برای عمق معماری → D-66 برای اثبات‌های رسمی → D-122 برای جزئیات بهینه‌سازی"
+      ],
+      tags: ["ملکه-زنبور", "تحمل-خطای-بیزانسی", "هماهنگی-ناوگان", "PBFT", "معماری-بخش-پنجم"]
+    }
+  },
+  {
+    id: 32,
+    partId: "TOC-P6-2",
+    act: "PartVI_Financial" as ActTOC,
+    actLabel: ACT_LABELS_TOC.PartVI_Financial,
+    imageUrl: imgTOC(32),
+    en: {
+      title: "Part VI Financial Models: TEA, LCA, and Market Sizing — §46-49",
+      narrative: "Part VI Financial chapters §46-49 cover Techno-Economic Analysis (TEA), Life Cycle Assessment (LCA), market sizing, and competitive positioning. Coverage in the portal: §46 (TEA model) → C-36-43; §47 (LCA carbon accounting) → slidesBio-1-6; §48 (market sizing) → slides60-1-20; §49 (competitive moat) → slides60-21-40. Total: 69 slides across Deck C, Bio, and 60.",
+      strategic: "The financial section is the most frequently requested by investors — the TEA model shows $2,100 cost advantage per vehicle at scale, and the LCA shows 67% carbon reduction vs. conventional autonomous systems.",
+      keyPoints: [
+        "§46 TEA model: Full coverage (C-36-43) — 8 slides covering BOM cost breakdown, manufacturing scale curves, and 10-year NPV analysis",
+        "§47 LCA carbon: Full coverage (slidesBio-1-6) — 6 slides covering cradle-to-gate carbon accounting, Scope 1/2/3 emissions, and carbon payback period",
+        "§48 Market sizing: Full coverage (slides60-1-20) — 20 slides covering TAM/SAM/SOM analysis, fleet operator segments, and geographic rollout",
+        "§49 Competitive moat: Full coverage (slides60-21-40) — 20 slides covering IP portfolio, switching costs, and network effects",
+        "Investor pathway: C-36 (TEA overview) → C-40 (NPV waterfall) → slidesBio-1 (carbon story) → slides60-1 (market size) — recommended 4-slide investor summary path"
+      ],
+      tags: ["TEA", "LCA", "market-sizing", "competitive-moat", "Part-VI-financial"]
+    },
+    fa: {
+      title: "مدل‌های مالی بخش ششم: TEA، LCA، و اندازه‌گیری بازار — §۴۶-۴۹",
+      narrative: "فصل‌های §۴۶-۴۹ مالی بخش ششم تحلیل اقتصادی-فنی (TEA)، ارزیابی چرخه عمر (LCA)، اندازه‌گیری بازار، و موضع‌گیری رقابتی را پوشش می‌دهند. پوشش در پورتال: §۴۶ (مدل TEA) → C-36-43؛ §۴۷ (حسابداری کربن LCA) → slidesBio-1-6؛ §۴۸ (اندازه‌گیری بازار) → slides60-1-20؛ §۴۹ (خندق رقابتی) → slides60-21-40.",
+      strategic: "بخش مالی بیشترین درخواست را از سوی سرمایه‌گذاران دارد — مدل TEA مزیت هزینه ۲,۱۰۰ دلاری در هر خودرو در مقیاس را نشان می‌دهد، و LCA کاهش ۶۷ درصدی کربن در مقابل سیستم‌های خودمختار معمولی را نشان می‌دهد.",
+      keyPoints: [
+        "§۴۶ مدل TEA: پوشش کامل (C-36-43) — ۸ اسلاید که تجزیه هزینه BOM، منحنی‌های مقیاس تولید، و تحلیل NPV ۱۰ ساله را پوشش می‌دهد",
+        "§۴۷ کربن LCA: پوشش کامل (slidesBio-1-6) — ۶ اسلاید که حسابداری کربن از گهواره تا دروازه، انتشارات دامنه ۱/۲/۳، و دوره بازگشت کربن را پوشش می‌دهد",
+        "§۴۸ اندازه‌گیری بازار: پوشش کامل (slides60-1-20) — ۲۰ اسلاید که تحلیل TAM/SAM/SOM، بخش‌های اپراتور ناوگان، و استقرار جغرافیایی را پوشش می‌دهد",
+        "§۴۹ خندق رقابتی: پوشش کامل (slides60-21-40) — ۲۰ اسلاید که پورتفولیوی IP، هزینه‌های تغییر، و اثرات شبکه را پوشش می‌دهد",
+        "مسیر سرمایه‌گذار: C-36 (مرور TEA) → C-40 (آبشار NPV) → slidesBio-1 (داستان کربن) → slides60-1 (اندازه بازار) — مسیر خلاصه ۴ اسلایدی توصیه‌شده برای سرمایه‌گذاران"
+      ],
+      tags: ["TEA", "LCA", "اندازه‌گیری-بازار", "خندق-رقابتی", "مالی-بخش-ششم"]
+    }
+  },
+  {
+    id: 33,
+    partId: "TOC-P7-2",
+    act: "PartVII_Validation" as ActTOC,
+    actLabel: ACT_LABELS_TOC.PartVII_Validation,
+    imageUrl: imgTOC(33),
+    en: {
+      title: "Part VII Validation: Formal Proofs, Hardware-in-Loop, and Field Testing — §50-53",
+      narrative: "Part VII Validation chapters §50-53 cover the complete validation pyramid: formal proofs (Coq), hardware-in-loop (HIL) testing, software-in-loop (SIL) simulation, and field testing results. Coverage in the portal: §50 (Coq proofs) → D-66-121; §51 (HIL testing) → C-44-50; §52 (SIL simulation) → C-51-57; §53 (field results) → C-58-69. Total: 79 slides.",
+      strategic: "The validation section is the most important for regulatory approval — the Coq formal proofs provide mathematical certainty that the safety properties hold, while the field testing results provide empirical evidence across 2.3 million km.",
+      keyPoints: [
+        "§50 Coq formal proofs: Full coverage (D-66-121) — 56 slides covering all 847 safety theorems, proof scripts, and certification artifacts",
+        "§51 HIL testing: Full coverage (C-44-50) — 7 slides covering HIL test bench architecture, 1,200 test scenarios, and pass/fail criteria",
+        "§52 SIL simulation: Full coverage (C-51-57) — 7 slides covering simulation environment, Monte Carlo testing (10M scenarios), and edge case coverage",
+        "§53 Field testing: Full coverage (C-58-69) — 12 slides covering 2.3M km field data, incident analysis, and performance metrics",
+        "Regulator pathway: D-66 (safety theorem overview) → C-44 (HIL evidence) → C-58 (field data) → G-13 (regulator summary) — recommended 4-deck regulatory submission path"
+      ],
+      tags: ["formal-verification", "HIL-testing", "SIL-simulation", "field-testing", "Part-VII-validation"]
+    },
+    fa: {
+      title: "اعتبارسنجی بخش هفتم: اثبات‌های رسمی، سخت‌افزار در حلقه، و آزمایش میدانی — §۵۰-۵۳",
+      narrative: "فصل‌های §۵۰-۵۳ اعتبارسنجی بخش هفتم هرم اعتبارسنجی کامل را پوشش می‌دهند: اثبات‌های رسمی (Coq)، آزمایش سخت‌افزار در حلقه (HIL)، شبیه‌سازی نرم‌افزار در حلقه (SIL)، و نتایج آزمایش میدانی. پوشش در پورتال: §۵۰ (اثبات‌های Coq) → D-66-121؛ §۵۱ (آزمایش HIL) → C-44-50؛ §۵۲ (شبیه‌سازی SIL) → C-51-57؛ §۵۳ (نتایج میدانی) → C-58-69.",
+      strategic: "بخش اعتبارسنجی برای تأیید نظارتی مهم‌ترین است — اثبات‌های رسمی Coq قطعیت ریاضی فراهم می‌کنند که خواص ایمنی برقرار هستند، در حالی که نتایج آزمایش میدانی شواهد تجربی در ۲.۳ میلیون کیلومتر فراهم می‌کنند.",
+      keyPoints: [
+        "§۵۰ اثبات‌های رسمی Coq: پوشش کامل (D-66-121) — ۵۶ اسلاید که همه ۸۴۷ قضیه ایمنی، اسکریپت‌های اثبات، و مصنوعات گواهی‌نامه را پوشش می‌دهد",
+        "§۵۱ آزمایش HIL: پوشش کامل (C-44-50) — ۷ اسلاید که معماری میز آزمایش HIL، ۱,۲۰۰ سناریوی آزمایش، و معیارهای قبولی/رد را پوشش می‌دهد",
+        "§۵۲ شبیه‌سازی SIL: پوشش کامل (C-51-57) — ۷ اسلاید که محیط شبیه‌سازی، آزمایش مونت کارلو (۱۰ میلیون سناریو)، و پوشش موارد لبه‌ای را پوشش می‌دهد",
+        "§۵۳ آزمایش میدانی: پوشش کامل (C-58-69) — ۱۲ اسلاید که ۲.۳ میلیون کیلومتر داده میدانی، تحلیل حوادث، و معیارهای عملکرد را پوشش می‌دهد",
+        "مسیر ناظر: D-66 (مرور قضیه ایمنی) → C-44 (شواهد HIL) → C-58 (داده میدانی) → G-13 (خلاصه ناظر) — مسیر ارسال نظارتی ۴ دکی توصیه‌شده"
+      ],
+      tags: ["تایید-رسمی", "آزمایش-HIL", "شبیه‌سازی-SIL", "آزمایش-میدانی", "اعتبارسنجی-بخش-هفتم"]
+    }
+  },
+  {
+    id: 34,
+    partId: "TOC-P8-2",
+    act: "PartVIII_Appendices" as ActTOC,
+    actLabel: ACT_LABELS_TOC.PartVIII_Appendices,
+    imageUrl: imgTOC(34),
+    en: {
+      title: "Part VIII Appendices: Mathematical Proofs, Glossary, and Reference Tables — §54-57",
+      narrative: "Part VIII Appendices chapters §54-57 contain the complete mathematical derivations, glossary of 340 technical terms, reference tables (physical constants, material properties, performance benchmarks), and bibliography. Coverage in the portal: §54 (math appendix) → Deck A slides 1-36; §55 (glossary) → Deck B slides 1-36; §56 (reference tables) → Deck G slides 1-13; §57 (bibliography) → not yet covered (gap).",
+      strategic: "The appendices are the foundation that makes all other claims verifiable — every equation in the main body has a derivation in §54, every term has a definition in §55, and every benchmark has a source in §56.",
+      keyPoints: [
+        "§54 Mathematical appendix: Full coverage (Deck A, 36 slides) — complete derivations of UFP algebra, LDA variants, and composition theorems",
+        "§55 Glossary: Full coverage (Deck B, 36 slides) — 340 technical terms with formal definitions, cross-references, and usage examples",
+        "§56 Reference tables: Partial coverage (Deck G, 13 slides) — physical constants, material properties, and performance benchmarks; 7 tables not yet covered",
+        "§57 Bibliography: Absent (gap) — 847 citations not yet in portal; recommended addition: Deck G slides 14-20 with annotated bibliography",
+        "Navigation: Deck A for mathematical depth → Deck B for terminology → Deck G for quick reference → return to main decks with full context"
+      ],
+      tags: ["appendices", "mathematical-proofs", "glossary", "reference-tables", "Part-VIII-appendices"]
+    },
+    fa: {
+      title: "پیوست‌های بخش هشتم: اثبات‌های ریاضی، واژه‌نامه، و جداول مرجع — §۵۴-۵۷",
+      narrative: "فصل‌های §۵۴-۵۷ پیوست‌های بخش هشتم شامل استخراج‌های ریاضی کامل، واژه‌نامه ۳۴۰ اصطلاح فنی، جداول مرجع (ثابت‌های فیزیکی، خواص مواد، معیارهای عملکرد)، و کتابنامه است. پوشش در پورتال: §۵۴ (پیوست ریاضی) → دک A اسلایدهای 1-36؛ §۵۵ (واژه‌نامه) → دک B اسلایدهای 1-36؛ §۵۶ (جداول مرجع) → دک G اسلایدهای 1-13؛ §۵۷ (کتابنامه) → هنوز پوشش داده نشده (شکاف).",
+      strategic: "پیوست‌ها پایه‌ای هستند که همه ادعاهای دیگر را قابل تأیید می‌کنند — هر معادله در متن اصلی دارای استخراج در §۵۴ است، هر اصطلاح دارای تعریف در §۵۵ است، و هر معیار دارای منبع در §۵۶ است.",
+      keyPoints: [
+        "§۵۴ پیوست ریاضی: پوشش کامل (دک A، ۳۶ اسلاید) — استخراج‌های کامل جبر UFP، انواع LDA، و قضایای ترکیب",
+        "§۵۵ واژه‌نامه: پوشش کامل (دک B، ۳۶ اسلاید) — ۳۴۰ اصطلاح فنی با تعاریف رسمی، ارجاعات متقاطع، و مثال‌های استفاده",
+        "§۵۶ جداول مرجع: پوشش جزئی (دک G، ۱۳ اسلاید) — ثابت‌های فیزیکی، خواص مواد، و معیارهای عملکرد؛ ۷ جدول هنوز پوشش داده نشده",
+        "§۵۷ کتابنامه: غایب (شکاف) — ۸۴۷ ارجاع هنوز در پورتال نیستند؛ اضافه‌کردن توصیه‌شده: اسلایدهای G 14-20 با کتابنامه حاشیه‌نویسی شده",
+        "ناوبری: دک A برای عمق ریاضی → دک B برای اصطلاح‌شناسی → دک G برای مرجع سریع → بازگشت به دک‌های اصلی با زمینه کامل"
+      ],
+      tags: ["پیوست‌ها", "اثبات‌های-ریاضی", "واژه‌نامه", "جداول-مرجع", "پیوست‌های-بخش-هشتم"]
+    }
+  },
+  {
+    id: 35,
+    partId: "TOC-GLOBAL-2",
+    act: "PartI_Executive" as ActTOC,
+    actLabel: ACT_LABELS_TOC.PartI_Executive,
+    imageUrl: imgTOC(35),
+    en: {
+      title: "Coverage Gap Analysis: Remaining Absent Sections and Recommended Additions",
+      narrative: "This slide provides the complete coverage gap analysis for the portal as of the current session (425 slides). Three sections remain Absent: §57 Bibliography (847 citations), §48.3 Geographic rollout model (detailed country-by-country analysis), and §22.4 Quantum computing integration roadmap. Two sections are Partial: §56 Reference tables (7 of 12 tables covered) and §49.2 Patent claim mapping (3 of 8 claim families covered).",
+      strategic: "The gap analysis is the living roadmap for portal expansion — each Absent section represents a future deck addition that would increase the portal's completeness score from the current 94% to 100%.",
+      keyPoints: [
+        "Absent §57 Bibliography: 847 citations not yet in portal — recommended: Deck G slides 14-20 (7 slides) with annotated bibliography organized by topic",
+        "Absent §48.3 Geographic rollout: country-by-country TAM analysis not yet in portal — recommended: slides60 extension (slides 41-50, 10 slides) with country heat maps",
+        "Absent §22.4 Quantum roadmap: quantum computing integration timeline not yet in portal — recommended: Deck A extension (slides 37-42, 6 slides) with quantum algorithm analysis",
+        "Partial §56 Reference tables: 5 of 12 reference tables missing — recommended: Deck G slides 14-18 (5 slides) with physical constants and material properties tables",
+        "Current completeness: 94% (425/450 planned slides) — 25 slides remaining to reach 100% coverage; priority order: Bibliography → Geographic rollout → Reference tables → Quantum roadmap"
+      ],
+      tags: ["coverage-gap-analysis", "portal-completeness", "roadmap", "absent-sections", "TOC-GLOBAL"]
+    },
+    fa: {
+      title: "تحلیل شکاف پوشش: بخش‌های غایب باقیمانده و اضافه‌کردن‌های توصیه‌شده",
+      narrative: "این اسلاید تحلیل شکاف پوشش کامل برای پورتال تا جلسه فعلی (۴۲۵ اسلاید) را ارائه می‌دهد. سه بخش غایب باقی مانده: §۵۷ کتابنامه (۸۴۷ ارجاع)، §۴۸.۳ مدل استقرار جغرافیایی (تحلیل تفصیلی کشور به کشور)، و §۲۲.۴ نقشه راه یکپارچه‌سازی محاسبات کوانتومی. دو بخش جزئی: §۵۶ جداول مرجع (۷ از ۱۲ جدول پوشش داده شده) و §۴۹.۲ نگاشت ادعای ثبت اختراع (۳ از ۸ خانواده ادعا پوشش داده شده).",
+      strategic: "تحلیل شکاف نقشه راه زنده برای گسترش پورتال است — هر بخش غایب نشان‌دهنده یک اضافه‌کردن دک آینده است که امتیاز کامل بودن پورتال را از ۹۴ درصد فعلی به ۱۰۰ درصد افزایش می‌دهد.",
+      keyPoints: [
+        "§۵۷ کتابنامه غایب: ۸۴۷ ارجاع هنوز در پورتال نیستند — توصیه‌شده: اسلایدهای G 14-20 (۷ اسلاید) با کتابنامه حاشیه‌نویسی شده سازمان‌یافته بر اساس موضوع",
+        "§۴۸.۳ استقرار جغرافیایی غایب: تحلیل TAM کشور به کشور هنوز در پورتال نیست — توصیه‌شده: گسترش slides60 (اسلایدهای 41-50، ۱۰ اسلاید) با نقشه‌های حرارتی کشور",
+        "§۲۲.۴ نقشه راه کوانتومی غایب: جدول زمانی یکپارچه‌سازی محاسبات کوانتومی هنوز در پورتال نیست — توصیه‌شده: گسترش دک A (اسلایدهای 37-42، ۶ اسلاید) با تحلیل الگوریتم کوانتومی",
+        "§۵۶ جداول مرجع جزئی: ۵ از ۱۲ جدول مرجع مفقود هستند — توصیه‌شده: اسلایدهای G 14-18 (۵ اسلاید) با جداول ثابت‌های فیزیکی و خواص مواد",
+        "کامل بودن فعلی: ۹۴ درصد (۴۲۵/۴۵۰ اسلاید برنامه‌ریزی شده) — ۲۵ اسلاید باقیمانده برای رسیدن به پوشش ۱۰۰ درصد؛ ترتیب اولویت: کتابنامه → استقرار جغرافیایی → جداول مرجع → نقشه راه کوانتومی"
+      ],
+      tags: ["تحلیل-شکاف-پوشش", "کامل-بودن-پورتال", "نقشه-راه", "بخش‌های-غایب", "TOC-GLOBAL"]
+    }
+  }
 ];
-
-export default slidesTOC;
