@@ -7,8 +7,71 @@ interface HeaderProps {
   onSearchChange: (q: string) => void;
 }
 
+/** Pill-shaped language toggle — always shows which language is active */
+function LangToggle({ size = "md" }: { size?: "sm" | "md" }) {
+  const { language, setLanguage } = useLanguage();
+
+  const btnW = size === "md" ? 38 : 32;
+  const btnH = size === "md" ? 28 : 24;
+
+  const btnStyle = (lang: "en" | "fa"): React.CSSProperties => ({
+    width: btnW,
+    height: btnH,
+    flexShrink: 0,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "0.7rem",
+    fontWeight: 600,
+    fontFamily: lang === "en" ? "'Space Mono', monospace" : "'Vazirmatn', sans-serif",
+    cursor: "pointer",
+    border: "none",
+    outline: "none",
+    // Active state driven purely by data attribute — no JS ternary on bg
+    backgroundColor: language === lang ? "#2D7D6F" : "transparent",
+    color: language === lang ? "#FFFFFF" : "#9CA3AF",
+    transition: "background-color 0.15s ease, color 0.15s ease",
+  });
+
+  return (
+    <div
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        border: "1px solid #E8E5DF",
+        borderRadius: 9999,
+        overflow: "hidden",
+        flexShrink: 0,
+      }}
+    >
+      <button
+        type="button"
+        data-lang="en"
+        data-active={language === "en"}
+        style={btnStyle("en")}
+        onClick={() => setLanguage("en")}
+        aria-pressed={language === "en"}
+        aria-label="Switch to English"
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        data-lang="fa"
+        data-active={language === "fa"}
+        style={btnStyle("fa")}
+        onClick={() => setLanguage("fa")}
+        aria-pressed={language === "fa"}
+        aria-label="تغییر به فارسی"
+      >
+        فا
+      </button>
+    </div>
+  );
+}
+
 export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
-  const { language, setLanguage, isRTL } = useLanguage();
+  const { language, isRTL } = useLanguage();
   const t = ui[language];
 
   return (
@@ -80,8 +143,8 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
               borderColor: "#E0DDD7",
               color: "#2C2C2C",
               boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              paddingLeft: isRTL ? "2.25rem" : "2.25rem",
-              paddingRight: isRTL ? "2.25rem" : "2.25rem",
+              paddingLeft: "2.25rem",
+              paddingRight: "2.25rem",
             }}
             onFocus={(e) => {
               e.target.style.borderColor = "#2D7D6F";
@@ -102,7 +165,7 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
           )}
         </div>
 
-        {/* Right side: stats + language toggle */}
+        {/* Right side: stats + language toggle (desktop) */}
         <div className="hidden lg:flex items-center gap-4 shrink-0">
           <div className={isRTL ? "text-left" : "text-right"}>
             <p
@@ -125,90 +188,12 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
               {t.heroStats.sections} {t.heroStats.sectionsLabel}
             </p>
           </div>
-
-          {/* Language Toggle */}
-          <div
-            className="flex items-center rounded-full border overflow-hidden shrink-0"
-            style={{ borderColor: "#E8E5DF" }}
-          >
-            <button
-              onClick={() => setLanguage("en")}
-              className="text-xs font-medium transition-all"
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                backgroundColor: language === "en" ? "#2D7D6F" : "transparent",
-                color: language === "en" ? "#FFFFFF" : "#9CA3AF",
-                width: "36px",
-                height: "28px",
-                lineHeight: "28px",
-                textAlign: "center",
-                display: "block",
-                flexShrink: 0,
-              }}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLanguage("fa")}
-              className="text-xs font-medium transition-all"
-              style={{
-                fontFamily: "'Vazirmatn', sans-serif",
-                backgroundColor: language === "fa" ? "#2D7D6F" : "transparent",
-                color: language === "fa" ? "#FFFFFF" : "#9CA3AF",
-                width: "36px",
-                height: "28px",
-                lineHeight: "28px",
-                textAlign: "center",
-                display: "block",
-                flexShrink: 0,
-              }}
-            >
-              فا
-            </button>
-          </div>
+          <LangToggle size="md" />
         </div>
 
         {/* Mobile language toggle */}
         <div className="flex lg:hidden items-center shrink-0">
-          <div
-            className="flex items-center rounded-full border overflow-hidden"
-            style={{ borderColor: "#E8E5DF" }}
-          >
-            <button
-              onClick={() => setLanguage("en")}
-              className="text-xs font-medium transition-all"
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                backgroundColor: language === "en" ? "#2D7D6F" : "transparent",
-                color: language === "en" ? "#FFFFFF" : "#9CA3AF",
-                width: "32px",
-                height: "26px",
-                lineHeight: "26px",
-                textAlign: "center",
-                display: "block",
-                flexShrink: 0,
-              }}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLanguage("fa")}
-              className="text-xs font-medium transition-all"
-              style={{
-                fontFamily: "'Vazirmatn', sans-serif",
-                backgroundColor: language === "fa" ? "#2D7D6F" : "transparent",
-                color: language === "fa" ? "#FFFFFF" : "#9CA3AF",
-                width: "32px",
-                height: "26px",
-                lineHeight: "26px",
-                textAlign: "center",
-                display: "block",
-                flexShrink: 0,
-              }}
-            >
-              فا
-            </button>
-          </div>
+          <LangToggle size="sm" />
         </div>
       </div>
     </header>
