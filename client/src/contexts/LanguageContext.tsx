@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-
-// Language type is defined inline to avoid importing from legacy translations.ts
-type Language = "en" | "fa";
+import type { Language } from "@/data/translations";
 
 interface LanguageContextType {
   language: Language;

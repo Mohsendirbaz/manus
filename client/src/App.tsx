@@ -6,17 +6,11 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
-import DeckA from "./pages/DeckA";
-import DeckB from "./pages/DeckB";
-import Decks from "./pages/Decks";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/decks"} component={Decks} />
-      <Route path={"/deck-a"} component={DeckA} />
-      <Route path={"/deck-b"} component={DeckB} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
