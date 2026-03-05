@@ -3,18 +3,31 @@
  *
  * DESIGN RATIONALE
  * ─────────────────
- * The page layout has one variable-height zone that differs between languages:
- *   • Hero section  (EN ≈ 556 px, FA ≈ 450 px)
+ * Layout layers (measured, px):
  *
- * Slide cards have *identical* fixed dimensions in both languages, so the
- * grid is a stable coordinate system.  The shared coordinate is:
+ *   EN mode:  header(63) + hero(556) + nav(62) + audience+label(143) = grid.offsetTop = 824
+ *   FA mode:  header(63) + hero(450) + nav(62) + audience+label(143) = grid.offsetTop = 718
+ *   Delta:    hero shrinks by 106 px in FA → grid shifts up by 106 px
+ *
+ * Sticky header height is identical in both modes: header(63) + nav(62) = 125 px.
+ *
+ * SHARED COORDINATE
+ * ─────────────────
+ * Slide cards have *identical* fixed dimensions in both languages.
+ * The shared coordinate is the card's position inside the grid:
  *
  *   anchorOffset = anchorCard.offsetTop − grid.offsetTop
  *
- * This value is invariant across language switches because it measures the
- * card's position *inside* the grid, not in the document.
+ * This is invariant across language switches.
  *
- * Restoration formula (after re-render):
+ * INITIAL CONDITION CHECK (critical)
+ * ────────────────────────────────────
+ * If the user is scrolled ABOVE the grid (scrollY < grid.offsetTop − stickyH),
+ * no restoration is needed — just let the browser stay where it is.
+ * Only restore when the user is actually scrolled into the card grid.
+ *
+ * RESTORATION FORMULA
+ * ────────────────────
  *   window.scrollTo(grid.offsetTop_new + anchorOffset − stickyH)
  *
  * The scroll logic lives here — not in any individual page — so every caller
@@ -55,14 +68,29 @@ function getStickyHeight(): number {
 }
 
 /**
- * Returns the grid-relative offset of the first card whose bottom edge
- * is below the sticky header, or -1 if no card is found / no grid.
+ * Captures the grid-relative offset of the topmost visible card.
+ *
+ * Returns -1 (no restoration needed) in two cases:
+ *   1. No grid / no cards found.
+ *   2. The user is scrolled ABOVE the grid — restoring would incorrectly
+ *      jump them into the grid when they should stay at/near the top.
  */
 function captureAnchor(): number {
   const grid = document.querySelector<HTMLElement>(".grid");
   if (!grid) return -1;
 
   const stickyH = getStickyHeight();
+
+  // INITIAL CONDITION CHECK:
+  // If the grid's top edge is still below the sticky header, the user has not
+  // scrolled into the card area yet.  No restoration needed.
+  const gridTopInViewport = grid.getBoundingClientRect().top;
+  if (gridTopInViewport >= stickyH) {
+    // Grid hasn't scrolled under the sticky bar — user is above the grid.
+    return -1;
+  }
+
+  // User is inside the grid. Find the first card whose bottom clears stickyH.
   const cards = Array.from(
     document.querySelectorAll<HTMLElement>("article[data-uid]")
   );
@@ -98,7 +126,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const isRTL = language === "fa";
 
   // Holds the grid-relative anchor captured just before a language switch.
-  // -1 means "no pending restoration".
+  // -1 means "no pending restoration" (user was above the grid).
   const pendingAnchor = useRef<number>(-1);
 
   /**
@@ -111,6 +139,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       if (lang === language) return; // no-op if already the same language
 
       // Capture anchor before the re-render changes the DOM.
+      // Returns -1 if user is above the grid (no restoration needed).
       pendingAnchor.current = captureAnchor();
 
       setLanguageState(lang);
@@ -127,7 +156,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, [language, isRTL]);
 
   // After every language change: restore scroll if an anchor was captured.
-  // rAF ensures the browser has painted the new layout before we measure.
+  // rAF ensures the browser has painted the new layout before we scroll.
   useEffect(() => {
     const anchor = pendingAnchor.current;
     if (anchor < 0) return;
