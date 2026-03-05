@@ -55,7 +55,7 @@ const IMG_URLS: Record<number, string> = {
   6:  `${CDN}/c06_provenance-JqRjsUWNXbFXaujUt8mMKX.png`,
   7:  `${CDN}/c07_risk_mgmt-iLA7rzAX3HfhUV4ktjsj25.png`,
   8:  `${CDN}/c08_roadmap-4utYrb4fS6aERzHA7brBZK.png`,
-  9:  "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c09_pdc_thesis-Nxqj2BqWFMJjFyqkqVHbBB.png",
+  9: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c09_pdc_thesis_v2_e82975ac.png",
   10: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c10_agent_world_causality-4xkAbYX8wHA3iTKHD5ZLBq.png",
   11: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c11_ufp_signal-EvUeFRopLJCPUoaYsHyRxS.png",
   12: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c12_lda_variants-BrRxAxq6a44Smtacv9uvH6.png",
