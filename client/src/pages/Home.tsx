@@ -587,43 +587,55 @@ export default function Home() {
   const [activeAudience, setActiveAudience] = useState<AudiencePath | null>(null);
   const [selectedSlide, setSelectedSlide] = useState<UnifiedSlide | null>(null);
 
-  // Index of the topmost visible card — used as shared coordinate across language renders.
-  // Slide cards have identical fixed dimensions in both EN and FA, so the same
-  // card index maps to the same visual position regardless of language.
-  const anchorIndexRef = React.useRef<number>(-1);
+  // Shared coordinate for language toggle scroll preservation.
+  // The grid is the stable coordinate system: card dimensions are identical in both
+  // EN and FA. Only the hero section height differs between languages.
+  // We store (card.offsetTop - grid.offsetTop) before the toggle, then restore
+  // scroll to (grid.offsetTop_new + anchorOffset - stickyH) after re-render.
+  const anchorOffsetRef = React.useRef<number>(-1);
 
   const handleLanguageToggle = useCallback(() => {
-    // 1. Find the index of the first card whose bottom edge is below the sticky header.
     const cards = Array.from(document.querySelectorAll<HTMLElement>("article[data-uid]"));
-    const HEADER_H = document.querySelector("header")?.offsetHeight ?? 64;
-    let topIdx = 0;
-    for (let i = 0; i < cards.length; i++) {
-      if (cards[i].getBoundingClientRect().bottom > HEADER_H) {
-        topIdx = i;
+    const grid = document.querySelector<HTMLElement>(".grid");
+    const header = document.querySelector<HTMLElement>("header");
+    const nav = document.querySelector<HTMLElement>("nav");
+    const stickyH = (header?.offsetHeight ?? 63) + (nav?.offsetHeight ?? 62);
+
+    // Find the first card whose bottom edge clears the sticky header.
+    let anchorCard: HTMLElement | null = null;
+    for (const card of cards) {
+      if (card.getBoundingClientRect().bottom > stickyH) {
+        anchorCard = card;
         break;
       }
     }
-    anchorIndexRef.current = topIdx;
 
-    // 2. Switch language — triggers re-render with identical card dimensions.
+    if (anchorCard && grid) {
+      // Store position of anchor card relative to grid start.
+      // This is the shared coordinate: identical in both languages.
+      anchorOffsetRef.current = anchorCard.offsetTop - grid.offsetTop;
+    } else {
+      anchorOffsetRef.current = -1;
+    }
+
     setLanguage(language === "fa" ? "en" : "fa");
   }, [language, setLanguage]);
 
-  // 3. After the language re-render, restore scroll so the anchor card is at
-  //    the same position relative to the sticky header.
-  //    Cards have identical fixed dimensions in both languages, so
-  //    cardTop - HEADER_H gives the exact same visual position.
+  // After language re-render: restore scroll using the grid-relative coordinate.
+  // grid.offsetTop changes with hero height, but anchorOffset is invariant.
   useEffect(() => {
-    const idx = anchorIndexRef.current;
-    if (idx < 0) return;
-    anchorIndexRef.current = -1; // consume so normal scrolls are not affected
-    const cards = Array.from(document.querySelectorAll<HTMLElement>("article[data-uid]"));
-    const target = cards[idx];
-    if (!target) return;
-    const HEADER_H = document.querySelector("header")?.offsetHeight ?? 64;
-    const cardTop = target.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: cardTop - HEADER_H, behavior: "instant" });
-  }, [language]); // runs once after each language change
+    const anchorOffset = anchorOffsetRef.current;
+    if (anchorOffset < 0) return;
+    anchorOffsetRef.current = -1; // consume
+
+    const grid = document.querySelector<HTMLElement>(".grid");
+    const header = document.querySelector<HTMLElement>("header");
+    const nav = document.querySelector<HTMLElement>("nav");
+    if (!grid) return;
+
+    const stickyH = (header?.offsetHeight ?? 63) + (nav?.offsetHeight ?? 62);
+    window.scrollTo({ top: grid.offsetTop + anchorOffset - stickyH, behavior: "instant" });
+  }, [language]);
 
   const filteredSlides = useMemo(() => {
     let result = allSlides;
