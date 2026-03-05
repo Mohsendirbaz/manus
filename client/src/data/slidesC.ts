@@ -114,13 +114,13 @@ const IMG_URLS: Record<number, string> = {
   65: `${CDN}/wave3_c65_scoring-W5TCbHHMacScBoX9MyeezB.png`,
   66: `${CDN}/wave3_c66_sensor-HDtkeHHgEGxk3dCBrbWfQZ.png`,
   67: `${CDN}/wave3_c67_dualtrack-HJTZ9aSTofmh9Ag2nQ6PTw.png`,
-  68: `${CDN}/slide_59_d538c8f5.png`,
-  69: `${CDN}/slide_60_3ac3aba2.png`,
-  70: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_0a647f72.png",
-  71: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c69_neural_epistemic_laws_0c167aa7.png",
-  72: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_0a647f72.png",
-  73: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c69_neural_epistemic_laws_0c167aa7.png",
-  74: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_0a647f72.png",
+  68: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c68_boltzmann_domain_classifier_b303d715.png`,
+  69: `https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c69_neural_merging_epistemic_laws_e36f5a4b.png`,
+  70: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c70_separable_2d_fft_90028fef.png",
+  71: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c71_elliptic_filter_rolloff_c61e15ac.png",
+  72: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c72_fft_convolution_complexity_26be07d5.png",
+  73: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c73_uncertainty_propagation_da050ba9.png",
+  74: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/c74_sensor_calibration_drift_f75ae9e8.png",
 };
 
 const imgC = (n: number) => IMG_URLS[n] || "";
