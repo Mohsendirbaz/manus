@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Language type is defined inline to avoid importing from legacy translations.ts
 type Language = "en" | "fa";
 
 interface LanguageContextType {
@@ -16,49 +15,31 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 /**
- * Find the nearest slide card element whose top edge is closest to the
- * vertical centre of the viewport.  Returns the element and its offset
- * from the viewport centre so we can restore that exact visual position
- * after a language switch re-renders the layout.
+ * Return the data-uid of the first slide card whose top edge is at or
+ * below the sticky header (i.e. the topmost fully-visible card).
  *
- * "Shared coordinate" strategy: instead of saving raw window.scrollY
- * (which changes when the hero/header height differs between languages),
- * we anchor to a DOM element that exists in both language renders.
+ * Slide cards are the shared coordinate: they have identical fixed
+ * dimensions in both EN and FA, so scrolling to the same uid after a
+ * language switch lands on exactly the same logical position.
  */
-function findAnchorElement(): { el: Element; offsetFromCenter: number } | null {
-  // Slide cards are <article> elements in the grid
-  const cards = Array.from(document.querySelectorAll("article[data-uid]"));
-  if (cards.length === 0) {
-    // Fallback: any article on the page
-    const fallback = Array.from(document.querySelectorAll("article"));
-    if (fallback.length === 0) return null;
-    cards.push(...fallback);
-  }
-
-  const viewportCenter = window.innerHeight / 2;
-  let best: Element | null = null;
-  let bestDist = Infinity;
-
+function getTopmostVisibleUid(): string | null {
+  // Sticky header is ~57 px; add a small buffer so we don't grab a card
+  // that is only 1 px visible.
+  const TOP_OFFSET = 64;
+  const cards = Array.from(document.querySelectorAll<HTMLElement>("article[data-uid]"));
   for (const card of cards) {
     const rect = card.getBoundingClientRect();
-    const cardCenter = rect.top + rect.height / 2;
-    const dist = Math.abs(cardCenter - viewportCenter);
-    if (dist < bestDist) {
-      bestDist = dist;
-      best = card;
+    if (rect.bottom > TOP_OFFSET) {
+      return card.dataset.uid ?? null;
     }
   }
-
-  if (!best) return null;
-  const rect = best.getBoundingClientRect();
-  const cardCenter = rect.top + rect.height / 2;
-  return { el: best, offsetFromCenter: cardCenter - viewportCenter };
+  return null;
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem("epu-language");
-    return (saved === "fa" || saved === "en") ? saved : "fa";
+    return saved === "fa" || saved === "en" ? saved : "fa";
   });
 
   const isRTL = language === "fa";
@@ -66,29 +47,27 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const setLanguage = (lang: Language) => {
     if (lang === language) return;
 
-    // ── Step 1: capture the shared anchor BEFORE the re-render ──────────────
-    const anchor = findAnchorElement();
+    // ── 1. Capture the shared coordinate BEFORE the re-render ──────────────
+    const anchorUid = getTopmostVisibleUid();
 
-    // ── Step 2: commit the language change (triggers re-render) ─────────────
+    // ── 2. Commit the language change ──────────────────────────────────────
     setLanguageState(lang);
     localStorage.setItem("epu-language", lang);
 
-    if (!anchor) {
-      // No cards visible (e.g. hero-only viewport) — just keep scrollY as-is
-      return;
-    }
-
-    // ── Step 3: after the DOM has settled, restore the anchor's position ────
-    // Two rAFs: first lets React flush the new render, second lets the browser
-    // paint and recalculate layout so getBoundingClientRect is accurate.
+    // ── 3. After React has flushed the new render, scroll to the same card ─
+    // Two rAFs: first lets React commit, second lets the browser layout.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        const newRect = anchor.el.getBoundingClientRect();
-        const newCardCenter = newRect.top + newRect.height / 2;
-        // How far is the card from where it should be?
-        const delta = newCardCenter - (window.innerHeight / 2 + anchor.offsetFromCenter);
-        if (Math.abs(delta) > 1) {
-          window.scrollBy({ top: delta, behavior: "instant" });
+        if (!anchorUid) return;
+        const target = document.querySelector<HTMLElement>(
+          `article[data-uid="${anchorUid}"]`
+        );
+        if (target) {
+          // block:'start' aligns the card's top edge with the scroll container top.
+          // The sticky header sits above it, so we nudge up by its height.
+          target.scrollIntoView({ block: "start", behavior: "instant" });
+          // Compensate for the sticky header so the card isn't hidden behind it.
+          window.scrollBy({ top: -64, behavior: "instant" });
         }
       });
     });
