@@ -288,6 +288,7 @@ function SlideCard({
   const deckMeta = DECK_META[slide.deck];
   return (
     <article
+      data-uid={slide.uid}
       className="group cursor-pointer border rounded-sm overflow-hidden"
       style={{
         borderColor: "#E8E5DF",
