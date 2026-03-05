@@ -133,22 +133,34 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
           >
             <button
               onClick={() => setLanguage("en")}
-              className="px-3 py-1 text-xs font-medium transition-all"
+              className="text-xs font-medium transition-all"
               style={{
                 fontFamily: "'Space Mono', monospace",
                 backgroundColor: language === "en" ? "#2D7D6F" : "transparent",
                 color: language === "en" ? "#FFFFFF" : "#9CA3AF",
+                width: "36px",
+                height: "28px",
+                lineHeight: "28px",
+                textAlign: "center",
+                display: "block",
+                flexShrink: 0,
               }}
             >
               EN
             </button>
             <button
               onClick={() => setLanguage("fa")}
-              className="px-3 py-1 text-xs font-medium transition-all"
+              className="text-xs font-medium transition-all"
               style={{
                 fontFamily: "'Vazirmatn', sans-serif",
                 backgroundColor: language === "fa" ? "#2D7D6F" : "transparent",
                 color: language === "fa" ? "#FFFFFF" : "#9CA3AF",
+                width: "36px",
+                height: "28px",
+                lineHeight: "28px",
+                textAlign: "center",
+                display: "block",
+                flexShrink: 0,
               }}
             >
               فا
@@ -164,22 +176,34 @@ export default function Header({ searchQuery, onSearchChange }: HeaderProps) {
           >
             <button
               onClick={() => setLanguage("en")}
-              className="px-2 py-1 text-xs font-medium transition-all"
+              className="text-xs font-medium transition-all"
               style={{
                 fontFamily: "'Space Mono', monospace",
                 backgroundColor: language === "en" ? "#2D7D6F" : "transparent",
                 color: language === "en" ? "#FFFFFF" : "#9CA3AF",
+                width: "32px",
+                height: "26px",
+                lineHeight: "26px",
+                textAlign: "center",
+                display: "block",
+                flexShrink: 0,
               }}
             >
               EN
             </button>
             <button
               onClick={() => setLanguage("fa")}
-              className="px-2 py-1 text-xs font-medium transition-all"
+              className="text-xs font-medium transition-all"
               style={{
                 fontFamily: "'Vazirmatn', sans-serif",
                 backgroundColor: language === "fa" ? "#2D7D6F" : "transparent",
                 color: language === "fa" ? "#FFFFFF" : "#9CA3AF",
+                width: "32px",
+                height: "26px",
+                lineHeight: "26px",
+                textAlign: "center",
+                display: "block",
+                flexShrink: 0,
               }}
             >
               فا
