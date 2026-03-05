@@ -294,6 +294,7 @@ function SlideCard({
         borderColor: "#E8E5DF",
         backgroundColor: "#FDFCFA",
         animationDelay: `${animationDelay}s`,
+        minHeight: "383px",
       }}
       onClick={onClick}
     >
@@ -886,7 +887,7 @@ export default function Home() {
         </div>
 
         {filteredSlides.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-start">
             {filteredSlides.map((slide, idx) => (
               <SlideCard
                 key={slide.uid}

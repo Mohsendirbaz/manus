@@ -19,6 +19,7 @@ export default function HeroSection() {
       style={{
         background: "linear-gradient(135deg, #1C2520 0%, #1A2B28 50%, #0F1E1A 100%)",
         direction: isRTL ? "rtl" : "ltr",
+        minHeight: "556px",
       }}
     >
       {/* Subtle grid texture */}
