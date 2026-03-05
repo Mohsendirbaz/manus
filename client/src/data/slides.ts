@@ -26,7 +26,7 @@ export const slides: Slide[] = [
     title: "Physics-Certified, Carbon-Auditable Autonomy: The EPU Vision",
     section: "Executive Framing",
     sectionColor: "#2D7D6F",
-    image: `${BASE}/img_01_bf4c830f.png`,
+    image: `${BASE}/epu_01_d071bd64.png`,
     summary:
       "The EPU (Event Processing Unit) represents a paradigm shift in autonomous vehicle architecture — a physics-certified, carbon-auditable safety compute core that is fuel-agnostic and application-agnostic.",
     keyPoints: [
@@ -44,7 +44,7 @@ export const slides: Slide[] = [
     title: "EPU Is a Safety Compute Core, Not a Driving Assistant",
     section: "Executive Framing",
     sectionColor: "#2D7D6F",
-    image: `${BASE}/img_02_22eb201b.png`,
+    image: `${BASE}/epu_02_3f96e364.png`,
     summary:
       "EPU is not an ADAS feature set. It is a sensor-to-decision safety pipeline governed by physics constraints, operating independently of any specific powertrain, HMI, or application domain.",
     keyPoints: [
@@ -62,7 +62,7 @@ export const slides: Slide[] = [
     title: "Scope Discipline — Core Roadmap vs. Application Notes",
     section: "Executive Framing",
     sectionColor: "#2D7D6F",
-    image: `${BASE}/img_03_cb722903.png`,
+    image: `${BASE}/epu_03_dc03e321.png`,
     summary:
       "Strategic clarity demands explicit scope boundaries. The EPU Core Roadmap encompasses physics proofs, sensor constitution design, certification evidence packages, and TEA/LCA governance integration.",
     keyPoints: [
@@ -79,7 +79,7 @@ export const slides: Slide[] = [
     title: "Four-Phase Integration Strategy — From TEA/LCA to Full Deployment",
     section: "Executive Framing",
     sectionColor: "#2D7D6F",
-    image: `${BASE}/img_04_864db6d6.png`,
+    image: `${BASE}/epu_04_b1f474d8.png`,
     summary:
       "The phased integration roadmap translates EPU strategy into executable milestones across an 8-week horizon and beyond, with four distinct phases and decision gates.",
     keyPoints: [
@@ -96,7 +96,7 @@ export const slides: Slide[] = [
     title: "The Driverless Cabin — Preference-Only Interaction, Zero Override Authority",
     section: "Cabin Controller",
     sectionColor: "#7C3AED",
-    image: `${BASE}/img_05_91548433.png`,
+    image: `${BASE}/epu_05_a1624fac.png`,
     summary:
       "The driverless cabin eliminates the steering wheel, pedal cluster, and driver-facing instrument panel entirely. The occupant interacts through a console-integrated semi-dome controller that expresses preferences, not commands.",
     keyPoints: [
@@ -113,7 +113,7 @@ export const slides: Slide[] = [
     title: "Controller Semantics — Direction and Intensity as Separate Channels",
     section: "Cabin Controller",
     sectionColor: "#7C3AED",
-    image: `${BASE}/img_06_3465c6f7.png`,
+    image: `${BASE}/epu_06_a822c7b7.png`,
     summary:
       "The semi-dome controller resolves the fundamental ambiguity of single-axis joystick interfaces by separating direction and intensity into independent physical channels.",
     keyPoints: [
@@ -130,7 +130,7 @@ export const slides: Slide[] = [
     title: "Three Interaction Modes — Low-Fatigue Default to Expressive Bounded Preference",
     section: "Cabin Controller",
     sectionColor: "#7C3AED",
-    image: `${BASE}/img_07_3cde0775.png`,
+    image: `${BASE}/epu_07_67c724e1.png`,
     summary:
       "The controller supports three distinct interaction modes calibrated to occupant engagement level: two-finger default, five-finger engaged, and hoisted expressive mode.",
     keyPoints: [
@@ -147,7 +147,7 @@ export const slides: Slide[] = [
     title: "Hydrogen Driverless Platform — Full Systems Architecture",
     section: "Hydrogen Platform",
     sectionColor: "#0891B2",
-    image: `${BASE}/img_08_0c6fc407.png`,
+    image: `${BASE}/epu_08_dd6ce3bc.png`,
     summary:
       "The hydrogen driverless platform integrates LH2 storage, a fuel-cell stack, a buffer battery, centralized compute modules, a full sensor suite, and multi-domain thermal management into a single coherent architecture.",
     keyPoints: [
@@ -164,7 +164,7 @@ export const slides: Slide[] = [
     title: "Packaging Opportunity — What Removing the Driver Architecture Actually Frees",
     section: "Hydrogen Platform",
     sectionColor: "#0891B2",
-    image: `${BASE}/img_09_b894256b.png`,
+    image: `${BASE}/epu_09_34a2fac0.png`,
     summary:
       "Eliminating the conventional driver architecture creates measurable volume and mass opportunities, but these gains must be assessed honestly — safety validation still applies to all freed zones.",
     keyPoints: [
@@ -181,7 +181,7 @@ export const slides: Slide[] = [
     title: "LH2 Tank and Cryogenic Safety — Engineering Complexity Without Drama",
     section: "Hydrogen Platform",
     sectionColor: "#0891B2",
-    image: `${BASE}/img_10_0c35a05b.png`,
+    image: `${BASE}/epu_10_9b74a3d9.png`,
     summary:
       "Liquid hydrogen storage at –253°C demands engineering rigor far beyond conventional fuel tank design, including multi-layer vacuum insulation, pressure relief, and crash deformation zones.",
     keyPoints: [
@@ -198,7 +198,7 @@ export const slides: Slide[] = [
     title: "Hydrogen Safety Supervisor — Monitoring as a Constitutional Subsystem",
     section: "Hydrogen Platform",
     sectionColor: "#0891B2",
-    image: `${BASE}/img_11_d94543c0.png`,
+    image: `${BASE}/epu_11_8cad2235.png`,
     summary:
       "The hydrogen-specific monitoring subsystem is a constitutional layer augmenting the EPU safety supervisor, with graded response from notification to Minimum Risk Condition (MRC) execution.",
     keyPoints: [
@@ -215,7 +215,7 @@ export const slides: Slide[] = [
     title: "Triple Thermal Domain Management — Cryo, Fuel Cell, and Compute",
     section: "Hydrogen Platform",
     sectionColor: "#0891B2",
-    image: `${BASE}/img_12_7b1632ac.png`,
+    image: `${BASE}/epu_12_66e9132d.png`,
     summary:
       "Managing three thermally distinct domains — cryogenic LH2, fuel-cell thermal loop, and compute thermal domain — in a single vehicle platform is one of the most complex systems engineering challenges.",
     keyPoints: [
@@ -232,7 +232,7 @@ export const slides: Slide[] = [
     title: "2,000-Mile Range Target — Feasibility Study, Not Production Claim",
     section: "Hydrogen Platform",
     sectionColor: "#0891B2",
-    image: `${BASE}/img_13_675367ec.png`,
+    image: `${BASE}/epu_13_8220788d.png`,
     summary:
       "A 2,000-mile range concept target is an ambitious design aspiration requiring rigorous feasibility analysis. The target is decomposed into range assumptions, efficiency sensitivities, tank volume implications, and packaging constraints.",
     keyPoints: [
@@ -249,7 +249,7 @@ export const slides: Slide[] = [
     title: "E/E Architecture Evolution — From Distributed ECUs to Centralized Intelligence",
     section: "Integrated Electronics",
     sectionColor: "#B45309",
-    image: `${BASE}/img_14_2b895a39.png`,
+    image: `${BASE}/epu_14_afed3e50.png`,
     summary:
       "The automotive E/E architecture has undergone three generations of evolution. EPU is architected for Generation 3: centralized/virtual domains with software-defined vehicle capabilities.",
     keyPoints: [
@@ -266,7 +266,7 @@ export const slides: Slide[] = [
     title: "EPU-Centric Compute Architecture — The Constitutional Core",
     section: "Integrated Electronics",
     sectionColor: "#B45309",
-    image: `${BASE}/img_15_56e9188b.png`,
+    image: `${BASE}/epu_15_d15493a5.png`,
     summary:
       "The EPU compute module is the constitutional center of the vehicle's electronic architecture, connecting to sensor modules, power domains, HMI layer, and actuator interfaces via safety-monitored channels.",
     keyPoints: [
@@ -283,7 +283,7 @@ export const slides: Slide[] = [
     title: "Sensor-to-Compute Dataflow — Deterministic Timing as a Safety Guarantee",
     section: "Integrated Electronics",
     sectionColor: "#B45309",
-    image: `${BASE}/img_16_cb533da0.png`,
+    image: `${BASE}/epu_16_987790cf.png`,
     summary:
       "The sensor-to-compute dataflow architecture enforces deterministic timing as a first-class safety property, with WCET bounds at every stage and safety monitors observing timing compliance.",
     keyPoints: [
@@ -300,7 +300,7 @@ export const slides: Slide[] = [
     title: "Power Domain Isolation and Thermal Zoning — Fault Containment by Design",
     section: "Integrated Electronics",
     sectionColor: "#B45309",
-    image: `${BASE}/img_17_19556e80.png`,
+    image: `${BASE}/epu_17_96258643.png`,
     summary:
       "Power domain isolation and thermal zoning are the physical implementation of fault containment in the EPU architecture, enabling graceful degradation without MRC triggers for non-critical domain losses.",
     keyPoints: [
@@ -317,7 +317,7 @@ export const slides: Slide[] = [
     title: "Modular Serviceability — Electronics Designed for Replacement, Not Discard",
     section: "Integrated Electronics",
     sectionColor: "#B45309",
-    image: `${BASE}/img_18_33e48176.png`,
+    image: `${BASE}/epu_18_a678c0bd.png`,
     summary:
       "The EPU architecture treats modular serviceability as a first-class design requirement. Sensor pods and compute modules use standardized interfaces enabling replacement without core system recertification.",
     keyPoints: [
@@ -334,7 +334,7 @@ export const slides: Slide[] = [
     title: "Sensor Suite Constitution — Budgets as Constitutional Limits",
     section: "Sensor Suite & Governance",
     sectionColor: "#047857",
-    image: `${BASE}/img_19_c361d41d.png`,
+    image: `${BASE}/epu_19_030a2ec5.png`,
     summary:
       "The Sensor Suite Constitution is the governing document defining modality allocations, resource budgets, and validation requirements for every sensor. It is a binding constraint document, not a wish list.",
     keyPoints: [
@@ -351,7 +351,7 @@ export const slides: Slide[] = [
     title: "Functional Redundancy by Modality — Philosophy Over Sensor Maximalism",
     section: "Sensor Suite & Governance",
     sectionColor: "#047857",
-    image: `${BASE}/img_20_7df01cbf.png`,
+    image: `${BASE}/epu_20_14b0e686.png`,
     summary:
       "The EPU sensor philosophy rejects sensor maximalism. Functional redundancy is achieved by ensuring each safety-critical perception function is covered by at least two independent modalities with non-correlated failure modes.",
     keyPoints: [
@@ -368,7 +368,7 @@ export const slides: Slide[] = [
     title: "Degradation Policy and MRC Trigger Matrix — Failure Behavior Made Legible",
     section: "Sensor Suite & Governance",
     sectionColor: "#047857",
-    image: `${BASE}/img_21_fc89fe8f.png`,
+    image: `${BASE}/epu_21_bd841133.png`,
     summary:
       "The degradation policy and MRC trigger matrix defines the vehicle's deterministic response to every classified sensor failure state — acceptable, degraded ODD, or MRC trigger.",
     keyPoints: [
@@ -385,7 +385,7 @@ export const slides: Slide[] = [
     title: "Validation Courts — Four-Gate Governance for Every Architecture Decision",
     section: "Sensor Suite & Governance",
     sectionColor: "#047857",
-    image: `${BASE}/img_22_cdb877f2.png`,
+    image: `${BASE}/epu_22_bd325e7f.png`,
     summary:
       "Every significant architecture decision must pass through four sequential validation courts: Physics, Safety, TEA, and LCA. Proposals that fail any court are returned for redesign — no conditional approvals.",
     keyPoints: [
@@ -402,7 +402,7 @@ export const slides: Slide[] = [
     title: "Certification Evidence Stack — The Auditable Safety Case",
     section: "Sensor Suite & Governance",
     sectionColor: "#047857",
-    image: `${BASE}/img_23_66f9db3d.png`,
+    image: `${BASE}/epu_23_2255d0cc.png`,
     summary:
       "The certification evidence stack is the complete documentation package supporting regulatory submission and partner due diligence, designed for full auditability with bidirectional traceability.",
     keyPoints: [
@@ -419,7 +419,7 @@ export const slides: Slide[] = [
     title: "Layer X TEA/LCA Governance — Carbon and Cost as First-Class Design Constraints",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_24_b0d4baba.png`,
+    image: `${BASE}/epu_24_bd1b851a.png`,
     summary:
       "TEA and LCA governance is implemented as a cross-cutting Layer X spanning all technical layers of the EPU architecture stack, embedding cost and carbon as design constraints from the first architecture decision.",
     keyPoints: [
@@ -436,7 +436,7 @@ export const slides: Slide[] = [
     title: "Transparent TCO — EPU vs. Traditional ADAS",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_25_438593a5.png`,
+    image: `${BASE}/epu_25_1e020bd6.png`,
     summary:
       "The transparent TCO comparison between EPU and traditional ADAS is presented as a scenario-based analysis with explicit sensitivity bands and confidence labels — not a definitive cost claim.",
     keyPoints: [
@@ -453,7 +453,7 @@ export const slides: Slide[] = [
     title: "Lifecycle Carbon Dashboard — Subsystem-Level Accountability",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_26_fb6b6237.png`,
+    image: `${BASE}/epu_26_a7c143a1.png`,
     summary:
       "The lifecycle carbon dashboard provides subsystem-level carbon accounting across the full vehicle lifecycle, with uncertainty ranges explicitly shown — no false precision.",
     keyPoints: [
@@ -470,7 +470,7 @@ export const slides: Slide[] = [
     title: "H2 vs. Current EV — A Rigorous Comparison Framework, Not a Verdict",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_27_347bbb51.png`,
+    image: `${BASE}/epu_27_f1b3395c.png`,
     summary:
       "The H2 driverless platform vs. current premium EV comparison is presented as an analysis framework across six dimensions: utility, TCO, lifecycle carbon, infrastructure realism, technology readiness, and sensitivity analysis.",
     keyPoints: [
@@ -487,7 +487,7 @@ export const slides: Slide[] = [
     title: "Risk Register — What Must Be True for This to Work",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_28_2956b8c7.png`,
+    image: `${BASE}/epu_28_750aa5e2.png`,
     summary:
       "Every ambitious concept carries a risk register. The EPU hydrogen driverless platform requires green hydrogen infrastructure, LH2 certification pathways, EPU formal verification toolchain maturity, and OEM architecture adoption.",
     keyPoints: [
@@ -504,7 +504,7 @@ export const slides: Slide[] = [
     title: "H2 vs. EV Sensitivity Analysis — Three Scenarios, Three Verdicts",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_29_75b817b7.png`,
+    image: `${BASE}/epu_29_d041c9bd.png`,
     summary:
       "A three-scenario sensitivity analysis (optimistic, baseline, conservative) reveals that the H2 case is compelling only under optimistic assumptions. The framework makes scenario dependencies explicit and auditable.",
     keyPoints: [
@@ -521,7 +521,7 @@ export const slides: Slide[] = [
     title: "The Methodology Is the Moat — EPU as Application-Neutral Deployment Platform",
     section: "TEA/LCA & Strategic Moat",
     sectionColor: "#9D174D",
-    image: `${BASE}/img_30_4be75609.png`,
+    image: `${BASE}/epu_30_3108b30d.png`,
     summary:
       "The closing synthesis: the EPU competitive moat is the methodology — physics-certified safety governance, TEA/LCA transparency as a design constraint, sensor suite constitutionalism, and auditable certification evidence.",
     keyPoints: [
