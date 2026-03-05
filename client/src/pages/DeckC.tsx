@@ -425,8 +425,8 @@ export default function DeckC() {
               }}
             >
               {isRTL
-                ? "۶۰ اسلاید پوشش‌دهنده ISA PICAPD، معماری Queen Bee BFT، پایه فیزیکی، مدل مالی، و نتایج اعتبارسنجی تجربی."
-                : "60 slides covering the PICAPD ISA, Queen Bee BFT architecture, physics foundation, financial model, and experimental validation results."}
+                ? "۷۴ اسلاید پوشش‌دهنده ISA PICAPD، معماری Queen Bee BFT، پایه فیزیکی، مدل مالی، و نتایج اعتبارسنجی تجربی."
+                : "74 slides covering the PICAPD ISA, Queen Bee BFT architecture, physics foundation, financial model, and experimental validation results."}
             </p>
           </div>
         </div>
