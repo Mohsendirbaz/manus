@@ -752,13 +752,27 @@ export default function Home() {
                 className="flex items-center gap-1"
               >
                 <input
-                  type="number"
-                  min={1}
-                  max={allSlides.length}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   value={jumpInput}
-                  onChange={(e) => setJumpInput(e.target.value)}
+                  onChange={(e) => {
+                    // Only allow digits
+                    const val = e.target.value.replace(/[^0-9]/g, "");
+                    setJumpInput(val);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      const n = parseInt(jumpInput, 10);
+                      if (!isNaN(n) && n >= 1 && n <= allSlides.length) {
+                        setSelectedSlide(allSlides[n - 1]);
+                        setJumpInput("");
+                      }
+                    }
+                  }}
                   placeholder={`1–${allSlides.length}`}
-                  className="text-xs border rounded-sm outline-none text-center transition-all focus:border-gray-400"
+                  className="text-xs border rounded-sm outline-none text-center transition-all"
                   style={{
                     width: "72px",
                     padding: "6px 4px",
@@ -766,8 +780,6 @@ export default function Home() {
                     borderColor: "#D0CCC5",
                     fontFamily: "'Space Mono', monospace",
                     color: "#1A1A1A",
-                    // hide number spinners
-                    MozAppearance: "textfield",
                   }}
                 />
                 <button
