@@ -89,3 +89,8 @@
 - [x] SEARCH.6 Fix duplicate TOC partId keys (TOC-P7-2 → TOC-P7-3, TOC-GLOBAL-2 → TOC-GLOBAL-3)
 - [x] SEARCH.7 Fix jump-to-slide input not accepting typed numbers (switched from type=number to type=text+inputMode=numeric)
 - [x] SEARCH.8 Fix search box not filtering slides when text is typed (root cause: published site was on old checkpoint; fixed remaining duplicate TOC partIds TOC-P5-4, TOC-P6-3)
+
+## Go-to and #number Search Fix
+- [x] GOTO.1 Change "Go to" from modal-open to grid-filter (show only that slide, no modal auto-open)
+- [x] GOTO.2 #number convention in search box: if query matches /^#(\d+)$/, filter grid to that global page number slide
+- [x] GOTO.3 Ensure closing a slide modal returns to current filter state (not full reset — modal close only clears selectedSlide, jumpTarget/filters remain)

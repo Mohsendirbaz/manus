@@ -591,10 +591,24 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // ── Jump target: when set (1-based page number), grid shows only that slide ─
+  const [jumpTarget, setJumpTarget] = useState<number | null>(null);
+
   const handleSearchChange = useCallback((value: string) => {
     setSearchInput(value);
-    if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => setSearchQuery(value), 150);
+    // #number convention: if query is exactly #N, filter to that global page number
+    const hashMatch = value.trim().match(/^#(\d+)$/);
+    if (hashMatch) {
+      const n = parseInt(hashMatch[1], 10);
+      if (n >= 1 && n <= allSlides.length) {
+        setJumpTarget(n);
+        setSearchQuery(""); // don't run text search
+      }
+    } else {
+      setJumpTarget(null); // clear any jump target when typing normal text
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(() => setSearchQuery(value), 150);
+    }
   }, []);
 
   // ── Jump-to-slide state ───────────────────────────────────────────────────
@@ -608,6 +622,11 @@ export default function Home() {
   const deferredQuery = useDeferredValue(searchQuery);
 
   const filteredSlides = useMemo(() => {
+    // Jump target takes priority: show only that one slide
+    if (jumpTarget !== null) {
+      const slide = allSlides[jumpTarget - 1];
+      return slide ? [slide] : [];
+    }
     let result = allSlides;
     if (activeDeck !== "All") result = result.filter((s) => s.deck === activeDeck);
     if (activeAudience) {
@@ -641,12 +660,13 @@ export default function Home() {
       });
     }
     return result;
-  }, [deferredQuery, activeDeck, activeAudience]);
+  }, [deferredQuery, activeDeck, activeAudience, jumpTarget]);
 
   const handleDeckChange = useCallback((deck: DeckId | "All") => {
     setActiveDeck(deck);
     setSearchInput("");
     setSearchQuery("");
+    setJumpTarget(null);
   }, []);
 
   const handleAudienceToggle = useCallback((audience: AudiencePath) => {
@@ -745,7 +765,12 @@ export default function Home() {
                   e.preventDefault();
                   const n = parseInt(jumpInput, 10);
                   if (!isNaN(n) && n >= 1 && n <= allSlides.length) {
-                    setSelectedSlide(allSlides[n - 1]);
+                    // Filter grid to show only that slide (don't open modal)
+                    setJumpTarget(n);
+                    setSearchInput("");
+                    setSearchQuery("");
+                    setActiveDeck("All");
+                    setActiveAudience(null);
                     setJumpInput("");
                   }
                 }}
@@ -766,7 +791,11 @@ export default function Home() {
                       e.preventDefault();
                       const n = parseInt(jumpInput, 10);
                       if (!isNaN(n) && n >= 1 && n <= allSlides.length) {
-                        setSelectedSlide(allSlides[n - 1]);
+                        setJumpTarget(n);
+                        setSearchInput("");
+                        setSearchQuery("");
+                        setActiveDeck("All");
+                        setActiveAudience(null);
                         setJumpInput("");
                       }
                     }
@@ -973,13 +1002,15 @@ export default function Home() {
             className="text-sm"
             style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
           >
-            {deferredQuery
+            {jumpTarget !== null
+              ? `${isRTL ? "اسلاید" : "Slide"} #${jumpTarget} — ${filteredSlides[0]?.uid ?? ""}`
+              : deferredQuery
               ? `${filteredSlides.length} ${isRTL ? "نتیجه" : "result" + (filteredSlides.length !== 1 ? "s" : "")} — "${deferredQuery}"`
               : `${filteredSlides.length} ${isRTL ? "اسلاید" : "slide" + (filteredSlides.length !== 1 ? "s" : "")}`}
           </p>
-          {(searchInput || activeDeck !== "All" || activeAudience) && (
+          {(searchInput || activeDeck !== "All" || activeAudience || jumpTarget !== null) && (
             <button
-              onClick={() => { setSearchInput(""); setSearchQuery(""); setActiveDeck("All"); setActiveAudience(null); }}
+              onClick={() => { setSearchInput(""); setSearchQuery(""); setActiveDeck("All"); setActiveAudience(null); setJumpTarget(null); }}
               className="text-xs px-3 py-1 border rounded-sm transition-all hover:bg-gray-50"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
