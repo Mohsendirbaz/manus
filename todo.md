@@ -88,3 +88,4 @@
 - [x] SEARCH.5 Jump-to-slide: accept page number (1-425) and open that slide's modal
 - [x] SEARCH.6 Fix duplicate TOC partId keys (TOC-P7-2 → TOC-P7-3, TOC-GLOBAL-2 → TOC-GLOBAL-3)
 - [x] SEARCH.7 Fix jump-to-slide input not accepting typed numbers (switched from type=number to type=text+inputMode=numeric)
+- [x] SEARCH.8 Fix search box not filtering slides when text is typed (root cause: published site was on old checkpoint; fixed remaining duplicate TOC partIds TOC-P5-4, TOC-P6-3)

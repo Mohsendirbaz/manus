@@ -1090,7 +1090,7 @@ export const slidesTOC: SlideTOC[] = [
   },
   {
     id: 31,
-    partId: "TOC-P5-2",
+    partId: "TOC-P5-4",
     act: "PartV_Architecture" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartV_Architecture,
     imageUrl: imgTOC(31),
@@ -1123,7 +1123,7 @@ export const slidesTOC: SlideTOC[] = [
   },
   {
     id: 32,
-    partId: "TOC-P6-2",
+    partId: "TOC-P6-3",
     act: "PartVI_Financial" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartVI_Financial,
     imageUrl: imgTOC(32),
