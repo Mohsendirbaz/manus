@@ -113,6 +113,8 @@ const IMG_URLS_TOC: Record<number, string> = {
   62: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc23_queen_bee_bft_coverage-RWPdFeByinQNvvdSRgdgwW.png",
   63: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc33_validation_pyramid-5cKrZ9UbGmEtWmYJskxubP.png",
   64: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc34_appendices_overview-B2o853Fwa8VkjqkAaaQgkQ.png",
+  // TOC-P6-3 Part VI Financial Models coverage map (audit fix 2026-03-06)
+  65: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p6_3_financial_models-NkWktL3wSpM4Bz4nLD4tQi.png",
 };
 
 const imgTOC = (n: number) => IMG_URLS_TOC[n] || "";
@@ -1126,7 +1128,7 @@ export const slidesTOC: SlideTOC[] = [
     partId: "TOC-P6-3",
     act: "PartVI_Financial" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartVI_Financial,
-    imageUrl: imgTOC(32),
+    imageUrl: imgTOC(65),
     en: {
       title: "Part VI Financial Models: TEA, LCA, and Market Sizing — §46-49",
       narrative: "Part VI Financial chapters §46-49 cover Techno-Economic Analysis (TEA), Life Cycle Assessment (LCA), market sizing, and competitive positioning. Coverage in the portal: §46 (TEA model) → C-36-43; §47 (LCA carbon accounting) → slidesBio-1-6; §48 (market sizing) → slides60-1-20; §49 (competitive moat) → slides60-21-40. Total: 69 slides across Deck C, Bio, and 60.",
