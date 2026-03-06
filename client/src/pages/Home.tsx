@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useState, useMemo, useCallback, useEffect, useDeferredValue, useRef } from "react";
 import { Link } from "wouter";
 import { slides60, actColors as actColorsEPU, ACT_LABELS as ACT_LABELS_EPU, type Act, type Slide60 } from "@/data/slides60";
 import { slidesA, ACT_LABELS_A, type SlideA, type ActA } from "@/data/slidesA";
@@ -221,7 +221,7 @@ const allSlides: UnifiedSlide[] = [
     en: s.en, fa: s.fa,
   })),
   ...slidesTOC.map((s: SlideTOC): UnifiedSlide => ({
-    uid: `TOC-${s.partId}`, deck: "TOC", id: s.id,
+    uid: s.partId, deck: "TOC", id: s.id,
     act: s.act, actLabel: s.actLabel, imageUrl: s.imageUrl,
     en: s.en, fa: s.fa,
   })),
@@ -265,11 +265,14 @@ function ActBadge({ slide, lang }: { slide: UnifiedSlide; lang: "en" | "fa" }) {
 function highlight(text: string, query: string): string | React.ReactNode {
   if (!query.trim()) return text;
   const q = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const parts = text.split(new RegExp(`(${q})`, "gi"));
+  // Use 'i' flag for case-insensitive; works for both Latin and Farsi Unicode
+  const regex = new RegExp(`(${q})`, "gi");
+  const parts = text.split(regex);
+  if (parts.length === 1) return text; // no match
   return (
     <>
       {parts.map((part, i) =>
-        part.toLowerCase() === query.toLowerCase() ? (
+        regex.test(part) ? (
           <mark key={i} style={{ backgroundColor: "#C8A96E33", color: "#8B6914" }}>{part}</mark>
         ) : part
       )}
@@ -583,10 +586,26 @@ export default function Home() {
   const lang = language as "en" | "fa";
   const t = ui60[lang];
 
+  // ── Search state: raw input + debounced committed query ──────────────────
+  const [searchInput, setSearchInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleSearchChange = useCallback((value: string) => {
+    setSearchInput(value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setSearchQuery(value), 150);
+  }, []);
+
+  // ── Jump-to-slide state ───────────────────────────────────────────────────
+  const [jumpInput, setJumpInput] = useState("");
+
   const [activeDeck, setActiveDeck] = useState<DeckId | "All">("All");
   const [activeAudience, setActiveAudience] = useState<AudiencePath | null>(null);
   const [selectedSlide, setSelectedSlide] = useState<UnifiedSlide | null>(null);
+
+  // ── Deferred query for non-blocking filtering ─────────────────────────────
+  const deferredQuery = useDeferredValue(searchQuery);
 
   const filteredSlides = useMemo(() => {
     let result = allSlides;
@@ -594,27 +613,39 @@ export default function Home() {
     if (activeAudience) {
       result = result.filter((s) => getAudiencePaths(s).includes(activeAudience));
     }
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
+    if (deferredQuery.trim()) {
+      // Search both EN and FA fields without lowercasing Farsi (Unicode-safe)
+      const q = deferredQuery.trim();
+      const qLower = q.toLowerCase();
       result = result.filter((s) => {
         const en = s.en; const fa = s.fa;
-        return (
-          en.title.toLowerCase().includes(q) ||
-          en.narrative.toLowerCase().includes(q) ||
-          en.keyPoints.some((k) => k.toLowerCase().includes(q)) ||
-          en.tags.some((tg) => tg.toLowerCase().includes(q)) ||
-          fa.title.toLowerCase().includes(q) ||
-          fa.narrative.toLowerCase().includes(q) ||
-          fa.keyPoints.some((k) => k.toLowerCase().includes(q)) ||
-          fa.tags.some((tg) => tg.toLowerCase().includes(q))
+        // For Latin queries: case-insensitive via toLowerCase
+        // For Farsi queries: direct includes (Farsi chars are already case-invariant)
+        const matchesEN = (
+          en.title.toLowerCase().includes(qLower) ||
+          en.narrative.toLowerCase().includes(qLower) ||
+          en.strategic.toLowerCase().includes(qLower) ||
+          en.keyPoints.some((k) => k.toLowerCase().includes(qLower)) ||
+          en.tags.some((tg) => tg.toLowerCase().includes(qLower))
         );
+        const matchesFA = (
+          fa.title.includes(q) ||
+          fa.narrative.includes(q) ||
+          fa.strategic.includes(q) ||
+          fa.keyPoints.some((k) => k.includes(q)) ||
+          fa.tags.some((tg) => tg.includes(q))
+        );
+        // Also match deck UID (e.g. "C-33", "TOC-22")
+        const matchesUID = s.uid.toLowerCase().includes(qLower);
+        return matchesEN || matchesFA || matchesUID;
       });
     }
     return result;
-  }, [searchQuery, activeDeck, activeAudience]);
+  }, [deferredQuery, activeDeck, activeAudience]);
 
   const handleDeckChange = useCallback((deck: DeckId | "All") => {
     setActiveDeck(deck);
+    setSearchInput("");
     setSearchQuery("");
   }, []);
 
@@ -671,8 +702,8 @@ export default function Home() {
             <div className="flex-1 max-w-md mx-auto relative">
               <input
                 type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={searchInput}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 placeholder={isRTL ? `جستجو در ${allSlides.length} اسلاید...` : `Search ${allSlides.length} slides...`}
                 className="w-full px-4 py-2 text-sm border rounded-sm outline-none transition-all focus:border-gray-400"
                 style={{
@@ -684,14 +715,76 @@ export default function Home() {
                   textAlign: isRTL ? "right" : "left",
                 }}
               />
-              {searchQuery && (
+              {searchInput && (
                 <button
-                  onClick={() => setSearchQuery("")}
+                  onClick={() => { setSearchInput(""); setSearchQuery(""); }}
                   className={`absolute top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 ${isRTL ? "left-3" : "right-3"}`}
                 >
                   ×
                 </button>
               )}
+            </div>
+
+            {/* Jump to Slide */}
+            <div
+              className="flex items-center gap-1.5 shrink-0"
+              style={{ direction: "ltr" }}
+            >
+              <span
+                className="text-xs whitespace-nowrap"
+                style={{
+                  fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Space Mono', monospace",
+                  color: "#9CA3AF",
+                  fontSize: "0.65rem",
+                }}
+              >
+                {isRTL ? "برو به:" : "Go to:"}
+              </span>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const n = parseInt(jumpInput, 10);
+                  if (!isNaN(n) && n >= 1 && n <= allSlides.length) {
+                    setSelectedSlide(allSlides[n - 1]);
+                    setJumpInput("");
+                  }
+                }}
+                className="flex items-center gap-1"
+              >
+                <input
+                  type="number"
+                  min={1}
+                  max={allSlides.length}
+                  value={jumpInput}
+                  onChange={(e) => setJumpInput(e.target.value)}
+                  placeholder={`1–${allSlides.length}`}
+                  className="text-xs border rounded-sm outline-none text-center transition-all focus:border-gray-400"
+                  style={{
+                    width: "72px",
+                    padding: "6px 4px",
+                    backgroundColor: "#FDFCFA",
+                    borderColor: "#D0CCC5",
+                    fontFamily: "'Space Mono', monospace",
+                    color: "#1A1A1A",
+                    // hide number spinners
+                    MozAppearance: "textfield",
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="text-xs px-2 py-1.5 border rounded-sm transition-all"
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    borderColor: "#2D7D6F",
+                    color: "#2D7D6F",
+                    backgroundColor: "#2D7D6F11",
+                    fontSize: "0.65rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  →
+                </button>
+              </form>
             </div>
 
             {/* Language toggle */}
@@ -868,13 +961,13 @@ export default function Home() {
             className="text-sm"
             style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
           >
-            {searchQuery
-              ? `${filteredSlides.length} ${isRTL ? "نتیجه" : "result" + (filteredSlides.length !== 1 ? "s" : "")} — "${searchQuery}"`
+            {deferredQuery
+              ? `${filteredSlides.length} ${isRTL ? "نتیجه" : "result" + (filteredSlides.length !== 1 ? "s" : "")} — "${deferredQuery}"`
               : `${filteredSlides.length} ${isRTL ? "اسلاید" : "slide" + (filteredSlides.length !== 1 ? "s" : "")}`}
           </p>
-          {(searchQuery || activeDeck !== "All" || activeAudience) && (
+          {(searchInput || activeDeck !== "All" || activeAudience) && (
             <button
-              onClick={() => { setSearchQuery(""); setActiveDeck("All"); setActiveAudience(null); }}
+              onClick={() => { setSearchInput(""); setSearchQuery(""); setActiveDeck("All"); setActiveAudience(null); }}
               className="text-xs px-3 py-1 border rounded-sm transition-all hover:bg-gray-50"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
@@ -895,7 +988,7 @@ export default function Home() {
                 slide={slide}
                 lang={lang}
                 isRTL={isRTL}
-                searchQuery={searchQuery}
+                searchQuery={deferredQuery}
                 animationDelay={idx * 0.02}
                 onClick={() => setSelectedSlide(slide)}
               />

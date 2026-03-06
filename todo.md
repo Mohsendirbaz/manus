@@ -79,3 +79,11 @@
 - [ ] GAP.5 Add B-31: Uncertainty Propagation & Landauer Measurement Bound (slidesB.ts)
 - [ ] FINAL.1 TypeScript zero-error verification
 - [ ] FINAL.2 Checkpoint and GitHub push
+
+## Search Fix + Jump to Slide
+- [x] SEARCH.1 Add debounce (150ms) to search input to prevent blocking on every keystroke
+- [x] SEARCH.2 Use useDeferredValue for non-blocking filtering of 425 slides
+- [x] SEARCH.3 Fix highlight() to work correctly with Farsi strings (no toLowerCase for FA)
+- [x] SEARCH.4 Add "Jump to slide" number input box in header
+- [x] SEARCH.5 Jump-to-slide: accept page number (1-425) and open that slide's modal
+- [x] SEARCH.6 Fix duplicate TOC partId keys (TOC-P7-2 → TOC-P7-3, TOC-GLOBAL-2 → TOC-GLOBAL-3)

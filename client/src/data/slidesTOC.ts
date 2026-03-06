@@ -1156,7 +1156,7 @@ export const slidesTOC: SlideTOC[] = [
   },
   {
     id: 33,
-    partId: "TOC-P7-2",
+    partId: "TOC-P7-3",
     act: "PartVII_Validation" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartVII_Validation,
     imageUrl: imgTOC(63),
@@ -1222,7 +1222,7 @@ export const slidesTOC: SlideTOC[] = [
   },
   {
     id: 35,
-    partId: "TOC-GLOBAL-2",
+    partId: "TOC-GLOBAL-3",
     act: "PartI_Executive" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartI_Executive,
     imageUrl: imgTOC(35),
