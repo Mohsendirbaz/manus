@@ -55,18 +55,18 @@ const IMG_URLS_TOC: Record<number, string> = {
   3: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p1_03_market_analysis_5e9c8ed0.png",
   4: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p1_04_product_roadmap_445119ef.png",
   5: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p1_05_competitive_0bd4a9f1.png",
-  6: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p1_06_team_risk_0a4847d6.png",
+  6: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_6_5863e66a.png",
   7: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p1_07_coverage_heatmap_441a21c1.png",
   // Part II — Design Philosophy (slides 8–12)
   9: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p2_01_cover_philosophy_6fab0b3d.png",
   10: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p2_02_pdc_motivation_3b60791f.png",
   11: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p2_03_system_model_7b2a12fd.png",
-  12: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p2_04_design_principles_8db5b582.png",
+  12: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_12_fc96cdd8.png",
   13: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p2_05_abstraction_layers_9b3a489b.png",
   // Part III — Strategic Context (slides 13–15)
   17: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p3_01_cover_strategic_eb13c44d.png",
-  18: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p3_02_origin_bilinear_a818b2ef.png",
-  19: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p3_03_silica_supply_d8dab3df.png",
+  18: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_18_3b0d0f38.png",
+  19: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_19_e7209db2.png",
   // Part IV — Technical Foundation (slides 16–20)
   24: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p4_01_cover_technical_48db2cb4.png",
   25: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_p4_02_physics_conservation_06421a4c.png",

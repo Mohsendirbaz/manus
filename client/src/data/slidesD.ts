@@ -152,7 +152,7 @@ const IMG_URLS_D: Record<number, string> = {
   104: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663375391636/GMuWNaCHauocRgAi.png",
   105: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d105_continuous_learning-R28osY7TdqPZdiij3YDpqb.png",
   106: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663375391636/SBBhSmDfqVpeIVIF.png",
-  107: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d107_fix_144b9431.png",
+  107: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/d_107_21b46f58.png",
   108: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663375391636/PrCQpPNRCoZuslGx.png",
   109: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663375391636/ETtyVoEtBrfDATXz.png",
   110: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663375391636/pFTqikrYoxZGoFyN.png",
