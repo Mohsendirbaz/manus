@@ -108,6 +108,11 @@ const IMG_URLS_TOC: Record<number, string> = {
   // Global Summary (slides 29–30, 59–60)
   59: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_global_01_complete_summary_ad1f11be.png",
   60: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc_global_02_nav_guide_3f7afc53.png",
+  // Corrected images for mismatch fixes (audit 2026-03-06)
+  61: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc22_picapd_isa_coverage-ghefMPChv4MknuAwCdeQef.png",
+  62: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc23_queen_bee_bft_coverage-RWPdFeByinQNvvdSRgdgwW.png",
+  63: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc33_validation_pyramid-5cKrZ9UbGmEtWmYJskxubP.png",
+  64: "https://d2xsxph8kpxj0f.cloudfront.net/310519663375391636/BEAks43mdXqakzGwnJU26K/toc34_appendices_overview-B2o853Fwa8VkjqkAaaQgkQ.png",
 };
 
 const imgTOC = (n: number) => IMG_URLS_TOC[n] || "";
@@ -791,7 +796,7 @@ export const slidesTOC: SlideTOC[] = [
 
   {
     id: 22, partId: "TOC-P5-2",
-    act: "PartV_Architecture", actLabel: ACT_LABELS_TOC.PartV_Architecture, imageUrl: imgTOC(34),
+    act: "PartV_Architecture", actLabel: ACT_LABELS_TOC.PartV_Architecture, imageUrl: imgTOC(61),
     en: {
       title: "§23–25: PICAPD ISA, Rectification & STOP-5 Profile — Coverage Map",
       narrative: "Chapters 23 through 25 cover the PICAPD instruction set architecture, the ISA rectification process (how formal proofs are used to correct the ISA before silicon), and the STOP-5 platform profile (the safety-certified software stack). PICAPD receives the most comprehensive coverage of any single architectural component in the portal, spanning three slides in Deck C and 37 slides in Deck D.",
@@ -822,7 +827,7 @@ export const slidesTOC: SlideTOC[] = [
 
   {
     id: 23, partId: "TOC-P5-3",
-    act: "PartV_Architecture", actLabel: ACT_LABELS_TOC.PartV_Architecture, imageUrl: imgTOC(35),
+    act: "PartV_Architecture", actLabel: ACT_LABELS_TOC.PartV_Architecture, imageUrl: imgTOC(62),
     en: {
       title: "§26–29: Queen Bee, Silicon Design, BFT Protocol & Safety — Coverage Map",
       narrative: "Chapters 26 through 29 cover the Queen Bee fault-tolerant hierarchy, EPU silicon design specifications, the Byzantine 3-phase commit protocol, and the safety architecture. The Queen Bee hierarchy and BFT protocol together receive the most extensive treatment in the portal — 37 slides in Deck D alone — reflecting their centrality to the Ghost EPU's safety and reliability claims.",
@@ -1154,7 +1159,7 @@ export const slidesTOC: SlideTOC[] = [
     partId: "TOC-P7-2",
     act: "PartVII_Validation" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartVII_Validation,
-    imageUrl: imgTOC(33),
+    imageUrl: imgTOC(63),
     en: {
       title: "Part VII Validation: Formal Proofs, Hardware-in-Loop, and Field Testing — §50-53",
       narrative: "Part VII Validation chapters §50-53 cover the complete validation pyramid: formal proofs (Coq), hardware-in-loop (HIL) testing, software-in-loop (SIL) simulation, and field testing results. Coverage in the portal: §50 (Coq proofs) → D-66-121; §51 (HIL testing) → C-44-50; §52 (SIL simulation) → C-51-57; §53 (field results) → C-58-69. Total: 79 slides.",
@@ -1187,7 +1192,7 @@ export const slidesTOC: SlideTOC[] = [
     partId: "TOC-P8-2",
     act: "PartVIII_Appendices" as ActTOC,
     actLabel: ACT_LABELS_TOC.PartVIII_Appendices,
-    imageUrl: imgTOC(34),
+    imageUrl: imgTOC(64),
     en: {
       title: "Part VIII Appendices: Mathematical Proofs, Glossary, and Reference Tables — §54-57",
       narrative: "Part VIII Appendices chapters §54-57 contain the complete mathematical derivations, glossary of 340 technical terms, reference tables (physical constants, material properties, performance benchmarks), and bibliography. Coverage in the portal: §54 (math appendix) → Deck A slides 1-36; §55 (glossary) → Deck B slides 1-36; §56 (reference tables) → Deck G slides 1-13; §57 (bibliography) → not yet covered (gap).",
