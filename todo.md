@@ -94,3 +94,9 @@
 - [x] GOTO.1 Change "Go to" from modal-open to grid-filter (show only that slide, no modal auto-open)
 - [x] GOTO.2 #number convention in search box: if query matches /^#(\d+)$/, filter grid to that global page number slide
 - [x] GOTO.3 Ensure closing a slide modal returns to current filter state (not full reset — modal close only clears selectedSlide, jumpTarget/filters remain)
+
+## Missing Slides Investigation (425 - 419 = 6 missing)
+- [x] MISSING.1 Identified: pages 372-377 = Deck F (slidesBio.ts) — extractor was looking for slidesF.ts; no slides were actually missing
+- [x] MISSING.2 N/A — all 425 slides present in allSlides array
+- [x] MISSING.3 N/A — no new slides needed
+- [x] MISSING.4 Fixed extractor to use slidesBio.ts; full 425-slide audit passes with 0 mismatches
