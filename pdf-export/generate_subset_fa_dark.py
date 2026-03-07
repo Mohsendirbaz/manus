@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
 """
 Farsi subset PDF generator — dark navy edition.
-- All slide pages: dark navy background (#0A1628), light text
-- Cover page: same dark navy (#080818) as before
-- RTL: WeasyPrint native BiDi — NO get_display/reshape pre-processing
-- Visual inspection: first 3 pages rendered to PNG before final output
+Governed by: PDF_DESIGN_DIRECTIVES.md (read before modifying)
+
+Design summary:
+  Page hierarchy:  Cover (with slide-number annotation) → Deck Divider → Slide Pages
+  Note:            Subset PDFs omit the Document Overview page
+  Background:      Slide pages #0A1628 | Dividers #0D1B2A | Cover #080818
+  Directionality:  RTL via WeasyPrint native BiDi — NO get_display/reshape
+  Page sizing:     Slide pages auto-height (no min-height) — prevents dead space
+  Margins:         18mm lateral minimum on all content pages
+  Flex+RTL fix:    All flex children inside padded containers carry width:100%
+  Fonts:           Noto Sans Arabic (FA text) + Noto Sans (numerals/EN)
+  Page numbering:  N از T format, referenced against full 425-slide corpus
+  Cover annotation: Slide number chips + total count vs. 425
 """
 
 import json, os
@@ -116,7 +125,7 @@ body {{
 
 /* ── Slide pages ── */
 .slide {{
-    width:210mm; min-height:297mm; padding:12mm 18mm 16mm 18mm;
+    width:210mm; padding:14mm 18mm 14mm 18mm;
     page-break-after:always; background:{BG_PAGE};
     direction:rtl; unicode-bidi:embed;
 }}

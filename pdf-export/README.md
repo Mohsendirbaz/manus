@@ -2,6 +2,8 @@
 
 This directory contains the Python scripts used to generate the official PDF exports of the EPU Strategy slide deck.
 
+> **Design Standards:** All generators in this directory are governed by [`PDF_DESIGN_DIRECTIVES.md`](./PDF_DESIGN_DIRECTIVES.md). Read that document before modifying any generator or adding a new one. It defines the mandatory page hierarchy, margin rules, color palette, typography, directionality requirements, and the pre-delivery quality verification protocol.
+
 ## Requirements
 
 ```bash

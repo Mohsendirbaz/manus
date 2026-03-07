@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
-"""Full Farsi PDF generator — dark navy edition.
-- Dark navy background on ALL slide pages (#0A1628)
-- RTL: WeasyPrint native BiDi — NO get_display/reshape
-- Deck dividers: #0D1B2A (slightly lighter navy)
-- Cover: #080818 (original deep black-navy)
+"""
+Full Farsi PDF generator — dark navy edition.
+Governed by: PDF_DESIGN_DIRECTIVES.md (read before modifying)
+
+Design summary:
+  Page hierarchy:  Cover → Document Overview → Deck Divider → Slide Pages
+  Background:      Slide pages #0A1628 | Dividers #0D1B2A | Cover #080818
+  Directionality:  RTL via WeasyPrint native BiDi — NO get_display/reshape
+  Page sizing:     Slide pages auto-height (no min-height) — prevents dead space
+  Margins:         18mm lateral minimum on all content pages
+  Flex+RTL fix:    All flex children inside padded containers carry width:100%
+  Fonts:           Noto Sans Arabic (FA text) + Noto Sans (numerals/EN)
+  Page numbering:  N از T format, continuous across all decks
 """
 
 import json, os, subprocess

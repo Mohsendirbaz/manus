@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
-"""English-only PDF generator — dark navy edition.
-- Dark navy background on ALL slide pages (#0A1628)
-- Deck dividers: #0D1B2A
-- Cover: #080818
-- LTR layout, formula rendering with monospace spans
+"""
+Full English PDF generator — dark navy edition.
+Governed by: PDF_DESIGN_DIRECTIVES.md (read before modifying)
+
+Design summary:
+  Page hierarchy:  Cover → Document Overview → Deck Divider → Slide Pages
+  Background:      Slide pages #0A1628 | Dividers #0D1B2A | Cover #080818
+  Directionality:  LTR throughout
+  Page sizing:     Slide pages auto-height (no min-height) — prevents dead space
+  Margins:         18mm lateral minimum on all content pages
+  Fonts:           Noto Sans (all text)
+  Page numbering:  N of T format, continuous across all decks
+  Formulas:        Inline monospace spans for mathematical expressions
 """
 
 import json, os, re, subprocess
