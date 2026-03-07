@@ -444,3 +444,42 @@ This branch represents the **verified state** of the portal as of March 2026. Th
 ---
 
 *Ghost Hydrogen Powered Autonomous Vehicle with Event Processing Unit microchip — v3.0 · March 2026 · `verified-425`*
+
+---
+
+## PDF Export Convention
+
+All PDF exports of this portal follow a unified convention established in March 2026.
+
+### Full-Deck PDFs
+
+Two complete PDFs covering all 425 slides are maintained:
+
+| File | Language | Pages | Layout | Description |
+|------|----------|------:|--------|-------------|
+| `epu_strategy_en.pdf` | English | 446 | LTR | All 425 slides in English, professional A4 layout |
+| `epu_strategy_fa.pdf` | Farsi | 446 | RTL | All 425 slides in Farsi (Noto Sans Arabic), right-to-left layout |
+
+Both PDFs share the same structure:
+- **Cover page**: Ghost vehicle image + two title lines only (English and Farsi) — no other content
+- **Deck divider pages**: one per deck, dark navy background, deck name and slide count
+- **Slide pages**: title, image, narrative, strategic context, key points, tags — all untruncated
+- **Page numbering**: `X / Y` format (current page / total pages), bottom corners
+- **Deck label**: printed in the bottom footer of each slide page
+
+### Subset PDFs
+
+Subset PDFs export a curated selection of slides from the full 425-slide library. They follow this convention:
+
+1. **Cover page**: identical to the full-deck cover (Ghost vehicle image + two title lines), with a small annotation block at the bottom separated by a thin rule. The annotation shows:
+   - A label: *"زیرمجموعه انتخابی — N اسلاید از 425"* (Selected subset — N slides of 425)
+   - Individual slide number chips (the 1-based position in the full 425-slide sequence)
+2. **Slide pages**: same layout as full-deck PDFs; the header shows both the page position within the subset PDF and the slide's original position in the 425-slide deck (e.g., `دسته C · اسلاید 19 · شماره 154 از 425`)
+3. **Language**: Farsi by default (RTL); English subsets follow the same convention with LTR layout
+
+#### Subset Index — March 2026
+
+| Subset ID | Slides (positions in 425) | Theme | Language | Pages |
+|-----------|---------------------------|-------|----------|------:|
+| `subset-001` | 154, 169, 172, 173, 176, 177, 178, 220, 235, 251, 282, 309, 341, 344, 347, 350, 380 | Value chain · formal verification · financial projections · multi-agent coordination · hydrogen platform | Farsi | 18 |
+
