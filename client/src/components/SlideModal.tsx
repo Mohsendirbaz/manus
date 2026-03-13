@@ -72,25 +72,26 @@ export default function SlideModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-8 animate-fade-in"
-      style={{ backgroundColor: "rgba(15, 20, 18, 0.85)", backdropFilter: "blur(8px)" }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 lg:p-6 animate-fade-in"
+      style={{ backgroundColor: "rgba(15, 20, 18, 0.88)", backdropFilter: "blur(8px)" }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div
-        className="relative w-full max-w-6xl rounded-xl overflow-hidden animate-fade-in-up"
+        className="relative w-full rounded-xl overflow-hidden animate-fade-in-up"
         style={{
           backgroundColor: "#F8F7F4",
-          maxHeight: "90vh",
+          maxWidth: "min(96vw, 1200px)",
+          maxHeight: "96vh",
           display: "flex",
           flexDirection: "column",
           direction: isRTL ? "rtl" : "ltr",
         }}
       >
-        {/* Modal Header */}
+        {/* ── Header ── */}
         <div
-          className="flex items-center justify-between px-6 py-4 border-b shrink-0"
+          className="flex items-center justify-between px-5 py-3 border-b shrink-0"
           style={{ borderColor: "#E8E5DF", backgroundColor: "white" }}
         >
           <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
@@ -107,7 +108,7 @@ export default function SlideModal({
               className="text-xs"
               style={{ fontFamily: "'Space Mono', monospace", color: "#9CA3AF" }}
             >
-              {t.slideOf} {String(slide.id).padStart(2, "0")} / 30
+              {t.slideOf} {String(slide.id).padStart(2, "0")} / 425
             </span>
           </div>
           <button
@@ -125,22 +126,37 @@ export default function SlideModal({
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className={`flex overflow-auto flex-1 ${isRTL ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"}`}>
-          {/* Image */}
-          <div className="lg:w-[55%] shrink-0 bg-black" style={{ minHeight: "240px" }}>
+        {/* ── Body: single-column stacked ── */}
+        <div className="flex flex-col overflow-auto flex-1">
+
+          {/* Image — full width, fixed height, no cropping */}
+          <div
+            className="w-full shrink-0 bg-black flex items-center justify-center"
+            style={{ height: "56vmin", minHeight: "260px", maxHeight: "520px" }}
+          >
             <img
               src={slide.image}
               alt={slideT.title}
-              className="w-full h-full object-contain"
-              style={{ maxHeight: "70vh" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                display: "block",
+                padding: "16px",
+              }}
             />
           </div>
 
-          {/* Content */}
-          <div className={`flex-1 overflow-y-auto p-6 lg:p-8 ${isRTL ? "text-right" : ""}`}>
+          {/* Divider */}
+          <div style={{ height: "1px", backgroundColor: "#E8E5DF", flexShrink: 0 }} />
+
+          {/* Text content — scrollable */}
+          <div
+            className={`overflow-y-auto px-6 py-5 lg:px-10 lg:py-6 ${isRTL ? "text-right" : ""}`}
+            style={{ flex: "1 1 auto" }}
+          >
             <h2
-              className="text-xl lg:text-2xl font-bold mb-4 leading-snug"
+              className="text-xl lg:text-2xl font-bold mb-3 leading-snug"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'Playfair Display', serif",
                 color: "#2C2C2C",
@@ -150,7 +166,7 @@ export default function SlideModal({
             </h2>
 
             <p
-              className="text-sm mb-6 leading-relaxed"
+              className="text-sm mb-5 leading-relaxed"
               style={{
                 fontFamily: isRTL ? "'Vazirmatn', sans-serif" : "'DM Sans', sans-serif",
                 color: "#5A5A5A",
@@ -162,7 +178,7 @@ export default function SlideModal({
             {/* Quote */}
             {slideT.quote && (
               <blockquote
-                className={`mb-6 py-2 italic text-sm ${isRTL ? "pr-4 border-r-4" : "pl-4 border-l-4"}`}
+                className={`mb-5 py-2 italic text-sm ${isRTL ? "pr-4 border-r-4" : "pl-4 border-l-4"}`}
                 style={{
                   borderColor: slide.sectionColor,
                   color: slide.sectionColor,
@@ -176,7 +192,7 @@ export default function SlideModal({
             )}
 
             {/* Key Points */}
-            <div className="mb-6">
+            <div className="mb-5">
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-3"
                 style={{
@@ -187,7 +203,7 @@ export default function SlideModal({
               >
                 {t.keyPoints}
               </p>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2">
                 {slideT.keyPoints.map((kp, i) => (
                   <li key={i} className={`flex items-start gap-2.5 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <CheckCircle2
@@ -233,9 +249,9 @@ export default function SlideModal({
           </div>
         </div>
 
-        {/* Modal Footer — Navigation */}
+        {/* ── Footer — Navigation ── */}
         <div
-          className={`flex items-center justify-between px-6 py-4 border-t shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}
+          className={`flex items-center justify-between px-5 py-3 border-t shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}
           style={{ borderColor: "#E8E5DF", backgroundColor: "white" }}
         >
           <button

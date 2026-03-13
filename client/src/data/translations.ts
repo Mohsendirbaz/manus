@@ -49,7 +49,7 @@ export const ui: Record<Language, UITranslation> = {
   en: {
     siteTitle: "EPU Strategy",
     siteSubtitle: "Driverless H2 Autonomy Platform",
-    heroEyebrow: "STRATEGY CONCEPT · CONCEPT DOCUMENT",
+    heroEyebrow: "STRATEGY CONCEPT · CONCEPT FRAMEWORK",
     heroDescription:
       "EPU Strategy combines a physics-certified safety compute core, hydrogen driverless platform architecture, sensor suite constitutionalism, and TEA/LCA governance into a single, defensible methodology.",
     heroStats: {
