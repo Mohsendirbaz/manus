@@ -398,16 +398,17 @@ function SlideModal({
   const content = slide[lang];
   const accentColor = getActColor(slide);
   const deckMeta = DECK_META[slide.deck];
+  const [zoomed, setZoomed] = useState(false);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") isRTL ? onNext() : onPrev();
-      if (e.key === "ArrowRight") isRTL ? onPrev() : onNext();
+      if (e.key === "Escape") { if (zoomed) setZoomed(false); else onClose(); }
+      if (!zoomed && e.key === "ArrowLeft") isRTL ? onNext() : onPrev();
+      if (!zoomed && e.key === "ArrowRight") isRTL ? onPrev() : onNext();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [onClose, onPrev, onNext, isRTL]);
+  }, [onClose, onPrev, onNext, isRTL, zoomed]);
 
   return (
     <div
@@ -443,17 +444,71 @@ function SlideModal({
         </div>
         {/* Modal body — single-column stacked */}
         <div className={`flex flex-col ${isRTL ? "direction-rtl" : ""}`}>
-          {/* Image — full width, fixed height, no cropping */}
+          {/* Image — full width, fixed height, no cropping. Click to zoom. */}
           <div
-            className="w-full shrink-0 bg-black flex items-center justify-center"
-            style={{ height: "56vmin", minHeight: "260px", maxHeight: "520px" }}
+            className="w-full shrink-0 bg-black flex items-center justify-center relative"
+            style={{ height: "56vmin", minHeight: "260px", maxHeight: "520px", cursor: "zoom-in" }}
+            onClick={() => setZoomed(true)}
+            title={isRTL ? "برای بزرگ‌نمایی کلیک کنید" : "Click to zoom"}
           >
             <img
               src={slide.imageUrl}
               alt={content.title}
               style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", padding: "16px" }}
             />
+            {/* Zoom hint icon */}
+            <div
+              style={{
+                position: "absolute", bottom: "10px", right: "10px",
+                backgroundColor: "rgba(0,0,0,0.55)", borderRadius: "4px",
+                padding: "4px 7px", color: "white", fontSize: "11px",
+                fontFamily: "'Space Mono', monospace", pointerEvents: "none",
+                opacity: 0.75,
+              }}
+            >
+              ⊕ zoom
+            </div>
           </div>
+
+          {/* Zoomed full-screen overlay */}
+          {zoomed && (
+            <div
+              className="fixed inset-0 z-[60] flex items-center justify-center"
+              style={{ backgroundColor: "rgba(0,0,0,0.96)", cursor: "zoom-out" }}
+              onClick={() => setZoomed(false)}
+            >
+              <img
+                src={slide.imageUrl}
+                alt={content.title}
+                style={{
+                  maxWidth: "98vw", maxHeight: "98vh",
+                  objectFit: "contain", display: "block",
+                  boxShadow: "0 0 60px rgba(0,0,0,0.8)",
+                }}
+              />
+              <button
+                onClick={() => setZoomed(false)}
+                style={{
+                  position: "fixed", top: "16px", right: "20px",
+                  color: "white", fontSize: "28px", lineHeight: 1,
+                  background: "none", border: "none", cursor: "pointer",
+                  opacity: 0.8, fontFamily: "monospace",
+                }}
+              >
+                ×
+              </button>
+              <div
+                style={{
+                  position: "fixed", bottom: "16px", left: "50%",
+                  transform: "translateX(-50%)",
+                  color: "rgba(255,255,255,0.5)", fontSize: "11px",
+                  fontFamily: "'Space Mono', monospace",
+                }}
+              >
+                {isRTL ? "کلیک یا Esc برای بستن" : "click or Esc to close"}
+              </div>
+            </div>
+          )}
           <div style={{ height: "1px", backgroundColor: "#E8E5DF", flexShrink: 0 }} />
           {/* Text content — scrollable */}
           <div className={`p-6 overflow-y-auto ${isRTL ? "text-right" : ""}`} style={{ maxHeight: "50vh" }}>
