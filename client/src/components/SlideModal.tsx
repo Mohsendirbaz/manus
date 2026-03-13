@@ -79,10 +79,11 @@ export default function SlideModal({
       }}
     >
       <div
-        className="relative w-full max-w-6xl rounded-xl overflow-hidden animate-fade-in-up"
+        className="relative w-full rounded-xl overflow-hidden animate-fade-in-up"
         style={{
           backgroundColor: "#F8F7F4",
-          maxHeight: "90vh",
+          maxWidth: "min(95vw, 1400px)",
+          maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
           direction: isRTL ? "rtl" : "ltr",
@@ -128,12 +129,20 @@ export default function SlideModal({
         {/* Modal Body */}
         <div className={`flex overflow-auto flex-1 ${isRTL ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"}`}>
           {/* Image */}
-          <div className="lg:w-[55%] shrink-0 bg-black" style={{ minHeight: "240px" }}>
+          <div
+            className="lg:w-[60%] shrink-0 bg-black flex items-center justify-center"
+            style={{ minHeight: "320px", height: "calc(95vh - 130px)" }}
+          >
             <img
               src={slide.image}
               alt={slideT.title}
-              className="w-full h-full object-contain"
-              style={{ maxHeight: "70vh" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                display: "block",
+                padding: "12px",
+              }}
             />
           </div>
 
