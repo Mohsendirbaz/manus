@@ -441,19 +441,22 @@ function SlideModal({
             ×
           </button>
         </div>
-        {/* Modal body — two-column */}
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${isRTL ? "direction-rtl" : ""}`}>
-          {/* Left: image */}
-          <div className="relative" style={{ minHeight: "280px" }}>
+        {/* Modal body — single-column stacked */}
+        <div className={`flex flex-col ${isRTL ? "direction-rtl" : ""}`}>
+          {/* Image — full width, fixed height, no cropping */}
+          <div
+            className="w-full shrink-0 bg-black flex items-center justify-center"
+            style={{ height: "56vmin", minHeight: "260px", maxHeight: "520px" }}
+          >
             <img
               src={slide.imageUrl}
               alt={content.title}
-              className="w-full h-full object-cover"
-              style={{ minHeight: "280px" }}
+              style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", padding: "16px" }}
             />
           </div>
-          {/* Right: content */}
-          <div className={`p-6 overflow-y-auto ${isRTL ? "text-right" : ""}`} style={{ maxHeight: "70vh" }}>
+          <div style={{ height: "1px", backgroundColor: "#E8E5DF", flexShrink: 0 }} />
+          {/* Text content — scrollable */}
+          <div className={`p-6 overflow-y-auto ${isRTL ? "text-right" : ""}`} style={{ maxHeight: "50vh" }}>
             <h2
               className="text-xl font-bold mb-3 leading-snug"
               style={{
